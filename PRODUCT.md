@@ -10,6 +10,8 @@ The owner playing the existing Pokémon game offline on Android, primarily lands
 Preserve the original game's gameplay and presentation while adding the user's requested offline story, roaming, progression, captures, shops and mobile controls. A new substitute game is not the intended product.
 ## Evidence
 Original source and assets copied from D:/work/acqron/pokemon-emerald-horizons; copy manifest in docs/source-copy-manifest.json. Reference navigation was inspected during the earlier pass; the source itself is the authority for gameplay and presentation.
+
+The owner also supplied C:/Users/ronde/Downloads/Pokemon - Emerald Version (USA, Europe) as the supplemental reference for missing resources, story, pathing and gameplay. Its ROM identity matches the checksum expected by the existing local pokeemerald checkout. Use that checkout's readable maps/scripts for missing Hoenn details; retain Empress-style combat and Gen 1–9 coverage. See docs/EMERALD-REFERENCE.md.
 ## Capabilities
 Original action combat, animation sheets, effects, arenas, sounds, source menu artwork and regional routes. Added a 34-location connected Hoenn campaign, NPC objectives, story trainer battles, local save/export/import, left movement and manual aiming controls, right skill/Dodge buttons, 1,025 base species, level evolution, random biome encounters, multiple captures, EXP/gold/upgrades, eight Hoenn gyms, League and postgame. Source repository must remain untouched.
 ## Known limitations
