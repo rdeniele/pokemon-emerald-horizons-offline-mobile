@@ -1,0 +1,2 @@
+# Emerald field journal
+Preserve the source Emerald pixel identity: forest-green frame, cream paper, berry actions and mint health bars. Local animated Pokémon sprites lead. Map paths and numbered gym stops communicate progression. Mobile landscape uses large touch targets and a full combat viewport; portrait remains usable with a rotate suggestion. Body text uses readable system sans, display labels use bundled VT323. Visible focus, reduced motion and safe insets are required.

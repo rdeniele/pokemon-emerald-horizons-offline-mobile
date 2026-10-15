@@ -1,0 +1,23 @@
+{
+  "species": 1025,
+  "generations": {
+    "1": 151,
+    "2": 100,
+    "3": 135,
+    "4": 107,
+    "5": 156,
+    "6": 72,
+    "7": 88,
+    "8": 96,
+    "9": 120
+  },
+  "missing": [],
+  "missingEvolutionTargets": [],
+  "evolutionEdges": 481,
+  "source": "Local Empress catalog and existing source species stats",
+  "limitations": [
+    "Base national species only; regional and battle-only forms excluded.",
+    "Evolution graph manually curated by national ID; external requirements replaced. Regional-form exclusive evolutions are offered from base species.",
+    "Catch rates default to 45 where source has no specific rate; legendary classification overrides chance."
+  ]
+}
