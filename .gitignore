@@ -4,3 +4,7 @@ build/
 *.apk
 *.idsig
 .env*
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo

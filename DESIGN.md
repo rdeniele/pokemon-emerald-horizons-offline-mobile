@@ -1,2 +1,22 @@
-# Emerald field journal
-Preserve the source Emerald pixel identity: forest-green frame, cream paper, berry actions and mint health bars. Local animated Pokémon sprites lead. Map paths and numbered gym stops communicate progression. Mobile landscape uses large touch targets and a full combat viewport; portrait remains usable with a rotate suggestion. Body text uses readable system sans, display labels use bundled VT323. Visible focus, reduced motion and safe insets are required.
+# Emerald pixel interface
+
+The user explicitly selected an Emerald-style pixel interface consistent with the bundled game assets. Extend this established world rather than inventing a new aesthetic.
+
+- Outside combat: parchment panels, cocoa double frames, peach canvas and labeled mint, blue, rose and lavender navigation tabs, inspired by LimeZu Modern User Interface. Collection panels carry subtle type colors with readable dark ink.
+- Combat retains the forest green frame, cream panels, berry-red actions and mint HP bars.
+- Original Pokémon sprites and pixel map layers. No painted trainer portraits, painted Torchic or illustrated arena background in the stage experience.
+- Crisp two-step borders, compact game-menu typography, readable system text; pixel rendering only for raster artwork.
+- A stage route is the main composition; a battle occupies the main viewport during play. Party and PC are reachable without leaving progression.
+- Preserve desktop keyboard and mouse controls, and add landscape-first touch controls in this offline Android target. The battle fills the browser viewport, with a small skill reference strip; a Fullscreen button expands it into browser fullscreen. Layout remains responsive; touch controls, safe-area insets and Android pause/resume are now part of the target. Focus outlines, disabled state, status messages and reduced motion remain explicit.
+- Credits live on a dedicated page reachable from the main menu and settings, with original contributor names preserved. Keep credits and the fan-project notice outside active combat.
+- Battles use gentle framing capped at 1.2× zoom for closer action while retaining space for strategy; the camera widens when fighters spread out. Reduced motion keeps the full arena visible. A high-contrast FPS crosshair tracks the mouse at a constant screen size.
+- Keep numbered party portraits, moves and control hints in one compact HUD row, visible in windowed play. Narrow windows scroll this row horizontally rather than adding lines or clipping portraits.
+- Fit the battle shell to the measured visible browser height, including resize/fullscreen transitions, and retain a small bottom inset so the complete HUD stays above the screen edge.
+- Keep the HP readout and compact control strip inside the arena frame. Windowed play reserves clearance below this panel for browser chrome; fullscreen uses a smaller inset. The battlefield canvas gets its own unobstructed space above the panel.
+- Optional local Humble Pixel Paper UI artwork adds layered parchment dialogue panels, a green-trimmed home ribbon, and paper textures to collection cards. Selected runtime images are tracked at the owner's request; original license terms and credits remain documented. Combat remains unchanged.
+- PvP rank shields use original SVG insignia from Iron to Legendary. Master is crimson, Grandmaster obsidian, Legendary ivory/gold with radiant wings. Tier symbols supplement color. Optional local Vryell keyboard sprites enhance move-key hints without enlarging the combat HUD.
+- Shared paper frames and asset-based buttons replace plain borders in gym routes, party lists, collection slots, paging/filter actions and PvP ranks. Pixel icons accompany navigation, trainer and gym actions. Reusable keyboard/mouse guides appear on home, settings, menu footer and compact battle hints. Preserve account button contrast with explicit foreground/background pairs.
+- Main tabs use imported parchment panels with the green-trimmed ribbon for the selected mode. VT323 labels carry through action buttons, collection names and trainer controls; descriptive body copy stays in the readable system face. Narrow windows scroll the tab strip horizontally rather than breaking words.
+
+## Offline mobile adaptation
+The desktop-only control restriction above described the incumbent source. For this target, the user's explicit brief adds landscape touch joystick, four move buttons, dodge, switching, items, pause, visible trainer observers and short Poké Ball effects. Preserve all original menu artwork, typography, combat renderer, camera, animated sheets and move effects. Fix only responsive sizing and safe-area behavior; do not replace the game with a new visual system. The added offline controls and feature panels extend the source styles in offline-mobile.css.

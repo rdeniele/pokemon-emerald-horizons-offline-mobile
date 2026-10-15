@@ -1,0 +1,95 @@
+import {ARENA_GRID} from "@/battle/field";
+import {getArena,STAGE_ARENAS} from "@/battle/arenas";
+import {applyArenaKit} from "@/pokemon/moves/arenaKit";
+import {arenaCooldown} from "@/pokemon/moves/timing";
+import {BattleEngine} from "@/battle/engine/BattleEngine";
+import {createInstance, toUnitSpec, type PokemonInstance} from "@/pokemon/instance";
+import {getSpecies,SPECIES} from "@/pokemon/species/species";
+import type {SaveData} from "./saveData";
+import {addToCollection} from "@/pokemon/party";
+import {Rng} from "@/battle/engine/rng";
+import {attemptCapture, catchProbability} from "@/pokemon/capture";
+import regionalRoutes from "@/data/pokemon/regional-routes.json";
+
+export interface ChallengeStage {name:string;title:string;type:string;badge?:string;team:readonly number[];region:string;kind:string;arenaId:string}
+const HOENN = [
+  {name:"Roxanne", title:"Rustboro Gym", type:"rock", badge:"Stone", team:[74,337,299]},
+  {name:"Brawly", title:"Dewford Gym", type:"fighting", badge:"Knuckle", team:[66,256,296]},
+  {name:"Wattson", title:"Mauville Gym", type:"electric", badge:"Dynamo", team:[100,309,81,82]},
+  {name:"Flannery", title:"Lavaridge Gym", type:"fire", badge:"Heat", team:[322,218,256,324]},
+  {name:"Norman", title:"Petalburg Gym", type:"normal", badge:"Balance", team:[263,264,327,288,289]},
+  {name:"Winona", title:"Fortree Gym", type:"flying", badge:"Feather", team:[276,279,227,357,334]},
+  {name:"Tate & Liza", title:"Mossdeep Gym", type:"psychic", badge:"Mind", team:[281,178,337,338,344]},
+  {name:"Juan", title:"Sootopolis Gym", type:"water", badge:"Rain", team:[370,279,340,364,342,230]},
+  {name:"Sidney", title:"Elite Four · Dark", type:"dark", team:[262,275,332,302,319,359]},
+  {name:"Phoebe", title:"Elite Four · Ghost", type:"ghost", team:[354,356,302,354,302,356]},
+  {name:"Glacia", title:"Elite Four · Ice", type:"ice", team:[364,362,365,362,364,365]},
+  {name:"Drake", title:"Elite Four · Dragon", type:"dragon", team:[371,372,334,330,230,373]},
+  {name:"Wallace", title:"Champion", type:"water", team:[319,340,279,342,230,350]},
+] as const;
+// Hoenn stays at indices 0–12 so existing saves retain every badge and clear.
+export const STAGES:readonly ChallengeStage[]=[
+  ...HOENN.map((s,i)=>({...s,region:"hoenn",kind:i<8?"gym":i===12?"champion":"elite",arenaId:STAGE_ARENAS[i]})),
+  ...regionalRoutes.flatMap(r=>r.stages),
+];
+export const REGIONS=[...regionalRoutes.map(({id,name,generation,description})=>({id,name,generation,description})),{id:"hoenn",name:"Hoenn",generation:3,description:"Eight gyms, Elite Four and Wallace."}].sort((a,b)=>a.generation-b.generation);
+export const regionStages=(region:string)=>STAGES.flatMap((stage,index)=>stage.region===region?[{stage,index}]:[]);
+export const nextStage=(index:number)=>STAGES[index]&&STAGES[index+1]?.region===STAGES[index].region?index+1:null;
+export const STAGE_LEVEL = 50; // Fixed internal formula constant; never a progression mechanic.
+export const stageCleared = (save: SaveData, index: number) => !!save.flags[`stage:${index}`];
+export const stageUnlocked = (save: SaveData, index: number) => !!STAGES[index]&&(index === 0 || STAGES[index-1].region!==STAGES[index].region || stageCleared(save, index - 1));
+export const stagePokemon = (speciesId:number, id?:string) => createInstance(speciesId,STAGE_LEVEL,id ? {id} : {});
+export const STAGE_ADVANTAGE = {damage:1.12,speed:1.08} as const;
+/** Casual PvE: equal team sizes, unique random opponents, no badges or rating rewards. */
+export function quickBattle(party:PokemonInstance[],seed=Date.now()) {
+  if(!party.length||party.length>6)throw Error("Quick battle requires a party of one to six Pokémon.");
+  const rng=new Rng(seed),pool=Object.keys(SPECIES).map(Number),foes:number[]=[];
+  while(foes.length<party.length){const i=Math.floor(rng.next()*pool.length);foes.push(pool.splice(i,1)[0]);}
+  return stageBattle(party,foes,seed,rng.pick(REGIONS.flatMap(r=>regionStages(r.id).map(({stage})=>stage.arenaId))));
+}
+/** Explicit PvE entry point: choosing a gym arena in PvP never grants stage bonuses. */
+export function gymBattle(party:PokemonInstance[],index:number,seed?:number) {
+  const stage=STAGES[index];
+  if(!stage)throw Error("Unknown gym stage.");
+  const engine=stageBattle(party,stage.team,seed,stage.arenaId);
+  for(const unit of engine.state.units.values())if(unit.side==="enemy"&&unit.spec.types.some(type=>type===stage.type)){
+    unit.spec.damageDealtMultiplier=STAGE_ADVANTAGE.damage;
+    unit.spec.movementSpeed*=STAGE_ADVANTAGE.speed;
+  }
+  return engine;
+}
+export function stageBattle(party: PokemonInstance[], foes: readonly number[], seed=Date.now(),arenaId="meadow") {
+  if (!party.length || !foes.length) throw Error("Both sides need a Pokémon.");
+  const roster = (list: readonly number[], side:string) => list.map((id,i) => toUnitSpec(stagePokemon(id,`${side}_${i}`)));
+  const player = party.map(p => toUnitSpec({...p,level:STAGE_LEVEL,exp:0}));
+  const enemy = roster(foes,"foe");
+  for(const unit of [...player,...enemy]) {
+    // Species retain their legal move identity, with equal arena stat budgets.
+    unit.stats={hp:300,atk:100,def:100,spa:100,spd:100,spe:100};
+    unit.movementSpeed=4.5;
+    unit.attackCooldown=.6;
+    applyArenaKit(unit);
+    for(const skill of unit.skills){
+      if(skill.kind==="damage"){
+        skill.power=skill.slot==="ultimate"?100:60;
+        if(skill.range<=2)skill.aoeRadius=Math.max(1.1,skill.aoeRadius);
+      }else if(skill.kind!=="buff")skill.power=skill.kind==="control"?0:20;
+      skill.cooldown=arenaCooldown(skill.name,skill.slot,skill.kind);
+    }
+  }
+  const arena=getArena(arenaId);
+  const engine = new BattleEngine({arena:true,arenaId:arena.id,seed,grid:ARENA_GRID,obstacles:arena.obstacles.map(o=>({...o})),timeLimit:300,
+    player:{roster:player,formation:[{unitId:player[0].id,x:3,y:9}],maxUnits:1},
+    enemy:{roster:enemy,formation:[{unitId:enemy[0].id,x:14,y:2}],maxUnits:1}});
+  engine.setControlled("player",true);
+  return engine;
+}
+export function catchOdds(speciesId:number) {
+  return catchProbability({maxHp:100,currentHp:0,catchRate:getSpecies(speciesId).catchRate});
+}
+/** Exactly one chance after a wild victory. The UI consumes its result before persisting. */
+export function catchDefeated(save:SaveData, speciesId:number, seed:number): {save:SaveData; caught:boolean} {
+  const caught = attemptCapture({maxHp:100,currentHp:0,catchRate:getSpecies(speciesId).catchRate},new Rng(seed)).success;
+  if (!caught || save.collection.storage.length >= 500 && save.collection.party.length >= 6) return {save,caught:false};
+  return {save:{...save,collection:addToCollection(save.collection,stagePokemon(speciesId))},caught:true};
+}

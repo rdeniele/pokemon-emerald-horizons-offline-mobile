@@ -1,56 +1,77 @@
 # Emerald Horizons Offline Mobile
 
-A local Android collection adventure with 1,025 national Pokémon, an original Aurora Trail story, eight gyms, four League guardians, Champion Rowan and postgame habitats. Built in the target repository; the source repository is untouched.
+This version copies and adapts the original game from `D:\work\acqron\pokemon-emerald-horizons`. It keeps the original deterministic action engine, directional Pokémon animations, move effects and clashes, arena obstacles, music, sounds, Emerald paper menus, party portraits, nine regional routes and original Hoenn leaders. Offline progression is added to that game rather than replacing combat with a newly written substitute.
+
+The earlier standalone prototype remains in Git history. Its substitute interface has been removed from the current checkout. Only its useful local progression/economy/save module (`web/engine.js`) and generation data are reused by the copied app through `src/offline/model.ts`. Its standalone `web/app.js` interface and combat loop are not bundled in this APK. The actual game is the statically exported Next.js app in `src/`.
 
 ## Install
 
-Debug APK: `D:\work\acqron\pokemon-emerald-horizons-offline-mobile\build\apk\emerald-horizons-debug.apk`.
-Requires Android 7.0 (API 24) or newer and a current Android System WebView. Copy the APK to your phone, open it in Files, allow installation from that file manager when prompted, and install. Or use:
+APK: `D:\work\acqron\pokemon-emerald-horizons-offline-mobile\build\apk\emerald-horizons-debug.apk`.
+
+Requires Android 7.0 (API 24) or newer with a current Android System WebView. Copy the APK to your phone, open it in Files, permit installation from that file manager when prompted, and launch **Emerald Horizons**. Or:
 
 ```powershell
 D:\android-sdk\platform-tools\adb.exe install -r build\apk\emerald-horizons-debug.apk
 ```
 
-Launch **Emerald Horizons**. No login or connection is needed. The APK has no INTERNET permission. Its HTTPS-looking appassets URL is intercepted locally by the shell; it is not a hosted website.
+The app has no INTERNET permission. Its `appassets.androidplatform.net` requests are served directly from the APK, including Next.js scripts, sprites, directional sheets, music, fonts and map artwork. No Next.js server runs on the phone. Authentication, Supabase, databases and multiplayer have been removed from this build.
 
-## Play
+## What is preserved and added
 
-Choose Treecko, Torchic or Mudkip. Tap numbered map stops for requirements, recommended levels and challenges. Explore one of ten biomes, choose an unlocked tier, and roam with the joystick to trigger weighted random encounters. Wild Pokémon are not selected from a menu.
+The source battle simulation and rendering remain the foundation: real skillshots, beams, clashes, dodges, switches, status/buff effects, move-specific timing, authored animation anchors and camera motion. The original source appearance is retained. A SHA-256 copy manifest at `docs/source-copy-manifest.json` records the imported source and assets. Tests verify that core combat systems, rendering helpers and the source theme remain identical to those copied files.
 
-Combat is real time: move with the joystick, use four move buttons, dodge, switch partners, use items or pause. Attacks aim toward the opponent. Optional Auto uses your strongest available attacks. Desktop preview also supports WASD/arrows, keys 1–4 and Space. Landscape is the Android default; controls and native window insets reserve space for system bars/cutouts.
+Added: landscape touch joystick and four move buttons, automatic touch aiming, visible trainers outside combat, short ball send-out/recall effects, pause/resume, durable battle checkpoints, original beacon-story dialogue, clickable progression stops, ten roaming biomes, random encounters, six progression tiers, EXP to 100, custom branching level evolutions, five capture attempts, three ball grades, party/PC overflow, gold, supplies, compatible move teaching, capped stat upgrades, held Focus Charms and repeatable farming. Existing source regional challenges remain available as extra battles after eight Hoenn badges.
 
-Defeating a wild Pokémon opens a five-attempt capture phase. Each throw consumes one selected ball; failures allow retries. Chances and inventory counts are shown. Catches retain level, moves and upgrades. Party limit is six; overflow goes to PC storage. Party/PC panels offer evolution, permanent training, move tutoring and Focus Charm equipment. Shops sell three ball grades, potions, revives and the held charm.
+Primary journey: source Hoenn leaders Roxanne, Brawly, Wattson, Flannery, Norman, Winona, Tate & Liza, Juan, then Sidney, Phoebe, Glacia, Drake and Wallace. New levels and generation-diverse teams replace the old fixed-stat battles. Additional regions retain source trainer rosters. Rowan remains a recurring rival in the original beacon story; Wallace remains the original Hoenn Champion.
 
-Gyms unlock sequentially. Every two milestones unlock another habitat/farming bracket; the 81–100 tier opens after becoming Champion. Legendaries can appear in appropriate high-tier biomes after eight badges. All locations and challenges remain replayable. Losing supplies recovery gold and emergency balls; the center is free.
+## Play and controls
 
-## Saves
+Choose one of the source game's 27 starters. Use Gym challenge to select a numbered milestone, Explore biomes to enter a random-encounter trail, Quick battle to farm, and Town shop to buy supplies. Completed challenges remain replayable.
 
-Version 1 saves contain the party, PC, inventory, upgrades, progression, deterministic RNG, capture allowance and battle state. Android writes use AtomicFile in private app storage; a checksum-valid previous revision is retained. Browser preview uses localStorage. Purchases, reward claims, throws and ownership changes commit as one state snapshot. A throw result is saved **before** its animation, preventing double consumption or duplicate ownership after termination. Active battles checkpoint every 750ms and on actions; restart/pause resumes behind a pause screen. An abrupt process kill can rewind up to 750ms of combat, but cannot repeat a completed saved reward.
+Combat: joystick to move, four buttons for moves, Dodge, party portraits to switch, Items, Pause and optional Auto. Touch moves aim toward the current opponent; desktop mouse aiming remains directional. Desktop keys remain the original WASD, Q/E/R/X, Space and 1–6. Items pause combat. Resume is required after a restart or Android backgrounding.
 
-Saves tab supports system-file export/import, text export/import and previous-revision recovery. Corrupt primary saves fall back to the valid backup. Import replaces the current adventure and retains its previous save for recovery. Export before uninstalling: uninstall removes private saves. Rebuilds reuse the local debug key while `build/debug.keystore` remains present.
+Wild victory opens a capture phase with five throws. Every throw consumes exactly one selected ball; failure permits another attempt. The estimated chance and remaining inventory are visible. Success joins the party or PC if the six slots are full. Party/PC training provides permanent upgrades and compatible move tutoring. Evolution choices appear at the custom level thresholds, including branching choices.
+
+Losing gives emergency gold and at least three Poké Balls. Every new battle starts with the party healed, so the player cannot become stranded without recovery. The highest tier unlocks after Champion; legendary encounters become possible in high-tier matching biomes after eight badges.
+
+## Save system
+
+Checksummed, versioned local snapshots retain ownership, EXP, moves, upgrades, currency, inventory, rewards, RNG, capture attempts and combat state. Android storage uses AtomicFile and keeps a valid previous revision. Import/export uses the Android system file picker or text. Browser preview uses localStorage.
+
+The **original engine** now checkpoints its full deterministic state: combatants/reserves, statuses, cooldowns, in-flight attacks/clashes, RNG, AI plans, controlled sides and pending hits. It saves every 750ms, on actions and on pause. A sudden process kill can rewind up to 750ms of combat; completed rewards and captures commit as one save and cannot be claimed twice. Imports keep monotonic revision ordering. Saves from the earlier prototype retain party/progression; an old prototype battle without an original-engine checkpoint restarts that encounter in the original engine behind a pause screen.
+
+Export before uninstalling: uninstall deletes private saves. Keep `build/debug.keystore` locally if you want subsequent debug APKs to update the installed app without uninstalling. The signing key is ignored by Git.
 
 ## Development and build
 
-No npm dependencies or runtime downloads are needed. Node 24 and JDK 17 were used. Next.js, React, Phaser, authentication, databases and multiplayer are not included in this target build; the source asset roster, sprites, species stats and type chart are reused. A small deterministic local action engine replaces the server-oriented battle integration.
+The installed Next.js static-export documentation was read before adapting the app. Next.js 16.3.8 and React 19.2.8 are retained. Install dependencies normally; no source dependencies or build caches were copied.
 
 ```powershell
+npm ci
+npm run typecheck
 npm test
-npm run dev
-npm run build:android
+npm run test:original
+npm run build
+node scripts/serve.mjs
 ```
 
-Preview: `http://127.0.0.1:4173`. Build defaults: SDK `D:\android-sdk`, build-tools 36.0.0, android-36 platform and JDK `C:\Program Files\Eclipse Adoptium\jdk-17.0.20.101-hotspot`. Override with `powershell -File scripts/build-android.ps1 -Sdk <path> -Java <jdk-path>`. The script compiles Java, builds DEX, bundles all web assets, aligns and signs the APK, then verifies its signature. No Gradle downloads are required. The generated key is development-only, ignored by Git and not suitable for production signing.
+Static preview: `http://127.0.0.1:4173`. `npm run dev` runs the original Next.js app on that port instead; use only one preview server at a time.
 
-Data regeneration is optional: `node scripts/inspect-reference.mjs` then `node scripts/import-data.mjs` with the original source/reference paths available. Already-generated data and assets are committed in this target, so normal builds do not need either source directory.
+```powershell
+npm run build:android
+node scripts/verify-apk.mjs
+```
 
-## Verification and limitations
+The Android build bundles `out/`, not `web/`. Default SDK is `D:\android-sdk` with build-tools 36.0.0 and android-36; JDK 17 is at `C:\Program Files\Eclipse Adoptium\jdk-17.0.20.101-hotspot`. The build script supports `-Sdk` and `-Java` overrides. Java compilation, DEX, asset packaging, alignment and APK signing do not require Gradle downloads. The static export needs development dependencies, but the installed APK needs no npm, server or downloads.
 
-See `docs/VERIFICATION.md`, `docs/PROGRESSION.md`, `docs/REFERENCE-INSPECTION.md` and `docs/roster-audit.json`.
+Source-copy/import scripts are provenance tools, not part of a normal build. Do not rerun `scripts/copy-original.mjs` over adapted files: it deliberately copies the unmodified originals. It never copies source secrets, `.env.local`, dependencies, build caches or Git history. Source repository remains untouched.
 
-All 1,025 national species have local data/sprites and participate in at least one encounter pool. Regional, Mega and Gigantamax variants are excluded. Evolution relationships are manually curated (481 edges), including level-based replacements for external requirements; regional-exclusive evolutions are offered from the base species. Full canonical evolution/form parity is not independently verified. Missing source catch rates use 45; rare guardians have a separate capture factor.
+## Coverage and known limitations
 
-This is a compact original implementation, not full mainline Pokémon mechanics: no breeding, abilities, IV/EV system or online features. Move power, type and physical/special split are preserved; non-damaging moves currently provide a small recovery action rather than canonical status effects. PP is replaced by cooldowns. Biome maps are compact generated trails with decorative terrain; no seamless world or collision puzzle system. Ball effects are short CSS effects. Trainers use reused local pixel assets rather than unique portraits for every leader. Only throw/victory audio is bundled and played.
+All 1,025 base national species are available in local encounter pools across Generations 1–9. Every additional source roster entry, including regional, Mega and Gigantamax variants, is also retained with its source stats, sprites and compatible move sets. These variants can appear rarely in unlocked postgame habitats; additional regional trainer teams retain their original forms. Evolution relationships are manually curated (481 edges); external requirements become levels, and regional-exclusive branches are offered from base species. Full canonical evolution/form parity has not been independently verified. Missing source catch rates default to 45, with a separate legendary factor.
 
-A signed APK was built and inspected. Automated engine checks and browser interactions passed; **physical Android installation, first-launch airplane-mode behavior, lifecycle file-picker behavior and device FPS remain unverified because no device/emulator was connected**. Do not interpret packaging success as device certification.
+This retains the source's action-game interpretation of moves, statuses and buffs rather than implementing the entire mainline ruleset. Abilities, breeding and IV/EV systems are not added; PP remains represented by move cooldowns. Compact biome maps are an added feature, not a claim to recreate a seamless reference world. Combat HP uses the source's 10× multiplier to suit real-time action. See `docs/PROGRESSION.md` for formulas.
 
-Unofficial fan project. Pokémon and related assets belong to their respective owners. Retained contributor metadata is in `web/assets/credits.json`; see `docs/ASSETS.md`. Do not assume the bundled reference assets grant redistribution rights.
+TypeScript, static export, engine tests, provenance tests, asset checks and browser checks are recorded in `docs/VERIFICATION.md`. Physical Android installation, airplane-mode first launch, system-picker lifecycle, cutout behavior and sustained device FPS remain unverified without a connected device. Full campaign difficulty still requires a real playthrough.
+
+Unofficial fan game. Pokémon belongs to its respective owners. Original contributor metadata is retained; see `/credits/`, `public/assets/empress/credits.json` and `docs/ASSETS.md`. Local availability of reference artwork does not itself establish redistribution rights.

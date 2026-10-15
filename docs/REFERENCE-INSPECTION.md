@@ -9,3 +9,6 @@ The user's requested clickable map is an adaptation, not an exact claim about th
 Data audit found 1,025 base national species with sprites, four-move selections and compatible learnsets across Generations 1–9. Imported only selected source sprite GIFs, local trainer art, two short audio files, one font, species/move data and contributor metadata. No server code, executable, authentication configuration, secrets, dependencies or source Git history were copied. Source evolution code had only a small hand-written family map; this target supplies its own national-ID evolution graph.
 
 The source repo's Emerald pixel interface is retained in green framing, cream panels, local pixel sprites and VT323 labels. No Next.js files are retained or modified, so its framework documentation requirement does not apply to this implementation.
+
+## Correction on 16 October 2026
+The first standalone implementation is superseded. The game is now copied and adapted from the user's source repository. Its Next.js static export, original battle engine, source directional sprites/effects, sounds, menus and Hoenn leaders are retained. See ORIGINAL-ADAPTATION.md and the source-copy manifest. The earlier statement that Next.js was not retained applied only to the superseded prototype.

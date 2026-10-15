@@ -1,20 +1,16 @@
-# Emerald Horizons Offline
+# Emerald Horizons Offline Mobile
 <!-- impeccable:product-schema 1 -->
 ## Platform
 web
 ## Stack
-Delegated by user: dependency-free bundled JavaScript game in a native Android shell. Source assets and species stats are reused; Next.js is not retained.
+The original Next.js/React game is copied and adapted, exported statically and bundled in a native Android WebView. Original deterministic engine and renderer are retained. No runtime server or account.
 ## Users
-The owner playing offline on an Android phone, primarily in landscape.
-## Product Purpose
-A complete local collection adventure: starter, roaming, action combat, captures, shops, eight gyms, League and legendary postgame.
-## Constraints
-No accounts, remote content or network permission. Durable local saves, touch controls, Gen 1–9 coverage. Preserve the source repository.
+The owner playing the existing Pokémon game offline on Android, primarily landscape.
+## Product purpose
+Preserve the original game's gameplay and presentation while adding the user's requested offline story, roaming, progression, captures, shops and mobile controls. A new substitute game is not the intended product.
 ## Evidence
-Existing source roster and sprite imports; local Empress distribution inspected as data. Original story is required.
-
-## Shipped implementation
-The local game is in `web/`; the Android shell is in `android/`. It offers starter selection, tap navigation, ten biome maps, weighted encounters, action combat, capture retries, shared EXP, branching level evolution, six-member party/PC, local shops/training, eight gyms, League and Champion postgame. Source sprite/data systems are reused; no online account or server is present. Versioned checksummed snapshots use native AtomicFile storage with previous-revision recovery and system-file export/import.
-
-## Known delivery limits
-All base national species are present; alternate forms are excluded. Canonical non-damaging move effects are simplified. Maps and story are compact. Physical-device acceptance and full difficulty balancing remain unverified; see docs/VERIFICATION.md. These limits are part of the current product truth, not hidden future promises.
+Original source and assets copied from D:/work/acqron/pokemon-emerald-horizons; copy manifest in docs/source-copy-manifest.json. Reference navigation was inspected during the earlier pass; the source itself is the authority for gameplay and presentation.
+## Capabilities
+Original action combat, animation sheets, effects, arenas, sounds, source menu artwork and regional routes. Added local save/export/import, touch controls, 1,025 base species, level evolution, random biome encounters, multiple captures, EXP/gold/upgrades, eight Hoenn gyms, League and postgame. Source repository must remain untouched.
+## Known limitations
+Original regional/Mega/Gigantamax roster entries are retained and obtainable in postgame; canonical transformation mechanics are not added. Mainline mechanics are limited by the source action engine. Device acceptance and campaign balancing remain pending; see docs/VERIFICATION.md.

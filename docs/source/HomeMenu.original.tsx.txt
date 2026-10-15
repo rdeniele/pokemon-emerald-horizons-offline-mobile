@@ -1,0 +1,95 @@
+"use client";
+
+import Link from "next/link";
+import UiIcon from "./stages/UiIcon";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { getRepository } from "@/game/save";
+import { summarizeSave } from "@/game/saveSummary";
+import { setSpriteManifest } from "@/pokemon/sprites/resolver";
+import { useAccount } from "./auth/useAccount";
+import {publicTrainerName} from "@/game/trainerName";
+
+type Summary = { text: string; quest: string; name:string } | null;
+
+export default function HomeMenu() {
+  const router = useRouter();
+  const { account, signOut } = useAccount();
+  const [summary, setSummary] = useState<Summary | undefined>(undefined); // undefined = still loading
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (account.status !== "guest" && account.status !== "signedIn") return;
+    let alive = true;
+    (async () => {
+      try {
+        setSpriteManifest(await fetch("/assets/pokemon/manifest.json").then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
+        const loaded = await getRepository(account.status === "signedIn").load();
+        if (alive) setSummary(loaded ? { text: summarizeSave(loaded.save), quest: "", name:publicTrainerName(loaded.save.playerName) } : null);
+      } catch (e) {
+        if (alive) setLoadError(e instanceof Error ? e.message : "Could not load your save");
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [account.status]);
+
+  const btn = "rounded-lg py-3 text-center font-semibold";
+  if (account.status === "loading") return <div className="h-40 w-full animate-pulse rounded-lg bg-white/5" />;
+
+  if (account.status === "signedOut") {
+    return (
+      <nav className="flex w-full flex-col gap-3">
+        <Link href="/login?next=%2Fgame" className={`${btn} bg-emerald-500 text-lg font-bold text-black hover:bg-emerald-400`}><UiIcon name="trainer"/>Sign in to play</Link>
+        <p className="text-xs text-white/50">New here? Choose “Create account” on the next page. Your sign-in email stays private.</p>
+      </nav>
+    );
+  }
+
+  const hasSave = !!summary;
+  return (
+    <nav className="flex w-full flex-col gap-3">
+      <Link href="/game" className={`${btn} bg-emerald-500 text-lg font-bold text-black hover:bg-emerald-400`}>
+        <UiIcon name="challenge"/>{hasSave ? "Continue challenge" : "Choose your starter"}
+        {summary && <span className="block text-xs font-normal text-black/70">{summary.text}</span>}
+      </Link>
+      {loadError && <p className="text-xs text-red-300">{loadError}</p>}
+      {hasSave && (
+        <button
+          className={`${btn} bg-white/10 hover:bg-white/20`}
+          onClick={() => {
+            if (window.confirm("Start a new game? Your current progress will be erased.")) router.push("/game?new=1");
+          }}
+        >
+          New game
+        </button>
+      )}
+      <div className="grid grid-cols-2 gap-3">
+        <Link href="/collection" className="home-party rounded-lg bg-white/10 py-2 text-sm font-semibold hover:bg-white/20"><UiIcon name="collection"/>Party & PC</Link>
+        <Link href="/arena" className="home-arena rounded-lg bg-white/10 py-2 text-sm font-semibold hover:bg-white/20"><UiIcon name="challenge"/>Ranked arena</Link>
+      </div>
+      <div className="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2 text-xs text-white/70">
+        {account.status === "signedIn" ? (
+          <>
+            <span>Signed in as <b>{summary?.name??account.username}</b></span>
+            <button
+              className="rounded bg-red-800 px-2 py-1 font-semibold text-white"
+              onClick={async () => {
+                await signOut();
+                router.refresh();
+              }}
+            >
+              Log out
+            </button>
+          </>
+        ) : (
+          <>
+            <span>Guest · progress is saved in this browser</span>
+            <Link href="/login" className="text-white/50 hover:text-white">Accounts</Link>
+          </>
+        )}
+      </div>
+    </nav>
+  );
+}

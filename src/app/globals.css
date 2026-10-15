@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --fan-notice-height: 28px;
+  --app-height: calc(100dvh - var(--fan-notice-height));
+  --background: #0b1220;
+  --foreground: #e8eef8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Menlo, monospace;
+}
+
+body {
+  height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-bottom: var(--fan-notice-height);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.fan-game-notice {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 100;
+  height: var(--fan-notice-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  background: #e4e9cf;
+  color: #486352;
+  text-align: center;
+  font: 11px/15px Verdana, Arial, sans-serif;
+  border-top: 1px solid #afc0a6;
+}
+
+@media (max-width: 640px) {
+  :root { --fan-notice-height: 40px; }
+}
+
+canvas {
+  image-rendering: pixelated;
+  touch-action: none;
+}
+/* Original menus may shrink on phones; desktop source layout remains capped. */
+.stage-app{width:100%;min-width:0}

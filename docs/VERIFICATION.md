@@ -1,26 +1,24 @@
-# Verification record — 15 October 2026
+# Verification — copied original-game adaptation, 16 October 2026
 
 ## Passed
 
-- Node syntax checks for the local engine and app entry point.
-- 14 Node test cases: all 1,025 national species in encounter pools; species stats/type immunities; three-stage, two-stage and branching evolution with large EXP rewards; failed/successful capture retries; no-ball handling; six-party PC overflow; costs/caps/compatibility; reward idempotence; save checksum fallback; import revision ordering; scaled farming; defeat recovery; appropriate early trainer stages; simulated 13-stage journey through Champion and postgame.
-- Actual browser interactions: starter selection and intro dialogue; world-map rendering; quick-battle entry; joystick/keyboard roaming triggering a random Pansage encounter; Auto toggle; defeat recovery; save import; failed throw and restart preserving 4 attempts / 14 balls; successful throw interrupted by reload preserving exactly one Pikachu in PC.
-- Visual inspection: default desktop map, 844×390 landscape battle and 390×844 portrait PC panel. Screenshot: `phone-pc.png`. Touch targets increased to a minimum 44px after first inspection; animated Pokémon image elements are reused between frames.
-- Android Java compilation, DEX generation, asset packaging, alignment, signing and APK signature verification. Package `com.emerald.offline`, min API 24, target API 35. Manifest has no network permission; shell rejects off-origin requests. Build identifier/hash in `build-info.json`.
-- Impeccable mechanical detector run once; its border-accent warning was addressed by reducing the Pokémon panel separator to 1px.
+- TypeScript checks and production Next.js static export of `/`, `/game/` and `/credits/`.
+- **14 offline progression/save tests**: all 1,025 base national species in pools; stats/immunities; evolution thresholds/branches/large EXP; capture retries, exhaustion/no balls and full-party PC overflow; purchase costs/upgrade caps/move compatibility; reward idempotence; checksum recovery/import revision ordering; scaled farming; defeat recovery; simulated primary journey and appropriate early stages.
+- **10 original-game adaptation tests**: source-file hash identity for core combat/status/movement/arena systems, effects, camera, animation helper, party portraits and original theme; original directional animation timing and local sheet coverage; real skillshot aim/miss behavior; deterministic original-engine resume with in-flight attacks; original buffs; type immunities; source stats and individual upgrades reaching the engine; checkpoints round-tripping through the save store; regional-form availability/move data; complete source roster preservation.
+- Browser verification of copied original Emerald menu and Rustboro arena: actual original-engine Auto battle defeated Roxanne, recorded one badge and awarded EXP/gold/story progression. Reloaded interrupted combat resumed behind an explicit pause screen with preserved combat state. Touch controls and phone layout inspected at 844×390; original desktop sizing assumptions corrected and readable HP panels added.
+- Browser capture checks in the copied React interface: failure + immediate reload retained 4 attempts and 14 balls; success + immediate reload produced exactly one Pikachu in PC with a full party. Restored the earlier verified original-game adventure after fixture checks.
+- Source-copy manifest records original file hashes. Complete source roster including forms is retained. Secrets, environment files, dependencies, caches and Git history were not copied from the source. Dependencies were installed fresh in the target. No source files were written.
+- Signed Android debug APK, package `com.emerald.offline`, version 1.1.0/code 2, minimum API 24/target API 35. APK verification checks every file in `out/` against its bundled bytes, explicitly requires `_next/static` and rejects the old standalone `app.js`. AAPT's underscore exclusion is overridden so the Next.js runtime is bundled. The manifest has no INTERNET permission. Final size/hash/counts are in `build-info.json`.
+- Impeccable detector for the adapted interface returned no findings. Original theme/artwork was retained rather than redesigned.
 
-## Not verified on a device
+## Device acceptance still pending
 
-ADB initially failed under the local socket sandbox. Retried with local socket access: server starts, but `adb devices` returns no connected devices. No Android emulator is installed in the inspected SDK. Therefore Android installation, airplane-mode first launch, process termination/resume through the OS, system save file pickers, physical touch accuracy, cutout behavior and sustained FPS are not claimed as tested. Browser reload and engine snapshot tests exercise the data logic, not the complete Android lifecycle.
+ADB was checked again on 16 October: server starts successfully, but `adb devices` lists no connected Android device. No physical installation, airplane-mode first launch, Android process-kill lifecycle, system file picker, cutout behavior or sustained device FPS is claimed as tested. Browser reload/state tests validate the logic but do not replace a device run.
 
-## Remaining device acceptance steps
+Install the APK on API 24+ with a current System WebView, enable airplane mode before first launch, choose a starter, roam, battle, catch, shop, train and evolve. Test pause/resume, force-stop during a throw, save export/import, full-party PC overflow and a small landscape phone with system navigation insets. A real campaign playthrough is still needed to tune pacing and difficulty; the automated full journey resolves victories directly.
 
-1. Install the APK on Android API 24+ with a current System WebView. Enable airplane mode before first launch; choose a starter and enter a biome.
-2. Battle, capture with multiple throws, buy supplies, train, evolve at 16/36 and import/export via the system picker. Fill the party and capture into PC.
-3. Background/foreground mid-battle; force-stop during a throw; relaunch and confirm single consumption/ownership. Verify pauses always require Resume.
-4. Test a small landscape phone with navigation/cutout insets and a tablet. Measure frame time during rapid projectile/move use. Try system back, rotation and file-picker cancel.
-5. Complete the progression with real battle play and tune difficulty/reward pacing. The automated Champion journey validates state transitions by resolving victories directly; it is not a claim of a human playthrough or balanced full campaign.
+## Scope and limitations
 
-## Known simplifications
+The original source action engine's supported status/buff/heal and move-specific effects are restored. This remains an action-game interpretation of Pokémon, not a full mainline simulator. IV/EV, abilities and breeding are not added; cooldowns stand in for PP. Extra forms are stable source-roster variants encountered in postgame, not canonical temporary transformation mechanics. Evolution relationships are manually curated with external requirements replaced by levels. Existing source runtime art and sounds make this APK larger than the discarded prototype.
 
-See README: canonical statuses/abilities/PP and regional/battle-only forms are not implemented. Moves use canonical types, power and damage categories, with simplified non-damaging actions. Maps are generated compact decorative trails. Evolution graph is manually curated; external/regional requirements are intentionally replaced. Android runtime and final balancing are pending the device steps above.
+Screenshot: `original-battle-landscape.png` shows the copied original battle with the added phone controls and HP panels. Older prototype screenshots are historical evidence only.

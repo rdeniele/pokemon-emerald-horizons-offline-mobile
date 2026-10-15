@@ -1,12 +1,15 @@
 {
   "apk": "D:\\work\\acqron\\pokemon-emerald-horizons-offline-mobile\\build\\apk\\emerald-horizons-debug.apk",
-  "bytes": 43656019,
-  "sha256": "8ec2d9c65aad24d65ce0937f7104ff367e888d2d358761b0ab52390c76d34ea2",
-  "bundledAssetFiles": 1037,
+  "bytes": 215716040,
+  "sha256": "1c2ac8caa81403ecb540407633e2f7930c87fd86b12af336a71e229a10fb96ed",
+  "bundledAssetFiles": 11055,
   "allBundledAssetsMatchSource": true,
   "package": "com.emerald.offline",
   "minAndroidApi": 24,
   "targetAndroidApi": 35,
-  "testCasesPassed": 14,
+  "offlineTestCasesPassed": 14,
+  "originalEngineTestCasesPassed": 10,
+  "originalGameAdaptation": true,
+  "standalonePrototypeIncluded": false,
   "deviceTested": false
 }

@@ -16,8 +16,9 @@
   "evolutionEdges": 481,
   "source": "Local Empress catalog and existing source species stats",
   "limitations": [
-    "Base national species only; regional and battle-only forms excluded.",
+    "This base catalog has 1,025 national species. The complete adapted game also preserves 391 source regional/Mega/Gigantamax forms in postgame.",
     "Evolution graph manually curated by national ID; external requirements replaced. Regional-form exclusive evolutions are offered from base species.",
     "Catch rates default to 45 where source has no specific rate; legendary classification overrides chance."
-  ]
+  ],
+  "scope": "National base catalog. The copied-game adapter adds every additional source roster entry; see original-roster-audit.json."
 }

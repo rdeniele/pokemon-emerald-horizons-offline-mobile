@@ -3,6 +3,7 @@ $ErrorActionPreference='Stop'
 Set-Location (Split-Path $PSScriptRoot -Parent)
 $tools=Join-Path $Sdk 'build-tools\36.0.0'
 $platform=Join-Path $Sdk 'platforms\android-36\android.jar'
+if(!(Test-Path 'out/index.html')){throw 'Run npm run build before packaging the original game.'}
 if(!(Test-Path $platform)){throw "Missing Android platform: $platform"}
 New-Item -ItemType Directory -Force build/classes,build/dex,build/apk | Out-Null
 function Run([string]$exe,[string[]]$arguments){ & $exe @arguments; if($LASTEXITCODE -ne 0){throw "$exe failed ($LASTEXITCODE)"} }
@@ -10,7 +11,7 @@ Run "$Java\bin\javac.exe" @('-source','8','-target','8','-classpath',$platform,'
 Run "$Java\bin\jar.exe" @('cf','build/classes.jar','-C','build/classes','.')
 $env:JAVA_HOME=$Java
 Run "$tools\d8.bat" @('--lib',$platform,'--min-api','24','--output','build/dex','build/classes.jar')
-Run "$tools\aapt.exe" @('package','-f','-M','android/AndroidManifest.xml','-I',$platform,'-A','web','-F','build/apk/unsigned.apk')
+Run "$tools\aapt.exe" @('package','-f','-M','android/AndroidManifest.xml','-I',$platform,'-A','out','--ignore-assets','*.DS_Store:*.git:*.svn','-F','build/apk/unsigned.apk')
 Push-Location build/dex
 try{Run "$tools\aapt.exe" @('add','../apk/unsigned.apk','classes.dex')}finally{Pop-Location}
 Run "$tools\zipalign.exe" @('-f','4','build/apk/unsigned.apk','build/apk/aligned.apk')

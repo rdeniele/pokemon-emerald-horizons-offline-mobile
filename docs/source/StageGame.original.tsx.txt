@@ -1,0 +1,142 @@
+"use client";
+import {useEffect,useRef,useState} from "react";
+import Link from "next/link";
+import {useRouter} from "next/navigation";
+import Image from "next/image";
+import {getEmpressSprite} from "@/pokemon/sprites/resolver";
+import {useAccount} from "@/components/auth/useAccount";
+import {getRepository,type SaveRepository} from "@/game/save";
+import {newSave,type SaveData} from "@/game/saveData";
+import {STAGES,REGIONS,regionStages,nextStage,quickBattle,stageBattle,stagePokemon,stageCleared,stageUnlocked,catchDefeated,catchOdds} from "@/game/stages";
+import {SPECIES} from "@/pokemon/species/species";
+import {POKEMON_TYPES,type PokemonType} from "@/pokemon/types/typeChart";
+import {STARTER_GENERATIONS} from "@/data/pokemon/starters";
+import {moveToParty,moveToStorage,reorderParty,swapWithStorage} from "@/pokemon/party";
+import type {BattleEngine} from "@/battle/engine/BattleEngine";
+import ArenaCanvas from "./ArenaCanvas";
+import RankedArena from "./RankedArena";
+import BattleActions from "./BattleActions";
+import {gymBattle} from "@/game/stages";
+import {getAudio} from "@/game/audio";
+import TrainerSettings from "./TrainerSettings";
+import UiIcon from "./UiIcon";
+import ControlGuide from "./ControlGuide";
+import Pager,{pageIndex,usePageSizes} from "./Pager";
+import {publicTrainerName} from "@/game/trainerName";
+import "./stages.css";
+
+type Fight={id:string;engine:BattleEngine;kind:"wild"|"stage"|"quick";index:number;done?:"win"|"loss";catchUsed?:boolean};
+function PokemonImage({id}:{id:number}) {return <Image unoptimized src={getEmpressSprite(id)} alt="" width={72} height={72}/>;}
+function Badge({index,earned}:{index:number;earned:boolean}) {return <svg className={`gym-badge ${earned?"earned":""}`} viewBox="0 0 32 32" aria-label={`${STAGES[index].badge} ${STAGES[index].kind==="trial"?"stamp":"badge"}${earned?" earned":" locked"}`} role="img"><path d={index%2?"M16 2 27 8 27 24 16 30 5 24 5 8Z":"M16 2 22 10 30 16 22 22 16 30 10 22 2 16 10 10Z"}/><path d="m16 9 7 7-7 7-7-7Z"/></svg>;}
+export default function StageGame({fresh=false,initialMode="stages"}:{fresh?:boolean;initialMode?:"stages"|"catch"|"party"|"ranked"}) {
+  const {account,signOut}=useAccount();
+  const router=useRouter();
+  const [leaving,setLeaving]=useState(false);
+  const [save,setSave]=useState<SaveData|null>(null),[error,setError]=useState<string|null>(null),[saving,setSaving]=useState(false);
+  const [tab,setTab]=useState<"stages"|"catch"|"party"|"ranked"|"settings">(initialMode);
+  const [fight,setFight]=useState<Fight|null>(null),[notice,setNotice]=useState("");
+  const [search,setSearch]=useState(""),[filter,setFilter]=useState("all");
+  const [catchType,setCatchType]=useState<PokemonType|"all">("all");
+  const [animatePanel,setAnimatePanel]=useState(false);
+  const [region,setRegion]=useState("hoenn");
+  const [pvpActive,setPvpActive]=useState(false);
+  useEffect(()=>{if(!fight&&!pvpActive)getAudio()?.playMusic("select");},[fight,pvpActive]);
+  const sizes=usePageSizes();
+  const [stagePage,setStagePage]=useState(0),[catchPage,setCatchPage]=useState(0),[starterPage,setStarterPage]=useState(0),[partyPage,setPartyPage]=useState(0),[pcPage,setPcPage]=useState(0),[storage,setStorage]=useState(false);
+  const initialName=account.status==="signedIn"?account.username:"Trainer";
+  const repo=useRef<SaveRepository|null>(null),revision=useRef(0),pending=useRef(Promise.resolve()),state=useRef(save);
+  const catchAttempt=useRef<BattleEngine|null>(null);
+  useEffect(()=>{state.current=save;},[save]);
+  const stopped=useRef(false);
+  useEffect(()=>{
+    if(account.status!=="guest"&&account.status!=="signedIn")return;
+    let live=true;repo.current=getRepository(account.status==="signedIn");
+    void repo.current.load().then(loaded=>{if(!live)return;revision.current=loaded?.rev??0;const next=fresh||!loaded?{...newSave(),playerName:initialName}:loaded.save;setSave(next);
+      if(fresh){const url=new URL(window.location.href);url.searchParams.delete("new");window.history.replaceState(null,"",url.pathname+url.search);}
+    }).catch(e=>{if(live)setError(e instanceof Error?e.message:"Save could not load. Reload to retry.");});
+    return()=>{live=false;};
+  },[account.status,fresh,initialName]);
+  const persist=(next:SaveData)=>{
+    if(stopped.current)return;
+    state.current=next;setSave(next);setSaving(true);
+    pending.current=pending.current.catch(()=>{}).then(async()=>{
+      if(stopped.current)return;
+      const result=await repo.current!.save(next,revision.current);
+      if("conflict"in result){stopped.current=true;throw Error("Your save changed in another tab. Reload before continuing.");}
+      revision.current=result.rev;
+    }).catch(e=>{setError(e instanceof Error?e.message:"Could not save. Retry before ranked play.");throw e;}).finally(()=>setSaving(false));
+    // Keep rejections observable to beforeQueue without an unhandled browser rejection.
+    void pending.current.catch(()=>{});
+  };
+  if(account.status==="signedOut")return <div className="stage-app"><div className="dialogue-panel"><p>Sign in to continue your challenge.</p><Link href="/login?next=%2Fgame">Sign in</Link></div></div>;
+  if(!save)return <div className="stage-app"><div className="dialogue-panel" role="status">{error??"Loading your team…"}{error&&<button onClick={()=>window.location.reload()}>Reload</button>}</div></div>;
+  const owned=[...save.collection.party,...save.collection.storage];
+  const route=regionStages(region),regionInfo=REGIONS.find(r=>r.id===region)!;
+  const stageRows=Math.max(1,sizes.rows-1)+2;
+  const starters=STARTER_GENERATIONS.flatMap(g=>g.choices);
+  const chooseStarter=(id:number)=>{if(owned.length)return;persist({...save,collection:{party:[stagePokemon(id)],storage:[]},flags:{...save.flags,"stage:starter":true}});setNotice(`${SPECIES[id].name} joined your party. Choose a stage or a wild challenge.`);};
+  const start=(kind:"wild"|"stage"|"quick",index:number)=>{
+    if(!save.collection.party.length||stopped.current)return;
+    if(kind==="stage"&&!stageUnlocked(save,index))return;
+    setNotice("");setFight({id:crypto.randomUUID(),engine:kind==="stage"?gymBattle(save.collection.party,index):kind==="quick"?quickBattle(save.collection.party,crypto.getRandomValues(new Uint32Array(1))[0]):stageBattle(save.collection.party,[index]),kind,index});
+    getAudio()?.playMusic(kind==="wild"?"battleWild":"battleTrainer");
+  };
+  const finish=(winner:"player"|"enemy")=>{
+    if(!fight||fight.done)return;
+    const won=winner==="player";setFight({...fight,done:won?"win":"loss"});
+    getAudio()?.playMusic(won?"victory":"defeat");
+    if(won&&fight.kind==="stage")persist({...state.current!,flags:{...state.current!.flags,[`stage:${fight.index}`]:true}});
+  };
+  const throwBall=()=>{
+    if(!fight||fight.kind!=="wild"||fight.done!=="win"||fight.catchUsed||catchAttempt.current===fight.engine)return;
+    // Consume the attempt immediately, even if persistence fails or the button is pressed twice.
+    catchAttempt.current=fight.engine;setFight({...fight,catchUsed:true});
+    const result=catchDefeated(state.current!,fight.index,crypto.getRandomValues(new Uint32Array(1))[0]);
+    if(result.caught){persist(result.save);setNotice(`${SPECIES[fight.index].name} was caught! ${state.current!.collection.party.length>save.collection.party.length?"Added to party.":"Sent to PC."}`);}
+    else setNotice(`${SPECIES[fight.index].name} broke free. It was not added to your collection. Win another challenge to try again.`);
+  };
+  const available=Object.values(SPECIES).filter(s=>(filter==="all"||filter==="mega"&&s.form==="mega"||filter==="gigantamax"&&s.form==="gigantamax"||filter==="normal"&&!s.form)&&(catchType==="all"||s.types.includes(catchType))&&s.name.toLowerCase().includes(search.toLowerCase()));
+  const openParty=()=>{getAudio()?.stopMusic();setFight(null);setStorage(false);setTab("party");};
+  const mainMenu=async()=>{
+    setLeaving(true);
+    try{await pending.current;if(stopped.current)throw Error("Reload before leaving to resolve your save conflict.");getAudio()?.stopMusic();router.push("/");}
+    catch(e){setError(e instanceof Error?e.message:"Could not save. Retry before leaving.");setLeaving(false);}
+  };
+  return <main className="stage-app stage-workspace">
+    <header className="stage-header"><Link href="/">Emerald Horizons</Link><span className="save-indicator" role="status">{saving?"Saving…":error?"Save needs attention":account.status==="guest"?"Guest save":"Saved"}</span><button disabled={!!fight||pvpActive} onClick={()=>{setTab("settings");setNotice("");}} aria-label="Open trainer settings"><UiIcon name="trainer"/>{publicTrainerName(save.playerName)}</button></header>
+    {error&&<div className="stage-error" role="alert">{error}<button onClick={()=>{setError(null);persist(state.current!);}}>Retry save</button></div>}
+    <div className="workspace-body">
+    {!owned.length&&tab!=="settings"?<section className="dialogue-panel starter-screen"><h1>Choose your first partner</h1><p>One starter is yours, free. Win wild battles to catch the rest. Every battle uses fixed stats—your movement, moves and type matchups decide the fight.</p><div className="pokemon-grid">{starters.slice(pageIndex(starterPage,starters.length,sizes.cards)*sizes.cards,(pageIndex(starterPage,starters.length,sizes.cards)+1)*sizes.cards).map(id=><button key={id} data-type={SPECIES[id].types[0]} onClick={()=>chooseStarter(id)}><PokemonImage id={id}/><strong>{SPECIES[id].name}</strong><small>{SPECIES[id].types.join(" / ")}</small></button>)}</div><Pager page={starterPage} total={starters.length} size={sizes.cards} onChange={setStarterPage} label="Starters"/></section>:<>
+      {!fight&&<nav className="stage-tabs" aria-label="Game modes">{(["stages","catch","party","ranked","settings"]as const).map(t=><button key={t} data-mode={t} disabled={pvpActive&&tab!==t} aria-current={tab===t?"page":undefined} onClick={e=>{setAnimatePanel(e.detail>0);setTab(t);setNotice("");}}><UiIcon name={t==="stages"?"challenge":t==="catch"?"check":t==="party"?"collection":t==="ranked"?"challenge":"settings"}/>{t==="stages"?"Gym challenge":t==="catch"?"Catch Pokémon":t==="party"?`Party & PC (${owned.length})`:t==="ranked"?"PvP":"Settings"}</button>)}</nav>}
+      {notice&&<div className="dialogue-panel notice"><span role="status">{notice}</span><button onClick={()=>setNotice("")} aria-label="Dismiss notification">OK</button></div>}
+      <div className={`workspace-panel ${animatePanel&&!fight?"panel-transition":""}`} key={fight?"fight":tab}>
+      {fight?<div className="fight-view">
+        <ArenaCanvas key={fight.id} engine={fight.engine} title={fight.kind==="quick"?"Quick battle · Random AI team":fight.kind==="wild"?`Wild ${SPECIES[fight.index].name}`:`${STAGES[fight.index].title} · ${STAGES[fight.index].name}`} onFinish={finish} onLeave={()=>{getAudio()?.stopMusic();setFight(null);}}/>
+        {fight.done&&<div className="dialogue-panel result-panel"><h2>{fight.done==="win"?"Victory!":"Challenge lost"}</h2>
+          {fight.done==="win"&&fight.kind==="stage"&&<p>{STAGES[fight.index].badge?`${STAGES[fight.index].badge} ${STAGES[fight.index].kind==="trial"?"trial stamp":"Badge"} earned.`:STAGES[fight.index].kind==="champion"?`${regionInfo.name} challenge complete!`:"Stage cleared."}</p>}
+          {fight.done==="win"&&fight.kind==="wild"&&!fight.catchUsed&&<><p>You won a catch attempt. Chance: {Math.round(catchOdds(fight.index)*100)}%. A failed catch adds nothing.</p><button className="primary-action" onClick={throwBall}>Throw Poké Ball</button></>}
+          <BattleActions againLabel={fight.kind==="quick"?"New random battle":"Battle again"} onAgain={()=>start(fight.kind,fight.index)} onParty={openParty} onMain={()=>void mainMenu()} busy={leaving} againDisabled={!!error}/>
+          <div className="battle-result-secondary">
+            {fight.done==="win"&&fight.kind==="stage"&&nextStage(fight.index)!==null&&<button disabled={!!error||leaving} onClick={()=>start("stage",nextStage(fight.index)!)}>Next stage</button>}
+            <button disabled={leaving} onClick={()=>{getAudio()?.stopMusic();setFight(null);}}>Back to {fight.kind==="wild"?"wild Pokémon":"stages"}</button>
+          </div>
+        </div>}
+      </div>:tab==="settings"?<TrainerSettings name={publicTrainerName(save.playerName)} busy={saving} onSave={name=>{persist({...state.current!,playerName:name});setNotice("Username updated. Rejoin an existing room to use your new name.");}} onSignOut={account.status==="signedIn"?async()=>{await pending.current;await signOut();}:undefined}/>:tab==="ranked"?<RankedArena onParty={openParty} onMain={()=>void mainMenu()} onActiveChange={setPvpActive} party={save.collection.party} onBack={()=>setTab("stages")} beforeQueue={async()=>{await pending.current;if(stopped.current)throw Error("Reload to resolve your save conflict.");}}/>:tab==="stages"?<section>
+        <div className="stage-heading regional-heading"><div><h1>{regionInfo.name} challenge</h1><p>{regionInfo.description}</p></div><label>Region<select value={region} onChange={e=>{setRegion(e.target.value);setStagePage(0);}}>{REGIONS.map(r=><option key={r.id} value={r.id}>Gen {r.generation} · {r.name}</option>)}</select></label></div>
+        <div className="regional-progress"><button onClick={()=>start("quick",0)}>Quick battle · Random AI</button><span>{route.filter(({index})=>stageCleared(save,index)).length}/{route.length} stages cleared</span><div className="badge-case" aria-label={region==='alola'?'Trial stamps':'Regional badges'}>{route.filter(({stage})=>stage.badge).map(({index})=><Badge key={index} index={index} earned={stageCleared(save,index)}/>)}</div></div>
+        <div className="stage-route">{route.slice(pageIndex(stagePage,route.length,stageRows)*stageRows,(pageIndex(stagePage,route.length,stageRows)+1)*stageRows).map(({stage,index:i},offset)=>{const ordinal=pageIndex(stagePage,route.length,stageRows)*stageRows+offset+1;return <div key={stage.arenaId} className={`stage-row ${stageCleared(save,i)?"cleared":""} ${!stageUnlocked(save,i)?"locked":""}`}><span className="stage-number">{ordinal}</span>{stage.badge?<Badge index={i} earned={stageCleared(save,i)}/>:<span className="league-mark">{stage.kind==='champion'?'C':stage.kind==='cup'?'Cup':'E4'}</span>}<div><h2>{stage.title}</h2><p>{stage.name} · {stage.type} · {stage.team.length} Pokémon · +12% damage / +8% movement</p></div><button disabled={!stageUnlocked(save,i)} onClick={()=>start("stage",i)}><UiIcon name={!stageUnlocked(save,i)?"locked":stageCleared(save,i)?"check":"challenge"}/>{stageCleared(save,i)?"Replay":stageUnlocked(save,i)?"Challenge":"Locked"}</button></div>;})}</div><Pager page={stagePage} total={route.length} size={stageRows} onChange={setStagePage} label="Stages"/>
+      </section>:tab==="catch"?<section>
+        <div className="stage-heading"><div><h1>Find your next partner</h1><p>Choose a wild opponent. Beat it, then take one chance to catch it.</p></div><label>Search<input value={search} onChange={e=>{setSearch(e.target.value);setCatchPage(0);}} placeholder="Pokémon name"/></label></div>
+        <div className="roster-filters">{["all","normal","mega","gigantamax"].map(f=><button key={f} aria-pressed={filter===f} onClick={()=>{setFilter(f);setCatchPage(0);}}>{f==="all"?"All Pokémon":f==="normal"?"Standard":f==="mega"?"Mega":"Gigantamax"}</button>)}<label className="catch-type-filter">Type<select value={catchType} onChange={e=>{setCatchType(e.target.value as PokemonType|"all");setCatchPage(0);}}><option value="all">All types</option>{POKEMON_TYPES.map(type=><option key={type} value={type}>{type[0].toUpperCase()+type.slice(1)}</option>)}</select></label></div>
+        <div className="pokemon-grid">{available.slice(pageIndex(catchPage,available.length,sizes.cards)*sizes.cards,(pageIndex(catchPage,available.length,sizes.cards)+1)*sizes.cards).map(s=><button key={s.id} data-type={s.types[0]} onClick={()=>start("wild",s.id)}><PokemonImage id={s.id}/><strong>{s.name}</strong><small>{s.types.join(" / ")}</small><span>{owned.some(p=>p.speciesId===s.id)?"Owned · Challenge again":"Battle to catch"}</span></button>)}</div>{!available.length&&<p>No Pokémon match these filters. Try another name, type, or form.</p>}<Pager page={catchPage} total={available.length} size={sizes.cards} onChange={setCatchPage} label="Pokémon"/>
+      </section>:<section>
+        <div className="stage-heading"><div><h1>Your party & PC</h1><p>The first Pokémon is your lead. Six in the party; every extra catch goes to PC.</p></div><span>{save.collection.party.length}/6 party · {save.collection.storage.length} in PC</span></div>
+        <div className="roster-filters"><button aria-pressed={!storage} onClick={()=>setStorage(false)}>Party · {save.collection.party.length}/6</button><button aria-pressed={storage} onClick={()=>setStorage(true)}>PC · {save.collection.storage.length}</button></div>
+        {!storage?<><div className="party-list">{save.collection.party.slice(pageIndex(partyPage,save.collection.party.length,sizes.rows)*sizes.rows,(pageIndex(partyPage,save.collection.party.length,sizes.rows)+1)*sizes.rows).map((p,offset)=>{const i=pageIndex(partyPage,save.collection.party.length,sizes.rows)*sizes.rows+offset;return <div className="party-row" key={p.id}><PokemonImage id={p.speciesId}/><div><strong>{SPECIES[p.speciesId].name}</strong><small>{i===0?"Lead Pokémon":SPECIES[p.speciesId].types.join(" / ")}</small></div><button disabled={i===0} onClick={()=>persist({...save,collection:reorderParty(save.collection,i,0)})}>Make lead</button><button disabled={save.collection.party.length===1||save.collection.storage.length>=500} onClick={()=>persist({...save,collection:moveToStorage(save.collection,p.id)})}>To PC</button></div>;})}</div><Pager page={partyPage} total={save.collection.party.length} size={sizes.rows} onChange={setPartyPage} label="Party"/></>:!save.collection.storage.length?<div className="dialogue-panel">Your PC is empty. Extra catches arrive here once your party is full.</div>:<><div className="pokemon-grid">{save.collection.storage.slice(pageIndex(pcPage,save.collection.storage.length,sizes.cards)*sizes.cards,(pageIndex(pcPage,save.collection.storage.length,sizes.cards)+1)*sizes.cards).map(p=><div className="pc-slot" key={p.id}><PokemonImage id={p.speciesId}/><strong>{SPECIES[p.speciesId].name}</strong><button onClick={()=>persist({...save,collection:save.collection.party.length<6?moveToParty(save.collection,p.id):swapWithStorage(save.collection,save.collection.party[0].id,p.id)})}>{save.collection.party.length<6?"To party":"Swap with lead"}</button></div>)}</div><Pager page={pcPage} total={save.collection.storage.length} size={sizes.cards} onChange={setPcPage} label="PC"/></>}
+      </section>}
+      </div>
+    </>}
+    </div>
+    <footer className="stage-footer"><ControlGuide/><span>Fixed battle stats · No EXP or evolutions</span></footer>
+  </main>;
+}
