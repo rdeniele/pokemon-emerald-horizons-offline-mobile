@@ -4,7 +4,7 @@ import {getEmpressSprite} from "@/pokemon/sprites/resolver";
 import ControlGuide from "./ControlGuide";
 import {getAudio,type AudioLike} from "@/game/audio";
 import {moveBehaviorLabel} from "@/pokemon/moves/behavior";
-import {FULL_ARENA_CAMERA,followBattleCamera,cameraToWorld} from "./battleCamera";
+import {FULL_ARENA_CAMERA,followBattleCamera} from "./battleCamera";
 import {combatAnimations,animationDirection,drawCombatAnimation,type AnimationState} from "./combatAnimation";
 import {drawMoveEffect} from "./moveEffects";
 import BattleParty from "./BattleParty";
@@ -25,7 +25,6 @@ const COLORS:Record<string,string>={fire:"#f06828",water:"#38a8f0",grass:"#70c83
 const spriteUrl=getEmpressSprite;
 export default function ArenaCanvas({engine,remote,side="player",send,onFinish,onLeave,title,spectator=false,wild=false,initialPaused=false,initialAuto=false,onCheckpoint,onItems}:Props) {
   const canvas=useRef<HTMLCanvasElement>(null);
-  const crosshair=useRef<SVGSVGElement>(null);
   const consoleRef=useRef<HTMLElement>(null);
   const [fullscreen,setFullscreen]=useState(false);
   useEffect(()=>{const changed=()=>setFullscreen(document.fullscreenElement===consoleRef.current);document.addEventListener("fullscreenchange",changed);return()=>document.removeEventListener("fullscreenchange",changed);},[]);
@@ -54,17 +53,17 @@ export default function ArenaCanvas({engine,remote,side="player",send,onFinish,o
   const checkpoint=useRef(onCheckpoint),itemCallback=useRef(onItems);checkpoint.current=onCheckpoint;itemCallback.current=onItems;
   const recallUntil=useRef(0);
   const aimDirection=useRef<{x:number;y:number}|undefined>(undefined);
-  const stickOwners=useRef<{move?:number;aim?:number}>({});
+  const stickOwner=useRef<number|undefined>(undefined);
   const switchTimer=useRef<ReturnType<typeof setTimeout>|null>(null),[recalling,setRecalling]=useState(false);
   const saveBattle=()=>{if(engine)checkpoint.current?.(engine,paused.current,autoRef.current);};
-  const togglePause=(value:boolean)=>{paused.current=value;setPauseState(value);input.current={x:0,y:0};stickOwners.current={};consoleRef.current?.querySelectorAll<HTMLElement>('.mobile-joystick span').forEach(knob=>knob.style.transform='');engine?.setMovement(side,0,0);saveBattle();};
+  const togglePause=(value:boolean)=>{paused.current=value;setPauseState(value);input.current={x:0,y:0};stickOwner.current=undefined;consoleRef.current?.querySelectorAll<HTMLElement>('.mobile-joystick span').forEach(knob=>knob.style.transform='');engine?.setMovement(side,0,0);saveBattle();};
   useEffect(()=>{const previous=window.pauseGame;window.pauseGame=()=>togglePause(true);const visibility=()=>{if(document.hidden)togglePause(true);};document.addEventListener('visibilitychange',visibility);window.addEventListener('pagehide',saveBattle);return()=>{if(switchTimer.current)clearTimeout(switchTimer.current);saveBattle();window.pauseGame=previous;document.removeEventListener('visibilitychange',visibility);window.removeEventListener('pagehide',saveBattle);};},[engine]);
   const [feedback,setFeedback]=useState("Close in for contact moves. Create space for ranged moves.");
   const seq=useRef(0);
   const act=useRef<(move?:number,dodge?:boolean,switchId?:string)=>void>(()=>{});
   useEffect(()=>{
     const node=canvas.current,ctx=node?.getContext("2d");if(!node||!ctx)return;
-    node.focus();
+    node.focus();node.style.cursor="default";
     const audio=getAudio(),sounds=new Map<number,AudioLike>();let musicArena="";
     const keys=new Set<string>(),images=new Map<number,HTMLImageElement>(),positions=new Map<string,{x:number;y:number}>();
     const deployedTimes=new Map<string,number>(),previouslyDeployed=new Set<string>();
@@ -74,9 +73,9 @@ export default function ArenaCanvas({engine,remote,side="player",send,onFinish,o
     const effects:{from:{x:number;y:number};to:{x:number;y:number};at:number;travel?:number;speciesId?:number;kind:"melee"|"ranged"|"hit"|"dodge"|"buff";color:string;label?:string;behavior?:import("@/pokemon/moves/behavior").MoveBehavior;radius?:number;attackId?:number;attackIds?:number[];moveName?:string}[]=[];
     const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let raf=0,last=performance.now(),hud=0,lastSend=0,lastCheckpoint=0,ended=false,lastTick=-1,received=performance.now();
-    const move=()=>{input.current={x:Number(keys.has("d"))-Number(keys.has("a")),y:Number(keys.has("s"))-Number(keys.has("w"))};};
-    let camera={...FULL_ARENA_CAMERA},pointerScreen:{x:number;y:number}|undefined;
-    const updatePointerAim=()=>{if(aimDirection.current){const unit=engine?.deployedUnits(side)[0]??current.current?.units.find(u=>u.side===side&&u.alive&&u.deployed);if(unit)aim.current={x:unit.x+aimDirection.current.x*24,y:unit.y+aimDirection.current.y*24};return;}if(!pointerScreen)return;const p=cameraToWorld(camera,pointerScreen);aim.current={x:Math.max(0,Math.min(17,(p.x-35)/650*17)),y:Math.max(0,Math.min(11,(p.y-35)/350*11))};};
+    const move=()=>{input.current={x:Number(keys.has("d"))-Number(keys.has("a")),y:Number(keys.has("s"))-Number(keys.has("w"))};const length=Math.hypot(input.current.x,input.current.y);if(length)aimDirection.current={x:input.current.x/length,y:input.current.y/length};};
+    let camera={...FULL_ARENA_CAMERA};
+    const updatePointerAim=()=>{const unit=engine?.deployedUnits(side)[0]??current.current?.units.find(u=>u.side===side&&u.alive&&u.deployed);if(unit){aimDirection.current??={x:side==="player"?1:-1,y:0};aim.current={x:unit.x+aimDirection.current.x*24,y:unit.y+aimDirection.current.y*24};}};
     const command=(slot?:number,dodge?:boolean,switchId?:string)=>{
       if(ended||spectator||paused.current)return;
       updatePointerAim();
@@ -97,11 +96,8 @@ export default function ArenaCanvas({engine,remote,side="player",send,onFinish,o
       const slot="qerx".indexOf(event.key.toLowerCase());if(slot>=0)command(slot);if(event.code==="Space")command(undefined,true);
     };
     const up=(event:KeyboardEvent)=>{keys.delete(event.key.toLowerCase());move();};
-    const hideCrosshair=()=>{if(crosshair.current)crosshair.current.style.visibility="hidden";pointerScreen=undefined;node.style.cursor="crosshair";};
-    const blur=()=>{if(engine&&!ended)togglePause(true);hideCrosshair();keys.clear();input.current={x:0,y:0};engine?.setMovement(side,0,0);commands.current?.({x:0,y:0});};
-    const pointer=(event:PointerEvent)=>{if(spectator)return;aimDirection.current=undefined;const rect=node.getBoundingClientRect(),scale=Math.min(rect.width/720,rect.height/420),x=(event.clientX-rect.left-(rect.width-720*scale)/2)/scale,y=(event.clientY-rect.top-(rect.height-420*scale)/2)/scale;if(x<0||x>720||y<0||y>420){hideCrosshair();node.style.cursor="default";return;}pointerScreen={x,y};if(crosshair.current){crosshair.current.style.left=`${event.clientX-rect.left}px`;crosshair.current.style.top=`${event.clientY-rect.top}px`;crosshair.current.style.visibility="visible";node.style.cursor="none";}updatePointerAim();};
-    node.addEventListener("pointerleave",hideCrosshair);node.addEventListener("pointermove",pointer);node.addEventListener("pointerdown",pointer);
-    window.addEventListener("resize",hideCrosshair);window.addEventListener("keydown",down);window.addEventListener("keyup",up);window.addEventListener("blur",blur);
+    const blur=()=>{if(engine&&!ended)togglePause(true);keys.clear();input.current={x:0,y:0};engine?.setMovement(side,0,0);commands.current?.({x:0,y:0});};
+    window.addEventListener("keydown",down);window.addEventListener("keyup",up);window.addEventListener("blur",blur);
     const pos=(u:BattleUnit)=>({x:35+u.x/17*650,y:35+u.y/11*350});
     const events=(list:BattleEvent[],all:BattleUnit[],now:number)=>{
       for(const event of list){
@@ -239,28 +235,28 @@ export default function ArenaCanvas({engine,remote,side="player",send,onFinish,o
       }
       raf=requestAnimationFrame(frame);
     };raf=requestAnimationFrame(frame);
-    return()=>{audio?.stopSfx();audio?.stopMusic();node.removeEventListener("pointerleave",hideCrosshair);node.removeEventListener("pointermove",pointer);node.removeEventListener("pointerdown",pointer);cancelAnimationFrame(raf);window.removeEventListener("resize",hideCrosshair);window.removeEventListener("keydown",down);window.removeEventListener("keyup",up);window.removeEventListener("blur",blur);input.current={x:0,y:0};};
+    return()=>{audio?.stopSfx();audio?.stopMusic();cancelAnimationFrame(raf);window.removeEventListener("keydown",down);window.removeEventListener("keyup",up);window.removeEventListener("blur",blur);input.current={x:0,y:0};};
   },[engine,side,spectator]);
   const active=units.find(u=>u.side===side&&u.deployed&&u.alive),enemy=units.find(u=>u.side!==side&&u.deployed&&u.alive);
   const moves=active?[{...active.spec.basic,cooldown:active.basicCooldown,maxCooldown:active.spec.attackCooldown},...active.spec.skills.map(s=>({...s,cooldown:active.skillCooldowns[s.id]??0,maxCooldown:s.cooldown}))]:[];
   const finished=!!(engine?.state.result||remote?.result);
   const locked=!active||!!active.travelMove||time<(active.channelUntil??0)||active.statuses.some(s=>s.kind==="sleep"||s.kind==="stun");
-  const stickMove=(event:ReactPointerEvent<HTMLDivElement>,kind:'move'|'aim')=>{
-    if(stickOwners.current[kind]!==event.pointerId||paused.current)return;
+  const stickMove=(event:ReactPointerEvent<HTMLDivElement>)=>{
+    if(stickOwner.current!==event.pointerId||paused.current)return;
     const rect=event.currentTarget.getBoundingClientRect(),radius=rect.width*.32;
     const dx=(event.clientX-rect.left-rect.width/2)/radius,dy=(event.clientY-rect.top-rect.height/2)/radius,length=Math.hypot(dx,dy);
     const vector=length<.16?{x:0,y:0}:{x:dx/Math.max(1,length),y:dy/Math.max(1,length)};
     const knob=event.currentTarget.querySelector<HTMLElement>('span');if(knob)knob.style.transform=`translate(${vector.x*radius}px,${vector.y*radius}px)`;
-    if(kind==='move')input.current=vector;
-    else if(length>=.16){const worldX=vector.x*17/650,worldY=vector.y*11/350,worldLength=Math.hypot(worldX,worldY);aimDirection.current={x:worldX/worldLength,y:worldY/worldLength};}
+    input.current=vector;
+    if(length>=.16){const directionLength=Math.hypot(vector.x,vector.y);aimDirection.current={x:vector.x/directionLength,y:vector.y/directionLength};}
   };
-  const stickStart=(event:ReactPointerEvent<HTMLDivElement>,kind:'move'|'aim')=>{
-    if(paused.current||stickOwners.current[kind]!==undefined)return;
-    event.preventDefault();stickOwners.current[kind]=event.pointerId;event.currentTarget.setPointerCapture(event.pointerId);stickMove(event,kind);
+  const stickStart=(event:ReactPointerEvent<HTMLDivElement>)=>{
+    if(paused.current||stickOwner.current!==undefined)return;
+    event.preventDefault();stickOwner.current=event.pointerId;event.currentTarget.setPointerCapture(event.pointerId);stickMove(event);
   };
-  const stickEnd=(event:ReactPointerEvent<HTMLDivElement>,kind:'move'|'aim')=>{
-    if(stickOwners.current[kind]!==event.pointerId)return;
-    delete stickOwners.current[kind];if(kind==='move')input.current={x:0,y:0};
+  const stickEnd=(event:ReactPointerEvent<HTMLDivElement>)=>{
+    if(stickOwner.current!==event.pointerId)return;
+    stickOwner.current=undefined;input.current={x:0,y:0};
     const knob=event.currentTarget.querySelector<HTMLElement>('span');if(knob)knob.style.transform='';
     if(event.currentTarget.hasPointerCapture(event.pointerId))event.currentTarget.releasePointerCapture(event.pointerId);
   };
@@ -282,11 +278,11 @@ export default function ArenaCanvas({engine,remote,side="player",send,onFinish,o
       {!wild&&<img className="battle-trainer opponent" src={/May/.test(title)?'/assets/offline/trainers/may.png':/Steven/.test(title)?'/assets/offline/trainers/steven.png':'/assets/offline/trainers/blue.png'} alt="Opposing trainer watching the battle"/>}
       <div className="deployment-effect" key={units.find(u=>u.side===side&&u.alive&&u.deployed)?.spec.id??'initial'} aria-hidden="true"><i className="pokeball"/><i className="release-beam"/></div>
       <div className="mobile-health-readout"><span>{active?.spec.name} · Lv {active?.spec.level}<meter min={0} max={active?.maxHp||1} value={active?.hp||0}/><small>{active?.hp||0}/{active?.maxHp||0} HP</small></span><span>{enemy?.spec.name} · Lv {enemy?.spec.level}<meter min={0} max={enemy?.maxHp||1} value={enemy?.hp||0}/><small>{enemy?.hp||0}/{enemy?.maxHp||0} HP</small></span></div>
-      <canvas ref={canvas} width={720} height={420} tabIndex={0} style={{cursor:spectator?"default":"crosshair"}} aria-label="Battle arena. WASD moves, Q E R X use moves, mouse cursor aims, Space dodges. Numbers 1 to 6 switch party members."/>{!spectator&&<svg ref={crosshair} className="aim-crosshair" viewBox="0 0 32 32" aria-hidden="true"><path className="crosshair-outline" d="M16 3v7m0 12v7M3 16h7m12 0h7"/><path className="crosshair-lines" d="M16 3v7m0 12v7M3 16h7m12 0h7"/><circle cx="16" cy="16" r="2"/></svg>}
+      <canvas ref={canvas} width={720} height={420} tabIndex={0} style={{cursor:"default"}} aria-label="Battle arena. Left joystick moves and sets attack direction. Release to keep facing. Right buttons use skills and dodge. WASD moves, Q E R X use moves, Space dodges. Numbers 1 to 6 switch party members."/>
     <div className="battle-overlay">
     <div className="battle-readout"><span>{active?.spec.name??"Your Pokémon"} · HP {active?.hp??0}/{active?.maxHp??0}</span><span>{enemy?.spec.name??"Opponent"} · HP {enemy?.hp??0}/{enemy?.maxHp??0}</span></div>
-    {!spectator&&<div className="mobile-combat-controls" aria-label="Left movement and aiming controls">
-      <div className="combat-stick-pair">{(['move','aim'] as const).map(kind=><div className={`combat-stick-control ${kind}`} key={kind}><div className="mobile-joystick" role="application" aria-label={kind==='move'?'Movement joystick':'Manual aiming angle joystick'} onPointerDown={e=>stickStart(e,kind)} onPointerMove={e=>stickMove(e,kind)} onPointerUp={e=>stickEnd(e,kind)} onPointerCancel={e=>stickEnd(e,kind)} onLostPointerCapture={e=>stickEnd(e,kind)}><span/></div><small>{kind==='move'?'MOVE':'AIM ANGLE'}</small></div>)}</div>
+    {!spectator&&<div className="mobile-combat-controls" aria-label="Left movement and facing controls">
+      <div className="combat-stick-control move"><div className="mobile-joystick" role="application" aria-label="Movement and facing joystick. Release to stand still and keep aiming in the last movement direction." onPointerDown={stickStart} onPointerMove={stickMove} onPointerUp={stickEnd} onPointerCancel={stickEnd} onLostPointerCapture={stickEnd}><span/></div><small>MOVE &amp; FACE</small></div>
       <div className="combat-utility"><button onClick={()=>togglePause(!pauseState)}>{pauseState?'Resume':'Pause'}</button><button onClick={()=>{togglePause(true);if(engine)itemCallback.current?.(engine);}}>Items</button></div>
     </div>}
     {pauseState&&<div className="battle-pause-overlay"><div className="dialogue-panel"><h2>Battle paused</h2><p>Your original arena battle is saved.</p><button onClick={()=>togglePause(false)}>Resume battle</button><button onClick={onLeave}>Retreat to map</button></div></div>}
@@ -301,7 +297,7 @@ export default function ArenaCanvas({engine,remote,side="player",send,onFinish,o
         <KeyIcon letter={"QERX"[i]}/><span className="move-name">{m.name}</span><small>{m.cooldown>0?`${m.cooldown.toFixed(1)}s`:matchup}</small>
       </button>;
     })}<button title="Space: dodge in your movement direction" className="combat-dodge" disabled={!active||pauseState||time<(active.dashReadyAt??0)} onClick={()=>act.current(undefined,true)}><kbd>SPACE</kbd><span className="move-name">Dodge</span><small>{time<(active?.dashReadyAt??0)?`${(((active?.dashReadyAt??0)-time)/1000).toFixed(1)}s`:"Ready"}</small></button></div>}
-      {!spectator&&<span className="battle-hints" title="WASD: move · Mouse: aim · Q/E/R/X: moves · Space: dodge · 1–6: switch Pokémon"><ControlGuide compact/></span>}
+      {!spectator&&<span className="battle-hints" title="WASD: move and face · Q/E/R/X: moves · Space: dodge · 1–6: switch Pokémon"><ControlGuide compact/></span>}
       <BattleParty units={units.filter(u=>u.side!==side)} label={spectator?"Second team":"Opponent team"}/>
     </div>
     </div>
