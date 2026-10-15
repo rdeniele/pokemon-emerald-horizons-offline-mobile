@@ -1,0 +1,4235 @@
+{
+  "inspectedAt": "2026-10-15T18:06:59.934Z",
+  "root": "C:/Users/ronde/Downloads/gamma-emerald-ea-windows",
+  "manifestSha256": "9653dd0a5be41299a1ee6afa08aec1718dc82a1cab148b9781fec7ed32eb642c",
+  "manifestEntryCount": 404105,
+  "pak": {
+    "path": "C:\\Users\\ronde\\Downloads\\gamma-emerald-ea-windows\\PokemonEmerald\\Content\\Paks\\PokemonEmerald-Windows.pak",
+    "size": 1645117904,
+    "footer": {
+      "magicOffset": 1645117700,
+      "magic": "0x5a6f12e1",
+      "version": 11,
+      "encryptedIndexFlag": 1,
+      "indexOffset": 1615066323,
+      "indexSize": 6417952,
+      "indexSha1": "b4c7abac9c1a889650fcbcaa7f70c3b9499df19d",
+      "firstCompressionName": "Oodle"
+    }
+  },
+  "maps": [
+    {
+      "line": 4063,
+      "path": "PokemonEmerald/Content/MAPS/MAP_Evolve.umap"
+    },
+    {
+      "line": 4065,
+      "path": "PokemonEmerald/Content/MAPS/MAP_HallOfFame.umap"
+    },
+    {
+      "line": 4067,
+      "path": "PokemonEmerald/Content/MAPS/MAP_Littleroot.umap"
+    },
+    {
+      "line": 4069,
+      "path": "PokemonEmerald/Content/MAPS/MAP_OldaleTown.umap"
+    },
+    {
+      "line": 4071,
+      "path": "PokemonEmerald/Content/MAPS/MAP_Overworld.umap"
+    },
+    {
+      "line": 4075,
+      "path": "PokemonEmerald/Content/MAPS/MAP_PSO.umap"
+    },
+    {
+      "line": 4077,
+      "path": "PokemonEmerald/Content/MAPS/MAP_Route101.umap"
+    },
+    {
+      "line": 4079,
+      "path": "PokemonEmerald/Content/MAPS/MAP_Route102.umap"
+    },
+    {
+      "line": 4081,
+      "path": "PokemonEmerald/Content/MAPS/MAP_Rustboro.umap"
+    },
+    {
+      "line": 4085,
+      "path": "PokemonEmerald/Content/MAPS/MAP_SecretArea.umap"
+    },
+    {
+      "line": 4087,
+      "path": "PokemonEmerald/Content/MAPS/MAP_ShayminBattle.umap"
+    },
+    {
+      "line": 4089,
+      "path": "PokemonEmerald/Content/MAPS/MAP_StormToIsland.umap"
+    },
+    {
+      "line": 6129,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/MAP_AshenForestBattle.umap"
+    },
+    {
+      "line": 6131,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/MAP_BloomingBattle.umap"
+    },
+    {
+      "line": 6133,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/MAP_Cemetery.umap"
+    },
+    {
+      "line": 6135,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/MAP_DesertBattle.umap"
+    },
+    {
+      "line": 6137,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/MAP_SecretBattle.umap"
+    },
+    {
+      "line": 6139,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/MAP_Slateport_Battle.umap"
+    },
+    {
+      "line": 6141,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/MAP_WaterBattle.umap"
+    },
+    {
+      "line": 6143,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/MAP_WoodsBattle.umap"
+    },
+    {
+      "line": 6145,
+      "path": "PokemonEmerald/Content/MAPS/DemoIsland/MAP_AshenForest.umap"
+    },
+    {
+      "line": 6147,
+      "path": "PokemonEmerald/Content/MAPS/DemoIsland/MAP_BloomingForest.umap"
+    },
+    {
+      "line": 6149,
+      "path": "PokemonEmerald/Content/MAPS/DemoIsland/MAP_DemoIsland_Beach.umap"
+    },
+    {
+      "line": 6151,
+      "path": "PokemonEmerald/Content/MAPS/DemoIsland/MAP_DemoIsland_R101.umap"
+    },
+    {
+      "line": 6153,
+      "path": "PokemonEmerald/Content/MAPS/DemoIsland/MAP_DemoIsland_R102.umap"
+    },
+    {
+      "line": 6155,
+      "path": "PokemonEmerald/Content/MAPS/DemoIsland/MAP_DemoIsland_R103.umap"
+    },
+    {
+      "line": 6157,
+      "path": "PokemonEmerald/Content/MAPS/DemoIsland/MAP_StarterSelect.umap"
+    },
+    {
+      "line": 6159,
+      "path": "PokemonEmerald/Content/MAPS/DemoIsland/MAP_TruckEnding.umap"
+    },
+    {
+      "line": 6161,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_BeachBattle.umap"
+    },
+    {
+      "line": 6163,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_BrawlyGym_Battle.umap"
+    },
+    {
+      "line": 6165,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_BrineyHouse_Interior.umap"
+    },
+    {
+      "line": 6167,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Daycare_Interior.umap"
+    },
+    {
+      "line": 6169,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Dewford.umap"
+    },
+    {
+      "line": 6171,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_EggRoom.umap"
+    },
+    {
+      "line": 6173,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_FallharborTown.umap"
+    },
+    {
+      "line": 6175,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_GaniteCave_Battle.umap"
+    },
+    {
+      "line": 6177,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Gatehouse.umap"
+    },
+    {
+      "line": 6179,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_GE_MainMenu.umap"
+    },
+    {
+      "line": 6181,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Hoenn_Persistant.umap"
+    },
+    {
+      "line": 6186,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Intro.umap"
+    },
+    {
+      "line": 6188,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_LittleRoot.umap"
+    },
+    {
+      "line": 6190,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_MauvilleCity.umap"
+    },
+    {
+      "line": 6192,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_MayHouse.umap"
+    },
+    {
+      "line": 6194,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_MeteorFalls.umap"
+    },
+    {
+      "line": 6196,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Oldale_House_Interiors.umap"
+    },
+    {
+      "line": 6198,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Olddale.umap"
+    },
+    {
+      "line": 6200,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Opening.umap"
+    },
+    {
+      "line": 6203,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PetalburgCity.umap"
+    },
+    {
+      "line": 6205,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PetalburgCity_Houses.umap"
+    },
+    {
+      "line": 6207,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PetalburgGym.umap"
+    },
+    {
+      "line": 6209,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PetalburgWoods.umap"
+    },
+    {
+      "line": 6211,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PetalburgWoodsBattle.umap"
+    },
+    {
+      "line": 6213,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Pokecenter_Inside_Dewford.umap"
+    },
+    {
+      "line": 6215,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Pokecenter_Inside_Mauville.umap"
+    },
+    {
+      "line": 6217,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Pokecenter_Inside_Petalburg.umap"
+    },
+    {
+      "line": 6219,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Pokecenter_Inside_Rustboro.umap"
+    },
+    {
+      "line": 6221,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Pokecenter_Inside_Verdanturf.umap"
+    },
+    {
+      "line": 6223,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PokeMart_Dewford.umap"
+    },
+    {
+      "line": 6225,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PokeMart_Mauville.umap"
+    },
+    {
+      "line": 6227,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PokeMart_Oldale.umap"
+    },
+    {
+      "line": 6229,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PokeMart_Petalburg.umap"
+    },
+    {
+      "line": 6231,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PokeMart_Rustboro.umap"
+    },
+    {
+      "line": 6233,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PokeMart_Slateport.umap"
+    },
+    {
+      "line": 6235,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_PokeMart_Verdanturf.umap"
+    },
+    {
+      "line": 6237,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_ProfBirch_Interior.umap"
+    },
+    {
+      "line": 6239,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_ProfBirch_IntroSeq.umap"
+    },
+    {
+      "line": 6241,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_RedMountain.umap"
+    },
+    {
+      "line": 6243,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_RematchRoom.umap"
+    },
+    {
+      "line": 6245,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route101.umap"
+    },
+    {
+      "line": 6247,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route102.umap"
+    },
+    {
+      "line": 6249,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route103.umap"
+    },
+    {
+      "line": 6251,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route103_Battle.umap"
+    },
+    {
+      "line": 6253,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route104.umap"
+    },
+    {
+      "line": 6255,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route109.umap"
+    },
+    {
+      "line": 6257,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route109_Beach_Battle.umap"
+    },
+    {
+      "line": 6259,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route110.umap"
+    },
+    {
+      "line": 6261,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route110_Interiors.umap"
+    },
+    {
+      "line": 6263,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route111.umap"
+    },
+    {
+      "line": 6265,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route113.umap"
+    },
+    {
+      "line": 6267,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route115.umap"
+    },
+    {
+      "line": 6269,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route116.umap"
+    },
+    {
+      "line": 6271,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route117.umap"
+    },
+    {
+      "line": 6273,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Route118.umap"
+    },
+    {
+      "line": 6275,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_RoxanneGym.umap"
+    },
+    {
+      "line": 6279,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_RusturfTunnelBattle.umap"
+    },
+    {
+      "line": 6281,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Slateport.umap"
+    },
+    {
+      "line": 6283,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_TheSummit.umap"
+    },
+    {
+      "line": 6285,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_TradeScreen.umap"
+    },
+    {
+      "line": 6287,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_TunnelerHouse_Interior.umap"
+    },
+    {
+      "line": 6289,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_VerdanturfTown.umap"
+    },
+    {
+      "line": 6291,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_Verdanturf_Interior.umap"
+    },
+    {
+      "line": 6293,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_WattsonGym_Battle.umap"
+    },
+    {
+      "line": 6295,
+      "path": "PokemonEmerald/Content/MAPS/Hoenn/MAP_WattsonGym_Battle_Trainer.umap"
+    },
+    {
+      "line": 6297,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_Brawley_Gym.umap"
+    },
+    {
+      "line": 6299,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_Brendan_HouseMainFloor.umap"
+    },
+    {
+      "line": 6301,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_Casino.umap"
+    },
+    {
+      "line": 6306,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_DevonCorp.umap"
+    },
+    {
+      "line": 6308,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_Dewford_House_Interiors.umap"
+    },
+    {
+      "line": 6310,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_FlowerShop_Interior.umap"
+    },
+    {
+      "line": 6312,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_GraniteCave.umap"
+    },
+    {
+      "line": 6314,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_Mauville_Interiors.umap"
+    },
+    {
+      "line": 6316,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_OceanicBattle.umap"
+    },
+    {
+      "line": 6318,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_Pokecenter_Inside.umap"
+    },
+    {
+      "line": 6320,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_Pokecenter_Inside_Slateport.umap"
+    },
+    {
+      "line": 6322,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_Rustboro_House_Interiors.umap"
+    },
+    {
+      "line": 6324,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_RusturfTunnel.umap"
+    },
+    {
+      "line": 6326,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_SlateportCity_Interiors.umap"
+    },
+    {
+      "line": 6328,
+      "path": "PokemonEmerald/Content/MAPS/INTERIORS/MAP_WattsonGym.umap"
+    },
+    {
+      "line": 11666,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_LabBattle.umap"
+    },
+    {
+      "line": 11668,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_LostGlades.umap"
+    },
+    {
+      "line": 11670,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_LostGlades2.umap"
+    },
+    {
+      "line": 11672,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_LostGladesSaveRoom.umap"
+    },
+    {
+      "line": 11674,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_MagmaLab.umap"
+    },
+    {
+      "line": 11676,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_RoxanneBattle.umap"
+    },
+    {
+      "line": 11678,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_RuinBattle.umap"
+    },
+    {
+      "line": 11680,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_RuinsPalace1.umap"
+    },
+    {
+      "line": 11682,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_RuinsPalace_Hideout.umap"
+    },
+    {
+      "line": 11684,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/ACT3/MAP_TeamAquaHideout.umap"
+    },
+    {
+      "line": 11686,
+      "path": "PokemonEmerald/Content/MAPS/BATTLEMAPS/Transition/MAP_HypnoToMiku.umap"
+    }
+  ],
+  "dialogue": [
+    {
+      "line": 2065,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Battle_RestoreFromWhiteOut.uasset"
+    },
+    {
+      "line": 2067,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Battle_WhiteOut.uasset"
+    },
+    {
+      "line": 2069,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Battle_WhiteOutNoMoney.uasset"
+    },
+    {
+      "line": 2071,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BerryTree_Harvested.uasset"
+    },
+    {
+      "line": 2073,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BerryTree_NotReady.uasset"
+    },
+    {
+      "line": 2075,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_BrendenDefeat.uasset"
+    },
+    {
+      "line": 2077,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_BrendenIntro.uasset"
+    },
+    {
+      "line": 2079,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_BrendenPostBattle.uasset"
+    },
+    {
+      "line": 2081,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_BrendenWantsToBattle.uasset"
+    },
+    {
+      "line": 2083,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_CristianDefeat.uasset"
+    },
+    {
+      "line": 2085,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_CristianIntro.uasset"
+    },
+    {
+      "line": 2087,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_CristianPostBattle.uasset"
+    },
+    {
+      "line": 2089,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_CristianWantsToBattle.uasset"
+    },
+    {
+      "line": 2091,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_GymGuideAdvice.uasset"
+    },
+    {
+      "line": 2093,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_GymGuidePostVictory.uasset"
+    },
+    {
+      "line": 2095,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_JocelynDefeat.uasset"
+    },
+    {
+      "line": 2097,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_JocelynIntro.uasset"
+    },
+    {
+      "line": 2099,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_JocelynPostBattle.uasset"
+    },
+    {
+      "line": 2101,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_JocelynWantsToBattle.uasset"
+    },
+    {
+      "line": 2103,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_LauraDefeat.uasset"
+    },
+    {
+      "line": 2105,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_LauraIntro.uasset"
+    },
+    {
+      "line": 2107,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_LauraPostBattle.uasset"
+    },
+    {
+      "line": 2109,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_LauraWantsToBattle.uasset"
+    },
+    {
+      "line": 2111,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_LilithDefeat.uasset"
+    },
+    {
+      "line": 2113,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_LilithIntro.uasset"
+    },
+    {
+      "line": 2115,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_LilithPostBattle.uasset"
+    },
+    {
+      "line": 2117,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_LilithWantsToBattle.uasset"
+    },
+    {
+      "line": 2119,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_Statue.uasset"
+    },
+    {
+      "line": 2121,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_StatueAfter.uasset"
+    },
+    {
+      "line": 2123,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_TakaoDefeat.uasset"
+    },
+    {
+      "line": 2125,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrawlyGym_TakaoWantsToBattle.uasset"
+    },
+    {
+      "line": 2127,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Brawly_Defeat.uasset"
+    },
+    {
+      "line": 2129,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Brawly_GiveStoneBadge.uasset"
+    },
+    {
+      "line": 2131,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Brawly_Intro.uasset"
+    },
+    {
+      "line": 2133,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Brawly_LastPokemon.uasset"
+    },
+    {
+      "line": 2135,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Brawly_PostBattle.uasset"
+    },
+    {
+      "line": 2137,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Brawly_WantsToBattle.uasset"
+    },
+    {
+      "line": 2139,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Brendan_TV.uasset"
+    },
+    {
+      "line": 2141,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/BrineyCottage_Briney.uasset"
+    },
+    {
+      "line": 2143,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Briney_ArivedAtDewfordAfterLetterDelivered.uasset"
+    },
+    {
+      "line": 2145,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Briney_ArivedAtDewfordBeforeLetterDelivered.uasset"
+    },
+    {
+      "line": 2147,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Briney_DewfordAfterLetterDelivered.uasset"
+    },
+    {
+      "line": 2149,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Briney_DewfordBeforeLetterDelivered.uasset"
+    },
+    {
+      "line": 2151,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Briney_Route104ToDewford.uasset"
+    },
+    {
+      "line": 2153,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Briney_Route109.uasset"
+    },
+    {
+      "line": 2155,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Congrats_Evolve.uasset"
+    },
+    {
+      "line": 2157,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/DevonCorp_DeskLady.uasset"
+    },
+    {
+      "line": 2159,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/DevonCorp_RedSuitGuy1.uasset"
+    },
+    {
+      "line": 2161,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/DevonCorp_RedSuitGuy2.uasset"
+    },
+    {
+      "line": 2163,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_ElliotDefeated.uasset"
+    },
+    {
+      "line": 2165,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_ElliotIntro.uasset"
+    },
+    {
+      "line": 2167,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_ElliotPostBattle.uasset"
+    },
+    {
+      "line": 2169,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_ElliotWantsToBattle.uasset"
+    },
+    {
+      "line": 2171,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_FisherGuy.uasset"
+    },
+    {
+      "line": 2173,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_FisherGuyAfterRod.uasset"
+    },
+    {
+      "line": 2175,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_GymSign.uasset"
+    },
+    {
+      "line": 2177,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_House1_OldGuy.uasset"
+    },
+    {
+      "line": 2179,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_House1_Oldlady.uasset"
+    },
+    {
+      "line": 2181,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_House1_Zigzagoon.uasset"
+    },
+    {
+      "line": 2183,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_House2_GuyInRedAndBlue.uasset"
+    },
+    {
+      "line": 2185,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_House2_SilkGuy.uasset"
+    },
+    {
+      "line": 2187,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_House2_SilkGuyAfter.uasset"
+    },
+    {
+      "line": 2189,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_HouseSign.uasset"
+    },
+    {
+      "line": 2191,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_KidInGrey.uasset"
+    },
+    {
+      "line": 2193,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_LadyInGreen.uasset"
+    },
+    {
+      "line": 2195,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_NedDefeated.uasset"
+    },
+    {
+      "line": 2197,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_NedIntro.uasset"
+    },
+    {
+      "line": 2199,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_NedPostBattle.uasset"
+    },
+    {
+      "line": 2201,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_NedWantsToBattle.uasset"
+    },
+    {
+      "line": 2203,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_Scientist.uasset"
+    },
+    {
+      "line": 2205,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_ScientistAfter.uasset"
+    },
+    {
+      "line": 2207,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_Sign.uasset"
+    },
+    {
+      "line": 2209,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Dewford_WoodSign.uasset"
+    },
+    {
+      "line": 2211,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/EggHatch_Hatched.uasset"
+    },
+    {
+      "line": 2213,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/EggHatch_Started.uasset"
+    },
+    {
+      "line": 2215,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_Azumarill.uasset"
+    },
+    {
+      "line": 2217,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_Chariman.uasset"
+    },
+    {
+      "line": 2219,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_DontLikeFainting.uasset"
+    },
+    {
+      "line": 2221,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_ProteinKid.uasset"
+    },
+    {
+      "line": 2223,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_Skitty.uasset"
+    },
+    {
+      "line": 2225,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_SootheBell.uasset"
+    },
+    {
+      "line": 2227,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_SootheBellAfter.uasset"
+    },
+    {
+      "line": 2229,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_SwaggerMove.uasset"
+    },
+    {
+      "line": 2231,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_SwaggerMoveAfter.uasset"
+    },
+    {
+      "line": 2233,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_TVLady.uasset"
+    },
+    {
+      "line": 2235,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_TVLadyAfter.uasset"
+    },
+    {
+      "line": 2237,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Fanclub_Zigzagoon.uasset"
+    },
+    {
+      "line": 2239,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/FlowerShop_LadyInGreen.uasset"
+    },
+    {
+      "line": 2241,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/FlowerShop_LadyInGreenAfterTalking.uasset"
+    },
+    {
+      "line": 2243,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/FlowerShop_LadyInPinkandYellow.uasset"
+    },
+    {
+      "line": 2245,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/FlowerShop_LadyInPinkandYellowAfterPail.uasset"
+    },
+    {
+      "line": 2247,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/FlowerShop_LadyRed.uasset"
+    },
+    {
+      "line": 2249,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/FlowerShop_LadyRedAFterBerry.uasset"
+    },
+    {
+      "line": 2251,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_PostBattle.uasset"
+    },
+    {
+      "line": 2253,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_PostBattle2.uasset"
+    },
+    {
+      "line": 2255,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_PostBattle3.uasset"
+    },
+    {
+      "line": 2257,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_Random1.uasset"
+    },
+    {
+      "line": 2259,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_Random2.uasset"
+    },
+    {
+      "line": 2261,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_Random3.uasset"
+    },
+    {
+      "line": 2263,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_Random4.uasset"
+    },
+    {
+      "line": 2265,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_RecentlyFainted.uasset"
+    },
+    {
+      "line": 2267,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_RecentlyFainted2.uasset"
+    },
+    {
+      "line": 2269,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_RecentlyFainted3.uasset"
+    },
+    {
+      "line": 2271,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Follower_RecentlyFainted4.uasset"
+    },
+    {
+      "line": 2273,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Gatehouse_BeSafe.uasset"
+    },
+    {
+      "line": 2275,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Gatehouse_HaveFun.uasset"
+    },
+    {
+      "line": 2277,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Gatehouse_NoEntry.uasset"
+    },
+    {
+      "line": 2279,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Gatehouse_NoEntry2.uasset"
+    },
+    {
+      "line": 2281,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Gift_Connecting.uasset"
+    },
+    {
+      "line": 2283,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Gift_Zappy.uasset"
+    },
+    {
+      "line": 2285,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GiveItem_Pokemon.uasset"
+    },
+    {
+      "line": 2287,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GraniteCave_Hiker.uasset"
+    },
+    {
+      "line": 2289,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GraniteCave_HikerAfter.uasset"
+    },
+    {
+      "line": 2291,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GraniteCave_Painting.uasset"
+    },
+    {
+      "line": 2293,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GraniteCave_StevenRoom.uasset"
+    },
+    {
+      "line": 2295,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GymLeaderRoxanne_Defeated.uasset"
+    },
+    {
+      "line": 2297,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GymLeaderRoxanne_GiveStoneBadge.uasset"
+    },
+    {
+      "line": 2299,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GymLeaderRoxanne_Intro.uasset"
+    },
+    {
+      "line": 2301,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GymLeaderRoxanne_LastPokemon.uasset"
+    },
+    {
+      "line": 2303,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GymLeaderRoxanne_PostBattle.uasset"
+    },
+    {
+      "line": 2305,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/GymLeaderRoxanne_WantsToBattle.uasset"
+    },
+    {
+      "line": 2307,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_Defeat.uasset"
+    },
+    {
+      "line": 2309,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_Intro.uasset"
+    },
+    {
+      "line": 2311,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_LastPokemon.uasset"
+    },
+    {
+      "line": 2313,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_PostBattle.uasset"
+    },
+    {
+      "line": 2315,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_PostBattleGiftFreedRoomInPartyOrBox.uasset"
+    },
+    {
+      "line": 2317,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_PostBattleGiftNoRoomInPartyOrBox.uasset"
+    },
+    {
+      "line": 2319,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_PostBattleGiftToBox.uasset"
+    },
+    {
+      "line": 2321,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_PostBattleGiftToParty.uasset"
+    },
+    {
+      "line": 2323,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Hikari_WantsToBattle.uasset"
+    },
+    {
+      "line": 2325,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/HM_Cut_UseFail.uasset"
+    },
+    {
+      "line": 2327,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/HM_Cut_UseSuccess.uasset"
+    },
+    {
+      "line": 2329,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/HM_RockSmash_UseFail.uasset"
+    },
+    {
+      "line": 2331,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/HM_RockSmash_UseSuccess.uasset"
+    },
+    {
+      "line": 2333,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_BlueShirtGuy.uasset"
+    },
+    {
+      "line": 2335,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_LittleGirlByTrees.uasset"
+    },
+    {
+      "line": 2337,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_LittleGirlByTrees2.uasset"
+    },
+    {
+      "line": 2339,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_LittleGirlByTreesAfterBirchIsSaved.uasset"
+    },
+    {
+      "line": 2341,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_PinkAndBlueShirtGuy.uasset"
+    },
+    {
+      "line": 2343,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_Sign_Dialogue.uasset"
+    },
+    {
+      "line": 2345,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_Sign_Playerhouse_Dialogue.uasset"
+    },
+    {
+      "line": 2347,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_Sign_ProfBirchHouse_Dialogue.uasset"
+    },
+    {
+      "line": 2349,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/LittleRoot_Sign_ProfBirchLab_Dialogue.uasset"
+    },
+    {
+      "line": 2351,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Lucious_Defeated.uasset"
+    },
+    {
+      "line": 2353,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Lucious_Intro.uasset"
+    },
+    {
+      "line": 2355,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Lucious_IntroRematch.uasset"
+    },
+    {
+      "line": 2357,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Lucious_LastPokemon.uasset"
+    },
+    {
+      "line": 2359,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Lucious_PostBattle.uasset"
+    },
+    {
+      "line": 2361,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Lucious_WantsToBattle.uasset"
+    },
+    {
+      "line": 2363,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MainMenu_AreYouSure.uasset"
+    },
+    {
+      "line": 2365,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MainMenu_NewGameEAExplanation.uasset"
+    },
+    {
+      "line": 2367,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_AllSortsOfPeopleComeThrough.uasset"
+    },
+    {
+      "line": 2369,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_BeautiflyCrossing.uasset"
+    },
+    {
+      "line": 2371,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_CoinCaseLadyHarborMail.uasset"
+    },
+    {
+      "line": 2373,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_CoinCaseLadyNoHarborMail.uasset"
+    },
+    {
+      "line": 2375,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_EndOfEarlyAccess.uasset"
+    },
+    {
+      "line": 2377,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCornerSign.uasset"
+    },
+    {
+      "line": 2379,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_Dragonite.uasset"
+    },
+    {
+      "line": 2381,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_Hero.uasset"
+    },
+    {
+      "line": 2383,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_HeroAfter.uasset"
+    },
+    {
+      "line": 2385,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_John1.uasset"
+    },
+    {
+      "line": 2387,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_John2.uasset"
+    },
+    {
+      "line": 2389,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_John3.uasset"
+    },
+    {
+      "line": 2391,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_LadyInGreen.uasset"
+    },
+    {
+      "line": 2393,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_Larry.uasset"
+    },
+    {
+      "line": 2395,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_LarryAfter.uasset"
+    },
+    {
+      "line": 2397,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_Nerd.uasset"
+    },
+    {
+      "line": 2399,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_OldGuy.uasset"
+    },
+    {
+      "line": 2401,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_Roulette1.uasset"
+    },
+    {
+      "line": 2403,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_Roulette2.uasset"
+    },
+    {
+      "line": 2405,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_Sherry.uasset"
+    },
+    {
+      "line": 2407,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_SherryAfter.uasset"
+    },
+    {
+      "line": 2409,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_Shop.uasset"
+    },
+    {
+      "line": 2411,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_ShopCoins.uasset"
+    },
+    {
+      "line": 2413,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_ShopDude.uasset"
+    },
+    {
+      "line": 2415,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_TeamRocket1.uasset"
+    },
+    {
+      "line": 2417,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_TeamRocket2.uasset"
+    },
+    {
+      "line": 2419,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_TeamRocket3.uasset"
+    },
+    {
+      "line": 2421,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_ThirstyNoMoney.uasset"
+    },
+    {
+      "line": 2423,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_ThisMachineIsLucky.uasset"
+    },
+    {
+      "line": 2425,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_UselessAdmin.uasset"
+    },
+    {
+      "line": 2427,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GameCorner_WhyAreWeHere.uasset"
+    },
+    {
+      "line": 2429,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_GymSign.uasset"
+    },
+    {
+      "line": 2431,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_ImRockSmashDudeTakeThis.uasset"
+    },
+    {
+      "line": 2433,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_RockSmashDudeAfter.uasset"
+    },
+    {
+      "line": 2435,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_RydelVeryGenerous.uasset"
+    },
+    {
+      "line": 2437,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_ScottYouDidntHoldBack.uasset"
+    },
+    {
+      "line": 2439,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_Sign.uasset"
+    },
+    {
+      "line": 2441,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_UncleCanYouBattleWally.uasset"
+    },
+    {
+      "line": 2443,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_UncleNoNeedToBeDown.uasset"
+    },
+    {
+      "line": 2445,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_UncleVisitUsSometime.uasset"
+    },
+    {
+      "line": 2447,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_UncleYourePushingIt.uasset"
+    },
+    {
+      "line": 2449,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_UseCoinCaseAtGameCorner.uasset"
+    },
+    {
+      "line": 2451,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_WallyDefeated.uasset"
+    },
+    {
+      "line": 2453,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_WallyImNotPushingIt.uasset"
+    },
+    {
+      "line": 2455,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_WallyPleaseBattleMe.uasset"
+    },
+    {
+      "line": 2457,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_WallyPostBattle.uasset"
+    },
+    {
+      "line": 2459,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_WallyUncleTooMuchPep.uasset"
+    },
+    {
+      "line": 2461,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_WallyWantsToBattle.uasset"
+    },
+    {
+      "line": 2463,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleCity_WallyWantsToChallengeGym.uasset"
+    },
+    {
+      "line": 2465,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_AngeloDefeated.uasset"
+    },
+    {
+      "line": 2467,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_AngeloIntro.uasset"
+    },
+    {
+      "line": 2469,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_AngeloPostBattle.uasset"
+    },
+    {
+      "line": 2471,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_AngeloWantsToBattle.uasset"
+    },
+    {
+      "line": 2473,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_BenDefeated.uasset"
+    },
+    {
+      "line": 2475,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_BenIntro.uasset"
+    },
+    {
+      "line": 2477,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_BenPostBattle.uasset"
+    },
+    {
+      "line": 2479,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_BenWantsToBattle.uasset"
+    },
+    {
+      "line": 2481,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_GymGuide.uasset"
+    },
+    {
+      "line": 2483,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_GymGuideVictory.uasset"
+    },
+    {
+      "line": 2485,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_GymStatue.uasset"
+    },
+    {
+      "line": 2487,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_GymStatueCertified.uasset"
+    },
+    {
+      "line": 2489,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_KirkDefeated.uasset"
+    },
+    {
+      "line": 2491,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_KirkIntro.uasset"
+    },
+    {
+      "line": 2493,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_KirkPostBattle.uasset"
+    },
+    {
+      "line": 2495,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_KirkWantsToBattle.uasset"
+    },
+    {
+      "line": 2497,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_ShawnDefeated.uasset"
+    },
+    {
+      "line": 2499,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_ShawnIntro.uasset"
+    },
+    {
+      "line": 2501,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_ShawnPostBattle.uasset"
+    },
+    {
+      "line": 2503,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_ShawnWantsToBattle.uasset"
+    },
+    {
+      "line": 2505,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_VivianDefeated.uasset"
+    },
+    {
+      "line": 2507,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_VivianIntro.uasset"
+    },
+    {
+      "line": 2509,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_VivianPostBattle.uasset"
+    },
+    {
+      "line": 2511,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MauvilleGym_VivianWantsToBattle.uasset"
+    },
+    {
+      "line": 2513,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MotherNeighbour_AfterIntro.uasset"
+    },
+    {
+      "line": 2515,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MotherNeighbour_Intro.uasset"
+    },
+    {
+      "line": 2517,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_AfterIntro.uasset"
+    },
+    {
+      "line": 2519,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_CheckYourRoom.uasset"
+    },
+    {
+      "line": 2521,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_HealParty.uasset"
+    },
+    {
+      "line": 2523,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_Intro.uasset"
+    },
+    {
+      "line": 2525,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_Intro2.uasset"
+    },
+    {
+      "line": 2527,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_Intro2After.uasset"
+    },
+    {
+      "line": 2529,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_ShowsTV.uasset"
+    },
+    {
+      "line": 2531,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_ShowsTVRecall.uasset"
+    },
+    {
+      "line": 2533,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Mother_VisitedRoom.uasset"
+    },
+    {
+      "line": 2535,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/MysteriousFlower_Used.uasset"
+    },
+    {
+      "line": 2537,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/NeighbourSister_Intro.uasset"
+    },
+    {
+      "line": 2539,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ObtainedItemDialogue.uasset"
+    },
+    {
+      "line": 2541,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ObtainedStarterKitDialogue.uasset"
+    },
+    {
+      "line": 2543,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_EntranceLady.uasset"
+    },
+    {
+      "line": 2545,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_EntranceLadyAfter.uasset"
+    },
+    {
+      "line": 2547,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_EntranceLadyNotEnoughMoney.uasset"
+    },
+    {
+      "line": 2549,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_AquaExistForGoodOFall.uasset"
+    },
+    {
+      "line": 2551,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_BeachSandDisplay.uasset"
+    },
+    {
+      "line": 2553,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_DidntHaveMoney.uasset"
+    },
+    {
+      "line": 2555,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_FossilDisplay.uasset"
+    },
+    {
+      "line": 2557,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_Minifact1.uasset"
+    },
+    {
+      "line": 2559,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_Minifact2.uasset"
+    },
+    {
+      "line": 2561,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_Minifact3.uasset"
+    },
+    {
+      "line": 2563,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_NefariousDeeds.uasset"
+    },
+    {
+      "line": 2565,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_OceansoilDisplay.uasset"
+    },
+    {
+      "line": 2567,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_OurBossIsntHere.uasset"
+    },
+    {
+      "line": 2569,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_RememberMeTakeThis.uasset"
+    },
+    {
+      "line": 2571,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_RustboroBungled.uasset"
+    },
+    {
+      "line": 2573,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_WaterfallExperiment.uasset"
+    },
+    {
+      "line": 2575,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_WhirlpoolExperiment.uasset"
+    },
+    {
+      "line": 2577,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F1_WouldThisMakeMeRich.uasset"
+    },
+    {
+      "line": 2579,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_AquaGrunt1_Defeated.uasset"
+    },
+    {
+      "line": 2581,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_AquaGrunt1_Post.uasset"
+    },
+    {
+      "line": 2583,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_AquaGrunt1_Pre.uasset"
+    },
+    {
+      "line": 2585,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_AquaGrunt2_Defeated.uasset"
+    },
+    {
+      "line": 2587,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_AquaGrunt2_Post.uasset"
+    },
+    {
+      "line": 2589,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_ArchieCameToSeeWhatWasTakingSoLong.uasset"
+    },
+    {
+      "line": 2591,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_DeepSeawaterDisplay.uasset"
+    },
+    {
+      "line": 2593,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_PressureExperiment.uasset"
+    },
+    {
+      "line": 2595,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_SSAnneReplica.uasset"
+    },
+    {
+      "line": 2597,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_SSTidalReplica.uasset"
+    },
+    {
+      "line": 2599,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_StartThanksYou.uasset"
+    },
+    {
+      "line": 2601,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_Stern_ThankYouForTheParts.uasset"
+    },
+    {
+      "line": 2603,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_SubmarineReplica.uasset"
+    },
+    {
+      "line": 2605,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_SumbersibleReplica.uasset"
+    },
+    {
+      "line": 2607,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_SurfaceSeawaterDisplay.uasset"
+    },
+    {
+      "line": 2609,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_WaterQualitySample1.uasset"
+    },
+    {
+      "line": 2611,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OceanicMuseum_F2_WaterQualitySample2.uasset"
+    },
+    {
+      "line": 2613,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldaleHouse01_BlueShirtGlasses.uasset"
+    },
+    {
+      "line": 2615,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldaleHouse01_LadyInRed.uasset"
+    },
+    {
+      "line": 2617,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldaleHouse02_GreenLady.uasset"
+    },
+    {
+      "line": 2619,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldalePC_GirlInRed.uasset"
+    },
+    {
+      "line": 2621,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldalePC_GuyInBlueShirt.uasset"
+    },
+    {
+      "line": 2623,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldalePC_OldGuy.uasset"
+    },
+    {
+      "line": 2625,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldalePokeMart_ClerkOutside_Part1.uasset"
+    },
+    {
+      "line": 2627,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldalePokeMart_ClerkOutside_Part2.uasset"
+    },
+    {
+      "line": 2629,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldalePokeMart_ClerkOutside_Part3.uasset"
+    },
+    {
+      "line": 2631,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldalePokeMart_GuyInBlueShirt.uasset"
+    },
+    {
+      "line": 2633,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/OldalePokeMart_LadyInRed.uasset"
+    },
+    {
+      "line": 2635,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Oldale_GirlInRed.uasset"
+    },
+    {
+      "line": 2637,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Oldale_PokeNerd.uasset"
+    },
+    {
+      "line": 2639,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Oldale_PokeNerdAfterRivalFoughtRoute103.uasset"
+    },
+    {
+      "line": 2641,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Oldale_PokeNerdDontPushBack.uasset"
+    },
+    {
+      "line": 2643,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Oldale_RivalAfterRoute103Battle.uasset"
+    },
+    {
+      "line": 2645,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Oldale_Sign_Dialogue.uasset"
+    },
+    {
+      "line": 2647,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_GuyByWater.uasset"
+    },
+    {
+      "line": 2649,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_GuyInPinkAndBlueShirtPart1.uasset"
+    },
+    {
+      "line": 2651,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_GuyInPinkAndBlueShirtPart2.uasset"
+    },
+    {
+      "line": 2653,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_GuyInPinkAndBlueShirtPart3.uasset"
+    },
+    {
+      "line": 2655,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_GymSign.uasset"
+    },
+    {
+      "line": 2657,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_KidWithGlassesHouse02.uasset"
+    },
+    {
+      "line": 2659,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_LadyHouse01.uasset"
+    },
+    {
+      "line": 2661,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_NormanAfterWallyLeaves.uasset"
+    },
+    {
+      "line": 2663,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_NormanFirstTime.uasset"
+    },
+    {
+      "line": 2665,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_NormanGoToWally.uasset"
+    },
+    {
+      "line": 2667,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_OldLadyHouse02.uasset"
+    },
+    {
+      "line": 2669,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_OldMan.uasset"
+    },
+    {
+      "line": 2671,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_OldManHouse01.uasset"
+    },
+    {
+      "line": 2673,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_ScottExcuseMePart1.uasset"
+    },
+    {
+      "line": 2675,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_ScottExcuseMePart2.uasset"
+    },
+    {
+      "line": 2677,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_ScottExcuseMePart3.uasset"
+    },
+    {
+      "line": 2679,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_Sign.uasset"
+    },
+    {
+      "line": 2681,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallyAndPlayerAfterRaltsCatch.uasset"
+    },
+    {
+      "line": 2683,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallyHouseSign.uasset"
+    },
+    {
+      "line": 2685,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallyLetsGoCatchAPokemon.uasset"
+    },
+    {
+      "line": 2687,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallyMother.uasset"
+    },
+    {
+      "line": 2689,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallyRoute102.uasset"
+    },
+    {
+      "line": 2691,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallyRoute102End.uasset"
+    },
+    {
+      "line": 2693,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallysHouse_Father.uasset"
+    },
+    {
+      "line": 2695,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallysHouse_FatherAfter.uasset"
+    },
+    {
+      "line": 2697,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallysHouse_FatherBeforeHelpingWally.uasset"
+    },
+    {
+      "line": 2699,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallysHouse_Mother.uasset"
+    },
+    {
+      "line": 2701,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PETALBURGCity_WallyWouldLikeAPokemon.uasset"
+    },
+    {
+      "line": 2703,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_AquaGruntDefeated.uasset"
+    },
+    {
+      "line": 2705,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_AquaGruntPostBattle.uasset"
+    },
+    {
+      "line": 2707,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_AquaGruntWantsToBattle.uasset"
+    },
+    {
+      "line": 2709,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_DevonResearcher.uasset"
+    },
+    {
+      "line": 2711,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_GuyInBlue.uasset"
+    },
+    {
+      "line": 2713,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_GuyInPinkAndBlue.uasset"
+    },
+    {
+      "line": 2715,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_JamesDefeated.uasset"
+    },
+    {
+      "line": 2717,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_JamesIntro.uasset"
+    },
+    {
+      "line": 2719,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_JamesPostBattle.uasset"
+    },
+    {
+      "line": 2721,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_JamesWantsToBattle.uasset"
+    },
+    {
+      "line": 2723,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_LyleDefeated.uasset"
+    },
+    {
+      "line": 2725,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_LyleIntro.uasset"
+    },
+    {
+      "line": 2727,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_LylePostBattle.uasset"
+    },
+    {
+      "line": 2729,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PetalburgWoods_LyleWantsToBattle.uasset"
+    },
+    {
+      "line": 2731,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PickStarter_Mudkip.uasset"
+    },
+    {
+      "line": 2733,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PickStarter_Torchic.uasset"
+    },
+    {
+      "line": 2735,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PickStarter_Treecko.uasset"
+    },
+    {
+      "line": 2737,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PlayerBattle_Dialogue.uasset"
+    },
+    {
+      "line": 2739,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Player_DoYouWantToSendOutNextPokemon.uasset"
+    },
+    {
+      "line": 2741,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_Assistant_NoService.uasset"
+    },
+    {
+      "line": 2743,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_Assistant_Rematch.uasset"
+    },
+    {
+      "line": 2745,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_Assistant_RematchCanceled.uasset"
+    },
+    {
+      "line": 2747,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_Assistant_RematchPrize.uasset"
+    },
+    {
+      "line": 2749,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_Assistant_RematchWithCombo.uasset"
+    },
+    {
+      "line": 2751,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_Assistant_Trade.uasset"
+    },
+    {
+      "line": 2753,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_NurseJoyAfterWhiteout.uasset"
+    },
+    {
+      "line": 2755,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_NurseJoyHeal.uasset"
+    },
+    {
+      "line": 2757,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokecenter_NurseJoyJudges.uasset"
+    },
+    {
+      "line": 2759,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PokeMart_ClerkEnd.uasset"
+    },
+    {
+      "line": 2761,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/PokeMart_ClerkStart.uasset"
+    },
+    {
+      "line": 2763,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_DecideOnNewMove.uasset"
+    },
+    {
+      "line": 2765,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_LearnedNewMove.uasset"
+    },
+    {
+      "line": 2767,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_SentToBox.uasset"
+    },
+    {
+      "line": 2769,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_SentToParty.uasset"
+    },
+    {
+      "line": 2771,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WallyCaughtRalts.uasset"
+    },
+    {
+      "line": 2773,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WallySendsOutZigzagoon.uasset"
+    },
+    {
+      "line": 2775,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WallyThrowsPokeballPart1.uasset"
+    },
+    {
+      "line": 2777,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WallyThrowsPokeballPart2.uasset"
+    },
+    {
+      "line": 2779,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WantsToLearnNewMove.uasset"
+    },
+    {
+      "line": 2781,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WildBrokeOut_FirstRoll_.uasset"
+    },
+    {
+      "line": 2783,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WildBrokeOut_SecondRoll_.uasset"
+    },
+    {
+      "line": 2785,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WildBrokeOut_ThirdRoll_.uasset"
+    },
+    {
+      "line": 2787,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WildBrokeOut_ZeroRoll_.uasset"
+    },
+    {
+      "line": 2789,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Pokemon_WildCaught_.uasset"
+    },
+    {
+      "line": 2791,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirchLab_AfterGivenPokedex.uasset"
+    },
+    {
+      "line": 2793,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirchLab_RivalAfterGivenPokedex.uasset"
+    },
+    {
+      "line": 2795,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirchLab_RivalAndProf.uasset"
+    },
+    {
+      "line": 2797,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirchLab_RivalBeforeGivenPokedex.uasset"
+    },
+    {
+      "line": 2799,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirchLab_RivalGotAPokedexTakeThese.uasset"
+    },
+    {
+      "line": 2801,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Lab_AssistantAfterSavingBirch.uasset"
+    },
+    {
+      "line": 2803,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Lab_AssistantBeforeBirchHelp.uasset"
+    },
+    {
+      "line": 2805,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Lab_PC.uasset"
+    },
+    {
+      "line": 2807,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Route101_AtLab.uasset"
+    },
+    {
+      "line": 2809,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Route101_DoesntInteractWithBag.uasset"
+    },
+    {
+      "line": 2811,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Route101_NeedsHelp.uasset"
+    },
+    {
+      "line": 2813,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Route101_Saved.uasset"
+    },
+    {
+      "line": 2815,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Route101_SavedPart2.uasset"
+    },
+    {
+      "line": 2817,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Route101_SavedPart3.uasset"
+    },
+    {
+      "line": 2819,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Speech_AreYouReady.uasset"
+    },
+    {
+      "line": 2821,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Speech_BoyOrGirl.uasset"
+    },
+    {
+      "line": 2823,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Speech_Pokemon.uasset"
+    },
+    {
+      "line": 2825,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Speech_SoItsPlayer.uasset"
+    },
+    {
+      "line": 2827,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/ProfBirch_Speech_Welcome.uasset"
+    },
+    {
+      "line": 2829,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Rival_HouseFirstTime.uasset"
+    },
+    {
+      "line": 2831,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Rival_Pokeball.uasset"
+    },
+    {
+      "line": 2833,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Rival_WantsToBattle.uasset"
+    },
+    {
+      "line": 2835,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route101_BlueCapGuy_Dialogue.uasset"
+    },
+    {
+      "line": 2837,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route101_RedBlueGuy_Dialogue.uasset"
+    },
+    {
+      "line": 2839,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route101_Sign_Dialogue.uasset"
+    },
+    {
+      "line": 2841,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_CalvinDefeated.uasset"
+    },
+    {
+      "line": 2843,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_CalvinIntro.uasset"
+    },
+    {
+      "line": 2845,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_CalvinPostBattle.uasset"
+    },
+    {
+      "line": 2847,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_CalvinWantsToBattle.uasset"
+    },
+    {
+      "line": 2849,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_GuyInBlueShirt.uasset"
+    },
+    {
+      "line": 2851,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_LittleKid.uasset"
+    },
+    {
+      "line": 2853,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_RickDefeated.uasset"
+    },
+    {
+      "line": 2855,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_RickIntro.uasset"
+    },
+    {
+      "line": 2857,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_RickPostBattle.uasset"
+    },
+    {
+      "line": 2859,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_RickWantsToBattle.uasset"
+    },
+    {
+      "line": 2861,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_Sign_Dialogue.uasset"
+    },
+    {
+      "line": 2863,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_Sign_Dialogue2.uasset"
+    },
+    {
+      "line": 2865,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_TianaDefeated.uasset"
+    },
+    {
+      "line": 2867,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_TianaIntro.uasset"
+    },
+    {
+      "line": 2869,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_TianaPostBattle.uasset"
+    },
+    {
+      "line": 2871,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route102_TianaWantsToBattle.uasset"
+    },
+    {
+      "line": 2873,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_AndrewDefeated.uasset"
+    },
+    {
+      "line": 2875,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_AndrewIntro.uasset"
+    },
+    {
+      "line": 2877,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_AndrewPostBattle.uasset"
+    },
+    {
+      "line": 2879,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_AndrewWantsToBattle.uasset"
+    },
+    {
+      "line": 2881,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_DaisyDefeated.uasset"
+    },
+    {
+      "line": 2883,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_DaisyIntro.uasset"
+    },
+    {
+      "line": 2885,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_DaisyPostBattle.uasset"
+    },
+    {
+      "line": 2887,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_DaisyWantsToBattle.uasset"
+    },
+    {
+      "line": 2889,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_GuyByWater.uasset"
+    },
+    {
+      "line": 2891,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_GuyInBlueShirt.uasset"
+    },
+    {
+      "line": 2893,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_MarcosDefeated.uasset"
+    },
+    {
+      "line": 2895,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_MarcosIntro.uasset"
+    },
+    {
+      "line": 2897,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_MarcosPostBattle.uasset"
+    },
+    {
+      "line": 2899,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_MarcosWantsToBattle.uasset"
+    },
+    {
+      "line": 2901,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_MiguelDefeated.uasset"
+    },
+    {
+      "line": 2903,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_MiguelIntro.uasset"
+    },
+    {
+      "line": 2905,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_MiguelPostBattle.uasset"
+    },
+    {
+      "line": 2907,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_MiguelWantsToBattle.uasset"
+    },
+    {
+      "line": 2909,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_RhettDefeat.uasset"
+    },
+    {
+      "line": 2911,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_RhettIntro.uasset"
+    },
+    {
+      "line": 2913,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_RhettPostBattle.uasset"
+    },
+    {
+      "line": 2915,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_RhettWantsToBattle.uasset"
+    },
+    {
+      "line": 2917,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_RivalBattle.uasset"
+    },
+    {
+      "line": 2919,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_RivalClosingThoughts.uasset"
+    },
+    {
+      "line": 2921,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_RivalDefeated.uasset"
+    },
+    {
+      "line": 2923,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route103_Sign_Dialogue.uasset"
+    },
+    {
+      "line": 2925,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_BillyDefeated.uasset"
+    },
+    {
+      "line": 2927,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_BillyIntro.uasset"
+    },
+    {
+      "line": 2929,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_BillyPostBattle.uasset"
+    },
+    {
+      "line": 2931,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_BillyWantsToBattle.uasset"
+    },
+    {
+      "line": 2933,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_BrineyHouseSign.uasset"
+    },
+    {
+      "line": 2935,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_CindyDefeated.uasset"
+    },
+    {
+      "line": 2937,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_CindyIntro.uasset"
+    },
+    {
+      "line": 2939,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_CindyPostBattle.uasset"
+    },
+    {
+      "line": 2941,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_CindyWantsToBattle.uasset"
+    },
+    {
+      "line": 2943,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_DarianDefeated.uasset"
+    },
+    {
+      "line": 2945,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_DarianIntro.uasset"
+    },
+    {
+      "line": 2947,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_DarianPostBattle.uasset"
+    },
+    {
+      "line": 2949,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_DarianWantsToBattle.uasset"
+    },
+    {
+      "line": 2951,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_DudeDefeated.uasset"
+    },
+    {
+      "line": 2953,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_DudeIntro.uasset"
+    },
+    {
+      "line": 2955,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_DudePostBattle.uasset"
+    },
+    {
+      "line": 2957,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_DudeWantsToBattle.uasset"
+    },
+    {
+      "line": 2959,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_FlowerShopSign.uasset"
+    },
+    {
+      "line": 2961,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_GeoDefeated.uasset"
+    },
+    {
+      "line": 2963,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_GeoIntro.uasset"
+    },
+    {
+      "line": 2965,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_GeoPostBattle.uasset"
+    },
+    {
+      "line": 2967,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_GeoWantsToBattle.uasset"
+    },
+    {
+      "line": 2969,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_GuyInBlueShirt.uasset"
+    },
+    {
+      "line": 2971,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_GuyInPinkAndBlue2.uasset"
+    },
+    {
+      "line": 2973,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_GuyInPinkAndBlue2AfterTM09.uasset"
+    },
+    {
+      "line": 2975,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_HaleyDefeated.uasset"
+    },
+    {
+      "line": 2977,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_HaleyIntro.uasset"
+    },
+    {
+      "line": 2979,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_HaleyPostBattle.uasset"
+    },
+    {
+      "line": 2981,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_HaleyWantsToBattle.uasset"
+    },
+    {
+      "line": 2983,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_IvanDefeated.uasset"
+    },
+    {
+      "line": 2985,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_IvanIntro.uasset"
+    },
+    {
+      "line": 2987,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_IvanPostBattle.uasset"
+    },
+    {
+      "line": 2989,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_IvanWantsToBattle.uasset"
+    },
+    {
+      "line": 2991,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_LadyInRedAndYellow.uasset"
+    },
+    {
+      "line": 2993,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_OldLady.uasset"
+    },
+    {
+      "line": 2995,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_OldLadyAfterBerry.uasset"
+    },
+    {
+      "line": 2997,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_Sign.uasset"
+    },
+    {
+      "line": 2999,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_Sign2.uasset"
+    },
+    {
+      "line": 3001,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_StrawHatGuy.uasset"
+    },
+    {
+      "line": 3003,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_TommyDefeated.uasset"
+    },
+    {
+      "line": 3005,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_TommyIntro.uasset"
+    },
+    {
+      "line": 3007,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_TommyPostBattle.uasset"
+    },
+    {
+      "line": 3009,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_TommyWantsToBattle.uasset"
+    },
+    {
+      "line": 3011,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_WinstonDefeated.uasset"
+    },
+    {
+      "line": 3013,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_WinstonIntro.uasset"
+    },
+    {
+      "line": 3015,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_WinstonPostBattle.uasset"
+    },
+    {
+      "line": 3017,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route104_WinstonWantsToBattle.uasset"
+    },
+    {
+      "line": 3019,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_BoyKing.uasset"
+    },
+    {
+      "line": 3021,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_ChandlerDefeated.uasset"
+    },
+    {
+      "line": 3023,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_ChandlerIntro.uasset"
+    },
+    {
+      "line": 3025,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_ChandlerPostBattle.uasset"
+    },
+    {
+      "line": 3027,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_ChandlerWantsToBattle.uasset"
+    },
+    {
+      "line": 3029,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_GirlSoftSand.uasset"
+    },
+    {
+      "line": 3031,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_GirlSoftSandPost.uasset"
+    },
+    {
+      "line": 3033,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_HueyDefeated.uasset"
+    },
+    {
+      "line": 3035,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_HueyIntro.uasset"
+    },
+    {
+      "line": 3037,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_HueyPostBattle.uasset"
+    },
+    {
+      "line": 3039,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_HueyWantsToBattle.uasset"
+    },
+    {
+      "line": 3041,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_LolaDefeated.uasset"
+    },
+    {
+      "line": 3043,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_LolaIntro.uasset"
+    },
+    {
+      "line": 3045,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_LolaPostBattle.uasset"
+    },
+    {
+      "line": 3047,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_LolaWantsToBattle.uasset"
+    },
+    {
+      "line": 3049,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_OldGuyWithZigzagoon.uasset"
+    },
+    {
+      "line": 3051,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_RickyDefeated.uasset"
+    },
+    {
+      "line": 3053,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_RickyIntro.uasset"
+    },
+    {
+      "line": 3055,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_RickyPostBattle.uasset"
+    },
+    {
+      "line": 3057,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_RickyWantsToBattle.uasset"
+    },
+    {
+      "line": 3059,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_SeashoreSign.uasset"
+    },
+    {
+      "line": 3061,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_SodaPopClosed.uasset"
+    },
+    {
+      "line": 3063,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_SternShipyardSign.uasset"
+    },
+    {
+      "line": 3065,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_TrainerTips.uasset"
+    },
+    {
+      "line": 3067,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route109_Zigzagoon.uasset"
+    },
+    {
+      "line": 3069,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110TimmyIntro.uasset"
+    },
+    {
+      "line": 3071,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AbigailDefeated.uasset"
+    },
+    {
+      "line": 3073,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AbigailIntro.uasset"
+    },
+    {
+      "line": 3075,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AbigailPostBattle.uasset"
+    },
+    {
+      "line": 3077,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AbigailWantsToBattle.uasset"
+    },
+    {
+      "line": 3079,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AlyssaDefeated.uasset"
+    },
+    {
+      "line": 3081,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AlyssaIntro.uasset"
+    },
+    {
+      "line": 3083,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AlyssaPostBattle.uasset"
+    },
+    {
+      "line": 3085,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AlyssaWantsToBattle.uasset"
+    },
+    {
+      "line": 3087,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AnthonyDefeated.uasset"
+    },
+    {
+      "line": 3089,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AnthonyIntro.uasset"
+    },
+    {
+      "line": 3091,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AnthonyPostBattle.uasset"
+    },
+    {
+      "line": 3093,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AnthonyWantsToBattle.uasset"
+    },
+    {
+      "line": 3095,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_AquaActions.uasset"
+    },
+    {
+      "line": 3097,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_BeenCheckingOutTV.uasset"
+    },
+    {
+      "line": 3099,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_BenjaminDefeated.uasset"
+    },
+    {
+      "line": 3101,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_BenjaminIntro.uasset"
+    },
+    {
+      "line": 3103,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_BenjaminPostBattle.uasset"
+    },
+    {
+      "line": 3105,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_BenjaminWantsToBattle.uasset"
+    },
+    {
+      "line": 3107,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_DaleDefeated.uasset"
+    },
+    {
+      "line": 3109,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_DaleIntro.uasset"
+    },
+    {
+      "line": 3111,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_DalePostBattle.uasset"
+    },
+    {
+      "line": 3113,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_DaleWantsToBattle.uasset"
+    },
+    {
+      "line": 3115,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_EdwardDefeated.uasset"
+    },
+    {
+      "line": 3117,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_EdwardIntro.uasset"
+    },
+    {
+      "line": 3119,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_EdwardPostBattle.uasset"
+    },
+    {
+      "line": 3121,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_EdwardWantsToBattle.uasset"
+    },
+    {
+      "line": 3123,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_EdwinDefeated.uasset"
+    },
+    {
+      "line": 3125,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_EdwinIntro.uasset"
+    },
+    {
+      "line": 3127,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_EdwinPostBattle.uasset"
+    },
+    {
+      "line": 3129,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_EdwinWantsToBattle.uasset"
+    },
+    {
+      "line": 3131,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_ExplainTV.uasset"
+    },
+    {
+      "line": 3133,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_HairStreamsBehindMe.uasset"
+    },
+    {
+      "line": 3135,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_HandbooksAreInBack.uasset"
+    },
+    {
+      "line": 3137,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_IsabelDefeated.uasset"
+    },
+    {
+      "line": 3139,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_IsabelIntro.uasset"
+    },
+    {
+      "line": 3141,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_IsabelPostBattle.uasset"
+    },
+    {
+      "line": 3143,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_IsabelWantsToBattle.uasset"
+    },
+    {
+      "line": 3145,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JacobIntro.uasset"
+    },
+    {
+      "line": 3147,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JacobPostBattle.uasset"
+    },
+    {
+      "line": 3149,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JasmineDefeated.uasset"
+    },
+    {
+      "line": 3151,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JasmineIntro.uasset"
+    },
+    {
+      "line": 3153,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JasminePostBattle.uasset"
+    },
+    {
+      "line": 3155,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JasmineWantsToBattle.uasset"
+    },
+    {
+      "line": 3157,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JosephDefeated.uasset"
+    },
+    {
+      "line": 3159,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JosephIntro.uasset"
+    },
+    {
+      "line": 3161,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JosephPostBattle.uasset"
+    },
+    {
+      "line": 3163,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_JosephWantsToBattle.uasset"
+    },
+    {
+      "line": 3165,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_KalebDefeated.uasset"
+    },
+    {
+      "line": 3167,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_KalebIntro.uasset"
+    },
+    {
+      "line": 3169,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_KalebPostBattle.uasset"
+    },
+    {
+      "line": 3171,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_KalebWantsToBattle.uasset"
+    },
+    {
+      "line": 3173,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_KickUpARuckus.uasset"
+    },
+    {
+      "line": 3175,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_MeetingRydel.uasset"
+    },
+    {
+      "line": 3177,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_MeetingRydelAfter.uasset"
+    },
+    {
+      "line": 3179,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_MyFirstJobInAqua.uasset"
+    },
+    {
+      "line": 3181,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_NurseHurtMonBackToHealth.uasset"
+    },
+    {
+      "line": 3183,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_OldLady.uasset"
+    },
+    {
+      "line": 3185,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_RideBikeAtFullSpeed.uasset"
+    },
+    {
+      "line": 3187,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_Rival.uasset"
+    },
+    {
+      "line": 3189,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_RivalDefeated.uasset"
+    },
+    {
+      "line": 3191,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_RivalFinalMessage.uasset"
+    },
+    {
+      "line": 3193,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_RivalPostBattle.uasset"
+    },
+    {
+      "line": 3195,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_SeasideParkingSign.uasset"
+    },
+    {
+      "line": 3197,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_Sign.uasset"
+    },
+    {
+      "line": 3199,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_TeamAquaActivities.uasset"
+    },
+    {
+      "line": 3201,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_TimmyDefeated.uasset"
+    },
+    {
+      "line": 3203,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_TimmyPostBattle.uasset"
+    },
+    {
+      "line": 3205,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_TimmyWantsToBattle.uasset"
+    },
+    {
+      "line": 3207,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_Tired.uasset"
+    },
+    {
+      "line": 3209,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_TrickHouseSign.uasset"
+    },
+    {
+      "line": 3211,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_TwoRoads.uasset"
+    },
+    {
+      "line": 3213,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_WhichShouldIChoose.uasset"
+    },
+    {
+      "line": 3215,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route110_YouGotThatBikeFromRydel.uasset"
+    },
+    {
+      "line": 3217,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route115_Sign1.uasset"
+    },
+    {
+      "line": 3219,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_BrineyNoPeeko1.uasset"
+    },
+    {
+      "line": 3221,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_ClarkIntro.uasset"
+    },
+    {
+      "line": 3223,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_ClarkPostBattle.uasset"
+    },
+    {
+      "line": 3225,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_DawsonDefeated.uasset"
+    },
+    {
+      "line": 3227,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_DawsonIntro.uasset"
+    },
+    {
+      "line": 3229,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_DawsonPostBattle.uasset"
+    },
+    {
+      "line": 3231,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_DawsonWantsToBattle.uasset"
+    },
+    {
+      "line": 3233,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_DevanDefeated.uasset"
+    },
+    {
+      "line": 3235,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_DevanIntro.uasset"
+    },
+    {
+      "line": 3237,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_DevanPostBattle.uasset"
+    },
+    {
+      "line": 3239,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_DevanWantsToBattle.uasset"
+    },
+    {
+      "line": 3241,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JaniceIntro.uasset"
+    },
+    {
+      "line": 3243,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JanicePostBattle.uasset"
+    },
+    {
+      "line": 3245,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JoeyIntro.uasset"
+    },
+    {
+      "line": 3247,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JoeyPostBattle.uasset"
+    },
+    {
+      "line": 3249,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JohnsonDefeated.uasset"
+    },
+    {
+      "line": 3251,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JohnsonIntro.uasset"
+    },
+    {
+      "line": 3253,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JohnsonPostBattle.uasset"
+    },
+    {
+      "line": 3255,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JohnsonWantsToBattle.uasset"
+    },
+    {
+      "line": 3257,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JoseDefeated.uasset"
+    },
+    {
+      "line": 3259,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JoseIntro.uasset"
+    },
+    {
+      "line": 3261,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JosePostBattle.uasset"
+    },
+    {
+      "line": 3263,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_JoseWantsToBattle.uasset"
+    },
+    {
+      "line": 3265,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_KarenDefeated.uasset"
+    },
+    {
+      "line": 3267,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_KarenIntro.uasset"
+    },
+    {
+      "line": 3269,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_KarenPostBattle.uasset"
+    },
+    {
+      "line": 3271,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_KarenWantsToBattle.uasset"
+    },
+    {
+      "line": 3273,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_RusturfTunnelSign.uasset"
+    },
+    {
+      "line": 3275,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_ThankYouTokenOfAppreciation.uasset"
+    },
+    {
+      "line": 3277,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_TunnelerSign.uasset"
+    },
+    {
+      "line": 3279,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_TunnelGuyPart1.uasset"
+    },
+    {
+      "line": 3281,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route116_TunnelGuyPart2.uasset"
+    },
+    {
+      "line": 3283,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_AirIsTastyHere.uasset"
+    },
+    {
+      "line": 3285,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_AishaDefeated.uasset"
+    },
+    {
+      "line": 3287,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_AishaIntro.uasset"
+    },
+    {
+      "line": 3289,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_AishaPostBattle.uasset"
+    },
+    {
+      "line": 3291,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_AishaWantsToBattle.uasset"
+    },
+    {
+      "line": 3293,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_ArentTheseFlowersPretty.uasset"
+    },
+    {
+      "line": 3295,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_BrandiDefeated.uasset"
+    },
+    {
+      "line": 3297,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_BrandiIntro.uasset"
+    },
+    {
+      "line": 3299,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_BrandiPostBattle.uasset"
+    },
+    {
+      "line": 3301,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_BrandiWantsToBattle.uasset"
+    },
+    {
+      "line": 3303,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DaycareSign.uasset"
+    },
+    {
+      "line": 3305,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_Daycare_Compatibility.uasset"
+    },
+    {
+      "line": 3307,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DerekDefeated.uasset"
+    },
+    {
+      "line": 3309,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DerekIntro.uasset"
+    },
+    {
+      "line": 3311,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DerekPostBattle.uasset"
+    },
+    {
+      "line": 3313,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DerekWantsToBattle.uasset"
+    },
+    {
+      "line": 3315,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DoYouWantEgg.uasset"
+    },
+    {
+      "line": 3317,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DoYouWantEggFull.uasset"
+    },
+    {
+      "line": 3319,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DylanIntro.uasset"
+    },
+    {
+      "line": 3321,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_DylanPostBattle.uasset"
+    },
+    {
+      "line": 3323,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_GoodToSeeYouFull.uasset"
+    },
+    {
+      "line": 3325,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_GoodToSeeYouOnlyOneInDaycare.uasset"
+    },
+    {
+      "line": 3327,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_IsaacDefeated.uasset"
+    },
+    {
+      "line": 3329,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_IsaacIntro.uasset"
+    },
+    {
+      "line": 3331,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_IsaacPostBattle.uasset"
+    },
+    {
+      "line": 3333,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_IsaacWantsToBattle.uasset"
+    },
+    {
+      "line": 3335,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_LydiaDefeated.uasset"
+    },
+    {
+      "line": 3337,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_LydiaIntro.uasset"
+    },
+    {
+      "line": 3339,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_LydiaPostBattle.uasset"
+    },
+    {
+      "line": 3341,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_LydiaWantsToBattle.uasset"
+    },
+    {
+      "line": 3343,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MariaDefeated.uasset"
+    },
+    {
+      "line": 3345,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MariaIntro.uasset"
+    },
+    {
+      "line": 3347,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MariaPostBattle.uasset"
+    },
+    {
+      "line": 3349,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MariaWantsToBattle.uasset"
+    },
+    {
+      "line": 3351,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MauvilleSign.uasset"
+    },
+    {
+      "line": 3353,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MelinaDefeated.uasset"
+    },
+    {
+      "line": 3355,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MelinaIntro.uasset"
+    },
+    {
+      "line": 3357,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MelinaPostBattle.uasset"
+    },
+    {
+      "line": 3359,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_MelinaWantsToBattle.uasset"
+    },
+    {
+      "line": 3361,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_OldLadyCancel.uasset"
+    },
+    {
+      "line": 3363,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_OldLadyReason.uasset"
+    },
+    {
+      "line": 3365,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_RouteSign.uasset"
+    },
+    {
+      "line": 3367,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_SeeWifeIfYouWantToRaiseMon.uasset"
+    },
+    {
+      "line": 3369,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_TryTakeBack2Pokemon.uasset"
+    },
+    {
+      "line": 3371,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_TryTakeBackPokemon.uasset"
+    },
+    {
+      "line": 3373,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_WellRaiseYourMon.uasset"
+    },
+    {
+      "line": 3375,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_WellRaiseYourMonFull.uasset"
+    },
+    {
+      "line": 3377,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route117_WouldYouLikeUsToRaiseAMon.uasset"
+    },
+    {
+      "line": 3379,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_CanCrossRiversWithSurf.uasset"
+    },
+    {
+      "line": 3381,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_DaltonDefeated.uasset"
+    },
+    {
+      "line": 3383,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_Daltonntro.uasset"
+    },
+    {
+      "line": 3385,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_DaltonPostBattle.uasset"
+    },
+    {
+      "line": 3387,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_DaltonWantsToBattle.uasset"
+    },
+    {
+      "line": 3389,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_DeandreDefeated.uasset"
+    },
+    {
+      "line": 3391,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_DeandreIntro.uasset"
+    },
+    {
+      "line": 3393,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_DeandrePostBattle.uasset"
+    },
+    {
+      "line": 3395,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_DeandreWantsToBattle.uasset"
+    },
+    {
+      "line": 3397,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_RoseDefeated.uasset"
+    },
+    {
+      "line": 3399,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_RoseIntro.uasset"
+    },
+    {
+      "line": 3401,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_RosePostBattle.uasset"
+    },
+    {
+      "line": 3403,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_RoseWantsToBattle.uasset"
+    },
+    {
+      "line": 3405,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_RouteSign.uasset"
+    },
+    {
+      "line": 3407,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_WadeDefeated.uasset"
+    },
+    {
+      "line": 3409,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_WadeIntro.uasset"
+    },
+    {
+      "line": 3411,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_WadePostBattle.uasset"
+    },
+    {
+      "line": 3413,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Route118_WadewWantsToBattle.uasset"
+    },
+    {
+      "line": 3415,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RoxanneGym_Fossil.uasset"
+    },
+    {
+      "line": 3417,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RoxanneGym_Statue.uasset"
+    },
+    {
+      "line": 3419,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RoxanneGym_StatueAfter.uasset"
+    },
+    {
+      "line": 3421,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Roxanne_WantsToBattle.uasset"
+    },
+    {
+      "line": 3423,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_AssistantAfterMrStoneIntro.uasset"
+    },
+    {
+      "line": 3425,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_BigGuyInBlueShirt.uasset"
+    },
+    {
+      "line": 3427,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_CutterGuy.uasset"
+    },
+    {
+      "line": 3429,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_CutterGuyAfterHM.uasset"
+    },
+    {
+      "line": 3431,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_CuttersDaughter.uasset"
+    },
+    {
+      "line": 3433,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_CuttersHouse_Sigm.uasset"
+    },
+    {
+      "line": 3435,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_DevonCorpGuard.uasset"
+    },
+    {
+      "line": 3437,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_DevonCorpSign.uasset"
+    },
+    {
+      "line": 3439,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_DevonResearcherPart1.uasset"
+    },
+    {
+      "line": 3441,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_DevonResearcherPart2.uasset"
+    },
+    {
+      "line": 3443,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_DevonResearcherPart3.uasset"
+    },
+    {
+      "line": 3445,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_DevonResearcherPart4.uasset"
+    },
+    {
+      "line": 3447,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_DevonResearcherPart5.uasset"
+    },
+    {
+      "line": 3449,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_DevonResearcherPart6.uasset"
+    },
+    {
+      "line": 3451,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat1_f1_LadyInRed.uasset"
+    },
+    {
+      "line": 3453,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat1_f1_OrangeHairDude.uasset"
+    },
+    {
+      "line": 3455,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat1_f2_FatherGuy.uasset"
+    },
+    {
+      "line": 3457,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat1_f2_MotherInRed.uasset"
+    },
+    {
+      "line": 3459,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat2_f1_Oldlady.uasset"
+    },
+    {
+      "line": 3461,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat2_f1_Skitty.uasset"
+    },
+    {
+      "line": 3463,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat2_f2_LittleKidPinkHair.uasset"
+    },
+    {
+      "line": 3465,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat2_f2_LittleKidPinkHairAfterGift.uasset"
+    },
+    {
+      "line": 3467,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat2_f2_Oldman.uasset"
+    },
+    {
+      "line": 3469,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat2_f3_LadyInBlueRibbon.uasset"
+    },
+    {
+      "line": 3471,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Flat2_f3_RedSuitGuy.uasset"
+    },
+    {
+      "line": 3473,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_GuyInBlueShirt.uasset"
+    },
+    {
+      "line": 3475,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_GuyInGlasses.uasset"
+    },
+    {
+      "line": 3477,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_GuyInRedBlue.uasset"
+    },
+    {
+      "line": 3479,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_GuyInRedSuit.uasset"
+    },
+    {
+      "line": 3481,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_GuyInRedWithOrangeHair.uasset"
+    },
+    {
+      "line": 3483,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_GymGuide.uasset"
+    },
+    {
+      "line": 3485,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_GymGuideAfter.uasset"
+    },
+    {
+      "line": 3487,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_GymSign.uasset"
+    },
+    {
+      "line": 3489,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_House1_Ranger.uasset"
+    },
+    {
+      "line": 3491,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_House1_RangerAfterTrade.uasset"
+    },
+    {
+      "line": 3493,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_House1_RangerCancelled.uasset"
+    },
+    {
+      "line": 3495,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_House1_RangerFailed.uasset"
+    },
+    {
+      "line": 3497,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_KidHouse2.uasset"
+    },
+    {
+      "line": 3499,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_LadyHouse2.uasset"
+    },
+    {
+      "line": 3501,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_LadyInRed.uasset"
+    },
+    {
+      "line": 3503,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_LittleKidBlueHair.uasset"
+    },
+    {
+      "line": 3505,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_LittleKidRedHair.uasset"
+    },
+    {
+      "line": 3507,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_MrStone.uasset"
+    },
+    {
+      "line": 3509,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_MrStoneAfter.uasset"
+    },
+    {
+      "line": 3511,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_MrStoneAfterLetterDelivered.uasset"
+    },
+    {
+      "line": 3513,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_MrStonePostDeliveredLetter.uasset"
+    },
+    {
+      "line": 3515,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_OldLadyHouse3.uasset"
+    },
+    {
+      "line": 3517,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_OldmanHouse3.uasset"
+    },
+    {
+      "line": 3519,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_PikachuHouse3.uasset"
+    },
+    {
+      "line": 3521,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_PinkHairKid.uasset"
+    },
+    {
+      "line": 3523,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_RareRockDisplay.uasset"
+    },
+    {
+      "line": 3525,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Rival.uasset"
+    },
+    {
+      "line": 3527,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_RivalDefeated.uasset"
+    },
+    {
+      "line": 3529,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_RivalFinalMessage.uasset"
+    },
+    {
+      "line": 3531,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_RivalPostBattle.uasset"
+    },
+    {
+      "line": 3533,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_RivalRetry.uasset"
+    },
+    {
+      "line": 3535,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_Sign.uasset"
+    },
+    {
+      "line": 3537,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TeamAquaGruntChase.uasset"
+    },
+    {
+      "line": 3539,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TeamAquaGruntChase2.uasset"
+    },
+    {
+      "line": 3541,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_FriendLeft.uasset"
+    },
+    {
+      "line": 3543,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_FriendRight.uasset"
+    },
+    {
+      "line": 3545,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_GuyInGreen.uasset"
+    },
+    {
+      "line": 3547,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_Lass.uasset"
+    },
+    {
+      "line": 3549,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_Nerd.uasset"
+    },
+    {
+      "line": 3551,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_Scott.uasset"
+    },
+    {
+      "line": 3553,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_ScottAlreadyGotStoneBadge.uasset"
+    },
+    {
+      "line": 3555,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_ScottTalentLevelUnknown.uasset"
+    },
+    {
+      "line": 3557,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_Sensei.uasset"
+    },
+    {
+      "line": 3559,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_SenseiAfterQuickClaw.uasset"
+    },
+    {
+      "line": 3561,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_Sign.uasset"
+    },
+    {
+      "line": 3563,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TrainerSchool_StudentNotes.uasset"
+    },
+    {
+      "line": 3565,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RustboroCity_TunnelSign.uasset"
+    },
+    {
+      "line": 3567,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_AquaGrunt.uasset"
+    },
+    {
+      "line": 3569,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_AquaGruntDefeated.uasset"
+    },
+    {
+      "line": 3571,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_AquaGruntIntro.uasset"
+    },
+    {
+      "line": 3573,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_AquaGruntPostBattle.uasset"
+    },
+    {
+      "line": 3575,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_Boyfriend.uasset"
+    },
+    {
+      "line": 3577,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_BoyfriendAfterRockSmash.uasset"
+    },
+    {
+      "line": 3579,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_Briney.uasset"
+    },
+    {
+      "line": 3581,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_Girlfriend.uasset"
+    },
+    {
+      "line": 3583,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/RusturfTunnel_Peeko.uasset"
+    },
+    {
+      "line": 3585,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Shimmerball_ClerkEnd.uasset"
+    },
+    {
+      "line": 3587,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Shimmerball_ClerkStart.uasset"
+    },
+    {
+      "line": 3589,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_AquaHasAPolicy.uasset"
+    },
+    {
+      "line": 3591,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_BattleTentGuy.uasset"
+    },
+    {
+      "line": 3593,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_BerryLady.uasset"
+    },
+    {
+      "line": 3595,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_BerryLadyAfter.uasset"
+    },
+    {
+      "line": 3597,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_BossIsBrilliant.uasset"
+    },
+    {
+      "line": 3599,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_BushedHikingFromMauville.uasset"
+    },
+    {
+      "line": 3601,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_CitySign.uasset"
+    },
+    {
+      "line": 3603,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_ConcstructionWorker_BattleTent1.uasset"
+    },
+    {
+      "line": 3605,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_ConcstructionWorker_Harbor.uasset"
+    },
+    {
+      "line": 3607,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_DontButtIn.uasset"
+    },
+    {
+      "line": 3609,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_EnergyGuruEnd.uasset"
+    },
+    {
+      "line": 3611,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_EnergyGuruStart.uasset"
+    },
+    {
+      "line": 3613,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_EnergyGuruWife.uasset"
+    },
+    {
+      "line": 3615,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_FanClubSign.uasset"
+    },
+    {
+      "line": 3617,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_FreshairLady.uasset"
+    },
+    {
+      "line": 3619,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_Gameboy.uasset"
+    },
+    {
+      "line": 3621,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_GuyInOrange.uasset"
+    },
+    {
+      "line": 3623,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_GuySaysAboutStern.uasset"
+    },
+    {
+      "line": 3625,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_HarborEnd.uasset"
+    },
+    {
+      "line": 3627,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_HarborStart.uasset"
+    },
+    {
+      "line": 3629,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_HarborUnderConstructionSign.uasset"
+    },
+    {
+      "line": 3631,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_HotSpringsOperation.uasset"
+    },
+    {
+      "line": 3633,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_LadySaysAfterAqua.uasset"
+    },
+    {
+      "line": 3635,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_LadySaysLongLine.uasset"
+    },
+    {
+      "line": 3637,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_LadyWhoBuysTooMuch.uasset"
+    },
+    {
+      "line": 3639,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_LongLine.uasset"
+    },
+    {
+      "line": 3641,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_MarketSign.uasset"
+    },
+    {
+      "line": 3643,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_NicknameGuy.uasset"
+    },
+    {
+      "line": 3645,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_OceanicMuseumSign.uasset"
+    },
+    {
+      "line": 3647,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_OldladyByShipyard.uasset"
+    },
+    {
+      "line": 3649,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_QuitPushin.uasset"
+    },
+    {
+      "line": 3651,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_Scott.uasset"
+    },
+    {
+      "line": 3653,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_SeaweedGuy.uasset"
+    },
+    {
+      "line": 3655,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_ShouldITakeItAll.uasset"
+    },
+    {
+      "line": 3657,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_WhatDoYouWantAfter.uasset"
+    },
+    {
+      "line": 3659,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_WhatDoYouWantExclamation.uasset"
+    },
+    {
+      "line": 3661,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_WhatsTheNewScheme.uasset"
+    },
+    {
+      "line": 3663,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SlateportCity_WhyAreWeLiningUp.uasset"
+    },
+    {
+      "line": 3665,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SternShipyard_1F_DockSaysNo.uasset"
+    },
+    {
+      "line": 3667,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SternShipyard_1F_DockSaysNoButHaventMetDockYet.uasset"
+    },
+    {
+      "line": 3669,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SternShipyard_1F_ImDock.uasset"
+    },
+    {
+      "line": 3671,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/SternShipyard_1F_ImDockAfter.uasset"
+    },
+    {
+      "line": 3673,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TakeItem_Pokemon.uasset"
+    },
+    {
+      "line": 3675,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TM_ClerkEnd.uasset"
+    },
+    {
+      "line": 3677,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TM_ClerkStart.uasset"
+    },
+    {
+      "line": 3679,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TradePokemon_Finished.uasset"
+    },
+    {
+      "line": 3681,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TradePokemon_Start.uasset"
+    },
+    {
+      "line": 3683,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_AwaitingPartnerConfirm.uasset"
+    },
+    {
+      "line": 3685,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_Cancelled.uasset"
+    },
+    {
+      "line": 3687,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_Committing.uasset"
+    },
+    {
+      "line": 3689,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_Completed.uasset"
+    },
+    {
+      "line": 3691,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_ConfirmOffer.uasset"
+    },
+    {
+      "line": 3693,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_Connected.uasset"
+    },
+    {
+      "line": 3695,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_Joining.uasset"
+    },
+    {
+      "line": 3697,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_OfferReceived.uasset"
+    },
+    {
+      "line": 3699,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_OfferSent.uasset"
+    },
+    {
+      "line": 3701,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_TradeFailed.uasset"
+    },
+    {
+      "line": 3703,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trade_WaitingForPartner.uasset"
+    },
+    {
+      "line": 3705,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TrainerHiker_WantsToBattle1.uasset"
+    },
+    {
+      "line": 3707,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TrainerRED_AfterBattle1.uasset"
+    },
+    {
+      "line": 3709,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TrainerRED_BeforeBattle1.uasset"
+    },
+    {
+      "line": 3711,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TrainerRED_Defeated1.uasset"
+    },
+    {
+      "line": 3713,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TrainerRED_FinalMessage.uasset"
+    },
+    {
+      "line": 3715,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TrainerRED_WantsToBattle1.uasset"
+    },
+    {
+      "line": 3717,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Trainer_AboutToSendOutNextPokemon.uasset"
+    },
+    {
+      "line": 3719,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TunnelersHouse_BottomLeftGuy.uasset"
+    },
+    {
+      "line": 3721,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TunnelersHouse_MiddleRightGuy.uasset"
+    },
+    {
+      "line": 3723,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/TunnelersHouse_TopRightGuy.uasset"
+    },
+    {
+      "line": 3725,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/UseBike_Indoors.uasset"
+    },
+    {
+      "line": 3727,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/UseItem_Antidote.uasset"
+    },
+    {
+      "line": 3729,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/UseItem_Awakening.uasset"
+    },
+    {
+      "line": 3731,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/UseItem_BurnHeal.uasset"
+    },
+    {
+      "line": 3733,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/UseItem_FullHeal.uasset"
+    },
+    {
+      "line": 3735,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/UseItem_IceHeal.uasset"
+    },
+    {
+      "line": 3737,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/UseItem_ParalyzeHeal.uasset"
+    },
+    {
+      "line": 3739,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/USeItem_Potion.uasset"
+    },
+    {
+      "line": 3741,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/UseItem_PPRestore.uasset"
+    },
+    {
+      "line": 3743,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_AirCleanHere.uasset"
+    },
+    {
+      "line": 3745,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_GuyTryingToBustThroughCave.uasset"
+    },
+    {
+      "line": 3747,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_House_DefeatEliteFourInARow.uasset"
+    },
+    {
+      "line": 3749,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_House_Pikachu.uasset"
+    },
+    {
+      "line": 3751,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_House_TrainersGatherAtPokemonLeague.uasset"
+    },
+    {
+      "line": 3753,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_ManTryingToDigTunnel.uasset"
+    },
+    {
+      "line": 3755,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_RusturfTunnelSign.uasset"
+    },
+    {
+      "line": 3757,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_Sign.uasset"
+    },
+    {
+      "line": 3759,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouseSign.uasset"
+    },
+    {
+      "line": 3761,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouse_CanSeeGirlfriendEveryDay.uasset"
+    },
+    {
+      "line": 3763,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouse_DaughtersBoyfriendDriven.uasset"
+    },
+    {
+      "line": 3765,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouse_DontWorryAboutWally.uasset"
+    },
+    {
+      "line": 3767,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouse_MeetWanda.uasset"
+    },
+    {
+      "line": 3769,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouse_StrongerSpeech.uasset"
+    },
+    {
+      "line": 3771,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouse_StrongerSpeechPost.uasset"
+    },
+    {
+      "line": 3773,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouse_WallysNextDoor.uasset"
+    },
+    {
+      "line": 3775,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/VerdanturfTown_WandaHouse_WallysNextDoorPost.uasset"
+    },
+    {
+      "line": 3777,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Wattson_Defeat.uasset"
+    },
+    {
+      "line": 3779,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Wattson_GiveStoneBadge.uasset"
+    },
+    {
+      "line": 3781,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Wattson_LastPokemon.uasset"
+    },
+    {
+      "line": 3783,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Wattson_PostBattle.uasset"
+    },
+    {
+      "line": 3785,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/Wattson_WantsToBattle.uasset"
+    },
+    {
+      "line": 3787,
+      "path": "PokemonEmerald/Content/DialogueForEntireGame/WhatsThis_Evolve.uasset"
+    }
+  ],
+  "cutscenes": [
+    {
+      "line": 4244,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_15days.uasset"
+    },
+    {
+      "line": 4246,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_50k.uasset"
+    },
+    {
+      "line": 4248,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_AshenForest.uasset"
+    },
+    {
+      "line": 4250,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Beautifly.uasset"
+    },
+    {
+      "line": 4252,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_BigManBlastoise.uasset"
+    },
+    {
+      "line": 4254,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_BrineyBoat.uasset"
+    },
+    {
+      "line": 4256,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_CynthiaShake.uasset"
+    },
+    {
+      "line": 4258,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Delibird_Reveal.uasset"
+    },
+    {
+      "line": 4260,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_DevonCorp.uasset"
+    },
+    {
+      "line": 4262,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_EATrailer3.uasset"
+    },
+    {
+      "line": 4264,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_FavePoke.uasset"
+    },
+    {
+      "line": 4266,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_GroudonKyogre.uasset"
+    },
+    {
+      "line": 4268,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_HallOfFame.uasset"
+    },
+    {
+      "line": 4270,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_HypnoToMiku.uasset"
+    },
+    {
+      "line": 4272,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Intro.uasset"
+    },
+    {
+      "line": 4274,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_LittleRootNew.uasset"
+    },
+    {
+      "line": 4276,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_MirageTowerReveal.uasset"
+    },
+    {
+      "line": 4278,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_NewYears2.uasset"
+    },
+    {
+      "line": 4280,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_OpeningPart2.uasset"
+    },
+    {
+      "line": 4282,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Patreon.uasset"
+    },
+    {
+      "line": 4284,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Pikachu.uasset"
+    },
+    {
+      "line": 4286,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_RedLeaves.uasset"
+    },
+    {
+      "line": 4288,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_ShayminTower1_Destroy.uasset"
+    },
+    {
+      "line": 4290,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_ShayminTower2_Destroy.uasset"
+    },
+    {
+      "line": 4292,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_ShayminTowerAshenForest_Destroy.uasset"
+    },
+    {
+      "line": 4294,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_StarterDemo.uasset"
+    },
+    {
+      "line": 4296,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_StaticPokemonReveal.uasset"
+    },
+    {
+      "line": 4298,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_StormyWaters.uasset"
+    },
+    {
+      "line": 4300,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Val2.uasset"
+    },
+    {
+      "line": 4302,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Valentines.uasset"
+    },
+    {
+      "line": 4304,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Valentines2.uasset"
+    },
+    {
+      "line": 4306,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_ValentinesPart2.uasset"
+    },
+    {
+      "line": 4308,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_WakingUpOnIsland.uasset"
+    },
+    {
+      "line": 4310,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Walkthrough1.uasset"
+    },
+    {
+      "line": 4312,
+      "path": "PokemonEmerald/Content/SEQ/SEQ_Zappy.uasset"
+    },
+    {
+      "line": 4672,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BPCG_BirchIntro.uasset"
+    },
+    {
+      "line": 4674,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BPCG_GroupOfScaredPokemon.uasset"
+    },
+    {
+      "line": 4676,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BPCG_HallOfFame.uasset"
+    },
+    {
+      "line": 4678,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BPCG_LowerCamera.uasset"
+    },
+    {
+      "line": 4680,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BPCG_SpawnStarterBalls.uasset"
+    },
+    {
+      "line": 4682,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BPCG_StormyBoat.uasset"
+    },
+    {
+      "line": 4684,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BPCG_Tako_Act3_Start.uasset"
+    },
+    {
+      "line": 4686,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BPCG_WakeUpIOnIsland.uasset"
+    },
+    {
+      "line": 4688,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BP_Act3_StageCamera.uasset"
+    },
+    {
+      "line": 4690,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BP_Cutscene_MirageTower.uasset"
+    },
+    {
+      "line": 4692,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BP_FlyHM.uasset"
+    },
+    {
+      "line": 4694,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BP_LatiasLatiosScene.uasset"
+    },
+    {
+      "line": 4696,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BP_RayquazaFly.uasset"
+    },
+    {
+      "line": 4698,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BP_RoxanneIntro.uasset"
+    },
+    {
+      "line": 4700,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/BP_SleepOnTruck.uasset"
+    },
+    {
+      "line": 4702,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/NS_HallOfFame.uasset"
+    },
+    {
+      "line": 7213,
+      "path": "PokemonEmerald/Content/SEQ/EATrailer/SEQ_EA_Dewford.uasset"
+    },
+    {
+      "line": 7215,
+      "path": "PokemonEmerald/Content/SEQ/EATrailer/SEQ_EA_Intro.uasset"
+    },
+    {
+      "line": 7217,
+      "path": "PokemonEmerald/Content/SEQ/EATrailer/SEQ_EA_LittleRoot1.uasset"
+    },
+    {
+      "line": 7219,
+      "path": "PokemonEmerald/Content/SEQ/EATrailer/SEQ_EA_Rustboro.uasset"
+    },
+    {
+      "line": 7221,
+      "path": "PokemonEmerald/Content/SEQ/FinalMessages/SEQ_FinalMessage_Roxanne.uasset"
+    },
+    {
+      "line": 7223,
+      "path": "PokemonEmerald/Content/SEQ/IDLECAMS/SEQ_IdleBattleCam1.uasset"
+    },
+    {
+      "line": 7225,
+      "path": "PokemonEmerald/Content/SEQ/IDLECAMS/SEQ_IdleBattleCam2.uasset"
+    },
+    {
+      "line": 7227,
+      "path": "PokemonEmerald/Content/SEQ/IDLECAMS/SEQ_IdleBattleCam3.uasset"
+    },
+    {
+      "line": 7229,
+      "path": "PokemonEmerald/Content/SEQ/IDLECAMS/SEQ_IdleBattleCam4.uasset"
+    },
+    {
+      "line": 7231,
+      "path": "PokemonEmerald/Content/SEQ/IDLECAMS/SEQ_IdleBattleCam5.uasset"
+    },
+    {
+      "line": 7233,
+      "path": "PokemonEmerald/Content/SEQ/IDLECAMS/SEQ_IdleBattleCam6.uasset"
+    },
+    {
+      "line": 7235,
+      "path": "PokemonEmerald/Content/SEQ/LostGlades/SEQ_Room1Exit.uasset"
+    },
+    {
+      "line": 10487,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/Flagger/BP_GE_FlagSetter.uasset"
+    },
+    {
+      "line": 10489,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/Flagger/BP_GE_Flag_Checker.uasset"
+    },
+    {
+      "line": 10491,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/FullGame/BPI_Cutscenes.uasset"
+    },
+    {
+      "line": 10493,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/FullGame/BP_CutsceneTrigger.uasset"
+    },
+    {
+      "line": 10495,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/TIPS/BP_TipMaster.uasset"
+    },
+    {
+      "line": 20987,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/FullGame/Casino/BP_CasinoTRF_Cutscene.uasset"
+    },
+    {
+      "line": 20989,
+      "path": "PokemonEmerald/Content/BPS/CUTSCENES/FullGame/Casino/BP_VendingMachineCasino.uasset"
+    }
+  ],
+  "limitations": [
+    "Inventory names establish shipped candidate assets, not reachability, exact dialogue, event order or actual runtime behavior.",
+    "Encrypted pak index not decrypted. No encryption key searched for or recovered.",
+    "No game execution, camera observation, asset extraction or full-campaign verification performed."
+  ]
+}

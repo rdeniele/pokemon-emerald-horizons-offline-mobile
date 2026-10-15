@@ -11,6 +11,7 @@ import {arenaCooldown} from '@/pokemon/moves/timing';
 import {arenaMoveProfile} from '@/pokemon/moves/arenaProfile';
 import type {PokemonType} from '@/pokemon/types/typeChart';
 import type {Skill,UnitSpec} from '@/battle/types';
+import type {CampaignProgress} from './campaign';
 
 // The earlier offline work is reused only for local progression, economy and saves.
 // All combat and rendering now come from the copied original game.
@@ -28,14 +29,27 @@ for(const raw of Object.values(sourceRoster) as any[]){
 }
 export type Mon={uid:string;species:number;level:number;xp:number;moves:string[];upgrades:Record<string,number>;held:string|null};
 export type Battle={id:string;kind:'wild'|'gym'|'quick';index:number;team:Mon[];active:number;paused:boolean;engineSnapshot?:string;[key:string]:any};
-export type Save={version:1;revision:number;rng:number;party:Mon[];pc:Mon[];gold:number;inventory:Record<string,number>;cleared:number[];chapter:number;seen:number[];pending:null|{id:string;mon:Mon;attempts:number};battle:Battle|null;claimed:string[];settings:{auto:boolean;sound:boolean};journal:string[]};
+export type Save={version:1;revision:number;rng:number;party:Mon[];pc:Mon[];gold:number;inventory:Record<string,number>;cleared:number[];chapter:number;seen:number[];pending:null|{id:string;mon:Mon;attempts:number};battle:Battle|null;claimed:string[];settings:{auto:boolean;sound:boolean};journal:string[];campaign?:CampaignProgress};
 export const ORIGINAL_LEADERS=['Roxanne','Brawly','Wattson','Flannery','Norman','Winona','Tate & Liza','Juan','Sidney','Phoebe','Glacia','Drake','Wallace'];
 export const ORIGINAL_TYPES=['rock','fighting','electric','fire','normal','flying','psychic','water','dark','ghost','ice','dragon','water'];
 // Keep the original Hoenn journey and leaders; the new level progression is applied to it.
 E.GYMS.forEach((g:string[],i:number)=>{g[0]=ORIGINAL_LEADERS[i];g[1]=ORIGINAL_TYPES[i];});
-for(const scene of E.CHAPTERS)for(const [oldName,newName] of [['Fern','Roxanne'],['Maris','Brawly'],['Flint','Wattson'],['Volt','Flannery'],['Opal','Norman'],['Shade','Winona'],['Glacier','Tate & Liza'],['Aster','Juan']]){scene[0]=scene[0].replaceAll(oldName,newName);scene[1]=scene[1].replaceAll(oldName,newName);}
-E.CHAPTERS[12]=['Drake','The Prism engine is silent and the rare Pokémon are free. Wallace waits beyond this chamber. Show the Champion what your journey taught you.'];
-E.CHAPTERS[13]=['Wallace','The beacons shine again. Your rival Rowan is watching from the stands. Let this final battle celebrate the partners who brought us here.'];
+E.CHAPTERS.splice(0,E.CHAPTERS.length,
+ ['Professor Birch','Welcome to Hoenn! Pokémon from all nine generations travel these routes. Explore, train your partner and meet Roxanne in Rustboro. Look for the marked people and exits.'],
+ ['Devon researcher','An Aqua thief escaped toward Rusturf Tunnel. Mr. Briney’s Peeko is missing too. Follow Route 116.'],
+ ['Captain Stern','Thank you for the goods. Aqua is searching the ocean for an ancient power. The road north leads to Mauville.'],
+ ['Professor Cozmo','Magma stole a meteorite from Meteor Falls. They are heading toward Mt. Chimney.'],
+ ['May','The volcano is safe. Return through the desert toward Petalburg and show Norman how far you have come.'],
+ ['Wally’s father','Cross Route 118 and follow the river to the Weather Institute. Your adventure continues east.'],
+ ['Steven','Aqua and Magma are searching for the ancient orbs. Follow their trail to Mt. Pyre.'],
+ ['Wallace','The powers of land and sea have awakened. Sky Pillar may hold the answer.'],
+ ['Juan','Hoenn is peaceful again. Victory Road leads to the Pokémon League.'],
+ ['Sidney','The League tests the whole team you raised on your journey.'],
+ ['Phoebe','Trust the partners who carried you this far.'],
+ ['Glacia','A careful strategy will overcome even the coldest challenge.'],
+ ['Drake','Wallace waits beyond this chamber. Show the Champion what your journey taught you.'],
+ ['Wallace','Let this final battle celebrate the partners who brought us here.'],
+ ['Professor Birch','Champion! Visit the Hall of Fame, revisit Hoenn and explore the highest tiers for rare partners from all generations.']);
 export const SPECIES:any=E.species;
 export function speciesName(p:Mon){return SPECIES[p.species].name as string;}
 declare global {interface Window {Native?:{load:(key:string)=>string;save:(key:string,value:string)=>boolean;exportSave:(data:string)=>void;importSave:()=>void};pauseGame?:()=>void;importNativeSave?:(data:string)=>void;}}

@@ -1,5 +1,16 @@
 # Verification — copied original-game adaptation, 16 October 2026
 
+## Version 1.2 campaign and controls
+
+- 14 offline tests and 14 source/campaign tests pass. The four added campaign checks cover complete story-gate reachability through Hall of Fame, prerequisite enforcement, old badge-save migration, and flood-fill reachability of all NPCs and both exits on all 34 maps.
+- TypeScript and the production static export pass. The Android package is version 1.2.0/code 3, still without INTERNET permission. Final byte-for-byte APK asset and signing checks are recorded in build-info.json.
+- Browser checks at 844×390 and 1280×800 confirm left movement/manual aim and right skills/Dodge, readable layouts and no horizontal overflow. Manual angle produces the visible direction indicator. Actual multitouch remains a device check.
+- An original-engine farming battle completed and awarded its saved reward. Paused battle reload restored correctly; Resume and Retreat work after fixing pointer hit-testing in the overlay. Walking to the Devon researcher, completing the dialogue and reloading retained the next Route 116 objective. Screenshots: combat-phone.png, combat-tablet.png and exploration-phone.png.
+- Android pause now explicitly stops exploration input and checkpoints its current position, including a new journey before its first battle. Native confirmations use an Android dialog.
+- Gamma's encrypted package does not establish its full campaign. Early inventory motifs inform the adaptation; later chapters and all map layouts are authored here. No exact Gamma geometry/dialogue or full reference runtime parity is claimed. See GAMMA-REFERENCE.md and empress-combat-evidence.json.
+
+The earlier 1.1 results below are historical validation of the preserved systems. Device acceptance and a complete balanced campaign playthrough remain pending.
+
 ## Passed
 
 - TypeScript checks and production Next.js static export of `/`, `/game/` and `/credits/`.

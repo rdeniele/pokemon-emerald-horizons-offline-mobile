@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --fan-notice-height: 28px;
-  --app-height: calc(100dvh - var(--fan-notice-height));
+  --fan-notice-height: 0px;
+  --app-height: 100dvh;
   --background: #0b1220;
   --foreground: #e8eef8;
 }
@@ -18,7 +18,7 @@ body {
   height: 100dvh;
   overflow: hidden;
   box-sizing: border-box;
-  padding-bottom: var(--fan-notice-height);
+  padding-bottom: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
@@ -41,7 +41,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  :root { --fan-notice-height: 40px; }
+  :root { --fan-notice-height: 0px; }
 }
 
 canvas {

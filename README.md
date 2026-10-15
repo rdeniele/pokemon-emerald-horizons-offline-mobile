@@ -4,6 +4,8 @@ This version copies and adapts the original game from `D:\work\acqron\pokemon-em
 
 The earlier standalone prototype remains in Git history. Its substitute interface has been removed from the current checkout. Only its useful local progression/economy/save module (`web/engine.js`) and generation data are reused by the copied app through `src/offline/model.ts`. Its standalone `web/app.js` interface and combat loop are not bundled in this APK. The actual game is the statically exported Next.js app in `src/`.
 
+See [the mobile campaign notes](docs/MOBILE-CAMPAIGN.md) for the exploration flow, controls, reference evidence and validation limits.
+
 ## Install
 
 APK: `D:\work\acqron\pokemon-emerald-horizons-offline-mobile\build\apk\emerald-horizons-debug.apk`.
@@ -20,15 +22,15 @@ The app has no INTERNET permission. Its `appassets.androidplatform.net` requests
 
 The source battle simulation and rendering remain the foundation: real skillshots, beams, clashes, dodges, switches, status/buff effects, move-specific timing, authored animation anchors and camera motion. The original source appearance is retained. A SHA-256 copy manifest at `docs/source-copy-manifest.json` records the imported source and assets. Tests verify that core combat systems, rendering helpers and the source theme remain identical to those copied files.
 
-Added: landscape touch joystick and four move buttons, automatic touch aiming, visible trainers outside combat, short ball send-out/recall effects, pause/resume, durable battle checkpoints, original beacon-story dialogue, clickable progression stops, ten roaming biomes, random encounters, six progression tiers, EXP to 100, custom branching level evolutions, five capture attempts, three ball grades, party/PC overflow, gold, supplies, compatible move teaching, capped stat upgrades, held Focus Charms and repeatable farming. Existing source regional challenges remain available as extra battles after eight Hoenn badges.
+Added: independent left movement/aim sticks and a right four-skill/Dodge cluster, visible trainers outside combat, short ball send-out/recall effects, pause/resume, durable battle checkpoints, 34 connected Hoenn locations with NPC interactions, story flags and trainer battles, ten roaming biomes, random encounters, six progression tiers, EXP to 100, custom branching level evolutions, five capture attempts, three ball grades, party/PC overflow, gold, supplies, compatible move teaching, capped stat upgrades, held Focus Charms and repeatable farming. Existing source regional challenges remain available as extra battles after eight Hoenn badges.
 
-Primary journey: source Hoenn leaders Roxanne, Brawly, Wattson, Flannery, Norman, Winona, Tate & Liza, Juan, then Sidney, Phoebe, Glacia, Drake and Wallace. New levels and generation-diverse teams replace the old fixed-stat battles. Additional regions retain source trainer rosters. Rowan remains a recurring rival in the original beacon story; Wallace remains the original Hoenn Champion.
+Primary journey: connected towns and routes follow the Hoenn leaders Roxanne, Brawly, Wattson, Flannery, Norman, Winona, Tate & Liza, Juan, then Sidney, Phoebe, Glacia, Drake and Wallace. Devon, Peeko, Steven’s letter, the museum, rival encounters, Aqua/Magma and the ancient Pokémon crisis connect the milestones. New levels and generation-diverse teams replace the old fixed-stat battles. Additional regions retain source trainer rosters.
 
 ## Play and controls
 
 Choose one of the source game's 27 starters. Use Gym challenge to select a numbered milestone, Explore biomes to enter a random-encounter trail, Quick battle to farm, and Town shop to buy supplies. Completed challenges remain replayable.
 
-Combat: joystick to move, four buttons for moves, Dodge, party portraits to switch, Items, Pause and optional Auto. Touch moves aim toward the current opponent; desktop mouse aiming remains directional. Desktop keys remain the original WASD, Q/E/R/X, Space and 1–6. Items pause combat. Resume is required after a restart or Android backgrounding.
+Combat: separate movement and manual angle sticks on the left; four move buttons and Dodge on the right. Party portraits switch Pokémon; Items, Pause and optional Auto remain available. Manual aim retains its direction as the Pokémon moves. Desktop keys remain WASD, Q/E/R/X, Space and 1–6, with mouse aiming. Items pause combat. Resume is required after a restart or Android backgrounding.
 
 Wild victory opens a capture phase with five throws. Every throw consumes exactly one selected ball; failure permits another attempt. The estimated chance and remaining inventory are visible. Success joins the party or PC if the six slots are full. Party/PC training provides permanent upgrades and compatible move tutoring. Evolution choices appear at the custom level thresholds, including branching choices.
 
@@ -70,7 +72,7 @@ Source-copy/import scripts are provenance tools, not part of a normal build. Do 
 
 All 1,025 base national species are available in local encounter pools across Generations 1–9. Every additional source roster entry, including regional, Mega and Gigantamax variants, is also retained with its source stats, sprites and compatible move sets. These variants can appear rarely in unlocked postgame habitats; additional regional trainer teams retain their original forms. Evolution relationships are manually curated (481 edges); external requirements become levels, and regional-exclusive branches are offered from base species. Full canonical evolution/form parity has not been independently verified. Missing source catch rates default to 45, with a separate legendary factor.
 
-This retains the source's action-game interpretation of moves, statuses and buffs rather than implementing the entire mainline ruleset. Abilities, breeding and IV/EV systems are not added; PP remains represented by move cooldowns. Compact biome maps are an added feature, not a claim to recreate a seamless reference world. Combat HP uses the source's 10× multiplier to suit real-time action. See `docs/PROGRESSION.md` for formulas.
+This retains the source's action-game interpretation of moves, statuses and buffs rather than implementing the entire mainline ruleset. Abilities, breeding and IV/EV systems are not added; PP remains represented by move cooldowns. The 34-location Hoenn journey is a Gamma-inspired adaptation with authored later chapters; exact Gamma geometry and dialogue were not recovered. Compact biome maps remain separately available. Combat HP uses the source's 10× multiplier to suit real-time action. See `docs/PROGRESSION.md` for formulas.
 
 TypeScript, static export, engine tests, provenance tests, asset checks and browser checks are recorded in `docs/VERIFICATION.md`. Physical Android installation, airplane-mode first launch, system-picker lifecycle, cutout behavior and sustained device FPS remain unverified without a connected device. Full campaign difficulty still requires a real playthrough.
 

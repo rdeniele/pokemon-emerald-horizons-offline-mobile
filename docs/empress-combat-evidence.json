@@ -1,0 +1,56 @@
+{
+  "evidenceId": "ev_79359df899c44ddecce6ead2b96ffd9762c642cda08e560ce05f4db3aea654bc",
+  "subject": {
+    "name": "app.asar",
+    "digest": {
+      "sha256": "5e71a4b11c35b01512772445e981ab5fe5299dc3f315cbb50530fc0a7ba97e91"
+    },
+    "local_path": "C:\\Users\\ronde\\Downloads\\Empress-Pokemon-2D-win\\resources\\app.asar",
+    "format": "asar",
+    "architecture": null
+  },
+  "sourceSelection": {
+    "requested_paths": [
+      "client/controls.mjs",
+      "server/engine.cjs",
+      "client/combat.mjs"
+    ],
+    "unselected_files": 553
+  },
+  "statistics": {
+    "relevant_files": 556,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 91781,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 3,
+    "visited_ast_nodes": 25767,
+    "findings": 28,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "limitations": [
+    "Caller-selected source analysis leaves 553 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+  ],
+  "sourceFiles": [
+    {
+      "name": "client-controls.mjs",
+      "sha256": "421efebf71ef6d3f8361fb5996aa5dab93c76573fc26e8cd305cb1e9e3188115"
+    },
+    {
+      "name": "server-engine.cjs",
+      "sha256": "0b402106f961c3ff9388ba83cdd3fded8bc8909fd5f84fb8961747cc9e1fca30"
+    },
+    {
+      "name": "client-combat.mjs",
+      "sha256": "a854a29015745d2827dcaa98d192e474b0404cd2a289372e5ae18260b66a9373"
+    }
+  ],
+  "completeEvidenceLocal": "build/reference/empress-rea.json",
+  "runtimeObserved": false
+}
