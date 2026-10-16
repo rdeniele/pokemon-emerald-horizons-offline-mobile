@@ -1,0 +1,6 @@
+{
+	"token": "b61bbcbd2fa9364141e904f469ffe34e",
+	"api_host": "https://api-eu.mixpanel.com",
+	"flush_secs": 30,
+	"max_batch": 50
+}

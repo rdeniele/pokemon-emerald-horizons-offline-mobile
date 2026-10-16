@@ -30,9 +30,7 @@
   },
   "include": [
     "next-env.d.ts",
-    "src/app/**/*.tsx",
-    "src/offline/**/*.ts",
-    "tests/original/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],

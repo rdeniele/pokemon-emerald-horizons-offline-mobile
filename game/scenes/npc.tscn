@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dsdi8q0n3bx5t" path="res://scripts/npc.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://37wud1jgewf1" path="res://assets/sprites/npc_girl.png" id="2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n"]
+radius = 0.35
+height = 1.4
+
+[node name="NPC" type="CharacterBody3D" unique_id=507605463]
+script = ExtResource("1")
+sprite_sheet = ExtResource("2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2006378714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_n")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1603122073]
+offset = Vector2(0, 16)
+pixel_size = 0.05
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2")
+hframes = 3
+vframes = 4

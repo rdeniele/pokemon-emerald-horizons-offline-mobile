@@ -8,3 +8,10 @@ build/
 out/
 next-env.d.ts
 *.tsbuildinfo
+tools/
+backups/
+game/.godot/
+reference/prototype/original/
+reference/prototype/*-export.log
+reference/prototype/rea-help.txt
+reference/prototype/pe-schema.json

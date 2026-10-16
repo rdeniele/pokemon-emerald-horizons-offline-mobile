@@ -1,0 +1,251 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cqrhwq541w4b0" path="res://scripts/world/zone.gd" id="1"]
+[ext_resource type="Script" uid="uid://dsrisntadms64" path="res://scripts/world/world_builder.gd" id="2"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="3"]
+[ext_resource type="Script" uid="uid://clw8juc1sypgx" path="res://scripts/tall_grass.gd" id="4"]
+[ext_resource type="Script" uid="uid://b3thag1pwxb7w" path="res://scripts/spawn_zone.gd" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://cnqf781ybynr0" path="res://assets/sprites/npc_kid.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bc254ht080h63" path="res://assets/sprites/npc_camper.png" id="8"]
+[ext_resource type="Script" uid="uid://cfra8s1cw4euk" path="res://scripts/world/sign_post.gd" id="9"]
+[ext_resource type="Script" uid="uid://duiuago7coixe" path="res://scripts/world/item_pickup.gd" id="10"]
+[ext_resource type="Script" uid="uid://cq5o0taun2ekv" path="res://scripts/world/static_mon.gd" id="11"]
+
+[node name="Zone_route_1" type="Node3D" unique_id=992125430]
+script = ExtResource("1")
+zone_id = "route_1"
+display_name = "ROUTE 1"
+
+[node name="World" type="Node3D" parent="." unique_id=484879838]
+script = ExtResource("2")
+map_file = "res://data/maps/route_1.json"
+
+[node name="Doors" type="Node3D" parent="." unique_id=343593713]
+
+[node name="r1_south" type="Marker3D" parent="Doors" unique_id=1111936723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+script = ExtResource("3")
+
+[node name="r1_hill_foot" type="Marker3D" parent="Doors" unique_id=1054811708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.8, -78)
+script = ExtResource("3")
+
+[node name="r1_band1" type="Marker3D" parent="Doors" unique_id=304583874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.9, -48)
+script = ExtResource("3")
+
+[node name="r1_road" type="Marker3D" parent="Doors" unique_id=1739333112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -38)
+script = ExtResource("3")
+
+[node name="r1_hill" type="Marker3D" parent="Doors" unique_id=15784749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 4.5, -74)
+script = ExtResource("3")
+
+[node name="r1_hilltop" type="Marker3D" parent="Doors" unique_id=209732156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 6, -88)
+script = ExtResource("3")
+
+[node name="TallGrass" type="Node3D" parent="." unique_id=1575686580]
+
+[node name="Grass1" type="Area3D" parent="TallGrass" unique_id=742136032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -27)
+script = ExtResource("4")
+size = Vector2(12, 7)
+
+[node name="Grass2" type="Area3D" parent="TallGrass" unique_id=1133079145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -33)
+script = ExtResource("4")
+size = Vector2(12, 9)
+
+[node name="Grass3" type="Area3D" parent="TallGrass" unique_id=1724693170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.9, -56)
+script = ExtResource("4")
+size = Vector2(14, 9)
+
+[node name="Grass4" type="Area3D" parent="TallGrass" unique_id=160537873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1.8, -77)
+script = ExtResource("4")
+size = Vector2(12, 10)
+
+[node name="Grass5" type="Area3D" parent="TallGrass" unique_id=1203021698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2.7, -96)
+script = ExtResource("4")
+size = Vector2(12, 8)
+
+[node name="Grass6" type="Area3D" parent="TallGrass" unique_id=418108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 2.7, -96)
+script = ExtResource("4")
+size = Vector2(10, 8)
+
+[node name="Grass7" type="Area3D" parent="TallGrass" unique_id=974980499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -39.9)
+script = ExtResource("4")
+size = Vector2(4.4, 3)
+
+[node name="SpawnZones" type="Node3D" parent="." unique_id=672468018]
+
+[node name="R1SpawnSouth" type="Node3D" parent="SpawnZones" unique_id=1090400195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -36)
+script = ExtResource("5")
+radius = 5.0
+max_alive = 4
+
+[node name="R1SpawnSouthWest" type="Node3D" parent="SpawnZones" unique_id=1685120269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -33)
+script = ExtResource("5")
+radius = 5.0
+
+[node name="R1SpawnSouthEast" type="Node3D" parent="SpawnZones" unique_id=1412770995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -30)
+script = ExtResource("5")
+radius = 5.0
+
+[node name="R1SpawnWest" type="Node3D" parent="SpawnZones" unique_id=2147101615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.9, -66)
+script = ExtResource("5")
+radius = 6.0
+max_alive = 4
+
+[node name="R1SpawnEast" type="Node3D" parent="SpawnZones" unique_id=1814986605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3.2, -52)
+script = ExtResource("5")
+radius = 5.0
+
+[node name="R1SpawnBand2East" type="Node3D" parent="SpawnZones" unique_id=803430158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 1.8, -76)
+script = ExtResource("5")
+radius = 5.0
+
+[node name="R1SpawnBand3West" type="Node3D" parent="SpawnZones" unique_id=597885522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2.7, -98)
+script = ExtResource("5")
+radius = 4.5
+
+[node name="R1SpawnNorth" type="Node3D" parent="SpawnZones" unique_id=2144646977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.7, -95)
+script = ExtResource("5")
+radius = 5.0
+max_alive = 4
+
+[node name="R1GroveWest" type="Node3D" parent="SpawnZones" unique_id=687519531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0.9, -48)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/route_1_grove.json"
+radius = 3.5
+max_alive = 2
+
+[node name="R1GroveEast" type="Node3D" parent="SpawnZones" unique_id=2094855813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0.9, -64)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/route_1_grove.json"
+radius = 3.5
+max_alive = 2
+
+[node name="NPCs" type="Node3D" parent="." unique_id=1971724105]
+
+[node name="NPC_Kid" parent="NPCs" unique_id=389825274 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.9, -60)
+npc_name = "Youngster Tom"
+sprite_sheet = ExtResource("7")
+lines = PackedStringArray("I saw a Rattata in the grass! It charged straight at me!", "See those ledges along the road?", "It\'s a bit scary, but you can jump\nfrom them.", "You can get back to PALLET TOWN\nquicker that way.", "Tip: if a battle goes badly, press Esc to run away.")
+wander_radius = 1.5
+
+[node name="NPC_Camper" parent="NPCs" unique_id=691064553 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.8, -72)
+npc_name = "Camper Ray"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("Something big rustled up the hill west of here.", "It had a long tail and a nasty set of teeth. I\'m not going back for my sandwich!")
+start_facing = 1
+
+[node name="Signs" type="Node3D" parent="." unique_id=1433028580]
+
+[node name="Route1Sign" type="Node3D" parent="Signs" unique_id=36453001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -21)
+script = ExtResource("9")
+lines = PackedStringArray("ROUTE 1", "PALLET TOWN - VIRIDIAN CITY")
+model = "hgss/route_1/sign_route"
+model_scale = 0.8
+
+[node name="ViridianSign" type="Node3D" parent="Signs" unique_id=1898268488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.7, -99)
+script = ExtResource("9")
+lines = PackedStringArray("VIRIDIAN CITY ahead.")
+model = "hgss/route_1/sign_route"
+model_scale = 0.8
+
+[node name="RestSign" type="Node3D" parent="Signs" unique_id=587051278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 1.8, -71.5)
+script = ExtResource("9")
+lines = PackedStringArray("ROUTE 1 REST STOP", "Rest here before the climb north.")
+model = "hgss/route_1/sign_route"
+model_scale = 0.8
+
+[node name="Items" type="Node3D" parent="." unique_id=1059937826]
+
+[node name="Item_r1_potion_grass" type="Node3D" parent="Items" unique_id=1282885898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -29)
+script = ExtResource("10")
+uid = "r1_potion_grass"
+
+[node name="Item_r1_poke_balls" type="Node3D" parent="Items" unique_id=1323113944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -36)
+script = ExtResource("10")
+uid = "r1_poke_balls"
+item_id = "poke_ball"
+count = 3
+
+[node name="Item_r1_antidote" type="Node3D" parent="Items" unique_id=1863382693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.9, -50)
+script = ExtResource("10")
+uid = "r1_antidote"
+item_id = "antidote"
+
+[node name="Item_r1_oran_berry" type="Node3D" parent="Items" unique_id=1974605720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 3.2, -64)
+script = ExtResource("10")
+uid = "r1_oran_berry"
+item_id = "oran_berry"
+count = 2
+
+[node name="Item_r1_rare_candy" type="Node3D" parent="Items" unique_id=272213098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 6, -78)
+script = ExtResource("10")
+uid = "r1_rare_candy"
+item_id = "rare_candy"
+
+[node name="Item_r1_super_potion" type="Node3D" parent="Items" unique_id=905560625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.7, -97)
+script = ExtResource("10")
+uid = "r1_super_potion"
+item_id = "super_potion"
+
+[node name="Item_r1_hidden_pecha" type="Node3D" parent="Items" unique_id=248969882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, -22)
+script = ExtResource("10")
+uid = "r1_hidden_pecha"
+item_id = "pecha_berry"
+hidden = true
+
+[node name="Item_r1_hidden_potion" type="Node3D" parent="Items" unique_id=623278239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -43.2)
+script = ExtResource("10")
+uid = "r1_hidden_potion"
+hidden = true
+
+[node name="CutTrees" type="Node3D" parent="." unique_id=808507152]
+
+[node name="Statics" type="Node3D" parent="." unique_id=2090272119]
+
+[node name="Static_r1_raticate" type="Node3D" parent="Statics" unique_id=1954065908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, -84)
+script = ExtResource("11")
+uid = "r1_raticate"
+species = "Raticate"
+level = 11
+hidden = true
+
+[node name="FlagWalls" type="Node3D" parent="." unique_id=878899547]
+
+[node name="Triggers" type="Node3D" parent="." unique_id=750220107]

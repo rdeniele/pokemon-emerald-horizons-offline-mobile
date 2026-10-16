@@ -1,52 +1,19 @@
-@import "tailwindcss";
-
-:root {
-  --fan-notice-height: 0px;
-  --app-height: 100dvh;
-  --background: #0b1220;
-  --foreground: #e8eef8;
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #101b20; color: #fff6dd; font-family: system-ui, sans-serif; }
+button { font: inherit; cursor: pointer; touch-action: manipulation; }
+button:focus-visible { outline: 3px solid #f5d47c; outline-offset: 4px; }
+::selection { background: #f5d47c; color: #101b20; }
+.game-shell { position: fixed; inset: 0; height: 100dvh; }
+iframe { display: block; border: 0; width: 100%; height: 100%; }
+.fullscreen { position: absolute; bottom: max(8px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; min-width: 44px; min-height: 44px; justify-content: center; padding: 7px 11px; border: 1px solid #fff6dd70; border-radius: 7px; color: #fff6dd; background: #101b20e6; font-size: 12px; }
+.fullscreen:hover { background: #27413c; }
+.notice { position: absolute; top: 55px; right: 12px; max-width: 320px; padding: 12px; border: 1px solid #f5d47c; background: #101b20; color: #fff6dd; border-radius: 8px; }
+.rotate-prompt { display: none; }
+@media (orientation: portrait) {
+  .rotate-prompt { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; text-align: center; background: #101b20; }
+  .rotate-prompt svg { color: #f5d47c; margin-bottom: 24px; }
+  .rotate-prompt h1 { font-size: 28px; margin: 0 0 10px; }
+  .rotate-prompt p { margin: 0 0 28px; color: #d8dbc9; }
+  .rotate-prompt button { border: 1px solid #f5d47c; border-radius: 8px; padding: 12px 20px; background: #f5d47c; color: #101b20; font-weight: 650; }
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, "Cascadia Mono", Menlo, monospace;
-}
-
-body {
-  height: 100dvh;
-  overflow: hidden;
-  box-sizing: border-box;
-  padding-bottom: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-}
-
-.fan-game-notice {
-  position: fixed;
-  inset: auto 0 0;
-  z-index: 100;
-  height: var(--fan-notice-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px 10px;
-  background: #e4e9cf;
-  color: #486352;
-  text-align: center;
-  font: 11px/15px Verdana, Arial, sans-serif;
-  border-top: 1px solid #afc0a6;
-}
-
-@media (max-width: 640px) {
-  :root { --fan-notice-height: 0px; }
-}
-
-canvas {
-  image-rendering: pixelated;
-  touch-action: none;
-}
-/* Original menus may shrink on phones; desktop source layout remains capped. */
-.stage-app{width:100%;min-width:0}
+@media (max-height: 450px) { .fullscreen span { display: none; } }

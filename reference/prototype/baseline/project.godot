@@ -1,0 +1,115 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Pokémon Prototype Demo"
+config/description="A private, non-commercial Pokémon FireRed/LeafGreen demo prototype."
+config/version="0.1.0-demo"
+run/main_scene="res://scenes/front/boot.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://icon.svg"
+
+[autoload]
+
+BeckettRuntime="*uid://do68dqybesb7r"
+Settings="*res://scripts/settings.gd"
+Game="*res://scripts/game.gd"
+Transitions="*res://scripts/transitions.gd"
+Battle="*res://scripts/battle.gd"
+Encounters="*res://scripts/encounters.gd"
+Dialogue="*res://scripts/dialogue.gd"
+Progression="*res://scripts/progression.gd"
+Moves="*res://scripts/moves.gd"
+Vfx="*res://scripts/vfx.gd"
+Audio="*res://scripts/audio.gd"
+Story="*res://scripts/story/story.gd"
+Clock="*res://scripts/clock.gd"
+Debug="*res://scripts/debug.gd"
+Touch="*res://scripts/ui/touch_controls.gd"
+Analytics="*res://scripts/analytics.gd"
+WaterReflections="*res://scripts/world/water_reflections.gd"
+Net="*res://scripts/net/net.gd"
+
+[beckett]
+
+effort_schema=2
+dock_revealed=true
+auto_reload_scenes=true
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_overrides]
+
+text_editor/behavior/indent/type=0
+text_editor/behavior/indent/size=4
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/beckett/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method.mobile="forward_plus"
+textures/vram_compression/import_etc2_astc=true
+lights_and_shadows/directional_shadow/size=2048
+camera/depth_of_field/depth_of_field_bokeh_shape=2
+anti_aliasing/quality/msaa_3d=2
+
+[shader_globals]
+
+wind_dir={
+"type": "vec2",
+"value": Vector2(1, 0)
+}
+wind_strength={
+"type": "float",
+"value": 1.0
+}
+wind_gust={
+"type": "float",
+"value": 0.0
+}
+wind_time={
+"type": "float",
+"value": 0.0
+}
+main_cam_pos={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+weather_map={
+"type": "sampler2D",
+"value": "res://assets/textures/weather_empty.png"
+}
+weather_origin={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
+weather_px={
+"type": "float",
+"value": 2.0
+}
+weather_time={
+"type": "float",
+"value": 0.0
+}

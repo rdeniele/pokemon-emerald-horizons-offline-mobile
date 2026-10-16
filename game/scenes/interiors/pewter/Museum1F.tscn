@@ -1,0 +1,632 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://m7wldfr8fec3" path="res://scripts/room.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://53aud63kbbr3" path="res://assets/textures/interior/floor_wood.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cljtape4sbnaj" path="res://assets/textures/interior/wallpaper_cream.png" id="3"]
+[ext_resource type="Script" uid="uid://bb4cnwqjekehv" path="res://scripts/prop.gd" id="4"]
+[ext_resource type="Script" uid="uid://d1l5p7hown3so" path="res://scripts/interiors/prop_model.gd" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://8vy80ugtrobf" path="res://assets/sprites/npc_woman.png" id="7"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="9"]
+
+[node name="Museum1F" type="Node3D" unique_id=225171699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
+metadata/music = "music/indoors"
+
+[node name="Room" type="Node3D" parent="." unique_id=1810612125]
+script = ExtResource("1")
+size = Vector2(36.25, 13.75)
+wall_height = 4.25
+floor_texture = ExtResource("2")
+wall_texture = ExtResource("3")
+exit_x = 0.625
+exit_width = 2.0
+wainscot_height = 1.125
+wainscot_color = Color(0.62, 0.6, 0.56, 1)
+
+[node name="Props" type="Node3D" parent="." unique_id=24685642]
+
+[node name="Pillar0" type="Node3D" parent="Props" unique_id=110968753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.875, 0, -6.438)
+script = ExtResource("4")
+size = Vector3(0.875, 4.25, 0.75)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="Pillar1" type="Node3D" parent="Props" unique_id=1640225970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.625, 0, -6.438)
+script = ExtResource("4")
+size = Vector3(0.875, 4.25, 0.75)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="Pillar2" type="Node3D" parent="Props" unique_id=26290652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.125, 0, -6.438)
+script = ExtResource("4")
+size = Vector3(0.875, 4.25, 0.75)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="Pillar3" type="Node3D" parent="Props" unique_id=1431719544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.875, 0, -6.438)
+script = ExtResource("4")
+size = Vector3(0.875, 4.25, 0.75)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="Pillar4" type="Node3D" parent="Props" unique_id=1045100795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.625, 0, -6.438)
+script = ExtResource("4")
+size = Vector3(0.875, 4.25, 0.75)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="Window0" type="Node3D" parent="Props" unique_id=879406196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 1.938, -6.5)
+script = ExtResource("4")
+size = Vector3(1.875, 1.625, 0.15)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="Window1" type="Node3D" parent="Props" unique_id=1687293851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.875, 1.938, -6.5)
+script = ExtResource("4")
+size = Vector3(1.875, 1.625, 0.15)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="Window2" type="Node3D" parent="Props" unique_id=1444733082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.938, -6.5)
+script = ExtResource("4")
+size = Vector3(1.875, 1.625, 0.15)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="Window3" type="Node3D" parent="Props" unique_id=111837265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.75, 1.938, -6.5)
+script = ExtResource("4")
+size = Vector3(1.875, 1.625, 0.15)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="PictureFrame" type="Node3D" parent="Props" unique_id=1729847914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.375, 2.375, -6.812)
+script = ExtResource("4")
+size = Vector3(1.375, 1.062, 0.062)
+color = Color(0.45, 0.3, 0.18, 1)
+collide = false
+
+[node name="Picture" type="Node3D" parent="Props" unique_id=1900323841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.375, 2.375, -6.775)
+script = ExtResource("4")
+size = Vector3(1.188, 0.875, 0.05)
+color = Color(0.6, 0.75, 0.9, 1)
+collide = false
+
+[node name="AerodactylPlinth" type="Node3D" parent="Props" unique_id=1200474485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 0, -2.5)
+script = ExtResource("4")
+size = Vector3(5.75, 0.688, 2.875)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="AerodactylTop" type="Node3D" parent="Props" unique_id=1578984367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 2.312, -2.5)
+script = ExtResource("4")
+size = Vector3(5.75, 0.15, 2.875)
+color = Color(0.52, 0.5, 0.47, 1)
+collide = false
+
+[node name="AerodactylPost-1-1" type="Node3D" parent="Props" unique_id=1879445498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.65, 1.5, -3.837)
+script = ExtResource("4")
+size = Vector3(0.125, 1.625, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="AerodactylPost-11" type="Node3D" parent="Props" unique_id=899531809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.65, 1.5, -1.163)
+script = ExtResource("4")
+size = Vector3(0.125, 1.625, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="AerodactylPost1-1" type="Node3D" parent="Props" unique_id=636518644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1, 1.5, -3.837)
+script = ExtResource("4")
+size = Vector3(0.125, 1.625, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="AerodactylPost11" type="Node3D" parent="Props" unique_id=473237553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1, 1.5, -1.163)
+script = ExtResource("4")
+size = Vector3(0.125, 1.625, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="AerodactylLabel" type="Node3D" parent="Props" unique_id=1702996628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 0.4, -1.038)
+script = ExtResource("4")
+size = Vector3(1.25, 0.375, 0.05)
+color = Color(0.96, 0.96, 0.92, 1)
+collide = false
+
+[node name="AerodactylSpine" type="Node3D" parent="Props" unique_id=6358505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 1.062, -2.5)
+script = ExtResource("4")
+size = Vector3(4, 0.15, 0.175)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="AerodactylRib0" type="Node3D" parent="Props" unique_id=804760339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.375, 1.062, -2.5)
+script = ExtResource("4")
+size = Vector3(0.1, 0.625, 1.125)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="AerodactylRib1" type="Node3D" parent="Props" unique_id=793855294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.625, 1.062, -2.5)
+script = ExtResource("4")
+size = Vector3(0.1, 0.625, 1.125)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="AerodactylRib2" type="Node3D" parent="Props" unique_id=165560750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 1.062, -2.5)
+script = ExtResource("4")
+size = Vector3(0.1, 0.625, 1.125)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="AerodactylRib3" type="Node3D" parent="Props" unique_id=1426225107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.125, 1.062, -2.5)
+script = ExtResource("4")
+size = Vector3(0.1, 0.625, 1.125)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="AerodactylRib4" type="Node3D" parent="Props" unique_id=653901623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.375, 1.062, -2.5)
+script = ExtResource("4")
+size = Vector3(0.1, 0.625, 1.125)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="AerodactylSkull" type="Node3D" parent="Props" unique_id=956055515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.688, 1.062, -2.5)
+script = ExtResource("4")
+size = Vector3(0.688, 0.425, 0.5)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="AerodactylWingL" type="Node3D" parent="Props" unique_id=1684316702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.125, 1.062, -3.5)
+script = ExtResource("4")
+size = Vector3(3, 0.1, 0.625)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="AerodactylWingR" type="Node3D" parent="Props" unique_id=308599643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.125, 1.062, -1.5)
+script = ExtResource("4")
+size = Vector3(3, 0.1, 0.625)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="KabutopsPlinth" type="Node3D" parent="Props" unique_id=1478969637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 0, 1.25)
+script = ExtResource("4")
+size = Vector3(5.75, 0.688, 2.875)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="KabutopsTop" type="Node3D" parent="Props" unique_id=757267029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 2.312, 1.25)
+script = ExtResource("4")
+size = Vector3(5.75, 0.15, 2.875)
+color = Color(0.52, 0.5, 0.47, 1)
+collide = false
+
+[node name="KabutopsPost-1-1" type="Node3D" parent="Props" unique_id=901663812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.65, 1.5, -0.087)
+script = ExtResource("4")
+size = Vector3(0.125, 1.625, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="KabutopsPost-11" type="Node3D" parent="Props" unique_id=1749335791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.65, 1.5, 2.587)
+script = ExtResource("4")
+size = Vector3(0.125, 1.625, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="KabutopsPost1-1" type="Node3D" parent="Props" unique_id=646186724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1, 1.5, -0.087)
+script = ExtResource("4")
+size = Vector3(0.125, 1.625, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="KabutopsPost11" type="Node3D" parent="Props" unique_id=1197544373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1, 1.5, 2.587)
+script = ExtResource("4")
+size = Vector3(0.125, 1.625, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="KabutopsLabel" type="Node3D" parent="Props" unique_id=183561304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 0.4, 2.712)
+script = ExtResource("4")
+size = Vector3(1.25, 0.375, 0.05)
+color = Color(0.96, 0.96, 0.92, 1)
+collide = false
+
+[node name="KabutopsSpine" type="Node3D" parent="Props" unique_id=1559720848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.875, 1.062, 1.25)
+script = ExtResource("4")
+size = Vector3(3.5, 0.15, 0.175)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="KabutopsRib0" type="Node3D" parent="Props" unique_id=555858336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.125, 1.062, 1.25)
+script = ExtResource("4")
+size = Vector3(0.1, 0.562, 1)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="KabutopsRib1" type="Node3D" parent="Props" unique_id=529301069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.375, 1.062, 1.25)
+script = ExtResource("4")
+size = Vector3(0.1, 0.562, 1)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="KabutopsRib2" type="Node3D" parent="Props" unique_id=1608716865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.625, 1.062, 1.25)
+script = ExtResource("4")
+size = Vector3(0.1, 0.562, 1)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="KabutopsRib3" type="Node3D" parent="Props" unique_id=2048733047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.875, 1.062, 1.25)
+script = ExtResource("4")
+size = Vector3(0.1, 0.562, 1)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="KabutopsHead" type="Node3D" parent="Props" unique_id=1864477928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.875, 1.062, 1.25)
+script = ExtResource("4")
+size = Vector3(0.75, 0.5, 0.625)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="KabutopsScytheL" type="Node3D" parent="Props" unique_id=1111439821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.188, 0.625)
+script = ExtResource("4")
+size = Vector3(0.875, 0.125, 0.875)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="KabutopsScytheR" type="Node3D" parent="Props" unique_id=1736641085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.188, 1.875)
+script = ExtResource("4")
+size = Vector3(0.875, 0.125, 0.875)
+color = Color(0.87, 0.85, 0.77, 1)
+collide = false
+
+[node name="YellowPath" type="Node3D" parent="Props" unique_id=716673859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.375, 0.019, -0.625)
+script = ExtResource("4")
+size = Vector3(3.75, 0.037, 10)
+color = Color(0.93, 0.82, 0.32, 1)
+collide = false
+
+[node name="StairsUp" type="Node3D" parent="Props" unique_id=1988722138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.375, 0, 3.625)
+script = ExtResource("5")
+model = "furniture/stairs"
+rot = 180.0
+model_scale = 1.562
+collide = false
+
+[node name="StairsBlock" type="Node3D" parent="Props" unique_id=1545562272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.375, 0, 4.25)
+visible = false
+script = ExtResource("4")
+size = Vector3(3, 2, 1.75)
+color = Color(0, 0, 0, 1)
+
+[node name="StairsSign" type="Node3D" parent="Props" unique_id=1119054243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.375, 1.938, 2.438)
+script = ExtResource("4")
+size = Vector3(1.75, 0.625, 0.075)
+color = Color(0.94, 0.92, 0.86, 1)
+collide = false
+
+[node name="CabinetWPlinth" type="Node3D" parent="Props" unique_id=282716846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.625, 0, -5)
+script = ExtResource("4")
+size = Vector3(5.25, 0.875, 1.625)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="CabinetWTop" type="Node3D" parent="Props" unique_id=214383475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.625, 2.438, -5)
+script = ExtResource("4")
+size = Vector3(5.25, 0.15, 1.625)
+color = Color(0.52, 0.5, 0.47, 1)
+collide = false
+
+[node name="CabinetWPost-1-1" type="Node3D" parent="Props" unique_id=1965403731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.656, -5.713)
+script = ExtResource("4")
+size = Vector3(0.125, 1.562, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="CabinetWPost-11" type="Node3D" parent="Props" unique_id=1215001600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.656, -4.287)
+script = ExtResource("4")
+size = Vector3(0.125, 1.562, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="CabinetWPost1-1" type="Node3D" parent="Props" unique_id=1793507682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.15, 1.656, -5.713)
+script = ExtResource("4")
+size = Vector3(0.125, 1.562, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="CabinetWPost11" type="Node3D" parent="Props" unique_id=1242865686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.15, 1.656, -4.287)
+script = ExtResource("4")
+size = Vector3(0.125, 1.562, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="CabinetWShelf0" type="Node3D" parent="Props" unique_id=2075413673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.625, 1.25, -5)
+script = ExtResource("4")
+size = Vector3(5, 0.075, 1.375)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.2
+collide = false
+
+[node name="CabinetWShelf1" type="Node3D" parent="Props" unique_id=604166889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.625, 1.875, -5)
+script = ExtResource("4")
+size = Vector3(5, 0.075, 1.375)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.2
+collide = false
+
+[node name="CabinetWArtefact1" type="Node3D" parent="Props" unique_id=1999183057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.125, 1.35, -5)
+script = ExtResource("4")
+size = Vector3(0.625, 0.275, 0.5)
+color = Color(0.93, 0.82, 0.32, 1)
+collide = false
+
+[node name="CabinetWArtefact2" type="Node3D" parent="Props" unique_id=923990942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.625, 1.35, -5)
+script = ExtResource("4")
+size = Vector3(0.625, 0.275, 0.5)
+color = Color(0.4, 0.68, 0.92, 1)
+collide = false
+
+[node name="CabinetWArtefact3" type="Node3D" parent="Props" unique_id=1992064905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.875, 1.975, -5)
+script = ExtResource("4")
+size = Vector3(0.625, 0.275, 0.5)
+color = Color(0.74, 0.72, 0.68, 1)
+collide = false
+
+[node name="CabinetWArtefact4" type="Node3D" parent="Props" unique_id=1000880614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 1.975, -5)
+script = ExtResource("4")
+size = Vector3(0.625, 0.275, 0.5)
+color = Color(0.93, 0.82, 0.32, 1)
+collide = false
+
+[node name="CabinetEPlinth" type="Node3D" parent="Props" unique_id=55786236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.125, 0, -5)
+script = ExtResource("4")
+size = Vector3(5.25, 0.875, 1.625)
+color = Color(0.74, 0.72, 0.68, 1)
+
+[node name="CabinetETop" type="Node3D" parent="Props" unique_id=1557044253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.125, 2.438, -5)
+script = ExtResource("4")
+size = Vector3(5.25, 0.15, 1.625)
+color = Color(0.52, 0.5, 0.47, 1)
+collide = false
+
+[node name="CabinetEPost-1-1" type="Node3D" parent="Props" unique_id=333904966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6, 1.656, -5.713)
+script = ExtResource("4")
+size = Vector3(0.125, 1.562, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="CabinetEPost-11" type="Node3D" parent="Props" unique_id=2055276608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6, 1.656, -4.287)
+script = ExtResource("4")
+size = Vector3(0.125, 1.562, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="CabinetEPost1-1" type="Node3D" parent="Props" unique_id=251150545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.65, 1.656, -5.713)
+script = ExtResource("4")
+size = Vector3(0.125, 1.562, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="CabinetEPost11" type="Node3D" parent="Props" unique_id=63104526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.65, 1.656, -4.287)
+script = ExtResource("4")
+size = Vector3(0.125, 1.562, 0.125)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.3
+collide = false
+
+[node name="CabinetEShelf0" type="Node3D" parent="Props" unique_id=66113496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.125, 1.25, -5)
+script = ExtResource("4")
+size = Vector3(5, 0.075, 1.375)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.2
+collide = false
+
+[node name="CabinetEShelf1" type="Node3D" parent="Props" unique_id=455657325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.125, 1.875, -5)
+script = ExtResource("4")
+size = Vector3(5, 0.075, 1.375)
+color = Color(0.66, 0.84, 0.95, 1)
+emission = 0.2
+collide = false
+
+[node name="CabinetEArtefact1" type="Node3D" parent="Props" unique_id=370943281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.625, 1.35, -5)
+script = ExtResource("4")
+size = Vector3(0.625, 0.275, 0.5)
+color = Color(0.93, 0.82, 0.32, 1)
+collide = false
+
+[node name="CabinetEArtefact2" type="Node3D" parent="Props" unique_id=549700064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.125, 1.35, -5)
+script = ExtResource("4")
+size = Vector3(0.625, 0.275, 0.5)
+color = Color(0.4, 0.68, 0.92, 1)
+collide = false
+
+[node name="CabinetEArtefact3" type="Node3D" parent="Props" unique_id=1017015192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.375, 1.975, -5)
+script = ExtResource("4")
+size = Vector3(0.625, 0.275, 0.5)
+color = Color(0.74, 0.72, 0.68, 1)
+collide = false
+
+[node name="CabinetEArtefact4" type="Node3D" parent="Props" unique_id=977962874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.25, 1.975, -5)
+script = ExtResource("4")
+size = Vector3(0.625, 0.275, 0.5)
+color = Color(0.93, 0.82, 0.32, 1)
+collide = false
+
+[node name="DeskBody" type="Node3D" parent="Props" unique_id=635251080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.875, 0, 0.625)
+script = ExtResource("4")
+size = Vector3(2.5, 1.25, 4.25)
+color = Color(0.52, 0.5, 0.47, 1)
+
+[node name="DeskTop" type="Node3D" parent="Props" unique_id=2013078542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.875, 1.25, 0.625)
+script = ExtResource("4")
+size = Vector3(2.75, 0.1, 4.5)
+color = Color(0.74, 0.72, 0.68, 1)
+collide = false
+
+[node name="Register" type="Node3D" parent="Props" unique_id=653403614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.75, 1.35, -1.125)
+script = ExtResource("4")
+size = Vector3(0.625, 0.375, 0.5)
+color = Color(0.92, 0.92, 0.9, 1)
+collide = false
+
+[node name="DeskSign" type="Node3D" parent="Props" unique_id=1748970982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.75, 1.5, 1.875)
+script = ExtResource("4")
+size = Vector3(0.875, 0.562, 0.075)
+color = Color(0.96, 0.94, 0.88, 1)
+collide = false
+
+[node name="PlantNW" type="Node3D" parent="Props" unique_id=1516381303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.375, 0, -5.5)
+script = ExtResource("5")
+model = "furniture/pottedPlant"
+model_scale = 3.25
+
+[node name="PlantSW" type="Node3D" parent="Props" unique_id=1842269254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.375, 0, 4.5)
+script = ExtResource("5")
+model = "furniture/pottedPlant"
+model_scale = 3.25
+
+[node name="PlantS1" type="Node3D" parent="Props" unique_id=423340034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.875, 0, 4.625)
+script = ExtResource("5")
+model = "furniture/pottedPlant"
+model_scale = 3.0
+
+[node name="PlantS2" type="Node3D" parent="Props" unique_id=845598549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.125, 0, 4.625)
+script = ExtResource("5")
+model = "furniture/pottedPlant"
+model_scale = 3.0
+
+[node name="PlantS3" type="Node3D" parent="Props" unique_id=2016235760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.75, 0, 4.625)
+script = ExtResource("5")
+model = "furniture/pottedPlant"
+model_scale = 3.0
+
+[node name="Lamp0" type="OmniLight3D" parent="." unique_id=941480292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.25, 3.75, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.9
+omni_range = 17.5
+
+[node name="Lamp1" type="OmniLight3D" parent="." unique_id=870905778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.9
+omni_range = 17.5
+
+[node name="Lamp2" type="OmniLight3D" parent="." unique_id=673508154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.25, 3.75, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.9
+omni_range = 17.5
+
+[node name="Lamp3" type="OmniLight3D" parent="." unique_id=1024444538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, 3.5, 0.625)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.7
+omni_range = 11.25
+
+[node name="NPC_Receptionist" parent="." unique_id=1220915219 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.25, 0, 0)
+npc_name = "Receptionist"
+sprite_sheet = ExtResource("7")
+lines = PackedStringArray("We have two fossils of rare,\nprehistoric POKéMON on exhibit.")
+start_facing = 1
+
+[node name="pw_museum_in" type="Marker3D" parent="." unique_id=1241305527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625, 0, 5)
+script = ExtResource("8")
+facing = 3
+
+[node name="ExitDoor" parent="." unique_id=634511846 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625, 0, 7.375)
+target_scene = "res://scenes/world/overworld.tscn"
+target_spawn = "pw_museum_door"

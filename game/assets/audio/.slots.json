@@ -1,0 +1,442 @@
+{
+  "cries/blastoise": {
+    "file": "blastoise.wav",
+    "sha1": "3eee1ce9f55f5c0ffca18c7d3a1dcf176670e3ba"
+  },
+  "cries/bulbasaur": {
+    "file": "bulbasaur.wav",
+    "sha1": "808cb7a7b22cee66de86ad02ac104721f58c543e"
+  },
+  "cries/charizard": {
+    "file": "charizard.wav",
+    "sha1": "09b915b20f298988b4a7330578fd2bae51fac444"
+  },
+  "cries/charmander": {
+    "file": "charmander.wav",
+    "sha1": "f2eb34357d168fd9c88a2f679b53c3d6bc43db85"
+  },
+  "cries/charmeleon": {
+    "file": "charmeleon.wav",
+    "sha1": "dc149fcb9100be86a557b7e446e1bd955fb26d91"
+  },
+  "cries/ivysaur": {
+    "file": "ivysaur.wav",
+    "sha1": "0971d82ad5175d937a0dc921ee62af5867935a71"
+  },
+  "cries/pidgeot": {
+    "file": "pidgeot.wav",
+    "sha1": "89b0bec8e4b505ded5e197b0f74873c794df33ce"
+  },
+  "cries/pidgeotto": {
+    "file": "pidgeotto.wav",
+    "sha1": "f7d27c12f599a29059a8564445a8a19b456360e1"
+  },
+  "cries/pidgey": {
+    "file": "pidgey.wav",
+    "sha1": "24dda58a591c3bc069653b9918d4c93939eb8ddb"
+  },
+  "cries/raticate": {
+    "file": "raticate.wav",
+    "sha1": "3df01ad80c2677de7f5992d9fa0e941af9334989"
+  },
+  "cries/rattata": {
+    "file": "rattata.wav",
+    "sha1": "751c4b7f21b0c97220ca7fb140c3e68f6354d33f"
+  },
+  "cries/squirtle": {
+    "file": "squirtle.wav",
+    "sha1": "c35662bd233f3a4b585672448e38fc53ddf01e70"
+  },
+  "cries/venusaur": {
+    "file": "venusaur.wav",
+    "sha1": "1a261ea1eee2d64e9a59e4fee89c98a563aeced6"
+  },
+  "cries/wartortle": {
+    "file": "wartortle.wav",
+    "sha1": "1a1b0ec8adb54d1e856ff297efcad2e3ce8e87f9"
+  },
+  "music/battle_wild": {
+    "file": "battle_wild.ogg",
+    "sha1": "96f48361b7c89ace60ebce675239d15fec99008e"
+  },
+  "music/caught": {
+    "file": "caught.ogg",
+    "sha1": "35da668dd95265a6650051ec9aa0c3b17ab3f05e"
+  },
+  "music/defeat": {
+    "file": "defeat.ogg",
+    "sha1": "9cd7fa7141130ceec19792e61b6148094ce316fb"
+  },
+  "music/encounter": {
+    "file": "encounter.ogg",
+    "sha1": "38a550bdf3c9ea61942eb28f9ebbeebaaa3ded7a"
+  },
+  "music/evolution": {
+    "file": "evolution.ogg",
+    "sha1": "62aadd06032ff14d8f0025b892aa73a15f7e9dd3"
+  },
+  "music/evolution_done": {
+    "file": "evolution_done.ogg",
+    "sha1": "01f4d531c11c63a5f6e67b5666ab77bfbb686b30"
+  },
+  "music/heal": {
+    "file": "heal.ogg",
+    "sha1": "5d4d81c110fbdc12862a18d4766d6d78b0a6988b"
+  },
+  "music/indoors": {
+    "file": "indoors.ogg",
+    "sha1": "ce024a19598d7e4b6a30ad637952a95067b571c6"
+  },
+  "music/item_get": {
+    "file": "item_get.ogg",
+    "sha1": "38f53cba145655dbff04e13e0106614e883770b3"
+  },
+  "music/lab": {
+    "file": "lab.ogg",
+    "sha1": "62aadd06032ff14d8f0025b892aa73a15f7e9dd3"
+  },
+  "music/level_up": {
+    "file": "level_up.ogg",
+    "sha1": "61e8f931be2ddf68fa77a21fe2702ac5329e2407"
+  },
+  "music/pallet_town": {
+    "file": "pallet_town.ogg",
+    "sha1": "bcae250d19c51db000a742daa2e1e16f12018686"
+  },
+  "music/route_1": {
+    "file": "route_1.ogg",
+    "sha1": "ba76ef7d02ea46e0a8f4070bc34d9080c2edc9ce"
+  },
+  "music/victory": {
+    "file": "victory.ogg",
+    "sha1": "3d8fc7dd66554e8ca5c643d1f8f804c35e134afe"
+  },
+  "sfx/ambience/amb_indoors": {
+    "file": "amb_indoors.wav",
+    "sha1": "663255233095bfe5fe39dda7fc5630e7b467b715"
+  },
+  "sfx/ambience/amb_route": {
+    "file": "amb_route.wav",
+    "sha1": "25c7e040e0e482a55157c0ba8847f84a18d93c8a"
+  },
+  "sfx/ambience/amb_snow": {
+    "file": "amb_snow.wav",
+    "sha1": "925f0045468f0b632ee1aa711521cd40f1916478"
+  },
+  "sfx/ambience/amb_town": {
+    "file": "amb_town.wav",
+    "sha1": "9ca35fa75acd5cd45661d64fe0c04392765001fd"
+  },
+  "sfx/battle/bars_slide": {
+    "file": "bars_slide.ogg",
+    "sha1": "023d30da6d7665dafa13b6d79f31ab63b2542bbc"
+  },
+  "sfx/battle/berry": {
+    "file": "berry.wav",
+    "sha1": "50a90a9eefa1b10597a1c7df8c0e7ae7afe742f5"
+  },
+  "sfx/battle/cure": {
+    "file": "cure.wav",
+    "sha1": "d5b1944335aeabc5198fa735e6d3b0d6d8ea9fde"
+  },
+  "sfx/battle/exp_fill": {
+    "file": "exp_fill.wav",
+    "sha1": "0d71be42037c37ed88493e23be83cf48cf7f6dd6"
+  },
+  "sfx/battle/fight": {
+    "file": "fight.ogg",
+    "sha1": "a029b4209574c526c9bb9888979fdf3ee89de719"
+  },
+  "sfx/battle/flee": {
+    "file": "flee.wav",
+    "sha1": "460cb43c11bb0023d848aba0c7271265d6595f41"
+  },
+  "sfx/battle/hit_crit": {
+    "file": "hit_crit.ogg",
+    "sha1": "08a073fd8c00c82870f15108cc020590bf942677"
+  },
+  "sfx/battle/hit_normal": {
+    "file": "hit_normal.ogg",
+    "sha1": "8ebb49e58245497a4fd50ca856c35e62be53d82b"
+  },
+  "sfx/battle/hit_super": {
+    "file": "hit_super.ogg",
+    "sha1": "f8c949a60a44d0862fb50ba4e8a0a77aabb389d0"
+  },
+  "sfx/battle/hit_weak": {
+    "file": "hit_weak.ogg",
+    "sha1": "020c492fbe661bf40b63b6b0ed0b43c9a8b7c6ec"
+  },
+  "sfx/battle/hp_fill": {
+    "file": "hp_fill.wav",
+    "sha1": "45f40c6b9e76ac1de69b29de1ec16e211e796a09"
+  },
+  "sfx/battle/miss": {
+    "file": "miss.wav",
+    "sha1": "5d1744e745725d2a9114cc9e864a187a06b3ef16"
+  },
+  "sfx/battle/no_effect": {
+    "file": "no_effect.ogg",
+    "sha1": "fbc7c169016afcce643f21729076a5fbef93bad2"
+  },
+  "sfx/battle/potion": {
+    "file": "potion.wav",
+    "sha1": "351356c3a5ba95523e07b932009c0f416602a45d"
+  },
+  "sfx/battle/recoil": {
+    "file": "recoil.ogg",
+    "sha1": "e169c71d67d4441b3ec968fcb06f0a212e637b7b"
+  },
+  "sfx/battle/stagger": {
+    "file": "stagger.ogg",
+    "sha1": "c61b666955b1efc248c1acb8d6f8614d575c2ad6"
+  },
+  "sfx/battle/stat_down": {
+    "file": "stat_down.wav",
+    "sha1": "3781e2f8fe0c785ae7ecf4f9869a6b126be24586"
+  },
+  "sfx/battle/stat_up": {
+    "file": "stat_up.wav",
+    "sha1": "b448656cb8a6509e5d5a0cc1d038184c3ee1d75a"
+  },
+  "sfx/capture/absorb": {
+    "file": "absorb.ogg",
+    "sha1": "5403de565b7c566e5d83ec4cb88d300309b324d8"
+  },
+  "sfx/capture/ball_hit": {
+    "file": "ball_hit.ogg",
+    "sha1": "df8c1eddb77ba062cb63fb988108735ea33de382"
+  },
+  "sfx/capture/ball_land": {
+    "file": "ball_land.ogg",
+    "sha1": "198e7b73922d7f2790c26fb33c579be74e6fb08e"
+  },
+  "sfx/capture/breakout": {
+    "file": "breakout.ogg",
+    "sha1": "c56e309f9c163544d4da13affc65abff7354b4b1"
+  },
+  "sfx/capture/caught_click": {
+    "file": "caught_click.ogg",
+    "sha1": "2ac8b7f588ad2d037383a82a6fdb95ada7dedc1d"
+  },
+  "sfx/capture/wobble": {
+    "file": "wobble.wav",
+    "sha1": "46837606164cb1046b892ee9981c39c192f550c6"
+  },
+  "sfx/evolution/evo_cancel": {
+    "file": "evo_cancel.ogg",
+    "sha1": "7896e37141257cf041355079d1714c6312f1a79a"
+  },
+  "sfx/evolution/evo_charge": {
+    "file": "evo_charge.ogg",
+    "sha1": "7ffc1e6044686986194b4a623c3db3cba215c708"
+  },
+  "sfx/evolution/evo_flash": {
+    "file": "evo_flash.wav",
+    "sha1": "86a4449db1227c8aac6f2b473cb992ad8fe64c9b"
+  },
+  "sfx/moves/beam_charge": {
+    "file": "beam_charge.ogg",
+    "sha1": "300f965d90e2e9bc5a696af1755102832b4da029"
+  },
+  "sfx/moves/beam_fire": {
+    "file": "beam_fire.ogg",
+    "sha1": "f39f1d22316efdfab3e058c98869447b9d297ac6"
+  },
+  "sfx/moves/bite": {
+    "file": "bite.ogg",
+    "sha1": "2fbd2cd9407bfb58dd3f385d2ecb48024debf281"
+  },
+  "sfx/moves/dash": {
+    "file": "dash.wav",
+    "sha1": "9be06d92cfc35f4a5b7adebc29cc4022ddb77268"
+  },
+  "sfx/moves/launch_fire": {
+    "file": "launch_fire.wav",
+    "sha1": "c06ed6febf363c077bdc2eae67bb5430c66a096a"
+  },
+  "sfx/moves/launch_leaf": {
+    "file": "launch_leaf.wav",
+    "sha1": "a574df95f55e3d3dd8551b2f88328ce314e9e38a"
+  },
+  "sfx/moves/launch_star": {
+    "file": "launch_star.wav",
+    "sha1": "6ff91c82b4e5ce994dcbb5a8d01c0b2fcd1fbd8c"
+  },
+  "sfx/moves/launch_water": {
+    "file": "launch_water.wav",
+    "sha1": "69e922fe533568d1cb132fbe945fc84009b60367"
+  },
+  "sfx/moves/launch_wind": {
+    "file": "launch_wind.wav",
+    "sha1": "77b2b1a1beb6da121aed5edd44de109df8e64a5d"
+  },
+  "sfx/moves/multi_slash": {
+    "file": "multi_slash.ogg",
+    "sha1": "236a5f24debe1e4306a0a8b425c9139bd3682fea"
+  },
+  "sfx/moves/powder": {
+    "file": "powder.wav",
+    "sha1": "12447d5241d476baf9290f7c8133e4d08323c1f3"
+  },
+  "sfx/moves/rumble": {
+    "file": "rumble.wav",
+    "sha1": "dd0e50f4eb3c46d73660281308923e2123703291"
+  },
+  "sfx/moves/shimmer": {
+    "file": "shimmer.wav",
+    "sha1": "d758d220732ec763c62c3f2cb4d4c2e4e564f4d5"
+  },
+  "sfx/moves/slash": {
+    "file": "slash.ogg",
+    "sha1": "a33feb2af2f4577e54f4dd194840170d5a1d51c2"
+  },
+  "sfx/moves/stream_fire": {
+    "file": "stream_fire.wav",
+    "sha1": "edd0d06410c0f22a2108051987c3b3c35a4b3296"
+  },
+  "sfx/moves/thunder": {
+    "file": "thunder.wav",
+    "sha1": "27b39ae5a9dcee302b2b06060ded0f3c222f0791"
+  },
+  "sfx/pokemon/ball_open": {
+    "file": "ball_open.wav",
+    "sha1": "f8cbf602818be3c668b03d5a7b8a0907fd0c2e68"
+  },
+  "sfx/pokemon/ball_throw": {
+    "file": "ball_throw.ogg",
+    "sha1": "7cd727ce920a3796eb4742b42db3504bb9cd91d2"
+  },
+  "sfx/pokemon/faint": {
+    "file": "faint.ogg",
+    "sha1": "7bf4ca9c41227371c280c21f3203868f602d42ec"
+  },
+  "sfx/pokemon/recall": {
+    "file": "recall.wav",
+    "sha1": "65e7b3e0f532bd4e930db2cee8c256c4c137edf4"
+  },
+  "sfx/status/burn": {
+    "file": "burn.wav",
+    "sha1": "e55e8bf5ad98618eb51ac66da034f3226f9d5dc5"
+  },
+  "sfx/status/flinch": {
+    "file": "flinch.wav",
+    "sha1": "955cf5910a175b9c05582df72056ad27838a0f92"
+  },
+  "sfx/status/leech": {
+    "file": "leech.wav",
+    "sha1": "af135bb0809cb4b52ed9c2ebb3627eaa9d0ad535"
+  },
+  "sfx/status/paralysis": {
+    "file": "paralysis.ogg",
+    "sha1": "9e2b6988bd9c950e128d3dcec3ebc938166d4b07"
+  },
+  "sfx/status/poison": {
+    "file": "poison.wav",
+    "sha1": "33b1a83818c71ee9ba1f8be9107df00932f516f2"
+  },
+  "sfx/status/sleep": {
+    "file": "sleep.wav",
+    "sha1": "810ed9b76ee7e50c7dc2c01fa24e1e12665c4eb1"
+  },
+  "sfx/status/tick_burn": {
+    "file": "tick_burn.wav",
+    "sha1": "f0537e7f747cf01c688179d26ae59de7a930826e"
+  },
+  "sfx/status/tick_leech": {
+    "file": "tick_leech.wav",
+    "sha1": "78b86c1d8ae5b75689fa18cb81cc231214926a91"
+  },
+  "sfx/status/tick_poison": {
+    "file": "tick_poison.wav",
+    "sha1": "b0c0216aedd3f5172b7c3c1d59b9d994ebf41535"
+  },
+  "sfx/ui/cancel": {
+    "file": "cancel.ogg",
+    "sha1": "2089986dce98337d28b017c871a56da012355ea8"
+  },
+  "sfx/ui/confirm": {
+    "file": "confirm.ogg",
+    "sha1": "778f174aeb2eb8c2e456bfdb9ab5b50bb766a911"
+  },
+  "sfx/ui/cursor": {
+    "file": "cursor.ogg",
+    "sha1": "bf7df59bc763af6857738979a9890ed34fe472c3"
+  },
+  "sfx/ui/error": {
+    "file": "error.ogg",
+    "sha1": "82b764e3bcaf2c0ae3b4d17e469f662e94aa9818"
+  },
+  "sfx/ui/low_hp": {
+    "file": "low_hp.ogg",
+    "sha1": "4d3c5683f8fa99177c1f7633836a0e0399cbfc16"
+  },
+  "sfx/ui/menu_close": {
+    "file": "menu_close.ogg",
+    "sha1": "827837c5a4ace73efa05d2b02613dec3653d85f6"
+  },
+  "sfx/ui/menu_open": {
+    "file": "menu_open.ogg",
+    "sha1": "3a6618eb9346042410a3081404d4696593539b5e"
+  },
+  "sfx/ui/mode_attack": {
+    "file": "mode_attack.ogg",
+    "sha1": "584d684eec81f44da0566bb0b5cf259f80ed053f"
+  },
+  "sfx/ui/mode_defend": {
+    "file": "mode_defend.ogg",
+    "sha1": "41adf7c856be8d44e3462c3cccd01ab3dc1b796e"
+  },
+  "sfx/ui/mode_support": {
+    "file": "mode_support.ogg",
+    "sha1": "6b9ecab3a381b4bc7981763fcf17a9f61b01dc61"
+  },
+  "sfx/ui/quick_slot": {
+    "file": "quick_slot.ogg",
+    "sha1": "0fab2e6230d8829ce3f71a36b8cd06955b19f246"
+  },
+  "sfx/ui/swap_control": {
+    "file": "swap_control.ogg",
+    "sha1": "ff27b5ddf92d6c9131dc80e39542bfd316f3ac25"
+  },
+  "sfx/ui/text_blip": {
+    "file": "text_blip.ogg",
+    "sha1": "4a02fc8e21a4db678c3f082f4ea8c4904bcde72c"
+  },
+  "sfx/weather/rain": {
+    "file": "rain.wav",
+    "sha1": "b98c81d4110e7311d1615d56e0ab127fb269a521"
+  },
+  "sfx/world/door": {
+    "file": "door.ogg",
+    "sha1": "ad436e0e5255fad32720d964ba7430a4be47f90a"
+  },
+  "sfx/world/grass_rustle": {
+    "file": "grass_rustle.ogg",
+    "sha1": "2a5515acedf713032285c9fdf0bb03170090d476"
+  },
+  "sfx/world/item_pickup": {
+    "file": "item_pickup.ogg",
+    "sha1": "57cba4460509758eb942e857e3b1a8b377e08c45"
+  },
+  "sfx/world/ledge_hop": {
+    "file": "ledge_hop.ogg",
+    "sha1": "f6bdcaa1f3381de0083951f18619e203f441b612"
+  },
+  "sfx/world/ledge_land": {
+    "file": "ledge_land.ogg",
+    "sha1": "7575b6e5cc59a73cca00ed3e8c2d7b440afd1898"
+  },
+  "sfx/world/step_grass": {
+    "file": "step_grass.ogg",
+    "sha1": "c087600e0cf894a5b7b1bd02e39124e67db38b2a"
+  },
+  "sfx/world/step_path": {
+    "file": "step_path.ogg",
+    "sha1": "c144d8610790e6992aa67af44179533165997da2"
+  },
+  "sfx/world/step_wood": {
+    "file": "step_wood.ogg",
+    "sha1": "29e445f211300a0ba806c1067b68fed5ef8fddf5"
+  }
+}

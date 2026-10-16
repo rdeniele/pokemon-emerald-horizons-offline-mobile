@@ -1,18 +1,16 @@
-# Emerald Horizons Offline Mobile
+# Pokémon Prototype Mobile
 <!-- impeccable:product-schema 1 -->
 ## Platform
-web
+android
 ## Stack
-The original Next.js/React game is copied and adapted, exported statically and bundled in a native Android WebView. Original deterministic engine and renderer are retained. No runtime server or account.
+Recovered Godot 4.7.1 game, native Android export, Compatibility renderer and WebGL2 preview. Next.js 16.3.8 is only the preview shell.
 ## Users
-The owner playing the existing Pokémon game offline on Android, primarily landscape.
+The owner playing the supplied Pokémon Prototype Demo offline on a landscape Android phone.
 ## Product purpose
-Preserve the original game's gameplay and presentation while adding the user's requested offline story, roaming, progression, captures, shops and mobile controls. A new substitute game is not the intended product.
+Copy the actual supplied game's presentation and gameplay into a mobile build. Preserve its world, sprites, combat, story and menus. Do not substitute the previous Emerald game or invent content beyond the demo.
 ## Evidence
-Original source and assets copied from D:/work/acqron/pokemon-emerald-horizons; copy manifest in docs/source-copy-manifest.json. Reference navigation was inspected during the earlier pass; the source itself is the authority for gameplay and presentation.
-
-The owner also supplied C:/Users/ronde/Downloads/Pokemon - Emerald Version (USA, Europe) as the supplemental reference for missing resources, story, pathing and gameplay. Its ROM identity matches the checksum expected by the existing local pokeemerald checkout. Use that checkout's readable maps/scripts for missing Hoenn details; retain Empress-style combat and Gen 1–9 coverage. See docs/EMERALD-REFERENCE.md.
+C:/Users/ronde/Downloads/Archive/PokemonPrototypeDemo.pck and PokemonPrototypeDemo.exe. REA inspection and GDRE Godot recovery records are in reference/prototype. All 146 scripts decompiled and 2,724 imported resources converted successfully.
 ## Capabilities
-Original action combat, animation sheets, effects, arenas, sounds, source menu artwork and regional routes. Added a 34-location connected Hoenn campaign, NPC objectives, story trainer battles, local save/export/import, left movement and manual aiming controls, right skill/Dodge buttons, 1,025 base species, level evolution, random biome encounters, multiple captures, EXP/gold/upgrades, eight Hoenn gyms, League and postgame. Source repository must remain untouched.
+Original Pallet–Pewter demo, landscape native APK, touch movement/Talk/Run and battle actions, party/bag/local saves, original keyboard/gamepad controls. Telemetry disabled. No Android Internet permission.
 ## Known limitations
-Original regional/Mega/Gigantamax roster entries are retained and obtainable in postgame; canonical transformation mechanics are not added. Mainline mechanics are limited by the source action engine. Device acceptance and campaign balancing remain pending; see docs/VERIFICATION.md.
+Source demo ends around Brock. Online Cable Club requires network services and is unavailable offline. Old WebView saves are incompatible. Full playthrough and physical-device acceptance remain outstanding.

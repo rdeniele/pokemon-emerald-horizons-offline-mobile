@@ -1,0 +1,195 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cqrhwq541w4b0" path="res://scripts/world/zone.gd" id="1"]
+[ext_resource type="Script" uid="uid://dsrisntadms64" path="res://scripts/world/world_builder.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="3"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="4"]
+[ext_resource type="Script" uid="uid://b3thag1pwxb7w" path="res://scripts/spawn_zone.gd" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://cerermfgsa1w8" path="res://assets/sprites/npc_scientist.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://ccsf6wddmu3t3" path="res://assets/sprites/npc_oldman.png" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/creature.tscn" id="9"]
+[ext_resource type="Script" uid="uid://cfra8s1cw4euk" path="res://scripts/world/sign_post.gd" id="10"]
+[ext_resource type="Script" uid="uid://duiuago7coixe" path="res://scripts/world/item_pickup.gd" id="11"]
+[ext_resource type="Script" uid="uid://c2emrqjhvd58b" path="res://scripts/world/story_trigger.gd" id="12"]
+
+[node name="Zone_pallet_town" type="Node3D" unique_id=609622570]
+script = ExtResource("1")
+zone_id = "pallet_town"
+display_name = "PALLET TOWN"
+
+[node name="World" type="Node3D" parent="." unique_id=1059649318]
+script = ExtResource("2")
+map_file = "res://data/maps/pallet_town.json"
+
+[node name="Doors" type="Node3D" parent="." unique_id=1456000036]
+
+[node name="Door_player_house" parent="Doors" unique_id=880722655 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3, 0, -5.85)
+target_scene = "res://scenes/interiors/pallet_town_interiors.tscn"
+target_spawn = "player_house"
+
+[node name="player_house_door" type="Marker3D" parent="Doors" unique_id=1914525401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3, 0, -4.4)
+script = ExtResource("4")
+
+[node name="Door_rival_house" parent="Doors" unique_id=1273537141 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7, 0, -5.85)
+target_scene = "res://scenes/interiors/pallet_town_interiors.tscn"
+target_spawn = "rival_house"
+
+[node name="rival_house_door" type="Marker3D" parent="Doors" unique_id=231442412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7, 0, -4.4)
+script = ExtResource("4")
+
+[node name="Door_lab" parent="Doors" unique_id=1275685728 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 3.626)
+target_scene = "res://scenes/interiors/pallet_town_interiors.tscn"
+target_spawn = "lab"
+
+[node name="lab_door" type="Marker3D" parent="Doors" unique_id=778142716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 5.076)
+script = ExtResource("4")
+
+[node name="start" type="Marker3D" parent="Doors" unique_id=289058233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3, 0, -4.2)
+script = ExtResource("4")
+
+[node name="TallGrass" type="Node3D" parent="." unique_id=1711510058]
+
+[node name="SpawnZones" type="Node3D" parent="." unique_id=1800839846]
+
+[node name="TownSpawnPondSwim" type="Node3D" parent="SpawnZones" unique_id=480914869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0, 14)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pond_swim.json"
+radius = 4.0
+max_alive = 2
+mode = "swim"
+
+[node name="TownSpawnWestMeadow" type="Node3D" parent="SpawnZones" unique_id=1116775657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 0.5)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pallet_grove.json"
+radius = 3.0
+max_alive = 2
+
+[node name="TownSpawnMeadowNorth" type="Node3D" parent="SpawnZones" unique_id=512839576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, -10)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pallet_grove.json"
+radius = 2.5
+max_alive = 1
+
+[node name="TownSpawnOrchard" type="Node3D" parent="SpawnZones" unique_id=382706371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, -11.5)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pallet_grove.json"
+radius = 3.0
+max_alive = 2
+
+[node name="TownSpawnNorthLawn" type="Node3D" parent="SpawnZones" unique_id=1010700465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -15)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pallet_town.json"
+radius = 3.0
+max_alive = 1
+
+[node name="TownSpawnShore" type="Node3D" parent="SpawnZones" unique_id=1253312381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 14)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pallet_town.json"
+radius = 3.5
+max_alive = 2
+
+[node name="OakField" type="Node3D" parent="SpawnZones" unique_id=1002601533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 10)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pallet_town.json"
+radius = 4.0
+max_alive = 2
+
+[node name="NPCs" type="Node3D" parent="." unique_id=679580323]
+
+[node name="NPC_Girl" parent="NPCs" unique_id=1672050917 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 5.5)
+npc_name = "Lily"
+lines = PackedStringArray("The Pokémon in town are so calm. They never pick a fight!", "Route 1 is just north of here. The tall grass there is full of surprises.")
+wander_radius = 3.0
+
+[node name="NPC_Scientist" parent="NPCs" unique_id=2074189610 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 4.4)
+npc_name = "Lab Aide"
+sprite_sheet = ExtResource("7")
+lines = PackedStringArray("Ah, welcome! I study how Pokémon behave in the wild.", "Have you noticed? Some Pokémon run away from you, others charge right at you!", "Press 1 to 6 to let your partners out of their balls. They love walking with you.")
+
+[node name="NPC_OldMan" parent="NPCs" unique_id=954433491 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -16.5)
+npc_name = "Old Man"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("Heading out to Route 1, are you?", "The longer you wander in tall grass, the more likely something jumps out at you.", "Stick to the path if you\'d rather avoid trouble. Ho ho!")
+
+[node name="LilysPidgey" parent="NPCs" unique_id=807962628 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6.5)
+species = "Pidgey"
+level = 8
+move_speed = 1.2
+trainer_owned = true
+owner_name = "Lily"
+talk_lines = PackedStringArray("Pidgey: Pidge! Pidge!", "Lily\'s Pidgey hops around her feet. It doesn\'t want to fight - it just wants attention.")
+
+[node name="Signs" type="Node3D" parent="." unique_id=538512960]
+
+[node name="PalletSign" type="Node3D" parent="Signs" unique_id=1967424785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0, 1)
+script = ExtResource("10")
+lines = PackedStringArray("PALLET TOWN", "Shades of your journey await!")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="LabSign" type="Node3D" parent="Signs" unique_id=975403364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 4.9)
+script = ExtResource("10")
+lines = PackedStringArray("OAK POKéMON RESEARCH LAB")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="PlayerMailbox" type="Node3D" parent="Signs" unique_id=1576342515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 0, -5.2)
+script = ExtResource("10")
+title = "Mailbox"
+lines = PackedStringArray("{PLAYER}\'s house")
+model = "hgss/common/mailbox"
+model_scale = 0.8
+
+[node name="RivalMailbox" type="Node3D" parent="Signs" unique_id=724300929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 0, -5.2)
+script = ExtResource("10")
+title = "Mailbox"
+lines = PackedStringArray("{RIVAL}\'s house")
+model = "hgss/common/mailbox"
+model_scale = 0.8
+
+[node name="Items" type="Node3D" parent="." unique_id=1441702755]
+
+[node name="Item_pt_hidden_potion" type="Node3D" parent="Items" unique_id=80590110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 11.2)
+script = ExtResource("11")
+uid = "pt_hidden_potion"
+hidden = true
+
+[node name="CutTrees" type="Node3D" parent="." unique_id=1831956665]
+
+[node name="Statics" type="Node3D" parent="." unique_id=152192369]
+
+[node name="FlagWalls" type="Node3D" parent="." unique_id=2045472511]
+
+[node name="Triggers" type="Node3D" parent="." unique_id=1783647233]
+
+[node name="OakStopTrigger" type="Area3D" parent="Triggers" unique_id=320116915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.5)
+script = ExtResource("12")
+event = "oak_stop"
+requires_flags = PackedStringArray()
+blocks_flags = PackedStringArray("starter_chosen", "oak_stopped")
+size = Vector3(44, 3, 1.5)

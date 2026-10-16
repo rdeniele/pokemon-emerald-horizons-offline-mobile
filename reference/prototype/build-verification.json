@@ -1,0 +1,18 @@
+{
+  "internetPermission": false,
+  "apk": "D:\\work\\acqron\\pokemon-emerald-horizons-offline-mobile\\build\\apk\\pokemon-prototype-mobile.apk",
+  "signatureVerified": true,
+  "gameplayProbe": "MOBILE_SMOKE: 0 failures",
+  "landscape": true,
+  "physicalDeviceTested": false,
+  "badging": [
+    "package: name='com.emerald.offline' versionCode='5' versionName='0.1.0-mobile' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+    "sdkVersion:'24'",
+    "targetSdkVersion:'36'",
+    "native-code: 'arm64-v8a' 'armeabi-v7a'"
+  ],
+  "existingSigningIdentity": true,
+  "bytes": 84943515,
+  "sha256": "075180BB8AD38601AC89F72FA05EB4DAEEB6A2F9CA40BD7581AEE20777791EE5",
+  "entryCount": 5737
+}

@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T23:55:17.036Z",
+  "title": "Design System: Pokémon Prototype Mobile",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.0105 106.59)",
+          "oklch(26.43% 0.0105 106.59)",
+          "oklch(37.86% 0.0105 106.59)",
+          "oklch(49.29% 0.0105 106.59)",
+          "oklch(60.71% 0.0105 106.59)",
+          "oklch(72.14% 0.0105 106.59)",
+          "oklch(83.57% 0.0105 106.59)",
+          "oklch(95.00% 0.0105 106.59)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0310 263.96)",
+          "oklch(26.43% 0.0310 263.96)",
+          "oklch(37.86% 0.0310 263.96)",
+          "oklch(49.29% 0.0310 263.96)",
+          "oklch(60.71% 0.0310 263.96)",
+          "oklch(72.14% 0.0310 263.96)",
+          "oklch(83.57% 0.0310 263.96)",
+          "oklch(95.00% 0.0310 263.96)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "rim": {
+        "role": "neutral",
+        "displayName": "rim",
+        "tonalRamp": [
+          "oklch(15.00% 0.0119 264.50)",
+          "oklch(26.43% 0.0119 264.50)",
+          "oklch(37.86% 0.0119 264.50)",
+          "oklch(49.29% 0.0119 264.50)",
+          "oklch(60.71% 0.0119 264.50)",
+          "oklch(72.14% 0.0119 264.50)",
+          "oklch(83.57% 0.0119 264.50)",
+          "oklch(95.00% 0.0119 264.50)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "red": {
+        "role": "secondary",
+        "displayName": "red",
+        "tonalRamp": [
+          "oklch(15.00% 0.1979 27.05)",
+          "oklch(26.43% 0.1979 27.05)",
+          "oklch(37.86% 0.1979 27.05)",
+          "oklch(49.29% 0.1979 27.05)",
+          "oklch(60.71% 0.1979 27.05)",
+          "oklch(72.14% 0.1979 27.05)",
+          "oklch(83.57% 0.1979 27.05)",
+          "oklch(95.00% 0.1979 27.05)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "green",
+        "tonalRamp": [
+          "oklch(15.00% 0.1395 149.27)",
+          "oklch(26.43% 0.1395 149.27)",
+          "oklch(37.86% 0.1395 149.27)",
+          "oklch(49.29% 0.1395 149.27)",
+          "oklch(60.71% 0.1395 149.27)",
+          "oklch(72.14% 0.1395 149.27)",
+          "oklch(83.57% 0.1395 149.27)",
+          "oklch(95.00% 0.1395 149.27)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "blue": {
+        "role": "secondary",
+        "displayName": "blue",
+        "tonalRamp": [
+          "oklch(15.00% 0.1491 259.17)",
+          "oklch(26.43% 0.1491 259.17)",
+          "oklch(37.86% 0.1491 259.17)",
+          "oklch(49.29% 0.1491 259.17)",
+          "oklch(60.71% 0.1491 259.17)",
+          "oklch(72.14% 0.1491 259.17)",
+          "oklch(83.57% 0.1491 259.17)",
+          "oklch(95.00% 0.1491 259.17)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "amber",
+        "tonalRamp": [
+          "oklch(15.00% 0.1487 83.01)",
+          "oklch(26.43% 0.1487 83.01)",
+          "oklch(37.86% 0.1487 83.01)",
+          "oklch(49.29% 0.1487 83.01)",
+          "oklch(60.71% 0.1487 83.01)",
+          "oklch(72.14% 0.1487 83.01)",
+          "oklch(83.57% 0.1487 83.01)",
+          "oklch(95.00% 0.1487 83.01)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "pp-blue": {
+        "role": "secondary",
+        "displayName": "pp blue",
+        "tonalRamp": [
+          "oklch(15.00% 0.1291 250.21)",
+          "oklch(26.43% 0.1291 250.21)",
+          "oklch(37.86% 0.1291 250.21)",
+          "oklch(49.29% 0.1291 250.21)",
+          "oklch(60.71% 0.1291 250.21)",
+          "oklch(72.14% 0.1291 250.21)",
+          "oklch(83.57% 0.1291 250.21)",
+          "oklch(95.00% 0.1291 250.21)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "dim": {
+        "role": "neutral",
+        "displayName": "dim",
+        "tonalRamp": [
+          "oklch(15.00% 0.0150 248.05)",
+          "oklch(26.43% 0.0150 248.05)",
+          "oklch(37.86% 0.0150 248.05)",
+          "oklch(49.29% 0.0150 248.05)",
+          "oklch(60.71% 0.0150 248.05)",
+          "oklch(72.14% 0.0150 248.05)",
+          "oklch(83.57% 0.0150 248.05)",
+          "oklch(95.00% 0.0150 248.05)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "shadow-text": {
+        "role": "neutral",
+        "displayName": "shadow text",
+        "tonalRamp": [
+          "oklch(15.00% 0.0109 106.63)",
+          "oklch(26.43% 0.0109 106.63)",
+          "oklch(37.86% 0.0109 106.63)",
+          "oklch(49.29% 0.0109 106.63)",
+          "oklch(60.71% 0.0109 106.63)",
+          "oklch(72.14% 0.0109 106.63)",
+          "oklch(83.57% 0.0109 106.63)",
+          "oklch(95.00% 0.0109 106.63)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      },
+      "red-soft": {
+        "role": "secondary",
+        "displayName": "red soft",
+        "tonalRamp": [
+          "oklch(15.00% 0.0266 23.36)",
+          "oklch(26.43% 0.0266 23.36)",
+          "oklch(37.86% 0.0266 23.36)",
+          "oklch(49.29% 0.0266 23.36)",
+          "oklch(60.71% 0.0266 23.36)",
+          "oklch(72.14% 0.0266 23.36)",
+          "oklch(83.57% 0.0266 23.36)",
+          "oklch(95.00% 0.0266 23.36)"
+        ],
+        "tonalRampPurpose": "Synthesized inspection swatches only; not a palette used by the Godot game."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Title",
+        "purpose": "Original kit title lettering."
+      },
+      "headline": {
+        "displayName": "Header",
+        "purpose": "Original kit menu headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Original kit body text."
+      },
+      "label": {
+        "displayName": "Small",
+        "purpose": "Original kit small text; battle touch labels have a separate screen-size floor."
+      }
+    },
+    "shadows": [
+      {
+        "name": "window",
+        "value": "Godot StyleBoxFlat: black alpha 0.3, shadow_size 8, offset (0,3)",
+        "purpose": "Paper-window separation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "window-pop-in",
+        "value": "0.12s; scale 0.96 to 1; alpha 0 to 1; TRANS_BACK/EASE_OUT",
+        "purpose": "UiKit.pop_in."
+      },
+      {
+        "name": "window-pop-out",
+        "value": "0.1s; scale 1 to 0.96; alpha 1 to 0",
+        "purpose": "UiKit.pop_out."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "minimum-design-canvas",
+        "value": "1280×720; canvas_items / expand"
+      },
+      {
+        "name": "verified-engine-viewport",
+        "value": "844×390; Menu ≥48px, small actions ≥52px, moves ≥60px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Paper window",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "Translation of UiKit.window_box at design scale.",
+      "html": "<section class=\"ds-window\">Party</section>",
+      "css": ".ds-window{background:#f8f8f0;color:#283040;border:3px solid #283040;border-radius:10px;padding:18px;box-shadow:0 3px 8px rgba(0,0,0,.3);font:600 24px Nunito,sans-serif}"
+    },
+    {
+      "name": "Glass overlay",
+      "kind": "card",
+      "refersTo": "glass",
+      "description": "Translation of the kit default translucent overlay.",
+      "html": "<section class=\"ds-glass\">PALLET TOWN</section>",
+      "css": ".ds-glass{background:rgba(40,48,64,.35);border:1px solid rgba(248,248,240,.08);border-radius:14px;color:#f8f8f0;font:600 28px \"Pixelify Sans\",sans-serif}"
+    },
+    {
+      "name": "Talk action",
+      "kind": "button",
+      "description": "Unscaled 90px touch A control; pressed opacity follows ui_draw.gd. Browser hover/focus uses the existing pressed appearance for inspection.",
+      "html": "<button class=\"ds-talk\" aria-label=\"Talk\">A</button>",
+      "css": ".ds-talk{width:90px;height:90px;background:rgba(40,48,64,.4);border:3.5px solid rgba(89,217,115,.7);border-radius:50%;color:rgba(248,248,240,.85);font:600 32px \"Pixelify Sans\",sans-serif;box-shadow:0 3px 0 rgba(0,0,0,.35)}.ds-talk:hover,.ds-talk:focus-visible,.ds-talk:active{background:rgba(40,48,64,.85);border-color:rgb(89,217,115);color:#f8f8f0}"
+    },
+    {
+      "name": "Idle movement stick",
+      "kind": "custom",
+      "description": "Translation of the visible idle stick before a drag establishes its floating origin.",
+      "html": "<div class=\"ds-stick\"><span class=\"ds-knob\"></span></div>",
+      "css": ".ds-stick{width:190px;height:190px;position:relative;background:rgba(10,18,20,.35);border:2px solid rgba(255,255,255,.45);border-radius:50%}.ds-knob{position:absolute;width:76px;height:76px;left:57px;top:57px;background:rgba(255,255,255,.2);border-radius:50%}"
+    },
+    {
+      "name": "HP ring",
+      "kind": "custom",
+      "description": "Static half-full ring translated from UiKit.draw_ring; meter color is green only above half.",
+      "html": "<svg class=\"ds-ring\" width=\"80\" height=\"80\" viewBox=\"0 0 80 80\" role=\"img\" aria-label=\"HP 50 percent\"><circle cx=\"40\" cy=\"40\" r=\"32\" fill=\"none\" stroke=\"#c8ccd4\" stroke-width=\"6\"/><path d=\"M40 8 A32 32 0 0 1 40 72\" fill=\"none\" stroke=\"#e8b030\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>",
+      "css": ".ds-ring{display:block}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The supplied HD-2D Kanto game",
+    "overview": "The recovered Godot game is the visual authority: HD-2D scenery, animated pixel characters, original title, music and white/ink menus. Mobile controls extend its existing touch system.",
+    "keyCharacteristics": [
+      "Original pixel characters in a lit three-dimensional world.",
+      "Paper windows and translucent combat overlays.",
+      "Contextual touch controls around a visible landscape playfield."
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Meter Rule",
+        "body": "HP is green above half, amber above one fifth, and red otherwise; PP keeps its own blue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Bounded Touch Scale Rule",
+        "body": "Retain the source scale range of 1.0–1.8. At the verified 844×390 engine viewport, Menu reaches at least 48px, small actions 52px and moves 60px. The cap means these are not universal physical-size guarantees; phone ergonomics require device review.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "Do preserve supplied assets, world visibility, original Credits and demo boundaries.",
+      "Do retain original fonts, window construction and semantic meters.",
+      "Do verify touch dimensions in engine screen pixels and separately review physical-device ergonomics."
+    ],
+    "donts": [
+      "Don't replace this game with Emerald/Empress UI or add marketing panels around active play.",
+      "Don't treat Compatibility rendering as exact desktop lighting parity."
+    ]
+  }
+}

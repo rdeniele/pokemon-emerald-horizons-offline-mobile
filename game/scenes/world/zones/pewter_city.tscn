@@ -1,0 +1,300 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cqrhwq541w4b0" path="res://scripts/world/zone.gd" id="1"]
+[ext_resource type="Script" uid="uid://dsrisntadms64" path="res://scripts/world/world_builder.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="3"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="4"]
+[ext_resource type="Script" uid="uid://b3thag1pwxb7w" path="res://scripts/spawn_zone.gd" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://dup4crndo4a0y" path="res://assets/sprites/npc_youngster.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cnqf781ybynr0" path="res://assets/sprites/npc_kid.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cerermfgsa1w8" path="res://assets/sprites/npc_scientist.png" id="9"]
+[ext_resource type="Script" uid="uid://cfra8s1cw4euk" path="res://scripts/world/sign_post.gd" id="10"]
+[ext_resource type="Script" uid="uid://duiuago7coixe" path="res://scripts/world/item_pickup.gd" id="11"]
+[ext_resource type="Script" uid="uid://c2emrqjhvd58b" path="res://scripts/world/story_trigger.gd" id="12"]
+
+[node name="Zone_pewter_city" type="Node3D" unique_id=1472508147]
+script = ExtResource("1")
+zone_id = "pewter_city"
+display_name = "PEWTER CITY"
+
+[node name="World" type="Node3D" parent="." unique_id=1913477398]
+script = ExtResource("2")
+map_file = "res://data/maps/pewter_city.json"
+
+[node name="Doors" type="Node3D" parent="." unique_id=1404058542]
+
+[node name="Door_museum" parent="Doors" unique_id=1543316194 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.53, 0, -446.35)
+target_scene = "res://scenes/interiors/pewter_city_interiors.tscn"
+target_spawn = "pw_museum_in"
+
+[node name="pw_museum_door" type="Marker3D" parent="Doors" unique_id=1799537179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.53, 0, -444.9)
+script = ExtResource("4")
+
+[node name="Door_house2" parent="Doors" unique_id=447529977 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58, 0, -446.35)
+target_scene = "res://scenes/interiors/pewter_city_interiors.tscn"
+target_spawn = "pw_house2_in"
+
+[node name="pw_house2_door" type="Marker3D" parent="Doors" unique_id=1908737262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58, 0, -444.9)
+script = ExtResource("4")
+
+[node name="Door_gym" parent="Doors" unique_id=816176353 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.15, 0, -432.85)
+target_scene = "res://scenes/interiors/pewter_city_interiors.tscn"
+target_spawn = "pw_gym_in"
+
+[node name="pw_gym_door" type="Marker3D" parent="Doors" unique_id=35830269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.15, 0, -431.4)
+script = ExtResource("4")
+
+[node name="Door_pokemart" parent="Doors" unique_id=542366274 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 0, -432.85)
+target_scene = "res://scenes/interiors/pewter_city_interiors.tscn"
+target_spawn = "pw_mart_in"
+
+[node name="pw_mart_door" type="Marker3D" parent="Doors" unique_id=1871257704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 0, -431.4)
+script = ExtResource("4")
+
+[node name="Door_pokecenter" parent="Doors" unique_id=1011899737 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -419.35)
+target_scene = "res://scenes/interiors/pewter_city_interiors.tscn"
+target_spawn = "pw_center_in"
+
+[node name="pw_center_door" type="Marker3D" parent="Doors" unique_id=1390094271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -417.9)
+script = ExtResource("4")
+
+[node name="Door_house1" parent="Doors" unique_id=752111343 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.92, 0, -419.35)
+target_scene = "res://scenes/interiors/pewter_city_interiors.tscn"
+target_spawn = "pw_house1_in"
+
+[node name="pw_house1_door" type="Marker3D" parent="Doors" unique_id=1215908051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.92, 0, -417.9)
+script = ExtResource("4")
+
+[node name="pw_south" type="Marker3D" parent="Doors" unique_id=2012265461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -386)
+script = ExtResource("4")
+
+[node name="pw_center_front" type="Marker3D" parent="Doors" unique_id=2063664802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -415)
+script = ExtResource("4")
+
+[node name="pw_gym_front" type="Marker3D" parent="Doors" unique_id=1980376578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.15, 0, -429.5)
+script = ExtResource("4")
+
+[node name="pw_museum" type="Marker3D" parent="Doors" unique_id=367539260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.53, 0, -443)
+script = ExtResource("4")
+
+[node name="pw_mart" type="Marker3D" parent="Doors" unique_id=1035042441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 0, -429.5)
+script = ExtResource("4")
+
+[node name="pw_east" type="Marker3D" parent="Doors" unique_id=610539140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, -429)
+script = ExtResource("4")
+
+[node name="TallGrass" type="Node3D" parent="." unique_id=799470274]
+
+[node name="SpawnZones" type="Node3D" parent="." unique_id=406847753]
+
+[node name="PewterParkMuseum" type="Node3D" parent="SpawnZones" unique_id=258215987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -446)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_grove.json"
+radius = 4.0
+max_alive = 4
+
+[node name="PewterGroveWest" type="Node3D" parent="SpawnZones" unique_id=1592108951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -458)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_grove.json"
+radius = 2.5
+
+[node name="PewterGroveNorthEast" type="Node3D" parent="SpawnZones" unique_id=858498047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -446)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_grove.json"
+radius = 4.0
+max_alive = 4
+
+[node name="PewterLawnEast" type="Node3D" parent="SpawnZones" unique_id=895058619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, -433)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_city.json"
+radius = 3.0
+
+[node name="PewterGroveGarden" type="Node3D" parent="SpawnZones" unique_id=230324857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -401)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_grove.json"
+radius = 3.5
+max_alive = 4
+
+[node name="PewterLawnSouthWest" type="Node3D" parent="SpawnZones" unique_id=1782925814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -406)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_city.json"
+radius = 3.5
+max_alive = 5
+
+[node name="PewterLawnEntranceWest" type="Node3D" parent="SpawnZones" unique_id=1284424483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -389)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_city.json"
+radius = 3.5
+max_alive = 5
+
+[node name="PewterLawnEntranceEast" type="Node3D" parent="SpawnZones" unique_id=793372036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -389)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_city.json"
+radius = 3.5
+max_alive = 4
+
+[node name="PewterQuarry" type="Node3D" parent="SpawnZones" unique_id=552706596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -421)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_grove.json"
+radius = 2.5
+
+[node name="PewterLawnNorthEast" type="Node3D" parent="SpawnZones" unique_id=875052185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -452)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_city.json"
+radius = 3.0
+
+[node name="PewterLawnSouthEast" type="Node3D" parent="SpawnZones" unique_id=684997541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -404)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/pewter_city.json"
+radius = 2.5
+max_alive = 2
+
+[node name="NPCs" type="Node3D" parent="." unique_id=1364266769]
+
+[node name="NPC_Youngster" parent="NPCs" unique_id=536488173 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, -429)
+npc_name = "Youngster"
+sprite_sheet = ExtResource("7")
+lines = PackedStringArray("You can\'t go east to Route 3 without the Boulder Badge.", "Beat Leader Brock at the Pewter Gym and come back!")
+start_facing = 2
+
+[node name="NPC_GymGuide" parent="NPCs" unique_id=2040135118 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -428)
+npc_name = "Gym Guide"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("There aren\'t many serious POKéMON\nTRAINERS here.", "They\'re all like BUG CATCHERS,\nyou know, just hobbyists.", "But PEWTER GYM\'s BROCK isn\'t like\nthat, not one bit.")
+
+[node name="NPC_MuseumGoer" parent="NPCs" unique_id=1083128911 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -443)
+npc_name = "Museum Goer"
+sprite_sheet = ExtResource("9")
+lines = PackedStringArray("This is it, the MUSEUM.", "You have to pay to get in, but it\'s\nworth it. See you around!")
+
+[node name="Signs" type="Node3D" parent="." unique_id=917055555]
+
+[node name="PewterSign" type="Node3D" parent="Signs" unique_id=1798471066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -387)
+script = ExtResource("10")
+lines = PackedStringArray("PEWTER CITY", "A Stone Gray City")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="GymSign" type="Node3D" parent="Signs" unique_id=1595830710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -432)
+script = ExtResource("10")
+lines = PackedStringArray("PEWTER CITY POKéMON GYM\nLEADER: BROCK\nThe Rock-Solid POKéMON TRAINER!")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="MartSign" type="Node3D" parent="Signs" unique_id=1158842037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -431.6)
+script = ExtResource("10")
+lines = PackedStringArray("PEWTER CITY POKé MART")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="CenterSign" type="Node3D" parent="Signs" unique_id=1945137126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -418)
+script = ExtResource("10")
+lines = PackedStringArray("POKéMON CENTER")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="MuseumSign" type="Node3D" parent="Signs" unique_id=84756046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -447)
+script = ExtResource("10")
+lines = PackedStringArray("PEWTER MUSEUM OF SCIENCE")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="FossilNotice" type="Node3D" parent="Signs" unique_id=1782506684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -438)
+script = ExtResource("10")
+lines = PackedStringArray("NOTICE!", "Thieves have been stealing POKéMON\nfossils from MT. MOON.", "Please call the PEWTER POLICE if\nyou have any information.")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="TipsSign" type="Node3D" parent="Signs" unique_id=939769249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 0, -421)
+script = ExtResource("10")
+title = "Trainer Tips"
+lines = PackedStringArray("TRAINER TIPS", "All POKéMON that appear in battle, however briefly, earn EXP Points.")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="RestGreen" type="Node3D" parent="Signs" unique_id=2040448548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -402)
+script = ExtResource("10")
+lines = PackedStringArray("PEWTER CITY", "A quiet green. Trainers rest here before the road to MT. MOON.")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="Route3Sign" type="Node3D" parent="Signs" unique_id=600797587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5, 0, -431.5)
+script = ExtResource("10")
+lines = PackedStringArray("ROUTE 3", "PEWTER CITY - MT. MOON")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="Items" type="Node3D" parent="." unique_id=922400806]
+
+[node name="Item_pw_hidden_poke_ball" type="Node3D" parent="Items" unique_id=1394959100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, -442.5)
+script = ExtResource("11")
+uid = "pw_hidden_poke_ball"
+item_id = "poke_ball"
+hidden = true
+
+[node name="CutTrees" type="Node3D" parent="." unique_id=284527413]
+
+[node name="Statics" type="Node3D" parent="." unique_id=1078165125]
+
+[node name="FlagWalls" type="Node3D" parent="." unique_id=736841058]
+
+[node name="Triggers" type="Node3D" parent="." unique_id=1945731895]
+
+[node name="PewterEastBlock" type="Area3D" parent="Triggers" unique_id=926426783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, -429)
+script = ExtResource("12")
+event = "pewter_east_block"
+requires_flags = PackedStringArray()
+blocks_flags = PackedStringArray()
+size = Vector3(5, 3, 2)
+
+[node name="DemoEndTrigger" type="Area3D" parent="Triggers" unique_id=1082562692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.15, 0, -431.5)
+script = ExtResource("12")
+event = "demo_end"
+requires_flags = PackedStringArray("boulder_badge")
+blocks_flags = PackedStringArray("demo_end_seen")
+size = Vector3(3.4, 3, 2.2)

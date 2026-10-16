@@ -1,0 +1,334 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cqrhwq541w4b0" path="res://scripts/world/zone.gd" id="1"]
+[ext_resource type="Script" uid="uid://dsrisntadms64" path="res://scripts/world/world_builder.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="3"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="4"]
+[ext_resource type="Script" uid="uid://cfra8s1cw4euk" path="res://scripts/world/sign_post.gd" id="5"]
+[ext_resource type="Script" uid="uid://b3thag1pwxb7w" path="res://scripts/spawn_zone.gd" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://ccsf6wddmu3t3" path="res://assets/sprites/npc_oldman.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://iilgucjgkc36" path="res://assets/sprites/npc_little_girl.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cnqf781ybynr0" path="res://assets/sprites/npc_kid.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cerermfgsa1w8" path="res://assets/sprites/npc_scientist.png" id="11"]
+[ext_resource type="Script" uid="uid://duiuago7coixe" path="res://scripts/world/item_pickup.gd" id="12"]
+[ext_resource type="Script" uid="uid://bxvu1ieciq1ev" path="res://scripts/world/cut_tree.gd" id="13"]
+[ext_resource type="Script" uid="uid://42ink30h1xiq" path="res://scripts/world/flag_wall.gd" id="14"]
+
+[node name="Zone_viridian_city" type="Node3D" unique_id=1787576046]
+script = ExtResource("1")
+zone_id = "viridian_city"
+display_name = "VIRIDIAN CITY"
+
+[node name="World" type="Node3D" parent="." unique_id=127521253]
+script = ExtResource("2")
+map_file = "res://data/maps/viridian_city.json"
+
+[node name="Doors" type="Node3D" parent="." unique_id=1960501713]
+
+[node name="Door_pokecenter" parent="Doors" unique_id=364910164 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -133.35)
+target_scene = "res://scenes/interiors/viridian_city_interiors.tscn"
+target_spawn = "vc_center_in"
+
+[node name="vc_center_door" type="Marker3D" parent="Doors" unique_id=986180420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -131.9)
+script = ExtResource("4")
+
+[node name="Door_house_s1" type="Node3D" parent="Doors" unique_id=1469608444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -132.6)
+script = ExtResource("5")
+title = "House"
+lines = PackedStringArray("It\'s locked.")
+model = ""
+
+[node name="Door_trainer_school" parent="Doors" unique_id=1109804215 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -145.35)
+target_scene = "res://scenes/interiors/viridian_city_interiors.tscn"
+target_spawn = "vc_school_in"
+
+[node name="vc_school_door" type="Marker3D" parent="Doors" unique_id=2002875509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -143.9)
+script = ExtResource("4")
+
+[node name="Door_pokemart" parent="Doors" unique_id=1494308334 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.897, 0, -145.35)
+target_scene = "res://scenes/interiors/viridian_city_interiors.tscn"
+target_spawn = "vc_mart_in"
+
+[node name="vc_mart_door" type="Marker3D" parent="Doors" unique_id=421264427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.897, 0, -143.9)
+script = ExtResource("4")
+
+[node name="Door_house" parent="Doors" unique_id=30622105 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4, 0, -161.35)
+target_scene = "res://scenes/interiors/viridian_city_interiors.tscn"
+target_spawn = "vc_house_in"
+
+[node name="vc_house_door" type="Marker3D" parent="Doors" unique_id=278603821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4, 0, -159.9)
+script = ExtResource("4")
+
+[node name="Door_house_s3" type="Node3D" parent="Doors" unique_id=481786642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8, 0, -160.6)
+script = ExtResource("5")
+title = "House"
+lines = PackedStringArray("It\'s locked.")
+model = ""
+
+[node name="Door_gym" type="Node3D" parent="Doors" unique_id=682046811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -160.6)
+script = ExtResource("5")
+title = "Viridian Gym"
+lines = PackedStringArray("VIRIDIAN GYM\'s doors are locked…")
+model = ""
+
+[node name="vc_south" type="Marker3D" parent="Doors" unique_id=1195773600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, -109)
+script = ExtResource("4")
+
+[node name="vc_gate" type="Marker3D" parent="Doors" unique_id=437927392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -118)
+script = ExtResource("4")
+
+[node name="vc_center" type="Marker3D" parent="Doors" unique_id=1622428177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -131.6)
+script = ExtResource("4")
+
+[node name="vc_north" type="Marker3D" parent="Doors" unique_id=976574295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -188)
+script = ExtResource("4")
+
+[node name="vc_west" type="Marker3D" parent="Doors" unique_id=965354413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -128)
+script = ExtResource("4")
+
+[node name="vc_gym" type="Marker3D" parent="Doors" unique_id=1362384867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -160.4)
+script = ExtResource("4")
+
+[node name="vc_school" type="Marker3D" parent="Doors" unique_id=1876330107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -143.4)
+script = ExtResource("4")
+
+[node name="vc_pond" type="Marker3D" parent="Doors" unique_id=413456589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -124)
+script = ExtResource("4")
+
+[node name="TallGrass" type="Node3D" parent="." unique_id=1107757218]
+
+[node name="SpawnZones" type="Node3D" parent="." unique_id=1071734967]
+
+[node name="PondSwim" type="Node3D" parent="SpawnZones" unique_id=400482079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0, -118.5)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_pond.json"
+radius = 4.0
+mode = "swim"
+
+[node name="TownPark" type="Node3D" parent="SpawnZones" unique_id=1813785683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -172)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_city.json"
+radius = 4.0
+max_alive = 4
+
+[node name="Orchard" type="Node3D" parent="SpawnZones" unique_id=897482622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -169)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_grove.json"
+radius = 4.0
+max_alive = 4
+
+[node name="NorthMeadowWest" type="Node3D" parent="SpawnZones" unique_id=1528081104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -183)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_city.json"
+radius = 4.0
+max_alive = 4
+
+[node name="NorthMeadowEast" type="Node3D" parent="SpawnZones" unique_id=504050698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -184)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_city.json"
+radius = 4.0
+max_alive = 4
+
+[node name="WestMeadow" type="Node3D" parent="SpawnZones" unique_id=501775412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -150)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_city.json"
+radius = 4.0
+
+[node name="EastGreen" type="Node3D" parent="SpawnZones" unique_id=1337270738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -139)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_city.json"
+radius = 4.0
+
+[node name="SchoolField" type="Node3D" parent="SpawnZones" unique_id=744372658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -150.5)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_city.json"
+radius = 3.0
+
+[node name="PondPark" type="Node3D" parent="SpawnZones" unique_id=1603931674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -123.5)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_grove.json"
+radius = 3.0
+
+[node name="SouthGreen" type="Node3D" parent="SpawnZones" unique_id=774559280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -119)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_city.json"
+radius = 4.0
+max_alive = 4
+
+[node name="Grove" type="Node3D" parent="SpawnZones" unique_id=255378522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, -182)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/viridian_grove.json"
+radius = 4.5
+max_alive = 4
+
+[node name="NPCs" type="Node3D" parent="." unique_id=1148792656]
+
+[node name="NPC_OldManSleepy" parent="NPCs" unique_id=183082129 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -190.5)
+npc_name = "Old Man"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("I absolutely forbid you from\ngoing through here!", "This is private property!")
+start_facing = 1
+lying = true
+hidden_by_flag = "has_pokedex"
+
+[node name="NPC_Granddaughter" parent="NPCs" unique_id=22430364 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -189.5)
+npc_name = "Girl"
+sprite_sheet = ExtResource("9")
+lines = PackedStringArray("Oh, Grandpa!\nDon\'t be so mean!", "I\'m so sorry.\nHe hasn\'t had his coffee yet.")
+start_facing = 1
+hidden_by_flag = "has_pokedex"
+
+[node name="NPC_OldManAwake" parent="NPCs" unique_id=914822461 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -189)
+npc_name = "Old Man"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("Well, now, I\'ve had my coffee, and\nthat\'s what I need to get going!", "Hm?\nWhat is that red box you have?", "Ah, so you\'re working on your\nPOKéDEX.", "Then let me give you a word of\nadvice.", "Whenever you catch a POKéMON,\nthe POKéDEX automatically updates\nits data.", "…You don\'t know how to catch\na POKéMON?", "I suppose I had better show you\nthen!")
+action = 3
+start_facing = 2
+requires_flag = "has_pokedex"
+
+[node name="NPC_GranddaughterAwake" parent="NPCs" unique_id=2054725265 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -189)
+npc_name = "Girl"
+sprite_sheet = ExtResource("9")
+lines = PackedStringArray("I go shopping in PEWTER CITY\noccasionally.", "I have to take the winding trail in\nVIRIDIAN FOREST when I go.")
+start_facing = 2
+requires_flag = "has_pokedex"
+
+[node name="NPC_OldMan" parent="NPCs" unique_id=839256962 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0, -161)
+npc_name = "Old Man"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("This POKéMON GYM is always closed.", "I wonder who the LEADER is?")
+
+[node name="NPC_Girl" parent="NPCs" unique_id=770530239 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -123.8)
+npc_name = "Girl"
+lines = PackedStringArray("Those POKé BALLS at your waist!\nYou have POKéMON, don\'t you?", "It\'s great that you can carry and\nuse POKéMON anytime, anywhere.")
+wander_radius = 1.5
+
+[node name="NPC_Kid" parent="NPCs" unique_id=796213011 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -147)
+npc_name = "School Kid"
+sprite_sheet = ExtResource("10")
+lines = PackedStringArray("I\'m studying type matchups at the Trainer School!", "Water beats Fire, Fire beats Grass, Grass beats Water. Easy!")
+wander_radius = 2.0
+
+[node name="NPC_Scientist" parent="NPCs" unique_id=1065658390 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -132.6)
+npc_name = "Scientist"
+sprite_sheet = ExtResource("11")
+lines = PackedStringArray("Pokémon tired? The nurse at the Pokémon Center will patch them right up.", "Professor Oak\'s aides pass through Viridian on their way to the League.")
+
+[node name="Signs" type="Node3D" parent="." unique_id=1999635516]
+
+[node name="ViridianSign" type="Node3D" parent="Signs" unique_id=369002656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 0, -122)
+script = ExtResource("5")
+lines = PackedStringArray("VIRIDIAN CITY", "The Eternally Green Paradise")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="Route2Sign" type="Node3D" parent="Signs" unique_id=338550739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 0, -192.5)
+script = ExtResource("5")
+lines = PackedStringArray("ROUTE 2", "VIRIDIAN CITY - PEWTER CITY")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="Route22Sign" type="Node3D" parent="Signs" unique_id=1851952627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5, 0, -123.6)
+script = ExtResource("5")
+lines = PackedStringArray("ROUTE 22", "VIRIDIAN CITY - POKÉMON LEAGUE")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="CenterSign" type="Node3D" parent="Signs" unique_id=1570136296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -132.4)
+script = ExtResource("5")
+title = "Trainer Tips"
+lines = PackedStringArray("TRAINER TIPS", "The battle moves of POKéMON are\nlimited by their POWER POINTS, PP.", "To replenish PP, rest your tired\nPOKéMON at a POKéMON CENTER.")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="SchoolSign" type="Node3D" parent="Signs" unique_id=2084239957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 0, -142.6)
+script = ExtResource("5")
+title = "Trainer Tips"
+lines = PackedStringArray("TRAINER TIPS", "Catch POKéMON and expand your\ncollection.", "The more you have, the easier it\nis to battle.")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="MartSign" type="Node3D" parent="Signs" unique_id=609014999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, -145)
+script = ExtResource("5")
+lines = PackedStringArray("VIRIDIAN CITY POKé MART")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="GymSign" type="Node3D" parent="Signs" unique_id=696099384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, -161)
+script = ExtResource("5")
+lines = PackedStringArray("VIRIDIAN CITY POKéMON GYM")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="Items" type="Node3D" parent="." unique_id=442258179]
+
+[node name="Item_vc_hidden_potion" type="Node3D" parent="Items" unique_id=1748629511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -182)
+script = ExtResource("12")
+uid = "vc_hidden_potion"
+hidden = true
+
+[node name="CutTrees" type="Node3D" parent="." unique_id=1863018536]
+
+[node name="Cut_vc_cut_grove" type="Node3D" parent="CutTrees" unique_id=1244088943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 0, -176)
+script = ExtResource("13")
+uid = "vc_cut_grove"
+
+[node name="Statics" type="Node3D" parent="." unique_id=745960726]
+
+[node name="FlagWalls" type="Node3D" parent="." unique_id=1366073591]
+
+[node name="FlagWall_has_pokedex" type="StaticBody3D" parent="FlagWalls" unique_id=53750016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -190.9)
+script = ExtResource("14")
+until_flag = "has_pokedex"
+size = Vector3(88, 6, 0.6)
+
+[node name="Triggers" type="Node3D" parent="." unique_id=1286586492]

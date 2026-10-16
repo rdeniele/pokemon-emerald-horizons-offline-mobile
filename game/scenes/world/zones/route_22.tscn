@@ -1,0 +1,212 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cqrhwq541w4b0" path="res://scripts/world/zone.gd" id="1"]
+[ext_resource type="Script" uid="uid://dsrisntadms64" path="res://scripts/world/world_builder.gd" id="2"]
+[ext_resource type="Script" uid="uid://cfra8s1cw4euk" path="res://scripts/world/sign_post.gd" id="3"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="4"]
+[ext_resource type="Script" uid="uid://clw8juc1sypgx" path="res://scripts/tall_grass.gd" id="5"]
+[ext_resource type="Script" uid="uid://b3thag1pwxb7w" path="res://scripts/spawn_zone.gd" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://dup4crndo4a0y" path="res://assets/sprites/npc_youngster.png" id="8"]
+[ext_resource type="Script" uid="uid://cg51640j4full" path="res://scripts/trainer.gd" id="9"]
+[ext_resource type="Texture2D" uid="uid://b12pn0y31g8xc" path="res://assets/sprites/npc_rival.png" id="10"]
+[ext_resource type="Script" uid="uid://duiuago7coixe" path="res://scripts/world/item_pickup.gd" id="11"]
+[ext_resource type="Script" uid="uid://cq5o0taun2ekv" path="res://scripts/world/static_mon.gd" id="12"]
+
+[node name="Zone_route_22" type="Node3D" unique_id=675536117]
+script = ExtResource("1")
+zone_id = "route_22"
+display_name = "ROUTE 22"
+
+[node name="World" type="Node3D" parent="." unique_id=708839924]
+script = ExtResource("2")
+map_file = "res://data/maps/route_22.json"
+
+[node name="Doors" type="Node3D" parent="." unique_id=1408302474]
+
+[node name="Door_league_gate" type="Node3D" parent="Doors" unique_id=157997178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130, 0, -132.152)
+script = ExtResource("3")
+title = "Indigo Plateau"
+lines = PackedStringArray("POKéMON LEAGUE", "Front Gate", "The gate is closed… for now!")
+model = ""
+
+[node name="r22_east" type="Marker3D" parent="Doors" unique_id=809435531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 0, -128)
+script = ExtResource("4")
+
+[node name="r22_south_loop" type="Marker3D" parent="Doors" unique_id=1256051642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -123)
+script = ExtResource("4")
+
+[node name="r22_grove" type="Marker3D" parent="Doors" unique_id=923527376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -120.5)
+script = ExtResource("4")
+
+[node name="r22_grass" type="Marker3D" parent="Doors" unique_id=1829619913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88, 0.9, -135)
+script = ExtResource("4")
+
+[node name="r22_hill" type="Marker3D" parent="Doors" unique_id=1701377875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 0.9, -134)
+script = ExtResource("4")
+
+[node name="r22_lake" type="Marker3D" parent="Doors" unique_id=2138977694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110, 0.9, -137)
+script = ExtResource("4")
+
+[node name="r22_ledge" type="Marker3D" parent="Doors" unique_id=1702433976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111, 0.9, -135)
+script = ExtResource("4")
+
+[node name="r22_return" type="Marker3D" parent="Doors" unique_id=429384970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -123)
+script = ExtResource("4")
+
+[node name="r22_rest" type="Marker3D" parent="Doors" unique_id=1875452248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111, 0.9, -130.5)
+script = ExtResource("4")
+
+[node name="r22_clearing" type="Marker3D" parent="Doors" unique_id=1800832203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130, 0, -130)
+script = ExtResource("4")
+
+[node name="r22_gate" type="Marker3D" parent="Doors" unique_id=1218289079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -127)
+script = ExtResource("4")
+
+[node name="TallGrass" type="Node3D" parent="." unique_id=1321416657]
+
+[node name="Grass1" type="Area3D" parent="TallGrass" unique_id=1568165762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.5, 0.9, -129)
+script = ExtResource("5")
+size = Vector2(12, 5)
+encounter_table = "res://data/encounters/route_22.json"
+
+[node name="Grass2" type="Area3D" parent="TallGrass" unique_id=1924878251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.6, 0, -136.5)
+script = ExtResource("5")
+size = Vector2(6, 5)
+encounter_table = "res://data/encounters/route_22.json"
+
+[node name="Grass3" type="Area3D" parent="TallGrass" unique_id=735059288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -128)
+script = ExtResource("5")
+size = Vector2(4, 6)
+encounter_table = "res://data/encounters/route_22.json"
+
+[node name="SpawnZones" type="Node3D" parent="." unique_id=492891403]
+
+[node name="R22SpawnLakeSwim" type="Node3D" parent="SpawnZones" unique_id=1764241941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111, 0, -145)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_22_lake.json"
+radius = 5.0
+mode = "swim"
+
+[node name="R22SpawnGrove" type="Node3D" parent="SpawnZones" unique_id=1758511286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -127.5)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_22_grove.json"
+radius = 2.5
+
+[node name="R22SpawnSouth" type="Node3D" parent="SpawnZones" unique_id=569701670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -121)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_22.json"
+radius = 3.0
+
+[node name="R22SpawnWest" type="Node3D" parent="SpawnZones" unique_id=1665645394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 0.9, -131)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_22.json"
+radius = 3.5
+
+[node name="R22SpawnReturn" type="Node3D" parent="SpawnZones" unique_id=143625164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0, -121.5)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_22.json"
+radius = 3.0
+max_alive = 2
+
+[node name="R22SpawnGrass1" type="Node3D" parent="SpawnZones" unique_id=1618465384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.5, 0.9, -129)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_22.json"
+radius = 1.5
+max_alive = 1
+
+[node name="R22SpawnGrass2" type="Node3D" parent="SpawnZones" unique_id=583057405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.6, 0, -136.5)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_22.json"
+radius = 1.5
+max_alive = 1
+
+[node name="R22SpawnClearing" type="Node3D" parent="SpawnZones" unique_id=1805130118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122, 0, -133)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_22.json"
+radius = 3.0
+max_alive = 2
+
+[node name="NPCs" type="Node3D" parent="." unique_id=381281243]
+
+[node name="NPC_Hiker" parent="NPCs" unique_id=1037306200 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -134)
+npc_name = "Worried Hiker"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("Something big and angry is holed up in the trees north of the loop.", "I heard it punch a trunk clean in two. Nope. Not today.")
+
+[node name="Trainer_Blue" parent="NPCs" unique_id=480467897 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.5, 0.9, -128)
+script = ExtResource("9")
+trainer_id = "rival_blue_route22"
+sight = 5.0
+sprite_sheet = ExtResource("10")
+
+[node name="Signs" type="Node3D" parent="." unique_id=606929894]
+
+[node name="Route22Sign" type="Node3D" parent="Signs" unique_id=470522166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -124)
+script = ExtResource("3")
+lines = PackedStringArray("ROUTE 22", "VIRIDIAN CITY - POKÉMON LEAGUE")
+model = "hgss/route_22/sign"
+model_scale = 0.8
+
+[node name="RestAreaSign" type="Node3D" parent="Signs" unique_id=1730022702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.5, 0.9, -131.3)
+script = ExtResource("3")
+lines = PackedStringArray("LAKESIDE REST STOP", "The water is calm here.", "Wild Pokémon like the flowers.")
+model = "hgss/common/sign_a"
+model_scale = 0.8
+
+[node name="Items" type="Node3D" parent="." unique_id=1420179527]
+
+[node name="Item_r22_potion" type="Node3D" parent="Items" unique_id=1818028447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87, 0.9, -129)
+script = ExtResource("11")
+uid = "r22_potion"
+
+[node name="Item_r22_poke_ball" type="Node3D" parent="Items" unique_id=1873555810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123, 0, -137)
+script = ExtResource("11")
+uid = "r22_poke_ball"
+item_id = "poke_ball"
+count = 2
+
+[node name="CutTrees" type="Node3D" parent="." unique_id=1663613160]
+
+[node name="Statics" type="Node3D" parent="." unique_id=1538891632]
+
+[node name="Static_r22_primeape" type="Node3D" parent="Statics" unique_id=1653502230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -143.5)
+script = ExtResource("12")
+uid = "r22_primeape"
+species = "Primeape"
+level = 15
+hidden = true
+
+[node name="FlagWalls" type="Node3D" parent="." unique_id=1417187146]
+
+[node name="Triggers" type="Node3D" parent="." unique_id=1368318158]

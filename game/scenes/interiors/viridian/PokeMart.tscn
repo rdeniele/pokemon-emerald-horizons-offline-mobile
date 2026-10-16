@@ -1,0 +1,1057 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://m7wldfr8fec3" path="res://scripts/room.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bph81tmmy68tc" path="res://assets/textures/interior/floor_mart.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cljtape4sbnaj" path="res://assets/textures/interior/wallpaper_cream.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b67vwqwmm27as" path="res://assets/textures/window_mask.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cthkjov7j0sx8" path="res://assets/textures/interior/window_view.png" id="5"]
+[ext_resource type="Script" uid="uid://d1l5p7hown3so" path="res://scripts/interiors/prop_model.gd" id="6"]
+[ext_resource type="Script" uid="uid://bb4cnwqjekehv" path="res://scripts/prop.gd" id="7"]
+[ext_resource type="Script" uid="uid://bgexylkbqb5a4" path="res://scripts/interiors/window_light.gd" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://dbyn4wyv00e8i" path="res://assets/sprites/npc_clerk.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://ccsf6wddmu3t3" path="res://assets/sprites/npc_oldman.png" id="11"]
+[ext_resource type="Script" uid="uid://c2emrqjhvd58b" path="res://scripts/world/story_trigger.gd" id="12"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="14"]
+
+[node name="PokeMart" type="Node3D" unique_id=694522832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+metadata/music = "music/indoors"
+
+[node name="Room" type="Node3D" parent="." unique_id=933632790]
+script = ExtResource("1")
+size = Vector2(11, 6)
+floor_texture = ExtResource("2")
+wall_texture = ExtResource("3")
+exit_x = -1.0
+window_side = 1
+window_size = Vector2(3, 1.2)
+window_y = 1.9
+window_mask = ExtResource("4")
+window_view = ExtResource("5")
+wainscot_height = 0.8
+wainscot_color = Color(0.4, 0.56, 0.8, 1)
+
+[node name="Props" type="Node3D" parent="." unique_id=1983757637]
+
+[node name="Plant" type="Node3D" parent="Props" unique_id=1258995205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15, 0, -2.5)
+script = ExtResource("6")
+model = "furniture/pottedPlant"
+model_scale = 3.6
+
+[node name="PosterFrame" type="Node3D" parent="Props" unique_id=1452182760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18, 0.95, -2.95)
+script = ExtResource("7")
+size = Vector3(1.2, 0.95, 0.05)
+color = Color(0.55, 0.42, 0.3, 1)
+collide = false
+
+[node name="Poster" type="Node3D" parent="Props" unique_id=1913437952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18, 1, -2.93)
+script = ExtResource("7")
+size = Vector3(1.1, 0.85, 0.06)
+color = Color(0.96, 0.95, 0.9, 1)
+collide = false
+
+[node name="PosterLine1" type="Node3D" parent="Props" unique_id=2001530104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18, 1.62, -2.9)
+script = ExtResource("7")
+size = Vector3(0.8, 0.1, 0.02)
+color = Color(0.86, 0.28, 0.24, 1)
+collide = false
+
+[node name="PosterLine2" type="Node3D" parent="Props" unique_id=685443833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18, 1.36, -2.9)
+script = ExtResource("7")
+size = Vector3(0.8, 0.1, 0.02)
+color = Color(0.3, 0.45, 0.8, 1)
+collide = false
+
+[node name="PosterLine3" type="Node3D" parent="Props" unique_id=919373468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18, 1.1, -2.9)
+script = ExtResource("7")
+size = Vector3(0.8, 0.1, 0.02)
+color = Color(0.92, 0.78, 0.28, 1)
+collide = false
+
+[node name="Boxes" type="Node3D" parent="Props" unique_id=746036670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95, 0, -1.65)
+script = ExtResource("6")
+model = "furniture/cardboardBoxClosed"
+model_scale = 2.8
+
+[node name="BoxesTop" type="Node3D" parent="Props" unique_id=1678517944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.8, -1.7)
+script = ExtResource("6")
+model = "furniture/cardboardBoxClosed"
+model_scale = 1.6
+collide = false
+
+[node name="Counter" type="Node3D" parent="Props" unique_id=1182372893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -0.8)
+script = ExtResource("7")
+size = Vector3(3, 0.7, 0.8)
+color = Color(0.94, 0.94, 0.92, 1)
+
+[node name="CounterTop" type="Node3D" parent="Props" unique_id=342304336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.7, -0.8)
+script = ExtResource("7")
+size = Vector3(3.06, 0.07, 0.86)
+color = Color(0.48, 0.72, 0.9, 1)
+emission = 0.25
+collide = false
+
+[node name="Register" type="Node3D" parent="Props" unique_id=539477237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05, 0.77, -0.85)
+script = ExtResource("7")
+size = Vector3(0.5, 0.32, 0.4)
+color = Color(0.92, 0.92, 0.88, 1)
+collide = false
+
+[node name="RegisterScreen" type="Node3D" parent="Props" unique_id=736900798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05, 1.09, -0.95)
+script = ExtResource("7")
+size = Vector3(0.42, 0.24, 0.06)
+color = Color(0.3, 0.34, 0.42, 1)
+collide = false
+
+[node name="Cooler" type="Node3D" parent="Props" unique_id=703874410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.81898344, -1.9034951)
+script = ExtResource("7")
+size = Vector3(0.98, 1.36, 2.88)
+color = Color(0.48, 0.72, 0.9, 1)
+emission = 0.1
+collide = false
+
+[node name="CoolerCol" type="Node3D" parent="Props" unique_id=391569782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.9589834, -1.9034951)
+visible = false
+script = ExtResource("7")
+size = Vector3(1.06, 1.6, 2.96)
+color = Color(0, 0, 0, 1)
+
+[node name="CoolerBase" type="Node3D" parent="Props" unique_id=1663984244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.9589834, -1.9034951)
+script = ExtResource("7")
+size = Vector3(1.06, 0.14, 2.96)
+color = Color(0.94, 0.94, 0.92, 1)
+collide = false
+
+[node name="CoolerTop" type="Node3D" parent="Props" unique_id=1911469279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5410166, -1.9034951)
+script = ExtResource("7")
+size = Vector3(1.06, 0.1, 2.96)
+color = Color(0.94, 0.94, 0.92, 1)
+collide = false
+
+[node name="CoolerPostNW" type="Node3D" parent="Props" unique_id=292711654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53, -0.9589834, -3.3534951)
+script = ExtResource("7")
+size = Vector3(0.12, 1.6, 0.12)
+color = Color(0.94, 0.94, 0.92, 1)
+collide = false
+
+[node name="CoolerPostNE" type="Node3D" parent="Props" unique_id=2050859345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47, -0.9589834, -3.3534951)
+script = ExtResource("7")
+size = Vector3(0.12, 1.6, 0.12)
+color = Color(0.94, 0.94, 0.92, 1)
+collide = false
+
+[node name="CoolerPostSW" type="Node3D" parent="Props" unique_id=1167456624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53, -0.9589834, -0.45349517)
+script = ExtResource("7")
+size = Vector3(0.12, 1.6, 0.12)
+color = Color(0.94, 0.94, 0.92, 1)
+collide = false
+
+[node name="CoolerPostSE" type="Node3D" parent="Props" unique_id=1250107730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47, -0.9589834, -0.45349517)
+script = ExtResource("7")
+size = Vector3(0.12, 1.6, 0.12)
+color = Color(0.94, 0.94, 0.92, 1)
+collide = false
+
+[node name="CoolerMachine" type="Node3D" parent="Props" unique_id=1213119962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.6410166, -2.367232)
+script = ExtResource("7")
+size = Vector3(0.62, 0.45, 0.7)
+color = Color(0.25, 0.28, 0.34, 1)
+collide = false
+
+[node name="WallShelfW" type="Node3D" parent="Props" unique_id=348935515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 0, -2.7)
+script = ExtResource("7")
+size = Vector3(1.5, 1.5, 0.6)
+color = Color(0.94, 0.94, 0.92, 1)
+
+[node name="WallShelfWShelf0" type="Node3D" parent="Props" unique_id=2024981671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 0.31, -2.7)
+script = ExtResource("7")
+size = Vector3(1.56, 0.06, 0.66)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="WallShelfWA00" type="Node3D" parent="Props" unique_id=499128684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.925, 0.34, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="WallShelfWA01" type="Node3D" parent="Props" unique_id=243788241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.675, 0.34, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="WallShelfWB00" type="Node3D" parent="Props" unique_id=1272372558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.925, 0.34, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="WallShelfWB01" type="Node3D" parent="Props" unique_id=581791239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.675, 0.34, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="WallShelfWShelf1" type="Node3D" parent="Props" unique_id=420326660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 0.73, -2.7)
+script = ExtResource("7")
+size = Vector3(1.56, 0.06, 0.66)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="WallShelfWA10" type="Node3D" parent="Props" unique_id=1240983517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.925, 0.76, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="WallShelfWA11" type="Node3D" parent="Props" unique_id=612096758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.675, 0.76, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="WallShelfWB10" type="Node3D" parent="Props" unique_id=1810525568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.925, 0.76, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="WallShelfWB11" type="Node3D" parent="Props" unique_id=721953464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.675, 0.76, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="WallShelfWShelf2" type="Node3D" parent="Props" unique_id=1689011982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 1.15, -2.7)
+script = ExtResource("7")
+size = Vector3(1.56, 0.06, 0.66)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="WallShelfWA20" type="Node3D" parent="Props" unique_id=177887731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.925, 1.18, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="WallShelfWA21" type="Node3D" parent="Props" unique_id=1873015094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.675, 1.18, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="WallShelfWB20" type="Node3D" parent="Props" unique_id=1293995683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.925, 1.18, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="WallShelfWB21" type="Node3D" parent="Props" unique_id=201107751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.675, 1.18, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="WallShelfE" type="Node3D" parent="Props" unique_id=2072690315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85, 0, -2.7)
+script = ExtResource("7")
+size = Vector3(1.5, 1.5, 0.6)
+color = Color(0.94, 0.94, 0.92, 1)
+
+[node name="WallShelfEShelf0" type="Node3D" parent="Props" unique_id=800464129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85, 0.31, -2.7)
+script = ExtResource("7")
+size = Vector3(1.56, 0.06, 0.66)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="WallShelfEA00" type="Node3D" parent="Props" unique_id=1243812360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.475, 0.34, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="WallShelfEA01" type="Node3D" parent="Props" unique_id=244821003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.225, 0.34, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="WallShelfEB00" type="Node3D" parent="Props" unique_id=2046296377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.475, 0.34, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="WallShelfEB01" type="Node3D" parent="Props" unique_id=1695438940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.225, 0.34, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="WallShelfEShelf1" type="Node3D" parent="Props" unique_id=705986869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85, 0.73, -2.7)
+script = ExtResource("7")
+size = Vector3(1.56, 0.06, 0.66)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="WallShelfEA10" type="Node3D" parent="Props" unique_id=471806184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.475, 0.76, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="WallShelfEA11" type="Node3D" parent="Props" unique_id=738031662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.225, 0.76, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="WallShelfEB10" type="Node3D" parent="Props" unique_id=333695883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.475, 0.76, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="WallShelfEB11" type="Node3D" parent="Props" unique_id=172604676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.225, 0.76, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="WallShelfEShelf2" type="Node3D" parent="Props" unique_id=491039020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85, 1.15, -2.7)
+script = ExtResource("7")
+size = Vector3(1.56, 0.06, 0.66)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="WallShelfEA20" type="Node3D" parent="Props" unique_id=620344721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.475, 1.18, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="WallShelfEA21" type="Node3D" parent="Props" unique_id=631230450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.225, 1.18, -3.02)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="WallShelfEB20" type="Node3D" parent="Props" unique_id=366306457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.475, 1.18, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="WallShelfEB21" type="Node3D" parent="Props" unique_id=2019144694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.225, 1.18, -2.38)
+script = ExtResource("7")
+size = Vector3(0.525, 0.3, 0.1)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="WallShelfSignW" type="Node3D" parent="Props" unique_id=648121894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 1.3, -2.38)
+script = ExtResource("7")
+size = Vector3(0.9, 0.14, 0.06)
+color = Color(0.55, 0.85, 0.5, 1)
+collide = false
+
+[node name="WallShelfSignE" type="Node3D" parent="Props" unique_id=847453103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85, 1.3, -2.38)
+script = ExtResource("7")
+size = Vector3(0.9, 0.14, 0.06)
+color = Color(0.55, 0.85, 0.5, 1)
+collide = false
+
+[node name="IslandA" type="Node3D" parent="Props" unique_id=486060092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0.3)
+script = ExtResource("7")
+size = Vector3(0.9, 1.55, 3)
+color = Color(0.94, 0.94, 0.92, 1)
+
+[node name="IslandAShelf0" type="Node3D" parent="Props" unique_id=1772975868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.33, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandAA00" type="Node3D" parent="Props" unique_id=92999592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0.36, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandAA01" type="Node3D" parent="Props" unique_id=563035622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0.36, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandAA02" type="Node3D" parent="Props" unique_id=1175695632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0.36, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandAA03" type="Node3D" parent="Props" unique_id=27587968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0.36, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandAB00" type="Node3D" parent="Props" unique_id=1276888384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 0.36, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandAB01" type="Node3D" parent="Props" unique_id=1454330693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 0.36, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandAB02" type="Node3D" parent="Props" unique_id=1131226032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 0.36, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandAB03" type="Node3D" parent="Props" unique_id=2004131589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 0.36, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandAShelf1" type="Node3D" parent="Props" unique_id=844581688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.75, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandAA10" type="Node3D" parent="Props" unique_id=526475157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0.78, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandAA11" type="Node3D" parent="Props" unique_id=206858201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0.78, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandAA12" type="Node3D" parent="Props" unique_id=528490007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0.78, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandAA13" type="Node3D" parent="Props" unique_id=610953675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0.78, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandAB10" type="Node3D" parent="Props" unique_id=512596601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 0.78, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandAB11" type="Node3D" parent="Props" unique_id=267138136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 0.78, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandAB12" type="Node3D" parent="Props" unique_id=2056413137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 0.78, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandAB13" type="Node3D" parent="Props" unique_id=753053481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 0.78, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandAShelf2" type="Node3D" parent="Props" unique_id=175101459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.17, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandAA20" type="Node3D" parent="Props" unique_id=981822578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 1.2, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandAA21" type="Node3D" parent="Props" unique_id=549079917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 1.2, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandAA22" type="Node3D" parent="Props" unique_id=2012930738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 1.2, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandAA23" type="Node3D" parent="Props" unique_id=982624217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 1.2, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandAB20" type="Node3D" parent="Props" unique_id=1132784375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 1.2, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandAB21" type="Node3D" parent="Props" unique_id=1467594960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 1.2, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandAB22" type="Node3D" parent="Props" unique_id=492810269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 1.2, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandAB23" type="Node3D" parent="Props" unique_id=1858315568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47, 1.2, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandB" type="Node3D" parent="Props" unique_id=516322059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0.3)
+script = ExtResource("7")
+size = Vector3(0.9, 1.55, 3)
+color = Color(0.94, 0.94, 0.92, 1)
+
+[node name="IslandBShelf0" type="Node3D" parent="Props" unique_id=888250242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.33, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandBA00" type="Node3D" parent="Props" unique_id=754778304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 0.36, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandBA01" type="Node3D" parent="Props" unique_id=951959844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 0.36, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandBA02" type="Node3D" parent="Props" unique_id=830735829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 0.36, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandBA03" type="Node3D" parent="Props" unique_id=86747078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 0.36, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandBB00" type="Node3D" parent="Props" unique_id=563657840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 0.36, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandBB01" type="Node3D" parent="Props" unique_id=1058981238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 0.36, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandBB02" type="Node3D" parent="Props" unique_id=1255665987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 0.36, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandBB03" type="Node3D" parent="Props" unique_id=864620553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 0.36, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandBShelf1" type="Node3D" parent="Props" unique_id=1890993423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.75, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandBA10" type="Node3D" parent="Props" unique_id=1987993341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 0.78, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandBA11" type="Node3D" parent="Props" unique_id=1586750403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 0.78, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandBA12" type="Node3D" parent="Props" unique_id=2044851754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 0.78, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandBA13" type="Node3D" parent="Props" unique_id=601905265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 0.78, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandBB10" type="Node3D" parent="Props" unique_id=833847069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 0.78, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandBB11" type="Node3D" parent="Props" unique_id=1807612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 0.78, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandBB12" type="Node3D" parent="Props" unique_id=1867720690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 0.78, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandBB13" type="Node3D" parent="Props" unique_id=1550018622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 0.78, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandBShelf2" type="Node3D" parent="Props" unique_id=919652776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.17, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandBA20" type="Node3D" parent="Props" unique_id=1357898723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 1.2, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandBA21" type="Node3D" parent="Props" unique_id=1920239241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 1.2, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandBA22" type="Node3D" parent="Props" unique_id=2037095149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 1.2, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandBA23" type="Node3D" parent="Props" unique_id=2070129409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53, 1.2, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandBB20" type="Node3D" parent="Props" unique_id=585067640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 1.2, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandBB21" type="Node3D" parent="Props" unique_id=1461736190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 1.2, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandBB22" type="Node3D" parent="Props" unique_id=1424237916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 1.2, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandBB23" type="Node3D" parent="Props" unique_id=1513001167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47, 1.2, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandC" type="Node3D" parent="Props" unique_id=1743441333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0.3)
+script = ExtResource("7")
+size = Vector3(0.9, 1.55, 3)
+color = Color(0.94, 0.94, 0.92, 1)
+
+[node name="IslandCShelf0" type="Node3D" parent="Props" unique_id=372978769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.33, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandCA00" type="Node3D" parent="Props" unique_id=1145643846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.36, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandCA01" type="Node3D" parent="Props" unique_id=1656596652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.36, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandCA02" type="Node3D" parent="Props" unique_id=2085528728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.36, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandCA03" type="Node3D" parent="Props" unique_id=503595222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.36, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandCB00" type="Node3D" parent="Props" unique_id=653467975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 0.36, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandCB01" type="Node3D" parent="Props" unique_id=1423627196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 0.36, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandCB02" type="Node3D" parent="Props" unique_id=647269439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 0.36, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandCB03" type="Node3D" parent="Props" unique_id=425424469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 0.36, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandCShelf1" type="Node3D" parent="Props" unique_id=1543240580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.75, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandCA10" type="Node3D" parent="Props" unique_id=406344424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.78, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandCA11" type="Node3D" parent="Props" unique_id=390117124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.78, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandCA12" type="Node3D" parent="Props" unique_id=1578641682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.78, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandCA13" type="Node3D" parent="Props" unique_id=1953267912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.78, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandCB10" type="Node3D" parent="Props" unique_id=1790347663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 0.78, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="IslandCB11" type="Node3D" parent="Props" unique_id=230394353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 0.78, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandCB12" type="Node3D" parent="Props" unique_id=1694804064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 0.78, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandCB13" type="Node3D" parent="Props" unique_id=1596588222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 0.78, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandCShelf2" type="Node3D" parent="Props" unique_id=1303248675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.17, 0.3)
+script = ExtResource("7")
+size = Vector3(0.96, 0.06, 3.06)
+color = Color(0.78, 0.78, 0.78, 1)
+collide = false
+
+[node name="IslandCA20" type="Node3D" parent="Props" unique_id=429166690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 1.2, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.95, 0.94, 0.88, 1)
+collide = false
+
+[node name="IslandCA21" type="Node3D" parent="Props" unique_id=147762307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 1.2, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandCA22" type="Node3D" parent="Props" unique_id=1513197191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 1.2, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandCA23" type="Node3D" parent="Props" unique_id=7765583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 1.2, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandCB20" type="Node3D" parent="Props" unique_id=1477169411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 1.2, -0.825)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.9, 0.36, 0.28, 1)
+collide = false
+
+[node name="IslandCB21" type="Node3D" parent="Props" unique_id=1758131561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 1.2, -0.075)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.44, 0.76, 0.46, 1)
+collide = false
+
+[node name="IslandCB22" type="Node3D" parent="Props" unique_id=2076125364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 1.2, 0.675)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.93, 0.81, 0.37, 1)
+collide = false
+
+[node name="IslandCB23" type="Node3D" parent="Props" unique_id=1484603168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47, 1.2, 1.425)
+script = ExtResource("7")
+size = Vector3(0.1, 0.3, 0.525)
+color = Color(0.36, 0.55, 0.82, 1)
+collide = false
+
+[node name="WindowLight" type="Node3D" parent="." unique_id=931010553]
+transform = Transform3D(-0.9486833, 0.1911759, -0.25189635, 0, 0.79656625, 0.60455126, 0.31622776, 0.5735277, -0.7556891, 0, 1.9, -2.75)
+script = ExtResource("8")
+cookie = ExtResource("4")
+win_size = Vector2(3, 1.2)
+length = 12.0
+energy = 9.0
+spot_angle = 38.0
+
+[node name="Lamp0" type="OmniLight3D" parent="." unique_id=695383322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.8
+omni_range = 11.0
+
+[node name="NPC_Clerk" parent="." unique_id=772347613 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1.8)
+npc_name = "Clerk"
+sprite_sheet = ExtResource("10")
+lines = PackedStringArray("Hi there! May I help you?", "...Sorry, we\'re still stocking the shelves. Come back soon!")
+action = 2
+metadata/shop = "viridian"
+
+[node name="NPC_Customer1" parent="." unique_id=1675552532 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+npc_name = "Girl"
+lines = PackedStringArray("This shop does good business in\nANTIDOTES, I\'ve heard.")
+start_facing = 2
+
+[node name="NPC_Customer2" parent="." unique_id=1806715284 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2.4)
+npc_name = "Old Man"
+sprite_sheet = ExtResource("11")
+lines = PackedStringArray("I\'ve got to buy some POTIONS.", "You never know when your POKéMON\nwill need quick healing.")
+start_facing = 1
+
+[node name="MartParcelTrigger" type="Area3D" parent="." unique_id=1550397696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2.2)
+script = ExtResource("12")
+event = "mart_parcel"
+requires_flags = PackedStringArray("rival_battle_done")
+blocks_flags = PackedStringArray("has_parcel")
+size = Vector3(3, 3, 1)
+
+[node name="vc_mart_in" type="Marker3D" parent="." unique_id=1432018494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2.2)
+script = ExtResource("13")
+facing = 3
+
+[node name="ExitDoor" parent="." unique_id=1954028701 instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4.4)
+target_scene = "res://scenes/world/overworld.tscn"
+target_spawn = "vc_mart_door"

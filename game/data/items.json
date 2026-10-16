@@ -1,0 +1,270 @@
+{
+ "_doc": "Items. 'balls': catch_mult multiplies the species catch rate (Gen 6+), guaranteed = always catches, top/accent = ball colours. 'items': everything else — category (medicine / berries / battle / key), price in Poké Dollars, effect = what using it does (hp = HP restored, 'full' = all; cure = status cured or 'all'; level = levels gained). icon = procedural icon for the UI (shape spray | vial | berry | candy, color); balls are drawn from top/accent.",
+ "balls": [
+  {
+   "id": "poke_ball",
+   "name": "Poké Ball",
+   "catch_mult": 1.0,
+   "top": "#e3352b",
+   "description": "A device for catching wild Pokémon.",
+   "price": 200,
+   "category": "balls"
+  },
+  {
+   "id": "great_ball",
+   "name": "Great Ball",
+   "catch_mult": 1.5,
+   "top": "#2f6fe0",
+   "accent": "#e3352b",
+   "description": "A good, high-performance Poké Ball with a higher catch rate than a standard one.",
+   "price": 600,
+   "category": "balls"
+  },
+  {
+   "id": "premier_ball",
+   "name": "Premier Ball",
+   "catch_mult": 1.0,
+   "top": "#f2f2f0",
+   "description": "A rare ball made in commemoration of some event.",
+   "price": 0,
+   "category": "balls"
+  },
+  {
+   "id": "ultra_ball",
+   "name": "Ultra Ball",
+   "catch_mult": 2.0,
+   "top": "#2a2a2e",
+   "accent": "#f2c53a",
+   "description": "An ultra-high-performance ball with a higher catch rate than a Great Ball.",
+   "price": 800,
+   "category": "balls"
+  },
+  {
+   "id": "master_ball",
+   "name": "Master Ball",
+   "catch_mult": 255.0,
+   "guaranteed": true,
+   "top": "#7b3fc4",
+   "accent": "#e85aa8",
+   "description": "The best ball. It catches any wild Pokémon without fail.",
+   "price": 0,
+   "category": "balls"
+  }
+ ],
+ "items": [
+  {
+   "id": "potion",
+   "name": "Potion",
+   "category": "medicine",
+   "price": 300,
+   "effect": {
+    "hp": 20
+   },
+   "description": "Restores the HP of one Pokémon by 20 points.",
+   "icon": {
+    "shape": "spray",
+    "color": "#9b59d0"
+   }
+  },
+  {
+   "id": "super_potion",
+   "name": "Super Potion",
+   "category": "medicine",
+   "price": 700,
+   "effect": {
+    "hp": 60
+   },
+   "description": "Restores the HP of one Pokémon by 60 points.",
+   "icon": {
+    "shape": "spray",
+    "color": "#e8742c"
+   }
+  },
+  {
+   "id": "antidote",
+   "name": "Antidote",
+   "category": "medicine",
+   "price": 100,
+   "effect": {
+    "cure": "poison"
+   },
+   "description": "Cures a Pokémon of poisoning.",
+   "icon": {
+    "shape": "vial",
+    "color": "#5cbf4f"
+   }
+  },
+  {
+   "id": "paralyze_heal",
+   "name": "Paralyze Heal",
+   "category": "medicine",
+   "price": 200,
+   "effect": {
+    "cure": "paralysis"
+   },
+   "description": "Cures a Pokémon of paralysis.",
+   "icon": {
+    "shape": "vial",
+    "color": "#f2d03b"
+   }
+  },
+  {
+   "id": "burn_heal",
+   "name": "Burn Heal",
+   "category": "medicine",
+   "price": 250,
+   "effect": {
+    "cure": "burn"
+   },
+   "description": "Heals a Pokémon of a burn.",
+   "icon": {
+    "shape": "vial",
+    "color": "#e8503a"
+   }
+  },
+  {
+   "id": "awakening",
+   "name": "Awakening",
+   "category": "medicine",
+   "price": 250,
+   "effect": {
+    "cure": "sleep"
+   },
+   "description": "Wakes up a sleeping Pokémon.",
+   "icon": {
+    "shape": "vial",
+    "color": "#4f8de0"
+   }
+  },
+  {
+   "id": "escape_rope",
+   "name": "Escape Rope",
+   "category": "medicine",
+   "price": 550,
+   "effect": {
+    "escape": true
+   },
+   "description": "A long, durable rope. Use it to escape from a cave or dungeon.",
+   "icon": {
+    "shape": "vial",
+    "color": "#b58a55"
+   }
+  },
+  {
+   "id": "repel",
+   "name": "Repel",
+   "category": "medicine",
+   "price": 350,
+   "effect": {
+    "repel": 100
+   },
+   "description": "Repels weak wild Pokémon for 100 steps.",
+   "icon": {
+    "shape": "spray",
+    "color": "#6f5bd0"
+   }
+  },
+  {
+   "id": "oran_berry",
+   "name": "Oran Berry",
+   "category": "berries",
+   "price": 20,
+   "effect": {
+    "hp": 10
+   },
+   "description": "If held by a Pokémon, it heals 10 HP when its HP drops low.",
+   "icon": {
+    "shape": "berry",
+    "color": "#3f6fd8"
+   }
+  },
+  {
+   "id": "pecha_berry",
+   "name": "Pecha Berry",
+   "category": "berries",
+   "price": 20,
+   "effect": {
+    "cure": "poison"
+   },
+   "description": "If held by a Pokémon, it cures poisoning.",
+   "icon": {
+    "shape": "berry",
+    "color": "#f29ab8"
+   }
+  },
+  {
+   "id": "rare_candy",
+   "name": "Rare Candy",
+   "category": "medicine",
+   "price": 4800,
+   "effect": {
+    "level": 1
+   },
+   "description": "A candy packed with energy. It raises the level of a single Pokémon by one.",
+   "icon": {
+    "shape": "candy",
+    "color": "#4aa0e8"
+   }
+  },
+  {
+   "id": "ether",
+   "name": "Ether",
+   "category": "medicine",
+   "price": 400,
+   "effect": {},
+   "description": "Restores the PP of one move. (PP restoring is not implemented yet.)",
+   "icon": {
+    "shape": "vial",
+    "color": "#7fd0e8"
+   }
+  },
+  {
+   "id": "oaks_parcel",
+   "name": "Oak's Parcel",
+   "category": "key",
+   "price": 0,
+   "effect": {},
+   "description": "A package to be delivered to Prof. Oak.",
+   "icon": {
+    "shape": "parcel",
+    "color": "#a9763f"
+   }
+  },
+  {
+   "id": "pokedex",
+   "name": "Pokédex",
+   "category": "key",
+   "price": 0,
+   "effect": {},
+   "description": "Records the Pokémon you see and catch.",
+   "icon": {
+    "shape": "device",
+    "color": "#d8423a"
+   }
+  },
+  {
+   "id": "teachy_tv",
+   "name": "Teachy TV",
+   "category": "key",
+   "price": 0,
+   "effect": {},
+   "description": "A portable TV that teaches you how to catch and battle with Pokémon.",
+   "icon": {
+    "shape": "vial",
+    "color": "#4a6fd0"
+   }
+  },
+  {
+   "id": "hm_flash",
+   "name": "HM05 Flash",
+   "category": "key",
+   "price": 0,
+   "effect": {},
+   "description": "Lights up even the darkest of caves. (HMs are not implemented yet.)",
+   "icon": {
+    "shape": "vial",
+    "color": "#f2e06a"
+   }
+  }
+ ]
+}

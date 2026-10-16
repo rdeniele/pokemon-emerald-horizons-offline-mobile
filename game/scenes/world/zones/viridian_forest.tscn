@@ -1,0 +1,461 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cqrhwq541w4b0" path="res://scripts/world/zone.gd" id="1"]
+[ext_resource type="Script" uid="uid://dsrisntadms64" path="res://scripts/world/world_builder.gd" id="2"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="3"]
+[ext_resource type="Script" uid="uid://clw8juc1sypgx" path="res://scripts/tall_grass.gd" id="4"]
+[ext_resource type="Script" uid="uid://b3thag1pwxb7w" path="res://scripts/spawn_zone.gd" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://dup4crndo4a0y" path="res://assets/sprites/npc_youngster.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cnqf781ybynr0" path="res://assets/sprites/npc_kid.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://b7n6omo444yle" path="res://assets/sprites/npc_lass.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bc254ht080h63" path="res://assets/sprites/npc_camper.png" id="10"]
+[ext_resource type="Script" uid="uid://cg51640j4full" path="res://scripts/trainer.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://duddxie5oglw7" path="res://assets/sprites/npc_bug_catcher.png" id="12"]
+[ext_resource type="Script" uid="uid://cfra8s1cw4euk" path="res://scripts/world/sign_post.gd" id="13"]
+[ext_resource type="Script" uid="uid://duiuago7coixe" path="res://scripts/world/item_pickup.gd" id="14"]
+[ext_resource type="Script" uid="uid://cq5o0taun2ekv" path="res://scripts/world/static_mon.gd" id="15"]
+
+[node name="Zone_viridian_forest" type="Node3D" unique_id=1262339425]
+script = ExtResource("1")
+zone_id = "viridian_forest"
+display_name = "VIRIDIAN FOREST"
+
+[node name="World" type="Node3D" parent="." unique_id=1774222453]
+script = ExtResource("2")
+map_file = "res://data/maps/viridian_forest.json"
+
+[node name="Doors" type="Node3D" parent="." unique_id=1795531524]
+
+[node name="vf_south" type="Marker3D" parent="Doors" unique_id=614570528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -258)
+script = ExtResource("3")
+
+[node name="vf_north" type="Marker3D" parent="Doors" unique_id=1129353799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -350.5)
+script = ExtResource("3")
+
+[node name="vf_mid" type="Marker3D" parent="Doors" unique_id=1162129194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -313)
+script = ExtResource("3")
+
+[node name="TallGrass" type="Node3D" parent="." unique_id=1481528092]
+
+[node name="Grass1" type="Area3D" parent="TallGrass" unique_id=377674149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -266)
+script = ExtResource("4")
+size = Vector2(13.2, 11.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass2" type="Area3D" parent="TallGrass" unique_id=257467751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -261.9)
+script = ExtResource("4")
+size = Vector2(13.2, 5)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass3" type="Area3D" parent="TallGrass" unique_id=587650392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -281)
+script = ExtResource("4")
+size = Vector2(8.2, 13.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass4" type="Area3D" parent="TallGrass" unique_id=1733663385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -279)
+script = ExtResource("4")
+size = Vector2(6.2, 9.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass5" type="Area3D" parent="TallGrass" unique_id=65047274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85, 0, -280.5)
+script = ExtResource("4")
+size = Vector2(5.5, 12.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass6" type="Area3D" parent="TallGrass" unique_id=956372570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -296.5)
+script = ExtResource("4")
+size = Vector2(12.2, 12.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass7" type="Area3D" parent="TallGrass" unique_id=1594676959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -296.5)
+script = ExtResource("4")
+size = Vector2(12.2, 12.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass8" type="Area3D" parent="TallGrass" unique_id=1368890607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -301)
+script = ExtResource("4")
+size = Vector2(7.2, 3.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass9" type="Area3D" parent="TallGrass" unique_id=2097507483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -293)
+script = ExtResource("4")
+size = Vector2(7.2, 5.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass10" type="Area3D" parent="TallGrass" unique_id=1228036098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -317.6)
+script = ExtResource("4")
+size = Vector2(13.2, 6)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass11" type="Area3D" parent="TallGrass" unique_id=1191905260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -317.1)
+script = ExtResource("4")
+size = Vector2(13.2, 5)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass12" type="Area3D" parent="TallGrass" unique_id=1912273132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 0, -317.1)
+script = ExtResource("4")
+size = Vector2(8.2, 5)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass13" type="Area3D" parent="TallGrass" unique_id=16639113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.5, 0, -314.5)
+script = ExtResource("4")
+size = Vector2(12.2, 11.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass14" type="Area3D" parent="TallGrass" unique_id=1469790574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 0, -313.5)
+script = ExtResource("4")
+size = Vector2(12.2, 14.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass15" type="Area3D" parent="TallGrass" unique_id=2114720154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5, 0, -318)
+script = ExtResource("4")
+size = Vector2(8.2, 5.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass16" type="Area3D" parent="TallGrass" unique_id=279792851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5, 0, -308.5)
+script = ExtResource("4")
+size = Vector2(8.2, 4.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass17" type="Area3D" parent="TallGrass" unique_id=1046169273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.1, 0, -329.5)
+script = ExtResource("4")
+size = Vector2(5, 12.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass18" type="Area3D" parent="TallGrass" unique_id=863945284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5, 0, -324.9)
+script = ExtResource("4")
+size = Vector2(12.2, 5)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass19" type="Area3D" parent="TallGrass" unique_id=843724356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5, 0, -344)
+script = ExtResource("4")
+size = Vector2(12.2, 11.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass20" type="Area3D" parent="TallGrass" unique_id=1067884138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -347.6)
+script = ExtResource("4")
+size = Vector2(13.2, 6)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass21" type="Area3D" parent="TallGrass" unique_id=451981697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -329)
+script = ExtResource("4")
+size = Vector2(13.2, 13.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass22" type="Area3D" parent="TallGrass" unique_id=1793746477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -330)
+script = ExtResource("4")
+size = Vector2(13.2, 13.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass23" type="Area3D" parent="TallGrass" unique_id=1519520646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1, 0, -344.5)
+script = ExtResource("4")
+size = Vector2(5, 12.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass24" type="Area3D" parent="TallGrass" unique_id=1768134818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -273.5)
+script = ExtResource("4")
+size = Vector2(3.2, 26.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass25" type="Area3D" parent="TallGrass" unique_id=530925896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -273.5)
+script = ExtResource("4")
+size = Vector2(5.2, 26.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass26" type="Area3D" parent="TallGrass" unique_id=806469441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -282)
+script = ExtResource("4")
+size = Vector2(7.2, 9.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass27" type="Area3D" parent="TallGrass" unique_id=112526622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -266)
+script = ExtResource("4")
+size = Vector2(7.2, 11.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass28" type="Area3D" parent="TallGrass" unique_id=1949697506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 0, -269)
+script = ExtResource("4")
+size = Vector2(11.2, 9.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass29" type="Area3D" parent="TallGrass" unique_id=53072925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.5, 0, -296.5)
+script = ExtResource("4")
+size = Vector2(6.2, 12.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass30" type="Area3D" parent="TallGrass" unique_id=986458678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -294)
+script = ExtResource("4")
+size = Vector2(7.2, 6.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass31" type="Area3D" parent="TallGrass" unique_id=111074881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, 0, -267)
+script = ExtResource("4")
+size = Vector2(10.2, 9.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass32" type="Area3D" parent="TallGrass" unique_id=763010031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -344)
+script = ExtResource("4")
+size = Vector2(13.2, 11.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="Grass33" type="Area3D" parent="TallGrass" unique_id=854083130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -345.5)
+script = ExtResource("4")
+size = Vector2(9.2, 8.2)
+encounter_table = "res://data/encounters/viridian_forest.json"
+
+[node name="SpawnZones" type="Node3D" parent="." unique_id=222008098]
+
+[node name="VFSpawnNW" type="Node3D" parent="SpawnZones" unique_id=394448735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -313)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/viridian_forest.json"
+radius = 4.0
+max_alive = 2
+
+[node name="VFSpawnW" type="Node3D" parent="SpawnZones" unique_id=1630081264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -296)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/viridian_forest.json"
+radius = 4.0
+max_alive = 2
+
+[node name="VFSpawnC" type="Node3D" parent="SpawnZones" unique_id=1087516351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -296)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/viridian_forest.json"
+radius = 4.0
+max_alive = 2
+
+[node name="VFSpawnSW" type="Node3D" parent="SpawnZones" unique_id=323211055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -282)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/viridian_forest.json"
+radius = 4.0
+max_alive = 2
+
+[node name="VFSpawnS" type="Node3D" parent="SpawnZones" unique_id=1939372772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -266)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/viridian_forest.json"
+radius = 4.0
+max_alive = 2
+
+[node name="VFSpawnNE" type="Node3D" parent="SpawnZones" unique_id=777187716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -344)
+script = ExtResource("5")
+encounter_table = "res://data/encounters/viridian_forest.json"
+radius = 4.0
+max_alive = 2
+
+[node name="NPCs" type="Node3D" parent="." unique_id=1160485133]
+
+[node name="NPC_Youngster" parent="NPCs" unique_id=899519766 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -269)
+npc_name = "Youngster"
+sprite_sheet = ExtResource("7")
+lines = PackedStringArray("I came here with some friends to\ncatch us some BUG POKéMON!", "They\'re all itching to get into\nsome POKéMON battles!")
+start_facing = 3
+
+[node name="NPC_Boy" parent="NPCs" unique_id=191501098 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -269)
+npc_name = "Boy"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("I was throwing POKé BALLS to\ncatch POKéMON, and I ran out.", "That\'s why you can never have too\nmany POKé BALLS.")
+start_facing = 1
+
+[node name="NPC_LassIvy" parent="NPCs" unique_id=650372314 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -288)
+npc_name = "Lass Ivy"
+sprite_sheet = ExtResource("9")
+lines = PackedStringArray("A Butterfree drifted past me by the old dead-end…", "It was huge! Bigger than the ones in the grass. Where does a thing that size hide?")
+
+[node name="NPC_CamperNed" parent="NPCs" unique_id=928290287 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -314)
+npc_name = "Camper Ned"
+sprite_sheet = ExtResource("10")
+lines = PackedStringArray("I keep hearing a buzzing deep in the trees west of here.", "Bug Catchers say something with big stingers lives back there. Nobody\'s ever caught it.")
+
+[node name="Trainer_Rick" parent="NPCs" unique_id=1158277541 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -265)
+script = ExtResource("11")
+trainer_id = "bug_catcher_rick"
+sight = 5.0
+sprite_sheet = ExtResource("12")
+start_facing = 1
+
+[node name="Trainer_Doug" parent="NPCs" unique_id=1038101942 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, -292)
+script = ExtResource("11")
+trainer_id = "bug_catcher_doug"
+sight = 5.0
+sprite_sheet = ExtResource("12")
+start_facing = 1
+
+[node name="Trainer_Anthony" parent="NPCs" unique_id=852101032 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -308)
+script = ExtResource("11")
+trainer_id = "bug_catcher_anthony"
+sight = 5.0
+sprite_sheet = ExtResource("12")
+
+[node name="Trainer_Charlie" parent="NPCs" unique_id=1443566874 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -334)
+script = ExtResource("11")
+trainer_id = "bug_catcher_charlie"
+sight = 5.0
+sprite_sheet = ExtResource("12")
+start_facing = 3
+
+[node name="Trainer_Sammy" parent="NPCs" unique_id=213654138 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -328)
+script = ExtResource("11")
+trainer_id = "bug_catcher_sammy"
+sight = 5.0
+sprite_sheet = ExtResource("12")
+start_facing = 1
+
+[node name="Signs" type="Node3D" parent="." unique_id=920527445]
+
+[node name="TipsSouth" type="Node3D" parent="Signs" unique_id=304853176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -266)
+script = ExtResource("13")
+title = "Trainer Tips"
+lines = PackedStringArray("TRAINER TIPS", "If your POKéMON are weak and you want to avoid battles, stay away from grassy areas!")
+model = "hgss/viridian_forest/tips_sign"
+model_scale = 0.8
+
+[node name="TipsSouth5" type="Node3D" parent="Signs" unique_id=1389935551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -266)
+script = ExtResource("13")
+title = "Trainer Tips"
+lines = PackedStringArray("TRAINER TIPS", "Weaken POKéMON before attempting capture! When healthy, they may escape!")
+model = "hgss/viridian_forest/tips_sign"
+model_scale = 0.8
+
+[node name="TipsMid" type="Node3D" parent="Signs" unique_id=709429193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -313)
+script = ExtResource("13")
+title = "Trainer Tips"
+lines = PackedStringArray("TRAINER TIPS", "For poison, use ANTIDOTE! Get it at POKéMON MARTS!")
+model = "hgss/viridian_forest/tips_sign"
+model_scale = 0.8
+
+[node name="TipsEast" type="Node3D" parent="Signs" unique_id=1130411719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -296)
+script = ExtResource("13")
+title = "Trainer Tips"
+lines = PackedStringArray("TRAINER TIPS", "Contact PROF. OAK via a PC to get your POKéDEX evaluated!")
+model = "hgss/viridian_forest/tips_sign"
+model_scale = 0.8
+
+[node name="TipsWest" type="Node3D" parent="Signs" unique_id=1261355049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, -313)
+script = ExtResource("13")
+title = "Trainer Tips"
+lines = PackedStringArray("TRAINER TIPS", "You can\'t catch a POKéMON that belongs to someone else. Throw POKé BALLS only at wild POKéMON to catch them!")
+model = "hgss/viridian_forest/tips_sign"
+model_scale = 0.8
+
+[node name="ExitSign" type="Node3D" parent="Signs" unique_id=2110361057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -345)
+script = ExtResource("13")
+lines = PackedStringArray("LEAVING VIRIDIAN FOREST", "PEWTER CITY AHEAD")
+model = "hgss/route_2/sign"
+model_scale = 0.8
+
+[node name="Items" type="Node3D" parent="." unique_id=769077860]
+
+[node name="Item_vf_pokeball" type="Node3D" parent="Items" unique_id=966710415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, 0, -267)
+script = ExtResource("14")
+uid = "vf_pokeball"
+item_id = "poke_ball"
+
+[node name="Item_vf_potion_east" type="Node3D" parent="Items" unique_id=1273072917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 0, -267)
+script = ExtResource("14")
+uid = "vf_potion_east"
+
+[node name="Item_vf_potion_se" type="Node3D" parent="Items" unique_id=1100361472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -267)
+script = ExtResource("14")
+uid = "vf_potion_se"
+
+[node name="Item_vf_antidote_ne" type="Node3D" parent="Items" unique_id=245931910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -344)
+script = ExtResource("14")
+uid = "vf_antidote_ne"
+item_id = "antidote"
+
+[node name="Item_vf_potion_hidden" type="Node3D" parent="Items" unique_id=1602630113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -345.5)
+script = ExtResource("14")
+uid = "vf_potion_hidden"
+hidden = true
+
+[node name="Item_vf_antidote_hidden" type="Node3D" parent="Items" unique_id=1877890870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, -311.5)
+script = ExtResource("14")
+uid = "vf_antidote_hidden"
+item_id = "antidote"
+hidden = true
+
+[node name="CutTrees" type="Node3D" parent="." unique_id=103810293]
+
+[node name="Statics" type="Node3D" parent="." unique_id=130418926]
+
+[node name="Static_vf_butterfree" type="Node3D" parent="Statics" unique_id=158835570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 0, -258.5)
+script = ExtResource("15")
+uid = "vf_butterfree"
+species = "Butterfree"
+level = 15
+hidden = true
+
+[node name="Static_vf_beedrill" type="Node3D" parent="Statics" unique_id=1015627814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.5, 0, -303)
+script = ExtResource("15")
+uid = "vf_beedrill"
+species = "Beedrill"
+level = 15
+hidden = true
+
+[node name="FlagWalls" type="Node3D" parent="." unique_id=947589709]
+
+[node name="Triggers" type="Node3D" parent="." unique_id=1234837989]

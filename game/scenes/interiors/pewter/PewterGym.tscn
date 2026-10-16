@@ -1,0 +1,1945 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://m7wldfr8fec3" path="res://scripts/room.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bl8xmpadsvjsy" path="res://assets/textures/interior/floor_rock.png" id="2"]
+[ext_resource type="Script" uid="uid://bb4cnwqjekehv" path="res://scripts/prop.gd" id="3"]
+[ext_resource type="Script" uid="uid://d1l5p7hown3so" path="res://scripts/interiors/prop_model.gd" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://cvwah7p3yxbu1" path="res://assets/sprites/npc_gym_guide.png" id="6"]
+[ext_resource type="Script" uid="uid://cg51640j4full" path="res://scripts/trainer.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://c18xebfhau7a2" path="res://assets/sprites/npc_brock.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bc254ht080h63" path="res://assets/sprites/npc_camper.png" id="9"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="10"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="11"]
+
+[node name="PewterGym" type="Node3D" unique_id=140096132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 0)
+metadata/music = "music/indoors"
+metadata/env = "res://resources/look/gym_env.tres"
+
+[node name="Room" type="Node3D" parent="." unique_id=1908232574]
+script = ExtResource("1")
+size = Vector2(30, 26)
+wall_height = 4.5
+floor_texture = ExtResource("2")
+wall_texture = ExtResource("2")
+wall_tint = Color(0.62, 0.63, 0.65, 1)
+exit_width = 2.5
+wainscot_height = 1.2
+wainscot_color = Color(0.34, 0.32, 0.3, 1)
+
+[node name="Props" type="Node3D" parent="." unique_id=384416237]
+
+[node name="RimN" type="Node3D" parent="Props" unique_id=1498277082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, -5)
+script = ExtResource("3")
+size = Vector3(16.4, 0.07, 0.5)
+color = Color(0.4, 0.4, 0.41, 1)
+collide = false
+
+[node name="RimS" type="Node3D" parent="Props" unique_id=1473692328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 5)
+script = ExtResource("3")
+size = Vector3(16.4, 0.07, 0.5)
+color = Color(0.4, 0.4, 0.41, 1)
+collide = false
+
+[node name="RimW" type="Node3D" parent="Props" unique_id=929212509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.035, 0)
+script = ExtResource("3")
+size = Vector3(0.5, 0.07, 10.4)
+color = Color(0.4, 0.4, 0.41, 1)
+collide = false
+
+[node name="RimE" type="Node3D" parent="Props" unique_id=27260993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.035, 0)
+script = ExtResource("3")
+size = Vector3(0.5, 0.07, 10.4)
+color = Color(0.4, 0.4, 0.41, 1)
+collide = false
+
+[node name="RimN0" type="Node3D" parent="Props" unique_id=662657106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 77.0
+model_scale = 1.7579293985692694
+collide = false
+
+[node name="RimN1" type="Node3D" parent="Props" unique_id=1252064681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 37.0
+model_scale = 1.9285097167965233
+collide = false
+
+[node name="RimN2" type="Node3D" parent="Props" unique_id=1761053403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 187.0
+model_scale = 1.8331152023613424
+collide = false
+
+[node name="RimN3" type="Node3D" parent="Props" unique_id=1182093600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 109.0
+model_scale = 1.614998263376794
+collide = false
+
+[node name="RimN4" type="Node3D" parent="Props" unique_id=586753448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 214.0
+model_scale = 1.6279421694298477
+collide = false
+
+[node name="RimN5" type="Node3D" parent="Props" unique_id=2080234225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 282.0
+model_scale = 1.7698076756570056
+collide = false
+
+[node name="RimN6" type="Node3D" parent="Props" unique_id=429531634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 63.0
+model_scale = 1.978979880282995
+collide = false
+
+[node name="RimN7" type="Node3D" parent="Props" unique_id=1712504407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 321.0
+model_scale = 1.833198761784163
+collide = false
+
+[node name="RimN8" type="Node3D" parent="Props" unique_id=2147230598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 295.0
+model_scale = 1.8342165690561547
+collide = false
+
+[node name="RimN9" type="Node3D" parent="Props" unique_id=29137271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 113.0
+model_scale = 1.6186330722471023
+collide = false
+
+[node name="RimN10" type="Node3D" parent="Props" unique_id=143720162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 148.0
+model_scale = 1.7676556174285862
+collide = false
+
+[node name="RimN11" type="Node3D" parent="Props" unique_id=1821156925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 60.0
+model_scale = 1.8283654758586936
+collide = false
+
+[node name="RimN12" type="Node3D" parent="Props" unique_id=572190884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 349.0
+model_scale = 1.672290551969575
+collide = false
+
+[node name="RimN13" type="Node3D" parent="Props" unique_id=1805999162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 292.0
+model_scale = 1.8555653875704736
+collide = false
+
+[node name="RimN14" type="Node3D" parent="Props" unique_id=1693588883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 49.0
+model_scale = 1.8190977862838231
+collide = false
+
+[node name="RimN15" type="Node3D" parent="Props" unique_id=805753120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 288.0
+model_scale = 1.623840467986493
+collide = false
+
+[node name="RimN16" type="Node3D" parent="Props" unique_id=1278495011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 254.0
+model_scale = 1.8721599892727143
+collide = false
+
+[node name="RimN17" type="Node3D" parent="Props" unique_id=2064523030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 160.0
+model_scale = 1.7862407463358696
+collide = false
+
+[node name="RimN18" type="Node3D" parent="Props" unique_id=938069323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 185.0
+model_scale = 1.719906798745473
+collide = false
+
+[node name="RimN19" type="Node3D" parent="Props" unique_id=359399932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 357.0
+model_scale = 1.9119318522336977
+collide = false
+
+[node name="RimN20" type="Node3D" parent="Props" unique_id=474899262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 294.0
+model_scale = 1.7200996474182502
+collide = false
+
+[node name="RimN21" type="Node3D" parent="Props" unique_id=858732881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 175.0
+model_scale = 1.891778115775687
+collide = false
+
+[node name="RimN22" type="Node3D" parent="Props" unique_id=949095557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 311.0
+model_scale = 1.9920699389970329
+collide = false
+
+[node name="RimN23" type="Node3D" parent="Props" unique_id=1291935218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 262.0
+model_scale = 1.767249128714091
+collide = false
+
+[node name="RimN24" type="Node3D" parent="Props" unique_id=200278023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 77.0
+model_scale = 1.973308084872255
+collide = false
+
+[node name="RimN25" type="Node3D" parent="Props" unique_id=2002533594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 20.0
+model_scale = 1.984807633364844
+collide = false
+
+[node name="RimN26" type="Node3D" parent="Props" unique_id=724797200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 285.0
+model_scale = 1.8292103761109535
+collide = false
+
+[node name="RimN27" type="Node3D" parent="Props" unique_id=715579332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 174.0
+model_scale = 1.878118146509464
+collide = false
+
+[node name="RimN28" type="Node3D" parent="Props" unique_id=993337790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 254.0
+model_scale = 1.831958081712997
+collide = false
+
+[node name="RimN29" type="Node3D" parent="Props" unique_id=1936215006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.95, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 35.0
+model_scale = 1.9359871122050163
+collide = false
+
+[node name="RimS0" type="Node3D" parent="Props" unique_id=1891409260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 242.0
+model_scale = 1.8788168271307712
+collide = false
+
+[node name="RimS1" type="Node3D" parent="Props" unique_id=1206787085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 31.0
+model_scale = 1.892463733856356
+collide = false
+
+[node name="RimS2" type="Node3D" parent="Props" unique_id=1854563223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 331.0
+model_scale = 1.8311784922870873
+collide = false
+
+[node name="RimS3" type="Node3D" parent="Props" unique_id=726687355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 228.0
+model_scale = 1.7138382128376597
+collide = false
+
+[node name="RimS4" type="Node3D" parent="Props" unique_id=386494041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 342.0
+model_scale = 1.7388021022753803
+collide = false
+
+[node name="RimS5" type="Node3D" parent="Props" unique_id=2028850212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 181.0
+model_scale = 1.667219351562618
+collide = false
+
+[node name="RimS6" type="Node3D" parent="Props" unique_id=1822708839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 252.0
+model_scale = 1.6235817677325242
+collide = false
+
+[node name="RimS7" type="Node3D" parent="Props" unique_id=555272863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 66.0
+model_scale = 1.8953453518379175
+collide = false
+
+[node name="RimS8" type="Node3D" parent="Props" unique_id=923488848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 200.0
+model_scale = 1.9667264904720243
+collide = false
+
+[node name="RimS9" type="Node3D" parent="Props" unique_id=249502346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 41.0
+model_scale = 1.6665465129887682
+collide = false
+
+[node name="RimS10" type="Node3D" parent="Props" unique_id=802908487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 281.0
+model_scale = 1.7111356523137804
+collide = false
+
+[node name="RimS11" type="Node3D" parent="Props" unique_id=1461837194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 220.0
+model_scale = 1.945593787879406
+collide = false
+
+[node name="RimS12" type="Node3D" parent="Props" unique_id=2077888958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 212.0
+model_scale = 1.9945868324004743
+collide = false
+
+[node name="RimS13" type="Node3D" parent="Props" unique_id=1854450116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 194.0
+model_scale = 1.9830924815855964
+collide = false
+
+[node name="RimS14" type="Node3D" parent="Props" unique_id=316423164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 42.0
+model_scale = 1.6704870913961485
+collide = false
+
+[node name="RimS15" type="Node3D" parent="Props" unique_id=1154324175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 337.0
+model_scale = 1.6933344334723446
+collide = false
+
+[node name="RimS16" type="Node3D" parent="Props" unique_id=380410714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 301.0
+model_scale = 1.672937149592479
+collide = false
+
+[node name="RimS17" type="Node3D" parent="Props" unique_id=1735515178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 2.0
+model_scale = 1.6582705569831924
+collide = false
+
+[node name="RimS18" type="Node3D" parent="Props" unique_id=2116887611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 189.0
+model_scale = 1.8439249741027988
+collide = false
+
+[node name="RimS19" type="Node3D" parent="Props" unique_id=1592928625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 64.0
+model_scale = 1.8761974628543912
+collide = false
+
+[node name="RimS20" type="Node3D" parent="Props" unique_id=2100475396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 316.0
+model_scale = 1.8619865854865316
+collide = false
+
+[node name="RimS21" type="Node3D" parent="Props" unique_id=691814347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 27.0
+model_scale = 1.78265748888115
+collide = false
+
+[node name="RimS22" type="Node3D" parent="Props" unique_id=1998613496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 286.0
+model_scale = 1.7569515627565075
+collide = false
+
+[node name="RimS23" type="Node3D" parent="Props" unique_id=1555659223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 201.0
+model_scale = 1.6414148374841298
+collide = false
+
+[node name="RimS24" type="Node3D" parent="Props" unique_id=1942393006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 205.0
+model_scale = 1.6248991286474752
+collide = false
+
+[node name="RimS25" type="Node3D" parent="Props" unique_id=151525316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 106.0
+model_scale = 1.7762507473299003
+collide = false
+
+[node name="RimS26" type="Node3D" parent="Props" unique_id=1282731783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 174.0
+model_scale = 1.8402909042017923
+collide = false
+
+[node name="RimS27" type="Node3D" parent="Props" unique_id=240005459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+model_scale = 1.826713443253234
+collide = false
+
+[node name="RimS28" type="Node3D" parent="Props" unique_id=673812165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 51.0
+model_scale = 1.9795795034277737
+collide = false
+
+[node name="RimS29" type="Node3D" parent="Props" unique_id=163242863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.95, 0, 5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 13.0
+model_scale = 1.628126230461396
+collide = false
+
+[node name="RimW0" type="Node3D" parent="Props" unique_id=1007931031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 314.0
+model_scale = 1.7504917447225763
+collide = false
+
+[node name="RimW1" type="Node3D" parent="Props" unique_id=1582846601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4.45)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 129.0
+model_scale = 1.9821872095685884
+collide = false
+
+[node name="RimW2" type="Node3D" parent="Props" unique_id=12263988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -3.9)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 186.0
+model_scale = 1.7896605852927037
+collide = false
+
+[node name="RimW3" type="Node3D" parent="Props" unique_id=1719519771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -3.35)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 249.0
+model_scale = 1.9972410886818857
+collide = false
+
+[node name="RimW4" type="Node3D" parent="Props" unique_id=1243284119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -2.8)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 245.0
+model_scale = 1.7935338625665078
+collide = false
+
+[node name="RimW5" type="Node3D" parent="Props" unique_id=1246038018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -2.25)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 73.0
+model_scale = 1.6408750466992674
+collide = false
+
+[node name="RimW6" type="Node3D" parent="Props" unique_id=1437104103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1.7)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 135.0
+model_scale = 1.7914487774039964
+collide = false
+
+[node name="RimW7" type="Node3D" parent="Props" unique_id=1496785617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1.15)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 82.0
+model_scale = 1.8065338075849289
+collide = false
+
+[node name="RimW8" type="Node3D" parent="Props" unique_id=1653814217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -0.6)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 270.0
+model_scale = 1.7447009836036045
+collide = false
+
+[node name="RimW9" type="Node3D" parent="Props" unique_id=1449517946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -0.05)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 278.0
+model_scale = 1.965658313116558
+collide = false
+
+[node name="RimW10" type="Node3D" parent="Props" unique_id=979395769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0.5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 152.0
+model_scale = 1.9914004970875891
+collide = false
+
+[node name="RimW11" type="Node3D" parent="Props" unique_id=245652039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 1.05)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 356.0
+model_scale = 1.9381790377530907
+collide = false
+
+[node name="RimW12" type="Node3D" parent="Props" unique_id=1973154178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 1.6)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 187.0
+model_scale = 1.963303417465216
+collide = false
+
+[node name="RimW13" type="Node3D" parent="Props" unique_id=1472004539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 2.15)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 114.0
+model_scale = 1.8130369589971516
+collide = false
+
+[node name="RimW14" type="Node3D" parent="Props" unique_id=1016962603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 2.7)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 168.0
+model_scale = 1.8545767701358848
+collide = false
+
+[node name="RimW15" type="Node3D" parent="Props" unique_id=552992139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3.25)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 99.0
+model_scale = 1.922431433914267
+collide = false
+
+[node name="RimW16" type="Node3D" parent="Props" unique_id=1209807636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3.8)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 116.0
+model_scale = 1.67996719335806
+collide = false
+
+[node name="RimW17" type="Node3D" parent="Props" unique_id=114558543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4.35)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 182.0
+model_scale = 1.8924015969901684
+collide = false
+
+[node name="RimW18" type="Node3D" parent="Props" unique_id=1815429981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4.9)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 143.0
+model_scale = 1.7888960249995425
+collide = false
+
+[node name="RimE0" type="Node3D" parent="Props" unique_id=1250826962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 354.0
+model_scale = 1.8420556126729104
+collide = false
+
+[node name="RimE1" type="Node3D" parent="Props" unique_id=1565406997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -4.45)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 228.0
+model_scale = 1.923426297119323
+collide = false
+
+[node name="RimE2" type="Node3D" parent="Props" unique_id=1943797115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3.9)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 178.0
+model_scale = 1.9820002525285336
+collide = false
+
+[node name="RimE3" type="Node3D" parent="Props" unique_id=493436390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3.35)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 41.0
+model_scale = 1.6881849291984952
+collide = false
+
+[node name="RimE4" type="Node3D" parent="Props" unique_id=880145862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -2.8)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 240.0
+model_scale = 1.678682465367727
+collide = false
+
+[node name="RimE5" type="Node3D" parent="Props" unique_id=1408468861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -2.25)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 247.0
+model_scale = 1.8496265589751273
+collide = false
+
+[node name="RimE6" type="Node3D" parent="Props" unique_id=698316982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1.7)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+model_scale = 1.7917893705046153
+collide = false
+
+[node name="RimE7" type="Node3D" parent="Props" unique_id=2094590869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1.15)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 176.0
+model_scale = 1.919857497939864
+collide = false
+
+[node name="RimE8" type="Node3D" parent="Props" unique_id=1759621848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -0.6)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 338.0
+model_scale = 1.6479614523344552
+collide = false
+
+[node name="RimE9" type="Node3D" parent="Props" unique_id=1735787151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -0.05)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 102.0
+model_scale = 1.7912130978376002
+collide = false
+
+[node name="RimE10" type="Node3D" parent="Props" unique_id=1951101863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0.5)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 222.0
+model_scale = 1.9156541724081104
+collide = false
+
+[node name="RimE11" type="Node3D" parent="Props" unique_id=446728797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1.05)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 44.0
+model_scale = 1.9203294275586764
+collide = false
+
+[node name="RimE12" type="Node3D" parent="Props" unique_id=1968735281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1.6)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 202.0
+model_scale = 1.7852642160695398
+collide = false
+
+[node name="RimE13" type="Node3D" parent="Props" unique_id=895407687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2.15)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 43.0
+model_scale = 1.8899194662536865
+collide = false
+
+[node name="RimE14" type="Node3D" parent="Props" unique_id=1329871452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2.7)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 65.0
+model_scale = 1.611019540283533
+collide = false
+
+[node name="RimE15" type="Node3D" parent="Props" unique_id=153561942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3.25)
+script = ExtResource("4")
+model = "nature/rock_smallFlatC"
+rot = 238.0
+model_scale = 1.9226007928128783
+collide = false
+
+[node name="RimE16" type="Node3D" parent="Props" unique_id=1276316045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3.8)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 313.0
+model_scale = 1.9306041914101548
+collide = false
+
+[node name="RimE17" type="Node3D" parent="Props" unique_id=1929205298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4.35)
+script = ExtResource("4")
+model = "nature/rock_smallFlatB"
+rot = 336.0
+model_scale = 1.9749870042515023
+collide = false
+
+[node name="RimE18" type="Node3D" parent="Props" unique_id=1366952835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4.9)
+script = ExtResource("4")
+model = "nature/rock_smallFlatA"
+rot = 280.0
+model_scale = 1.8193142239182707
+collide = false
+
+[node name="Boulder0" type="Node3D" parent="Props" unique_id=2018849943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, -3.2)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 7.0
+model_scale = 1.6
+
+[node name="Boulder0S" type="Node3D" parent="Props" unique_id=1095399287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72, 0, -2.72)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 332.0
+model_scale = 0.5599999999999999
+collide = false
+
+[node name="Boulder1" type="Node3D" parent="Props" unique_id=270088830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -3.2)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 269.0
+model_scale = 1.6
+
+[node name="Boulder1S" type="Node3D" parent="Props" unique_id=316495696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.48, 0, -2.72)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 71.0
+model_scale = 0.5599999999999999
+collide = false
+
+[node name="Boulder2" type="Node3D" parent="Props" unique_id=753323122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 3.2)
+script = ExtResource("4")
+model = "nature/stone_tallB"
+rot = 99.0
+model_scale = 1.6
+
+[node name="Boulder2S" type="Node3D" parent="Props" unique_id=1077843837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.48, 0, 3.68)
+script = ExtResource("4")
+model = "nature/rock_smallB"
+rot = 14.0
+model_scale = 0.5599999999999999
+collide = false
+
+[node name="Boulder3" type="Node3D" parent="Props" unique_id=1301104970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3.6)
+script = ExtResource("4")
+model = "nature/stone_tallA"
+rot = 108.0
+model_scale = 1.6
+
+[node name="Boulder3S" type="Node3D" parent="Props" unique_id=625079850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12, 0, 4.08)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 256.0
+model_scale = 0.5599999999999999
+collide = false
+
+[node name="Dais" type="Node3D" parent="Props" unique_id=866416224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.5)
+script = ExtResource("3")
+size = Vector3(4, 0.4, 2.6)
+color = Color(0.4, 0.4, 0.41, 1)
+
+[node name="DaisTop" type="Node3D" parent="Props" unique_id=469626681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -8.5)
+script = ExtResource("3")
+size = Vector3(3.7, 0.08, 2.3)
+color = Color(0.57, 0.57, 0.58, 1)
+collide = false
+
+[node name="Step1" type="Node3D" parent="Props" unique_id=149368487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.05)
+script = ExtResource("3")
+size = Vector3(2.6, 0.26, 0.34)
+color = Color(0.57, 0.57, 0.58, 1)
+collide = false
+
+[node name="Step2" type="Node3D" parent="Props" unique_id=1434903585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.72)
+script = ExtResource("3")
+size = Vector3(2.1, 0.13, 0.34)
+color = Color(0.57, 0.57, 0.58, 1)
+collide = false
+
+[node name="StatueWBase" type="Node3D" parent="Props" unique_id=984233085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0, 11.4)
+script = ExtResource("3")
+size = Vector3(1.9, 0.45, 1.9)
+color = Color(0.4, 0.4, 0.41, 1)
+
+[node name="StatueWPlinth" type="Node3D" parent="Props" unique_id=344031718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0.45, 11.4)
+script = ExtResource("3")
+size = Vector3(1.3, 1.05, 1.3)
+color = Color(0.57, 0.57, 0.58, 1)
+
+[node name="StatueWRock" type="Node3D" parent="Props" unique_id=1001147746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 1.5, 11.4)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 25.0
+model_scale = 2.1
+collide = false
+
+[node name="StatueWRockB" type="Node3D" parent="Props" unique_id=2078745837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45, 1.5, 11.1)
+script = ExtResource("4")
+model = "nature/rock_largeD"
+rot = 200.0
+model_scale = 1.3
+collide = false
+
+[node name="StatueEBase" type="Node3D" parent="Props" unique_id=223093671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 0, 11.4)
+script = ExtResource("3")
+size = Vector3(1.9, 0.45, 1.9)
+color = Color(0.4, 0.4, 0.41, 1)
+
+[node name="StatueEPlinth" type="Node3D" parent="Props" unique_id=540783071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 0.45, 11.4)
+script = ExtResource("3")
+size = Vector3(1.3, 1.05, 1.3)
+color = Color(0.57, 0.57, 0.58, 1)
+
+[node name="StatueERock" type="Node3D" parent="Props" unique_id=254637733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 1.5, 11.4)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 25.0
+model_scale = 2.1
+collide = false
+
+[node name="StatueERockB" type="Node3D" parent="Props" unique_id=92961166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35, 1.5, 11.1)
+script = ExtResource("4")
+model = "nature/rock_largeD"
+rot = 200.0
+model_scale = 1.3
+collide = false
+
+[node name="RockW0" type="Node3D" parent="Props" unique_id=901738265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, -11.5)
+script = ExtResource("4")
+model = "nature/rock_largeE"
+rot = 278.0
+model_scale = 2.5367551495816687
+
+[node name="RockW0S0" type="Node3D" parent="Props" unique_id=2111540666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.027212, 0, -10.637504)
+script = ExtResource("4")
+model = "nature/rock_smallB"
+rot = 31.0
+model_scale = 1.1765548265613155
+collide = false
+
+[node name="RockW0S1" type="Node3D" parent="Props" unique_id=1253839621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.969848, 0, -12.514702)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 339.0
+model_scale = 1.0273928851407756
+collide = false
+
+[node name="RockW0S2" type="Node3D" parent="Props" unique_id=76522365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.838973, 0, -13.072788)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 256.0
+model_scale = 0.8207351316005824
+collide = false
+
+[node name="RockW1" type="Node3D" parent="Props" unique_id=1688595174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, -9.743714)
+script = ExtResource("4")
+model = "nature/rock_largeC"
+rot = 311.0
+model_scale = 2.9147658171220634
+
+[node name="RockW1S1" type="Node3D" parent="Props" unique_id=867810568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.173973, 0, -10.909621)
+script = ExtResource("4")
+model = "nature/rock_smallB"
+rot = 72.0
+model_scale = 1.122851527690638
+collide = false
+
+[node name="RockW1S2" type="Node3D" parent="Props" unique_id=1212015542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.725571, 0, -11.550869)
+script = ExtResource("4")
+model = "nature/rock_smallG"
+rot = 31.0
+model_scale = 1.045458838693066
+collide = false
+
+[node name="RockW2" type="Node3D" parent="Props" unique_id=324427469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, -7.7308702)
+script = ExtResource("4")
+model = "nature/rock_largeB"
+rot = 286.0
+model_scale = 2.9776186248323455
+
+[node name="RockWC3" type="Node3D" parent="Props" unique_id=2130404156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, -6.012449)
+script = ExtResource("4")
+model = "nature/cliff_block_rock"
+rot = 226.0
+model_scale = 2.5497416678650606
+
+[node name="RockW4" type="Node3D" parent="Props" unique_id=757206577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, -4.134519)
+script = ExtResource("4")
+model = "nature/rock_largeD"
+rot = 354.0
+model_scale = 3.562704352347362
+
+[node name="RockW4S1" type="Node3D" parent="Props" unique_id=864604219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.52386, 0, -5.559601)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 259.0
+model_scale = 1.6725835353720542
+collide = false
+
+[node name="RockW4S2" type="Node3D" parent="Props" unique_id=791972455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.531189, 0, -6.3433957)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 286.0
+model_scale = 1.6413232506874986
+collide = false
+
+[node name="RockW5" type="Node3D" parent="Props" unique_id=1688971306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, -2.3427072)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 226.0
+model_scale = 2.826539510428818
+
+[node name="RockW5S1" type="Node3D" parent="Props" unique_id=525405874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.126331, 0, -3.473323)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 37.0
+model_scale = 0.9561735550887484
+collide = false
+
+[node name="RockW6" type="Node3D" parent="Props" unique_id=1332090237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, -0.6070623)
+script = ExtResource("4")
+model = "nature/stone_largeD"
+rot = 338.0
+model_scale = 3.287705627204666
+
+[node name="RockW6S0" type="Node3D" parent="Props" unique_id=124317653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.561623, 0, 0.5107576)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 70.0
+model_scale = 1.558892124939461
+collide = false
+
+[node name="RockW6S2" type="Node3D" parent="Props" unique_id=1521136864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.613688, 0, -2.6454399)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 249.0
+model_scale = 1.082651756160673
+collide = false
+
+[node name="RockW7" type="Node3D" parent="Props" unique_id=779220750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 1.5104208)
+script = ExtResource("4")
+model = "nature/rock_tallH"
+rot = 206.0
+model_scale = 2.5131970377717354
+
+[node name="RockW8" type="Node3D" parent="Props" unique_id=1719606705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 3.6659265)
+script = ExtResource("4")
+model = "nature/rock_tallB"
+rot = 9.0
+model_scale = 2.2272760992733507
+
+[node name="RockW8S0" type="Node3D" parent="Props" unique_id=1991227387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.219089, 0, 4.4232)
+script = ExtResource("4")
+model = "nature/rock_smallG"
+rot = 319.0
+model_scale = 0.786633248173904
+collide = false
+
+[node name="RockW8S1" type="Node3D" parent="Props" unique_id=1065774295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.802729, 0, 2.7750158)
+script = ExtResource("4")
+model = "nature/rock_smallA"
+rot = 117.0
+model_scale = 1.0577451629839294
+collide = false
+
+[node name="RockW9" type="Node3D" parent="Props" unique_id=2079535218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 5.5018215)
+script = ExtResource("4")
+model = "nature/rock_largeE"
+rot = 66.0
+model_scale = 2.2554234658796948
+
+[node name="RockW9S0" type="Node3D" parent="Props" unique_id=1954419562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.201637, 0, 6.2686653)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 132.0
+model_scale = 0.8414322060245844
+collide = false
+
+[node name="RockW9S1" type="Node3D" parent="Props" unique_id=1012244085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.817928, 0, 4.599652)
+script = ExtResource("4")
+model = "nature/rock_smallG"
+rot = 292.0
+model_scale = 0.8774277693996437
+collide = false
+
+[node name="RockWC10" type="Node3D" parent="Props" unique_id=184096819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 7.347165)
+script = ExtResource("4")
+model = "nature/cliff_block_rock"
+rot = 137.0
+model_scale = 2.9874803166623343
+
+[node name="RockW11" type="Node3D" parent="Props" unique_id=1767713036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 9.65401)
+script = ExtResource("4")
+model = "nature/rock_largeB"
+rot = 311.0
+model_scale = 3.0882153088151836
+
+[node name="RockW11S0" type="Node3D" parent="Props" unique_id=758901624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.685307, 0, 10.704003)
+script = ExtResource("4")
+model = "nature/rock_smallA"
+rot = 135.0
+model_scale = 1.4060628687935892
+collide = false
+
+[node name="RockW11S1" type="Node3D" parent="Props" unique_id=1536469526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.267636, 0, 8.418724)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 283.0
+model_scale = 1.1586886874435378
+collide = false
+
+[node name="RockW11S2" type="Node3D" parent="Props" unique_id=235648793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.673535, 0, 7.7393165)
+script = ExtResource("4")
+model = "nature/rock_smallG"
+rot = 66.0
+model_scale = 0.950481717746739
+collide = false
+
+[node name="RockE0" type="Node3D" parent="Props" unique_id=53814220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -11.5)
+script = ExtResource("4")
+model = "nature/rock_largeE"
+rot = 25.0
+model_scale = 3.5133762832971813
+
+[node name="RockE0S1" type="Node3D" parent="Props" unique_id=272777438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.702777, 0, -12.905351)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 156.0
+model_scale = 1.3898756757517552
+collide = false
+
+[node name="RockEC1" type="Node3D" parent="Props" unique_id=1360154114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -9.538019)
+script = ExtResource("4")
+model = "nature/cliff_block_rock"
+rot = 128.0
+model_scale = 2.826918071390345
+
+[node name="RockE2" type="Node3D" parent="Props" unique_id=1180163073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -7.8621545)
+script = ExtResource("4")
+model = "nature/rock_largeD"
+rot = 263.0
+model_scale = 2.2258074553781193
+
+[node name="RockE2S0" type="Node3D" parent="Props" unique_id=1111079007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9800005, 0, -7.10538)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 54.0
+model_scale = 0.9314952068586436
+collide = false
+
+[node name="RockE2S1" type="Node3D" parent="Props" unique_id=1426689139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.398064, 0, -8.752478)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 253.0
+model_scale = 0.8864570335991608
+collide = false
+
+[node name="RockE2S2" type="Node3D" parent="Props" unique_id=1969605820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.267742, 0, -9.242155)
+script = ExtResource("4")
+model = "nature/rock_smallG"
+rot = 157.0
+model_scale = 0.943282759494941
+collide = false
+
+[node name="RockE3" type="Node3D" parent="Props" unique_id=1241296681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -5.5244465)
+script = ExtResource("4")
+model = "nature/stone_largeD"
+rot = 71.0
+model_scale = 2.6797864755844643
+
+[node name="RockE3S0" type="Node3D" parent="Props" unique_id=1680682971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.261468, 0, -4.613319)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 27.0
+model_scale = 1.2076669479335305
+collide = false
+
+[node name="RockE3S2" type="Node3D" parent="Props" unique_id=1583829647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.403936, 0, -7.185914)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 220.0
+model_scale = 0.8826797897754534
+collide = false
+
+[node name="RockE4" type="Node3D" parent="Props" unique_id=2063596608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -3.815307)
+script = ExtResource("4")
+model = "nature/stone_largeD"
+rot = 144.0
+model_scale = 3.377776574591059
+
+[node name="RockE4S0" type="Node3D" parent="Props" unique_id=1847223779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6942215, 0, -2.6668627)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 150.0
+model_scale = 1.040837358000528
+collide = false
+
+[node name="RockE5" type="Node3D" parent="Props" unique_id=645146399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -2.162771)
+script = ExtResource("4")
+model = "nature/rock_tallH"
+rot = 165.0
+model_scale = 2.709797893065968
+
+[node name="RockE5S1" type="Node3D" parent="Props" unique_id=1356385232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.136709, 0, -3.24669)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 111.0
+model_scale = 0.9868680303844184
+collide = false
+
+[node name="RockE6" type="Node3D" parent="Props" unique_id=2070881806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -0.24563234)
+script = ExtResource("4")
+model = "nature/rock_largeD"
+rot = 127.0
+model_scale = 2.8645010783560605
+
+[node name="RockE6S0" type="Node3D" parent="Props" unique_id=1177616415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.375991, 0, 0.728298)
+script = ExtResource("4")
+model = "nature/rock_smallA"
+rot = 46.0
+model_scale = 0.995558390869233
+collide = false
+
+[node name="RockE6S2" type="Node3D" parent="Props" unique_id=772916177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.459351, 0, -2.021623)
+script = ExtResource("4")
+model = "nature/rock_smallA"
+rot = 201.0
+model_scale = 0.8709485349923586
+collide = false
+
+[node name="RockE7" type="Node3D" parent="Props" unique_id=307763473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, 1.6173389)
+script = ExtResource("4")
+model = "nature/rock_tallH"
+rot = 79.0
+model_scale = 2.525933393227129
+
+[node name="RockE7S0" type="Node3D" parent="Props" unique_id=2085214084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.166079, 0, 2.4761562)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 305.0
+model_scale = 0.9348806970315828
+collide = false
+
+[node name="RockE7S2" type="Node3D" parent="Props" unique_id=1593137317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.35778, 0, 0.05126016)
+script = ExtResource("4")
+model = "nature/rock_smallB"
+rot = 145.0
+model_scale = 1.087030482938052
+collide = false
+
+[node name="RockE8" type="Node3D" parent="Props" unique_id=1654625335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, 3.7175925)
+script = ExtResource("4")
+model = "nature/rock_tallH"
+rot = 321.0
+model_scale = 2.26130329336822
+
+[node name="RockE8S0" type="Node3D" parent="Props" unique_id=129754069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.002008, 0, 4.4864354)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 258.0
+model_scale = 0.7350940043294488
+collide = false
+
+[node name="RockE8S1" type="Node3D" parent="Props" unique_id=1961683104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.378896, 0, 2.8130713)
+script = ExtResource("4")
+model = "nature/rock_smallG"
+rot = 291.0
+model_scale = 1.018239471373761
+collide = false
+
+[node name="RockE8S2" type="Node3D" parent="Props" unique_id=643551550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.278391, 0, 2.3155844)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 299.0
+model_scale = 1.0031912371503462
+collide = false
+
+[node name="RockE9" type="Node3D" parent="Props" unique_id=460421667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, 5.8654227)
+script = ExtResource("4")
+model = "nature/rock_largeB"
+rot = 15.0
+model_scale = 3.5385087905128048
+
+[node name="RockE9S1" type="Node3D" parent="Props" unique_id=543049290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.689205, 0, 4.4500194)
+script = ExtResource("4")
+model = "nature/rock_smallA"
+rot = 192.0
+model_scale = 1.5939135564558895
+collide = false
+
+[node name="RockE9S2" type="Node3D" parent="Props" unique_id=1116761524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.661552, 0, 3.6715474)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 9.0
+model_scale = 1.4604160465152078
+collide = false
+
+[node name="RockEC10" type="Node3D" parent="Props" unique_id=24501037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, 7.9918876)
+script = ExtResource("4")
+model = "nature/cliff_block_rock"
+rot = 257.0
+model_scale = 2.596510836723291
+
+[node name="RockE11" type="Node3D" parent="Props" unique_id=931820269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, 10.270388)
+script = ExtResource("4")
+model = "nature/rock_tallB"
+rot = 129.0
+model_scale = 2.328718698941315
+
+[node name="RockE11S0" type="Node3D" parent="Props" unique_id=2073903811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.043805, 0, 11.062152)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 120.0
+model_scale = 1.0043305150399695
+collide = false
+
+[node name="RockE11S2" type="Node3D" parent="Props" unique_id=1701856043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.298615, 0, 8.826582)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 252.0
+model_scale = 1.0530364076873502
+collide = false
+
+[node name="RockNC0" type="Node3D" parent="Props" unique_id=1878567002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -11.6)
+script = ExtResource("4")
+model = "nature/cliff_block_rock"
+rot = 315.0
+model_scale = 3.1271879930902844
+
+[node name="RockN1" type="Node3D" parent="Props" unique_id=953374343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.207045, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_largeF"
+rot = 130.0
+model_scale = 2.477606175157879
+
+[node name="RockN1S0" type="Node3D" parent="Props" unique_id=797504819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.670929, 0, -10.757614)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 155.0
+model_scale = 1.0202959011726256
+collide = false
+
+[node name="RockN1S2" type="Node3D" parent="Props" unique_id=2077405138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.463763, 0, -13.136116)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 137.0
+model_scale = 1.17699083132585
+collide = false
+
+[node name="RockN2" type="Node3D" parent="Props" unique_id=1581555618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.287382, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_tallH"
+rot = 146.0
+model_scale = 2.504770844772389
+
+[node name="RockN2S0" type="Node3D" parent="Props" unique_id=678035030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7344236, 0, -10.748378)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 60.0
+model_scale = 1.1992694355014415
+collide = false
+
+[node name="RockN2S1" type="Node3D" parent="Props" unique_id=1989802405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.639958, 0, -12.601909)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 43.0
+model_scale = 1.1735497172039588
+collide = false
+
+[node name="RockN3" type="Node3D" parent="Props" unique_id=757349179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.116102, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_tallB"
+rot = 137.0
+model_scale = 3.3478567697798156
+
+[node name="RockN3S0" type="Node3D" parent="Props" unique_id=37517121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.040431, 0, -10.461729)
+script = ExtResource("4")
+model = "nature/rock_smallB"
+rot = 38.0
+model_scale = 1.354760547422626
+collide = false
+
+[node name="RockN3S2" type="Node3D" parent="Props" unique_id=999096116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.111745, 0, -13.675672)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 67.0
+model_scale = 1.367953805049393
+collide = false
+
+[node name="RockNC4" type="Node3D" parent="Props" unique_id=1707796140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8239343, 0, -11.6)
+script = ExtResource("4")
+model = "nature/cliff_blockHalf_rock"
+rot = 118.0
+model_scale = 2.332255549560833
+
+[node name="RockN5" type="Node3D" parent="Props" unique_id=2138753822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6254128, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_largeC"
+rot = 1.0
+model_scale = 3.4266033253118167
+
+[node name="RockN5S0" type="Node3D" parent="Props" unique_id=1771362384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49908128, 0, -10.434955)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 230.0
+model_scale = 1.27803901770559
+collide = false
+
+[node name="RockN5S1" type="Node3D" parent="Props" unique_id=1524494393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4757786, 0, -12.970641)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 176.0
+model_scale = 1.259958979893988
+collide = false
+
+[node name="RockN6" type="Node3D" parent="Props" unique_id=678954533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45651427, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 61.0
+model_scale = 2.6543666217552695
+
+[node name="RockN6S0" type="Node3D" parent="Props" unique_id=251132756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1022215, 0, -10.6975155)
+script = ExtResource("4")
+model = "nature/rock_smallB"
+rot = 6.0
+model_scale = 1.2270658611550584
+collide = false
+
+[node name="RockN6S2" type="Node3D" parent="Props" unique_id=2000168393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2528243, 0, -13.2457075)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 199.0
+model_scale = 1.273519054621576
+collide = false
+
+[node name="RockN7" type="Node3D" parent="Props" unique_id=637590438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7189379, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_largeE"
+rot = 24.0
+model_scale = 2.7049930534927675
+
+[node name="RockN7S2" type="Node3D" parent="Props" unique_id=885932416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5304358, 0, -13.277096)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 76.0
+model_scale = 0.9328938087202744
+collide = false
+
+[node name="RockNC8" type="Node3D" parent="Props" unique_id=420520515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7549477, 0, -11.6)
+script = ExtResource("4")
+model = "nature/cliff_blockHalf_rock"
+rot = 219.0
+model_scale = 2.6238133646373285
+
+[node name="RockN9" type="Node3D" parent="Props" unique_id=2052360475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.223934, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_tallH"
+rot = 281.0
+model_scale = 3.3367471744590813
+
+[node name="RockN9S2" type="Node3D" parent="Props" unique_id=503343715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.224958, 0, -13.668783)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 230.0
+model_scale = 1.3703504553671788
+collide = false
+
+[node name="RockN10" type="Node3D" parent="Props" unique_id=692048753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.170935, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_tallH"
+rot = 65.0
+model_scale = 3.4172703847340618
+
+[node name="RockN10S1" type="Node3D" parent="Props" unique_id=131153315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3256087, 0, -12.966908)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 152.0
+model_scale = 1.1824907158324676
+collide = false
+
+[node name="RockN10S2" type="Node3D" parent="Props" unique_id=1567854245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.196116, 0, -13.718708)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 133.0
+model_scale = 1.2750439559216649
+collide = false
+
+[node name="RockN11" type="Node3D" parent="Props" unique_id=117186193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.188001, 0, -11.6)
+script = ExtResource("4")
+model = "nature/rock_largeB"
+rot = 85.0
+model_scale = 2.87645483449288
+
+[node name="RockN11S0" type="Node3D" parent="Props" unique_id=1998646999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.971402, 0, -10.622005)
+script = ExtResource("4")
+model = "nature/rock_smallA"
+rot = 106.0
+model_scale = 1.122130524066535
+collide = false
+
+[node name="RockN11S1" type="Node3D" parent="Props" unique_id=903866806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.634715, 0, -12.750582)
+script = ExtResource("4")
+model = "nature/rock_smallG"
+rot = 112.0
+model_scale = 1.0974753681200338
+collide = false
+
+[node name="RockS0" type="Node3D" parent="Props" unique_id=1002585779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 11.6)
+script = ExtResource("4")
+model = "nature/rock_largeD"
+rot = 46.0
+model_scale = 2.7983922332185096
+
+[node name="RockS0S1" type="Node3D" parent="Props" unique_id=912135791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.511132, 0, 10.480643)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 122.0
+model_scale = 1.0250369719119763
+collide = false
+
+[node name="RockS0S2" type="Node3D" parent="Props" unique_id=426482298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.160482, 0, 9.864997)
+script = ExtResource("4")
+model = "nature/rock_smallB"
+rot = 10.0
+model_scale = 1.217128154770491
+collide = false
+
+[node name="RockS1" type="Node3D" parent="Props" unique_id=647257313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8610525, 0, 11.6)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 138.0
+model_scale = 2.7794370013786613
+
+[node name="RockS2" type="Node3D" parent="Props" unique_id=1347702983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3336735, 0, 11.6)
+script = ExtResource("4")
+model = "nature/stone_largeD"
+rot = 110.0
+model_scale = 2.3762233224619513
+
+[node name="RockS2S1" type="Node3D" parent="Props" unique_id=405912359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.616834, 0, 10.64951)
+script = ExtResource("4")
+model = "nature/rock_smallD"
+rot = 204.0
+model_scale = 0.9890851560084892
+collide = false
+
+[node name="RockS2S2" type="Node3D" parent="Props" unique_id=414422591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.620806, 0, 10.126741)
+script = ExtResource("4")
+model = "nature/rock_smallC"
+rot = 11.0
+model_scale = 0.767293117693723
+collide = false
+
+[node name="RockS9" type="Node3D" parent="Props" unique_id=648403144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7345624, 0, 11.6)
+script = ExtResource("4")
+model = "nature/rock_tallB"
+rot = 229.0
+model_scale = 3.499424995152838
+
+[node name="RockS10" type="Node3D" parent="Props" unique_id=1301548030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.950218, 0, 11.6)
+script = ExtResource("4")
+model = "nature/stone_largeD"
+rot = 234.0
+model_scale = 3.154905086401452
+
+[node name="RockS10S1" type="Node3D" parent="Props" unique_id=1792171232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24657, 0, 10.3380375)
+script = ExtResource("4")
+model = "nature/rock_smallA"
+rot = 64.0
+model_scale = 1.07854793364406
+collide = false
+
+[node name="RockS10S2" type="Node3D" parent="Props" unique_id=1080395733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.896689, 0, 9.643959)
+script = ExtResource("4")
+model = "nature/rock_smallH"
+rot = 155.0
+model_scale = 1.4930218608548704
+collide = false
+
+[node name="RockS11" type="Node3D" parent="Props" unique_id=54423651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2387495, 0, 11.6)
+script = ExtResource("4")
+model = "nature/rock_largeB"
+rot = 50.0
+model_scale = 2.9395543999285065
+
+[node name="RockS11S1" type="Node3D" parent="Props" unique_id=1665871216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.65139, 0, 10.424178)
+script = ExtResource("4")
+model = "nature/rock_smallG"
+rot = 98.0
+model_scale = 1.0872081592727787
+collide = false
+
+[node name="Column0" type="Node3D" parent="Props" unique_id=503672569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4, 0, -11.4)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 275.0
+model_scale = 4.441217040994013
+
+[node name="Column1" type="Node3D" parent="Props" unique_id=198858900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4, 0, -11.4)
+script = ExtResource("4")
+model = "nature/rock_tallH"
+rot = 142.0
+model_scale = 4.967151977517348
+
+[node name="Column2" type="Node3D" parent="Props" unique_id=818539048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4, 0, 11.4)
+script = ExtResource("4")
+model = "nature/rock_tallI"
+rot = 124.0
+model_scale = 4.580243376054035
+
+[node name="Column3" type="Node3D" parent="Props" unique_id=1633862162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4, 0, 11.4)
+script = ExtResource("4")
+model = "nature/rock_tallA"
+rot = 280.0
+model_scale = 4.397646707470899
+
+[node name="TorchNWBracket" type="Node3D" parent="Props" unique_id=837654398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3.6, -12.75)
+script = ExtResource("3")
+size = Vector3(0.28, 0.5, 0.28)
+color = Color(0.3, 0.27, 0.24, 1)
+collide = false
+
+[node name="TorchNWFlame" type="Node3D" parent="Props" unique_id=1656972900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4.05, -12.75)
+script = ExtResource("3")
+shape = 2
+size = Vector3(0.34, 0.42, 0.34)
+color = Color(1, 0.6, 0.22, 1)
+emission = 1.6
+collide = false
+
+[node name="TorchNEBracket" type="Node3D" parent="Props" unique_id=1396440391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3.6, -12.75)
+script = ExtResource("3")
+size = Vector3(0.28, 0.5, 0.28)
+color = Color(0.3, 0.27, 0.24, 1)
+collide = false
+
+[node name="TorchNEFlame" type="Node3D" parent="Props" unique_id=2039536553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.05, -12.75)
+script = ExtResource("3")
+shape = 2
+size = Vector3(0.34, 0.42, 0.34)
+color = Color(1, 0.6, 0.22, 1)
+emission = 1.6
+collide = false
+
+[node name="TorchWBracket" type="Node3D" parent="Props" unique_id=105932723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.85, 3.6, 0)
+script = ExtResource("3")
+size = Vector3(0.28, 0.5, 0.28)
+color = Color(0.3, 0.27, 0.24, 1)
+collide = false
+
+[node name="TorchWFlame" type="Node3D" parent="Props" unique_id=2029734972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.85, 4.05, 0)
+script = ExtResource("3")
+shape = 2
+size = Vector3(0.34, 0.42, 0.34)
+color = Color(1, 0.6, 0.22, 1)
+emission = 1.6
+collide = false
+
+[node name="TorchEBracket" type="Node3D" parent="Props" unique_id=800568111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.85, 3.6, 0)
+script = ExtResource("3")
+size = Vector3(0.28, 0.5, 0.28)
+color = Color(0.3, 0.27, 0.24, 1)
+collide = false
+
+[node name="TorchEFlame" type="Node3D" parent="Props" unique_id=750955744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.85, 4.05, 0)
+script = ExtResource("3")
+shape = 2
+size = Vector3(0.34, 0.42, 0.34)
+color = Color(1, 0.6, 0.22, 1)
+emission = 1.6
+collide = false
+
+[node name="TorchSWBracket" type="Node3D" parent="Props" unique_id=385329631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3.6, 12.75)
+script = ExtResource("3")
+size = Vector3(0.28, 0.5, 0.28)
+color = Color(0.3, 0.27, 0.24, 1)
+collide = false
+
+[node name="TorchSWFlame" type="Node3D" parent="Props" unique_id=224171352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4.05, 12.75)
+script = ExtResource("3")
+shape = 2
+size = Vector3(0.34, 0.42, 0.34)
+color = Color(1, 0.6, 0.22, 1)
+emission = 1.6
+collide = false
+
+[node name="TorchSEBracket" type="Node3D" parent="Props" unique_id=1679930093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3.6, 12.75)
+script = ExtResource("3")
+size = Vector3(0.28, 0.5, 0.28)
+color = Color(0.3, 0.27, 0.24, 1)
+collide = false
+
+[node name="TorchSEFlame" type="Node3D" parent="Props" unique_id=989699652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.05, 12.75)
+script = ExtResource("3")
+shape = 2
+size = Vector3(0.34, 0.42, 0.34)
+color = Color(1, 0.6, 0.22, 1)
+emission = 1.6
+collide = false
+
+[node name="Lamp0" type="OmniLight3D" parent="." unique_id=1241161818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -8)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 1.1
+omni_range = 17.0
+
+[node name="Lamp1" type="OmniLight3D" parent="." unique_id=1236922241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.4, -6)
+light_color = Color(1, 0.86, 0.68, 1)
+omni_range = 15.0
+
+[node name="Lamp2" type="OmniLight3D" parent="." unique_id=113992424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.4, -6)
+light_color = Color(1, 0.86, 0.68, 1)
+omni_range = 15.0
+
+[node name="Lamp3" type="OmniLight3D" parent="." unique_id=1671461703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.4, 7)
+light_color = Color(1, 0.86, 0.68, 1)
+omni_range = 15.0
+
+[node name="Lamp4" type="OmniLight3D" parent="." unique_id=2109126422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.4, 7)
+light_color = Color(1, 0.86, 0.68, 1)
+omni_range = 15.0
+
+[node name="Lamp5" type="OmniLight3D" parent="." unique_id=867230760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, 11)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.9
+omni_range = 13.0
+
+[node name="NPC_GymGuide" parent="." unique_id=1067911801 instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 11)
+npc_name = "Gym Guide"
+sprite_sheet = ExtResource("6")
+lines = PackedStringArray("Hiya!\nDo you want to dream big?", "Do you dare to dream of becoming\nthe POKéMON champ?", "I\'m no TRAINER, but I can advise\nyou on how to win.", "Let me take you to the top!", "The first POKéMON out in a match is\nat the left of the POKéMON LIST.", "By changing the order of POKéMON,\nyou may gain an advantage.", "Try different orders to suit your\nopponent\'s party.")
+
+[node name="NPC_Brock" parent="." unique_id=1871788362 instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -8.5)
+script = ExtResource("7")
+trainer_id = "brock"
+sight = 0.0
+sprite_sheet = ExtResource("8")
+
+[node name="Trainer_Liam" parent="." unique_id=918023863 instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 4.5)
+script = ExtResource("7")
+trainer_id = "camper_liam"
+sight = 5.0
+sprite_sheet = ExtResource("9")
+start_facing = 3
+
+[node name="pw_gym_in" type="Marker3D" parent="." unique_id=2008418297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.5)
+script = ExtResource("10")
+facing = 3
+
+[node name="GymArenaCenter" type="Marker3D" parent="." unique_id=961406673]
+
+[node name="BrockSpot" type="Marker3D" parent="." unique_id=1830024286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.2)
+
+[node name="LiamSpot" type="Marker3D" parent="." unique_id=1959208651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 4.5)
+
+[node name="ExitDoor" parent="." unique_id=94880589 instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.4)
+target_scene = "res://scenes/world/overworld.tscn"
+target_spawn = "pw_gym_door"

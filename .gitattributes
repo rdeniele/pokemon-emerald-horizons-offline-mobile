@@ -1,0 +1,4 @@
+# Recovered game bytes are checked against the retained recovery manifest.
+# Preserve exact line endings on every checkout, including Windows.
+game/** -text
+reference/prototype/baseline/** -text

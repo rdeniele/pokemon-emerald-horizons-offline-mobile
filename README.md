@@ -1,37 +1,35 @@
-# Emerald Horizons Offline Mobile
+# Pokémon Prototype Mobile
 
-Android landscape fan game with Emerald's field world and event scripts, an expanded Generation 1–9 roster, and the existing Empress-inspired action battle engine and Pokémon assets. The app opens directly into the overworld. Separate region, biome, farming and click-to-battle launchers are removed.
+The game supplied in `C:/Users/ronde/Downloads/Archive/PokemonPrototypeDemo.pck`, recovered and adapted in its original Godot engine. This replaces the previous Emerald/Empress implementation. Original HD-2D scenery, sprites, music, story, party, inventory, real-time combat and local saves are retained. The supplied demo covers Pallet Town through Pewter/Brock; no later regions are claimed.
 
-The canonical import includes 518 maps, 441 layouts, 1,313 warps, original collision/elevation data, NPCs, dialogue, trainer teams, shops and story flags. Original field scripts suspend for action combat and resume after the committed outcome. The field menu provides progression-gated Pokédex, Pokémon, Bag, PokéNav, trainer card, Save, Option and Exit. New games begin in the truck with an empty party; starters from all nine generations are chosen in Birch's bag event.
+## Play
 
-## APK
+Install [the Android APK](build/apk/pokemon-prototype-mobile.apk). Android 7.0+, ARMv7/ARM64, landscape, immersive fullscreen, no Internet permission. Existing package name and signing key retained. Previous WebView-game saves are incompatible with this different game.
 
-`build/apk/emerald-horizons-debug.apk` requires Android 7.0/API 24 or newer and Android System WebView. The signed development APK bundles all runtime files and assets, has no INTERNET permission, uses landscape orientation and opens without browser chrome. Preserve the existing debug signing key to install updates over previous builds.
+Drag the left stick to move; hold B to run; A talks/interacts. The upper-right menu opens the original party, bag, Pokédex, save and options. Combat retains four move buttons, jump, sprint, items and party selection. Multiple fingers work together. Backgrounding releases controls. Original keyboard/gamepad support remains.
 
-Install with Files, or run:
+`npm run dev` serves the browser preview at http://localhost:4173. It opens directly into Godot. Portrait phones show a rotate prompt; fullscreen requests landscape where supported. Native Android is the primary mobile deliverable.
 
-```powershell
-D:\android-sdk\platform-tools\adb.exe install -r build\apk\emerald-horizons-debug.apk
-```
+## Build
 
-Movement and facing share one left joystick. Releasing it retains facing. Skills and Dodge are on the right; mouse aiming and its crosshair are removed. Field exploration uses the same joystick, Interact and Run. Running shoes, bikes, HMs and field items follow their source gates.
+`game/` is the recovered Godot 4.7.1 project. `reference/prototype/baseline/` retains untouched originals of the eight adapted files. `scripts/adapt-prototype.mjs` reapplies modifications reproducibly. `src/app/` is only the browser preview shell.
 
-## Build and checks
+Portable Godot and selected official export templates are in ignored `tools/`. Self-contained editor settings use the existing Android SDK and JDK17. Preserve `build/debug.keystore` for updates.
 
 ```powershell
+node scripts/adapt-prototype.mjs
+npm run build:game     # Web + signed debug APK
+npm run build         # static Next.js preview
 npm run typecheck
 npm test
-npm run test:original
-npm run build:android
-node scripts/verify-apk.mjs
 ```
 
-The Android packaging script uses the existing SDK at `D:\android-sdk` and JDK 17. Native local saves retain a checksum-valid backup and Android import/export. Battle checkpoints retain the original deterministic engine state.
+Integration test:
 
-## Evidence and current limits
+```powershell
+& tools/godot/Godot_v4.7.1-stable_win64_console.exe --path game --script res://mobile_smoke.gd --resolution 844x390 -- --touch
+```
 
-[REA evidence](docs/REA-GAMEPLAY-EVIDENCE.md) records the supplied Empress ASAR identity and retained static analysis. [World import](docs/EMERALD-WORLD-IMPORT.md) records exact map/resource coverage. [Progression coverage](docs/EMERALD-PROGRESSION-COVERAGE.md) lists the 21 source story entrypoints checked through Hall of Fame and their test boundaries. The readable local pokeemerald reference matches the supplied ROM's expected identity; no byte-identical source rebuild is claimed. The ROM itself is not bundled.
+The previous source, assets, tests and unfinished edits are in `backups/pre-prototype-20261017.zip`. Downloads is untouched. Old generated outputs were removed; backup, signing key and new builds remain.
 
-Gamma's encrypted package supplies bounded scenario references; its exact gameplay and assets have not been decoded. This build is an ongoing source port, not a certified complete Emerald playthrough. Optional contests, Battle Frontier, some postgame native services and complete cinematic presentations remain incomplete. Unsupported native handlers preserve the script checkpoint and report the missing handler. Full opening-to-Champion traversal and physical Android acceptance remain outstanding. Browser QA was blocked by the browser security policy in the latest continuation; source/engine/build checks remain available.
-
-Nintendo, Game Freak, Creatures and sprite contributors are credited in the in-app Credits. Pokémon artwork and names remain their owners' property. See [asset provenance](ASSETS.md).
+See [recovery and verification](reference/prototype/RECOVERY.md). Physical-device performance and a full start-to-Brock playthrough remain acceptance work. Original credits remain in the game. This APK is development-signed.

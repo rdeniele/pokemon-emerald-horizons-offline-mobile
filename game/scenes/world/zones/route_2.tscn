@@ -1,0 +1,224 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cqrhwq541w4b0" path="res://scripts/world/zone.gd" id="1"]
+[ext_resource type="Script" uid="uid://dsrisntadms64" path="res://scripts/world/world_builder.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="3"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="4"]
+[ext_resource type="Script" uid="uid://clw8juc1sypgx" path="res://scripts/tall_grass.gd" id="5"]
+[ext_resource type="Script" uid="uid://b3thag1pwxb7w" path="res://scripts/spawn_zone.gd" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://duddxie5oglw7" path="res://assets/sprites/npc_bug_catcher.png" id="8"]
+[ext_resource type="Script" uid="uid://cfra8s1cw4euk" path="res://scripts/world/sign_post.gd" id="9"]
+[ext_resource type="Script" uid="uid://duiuago7coixe" path="res://scripts/world/item_pickup.gd" id="10"]
+[ext_resource type="Script" uid="uid://bxvu1ieciq1ev" path="res://scripts/world/cut_tree.gd" id="11"]
+[ext_resource type="Script" uid="uid://cq5o0taun2ekv" path="res://scripts/world/static_mon.gd" id="12"]
+
+[node name="Zone_route_2" type="Node3D" unique_id=2017135996]
+script = ExtResource("1")
+zone_id = "route_2"
+display_name = "ROUTE 2"
+
+[node name="World" type="Node3D" parent="." unique_id=1855886370]
+script = ExtResource("2")
+map_file = "res://data/maps/route_2.json"
+
+[node name="Doors" type="Node3D" parent="." unique_id=828810856]
+
+[node name="Door_forest_gate" parent="Doors" unique_id=432559249 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -246.746)
+target_scene = "res://scenes/interiors/viridian_forest_interiors.tscn"
+target_spawn = "vf_gate_s_in"
+
+[node name="r2_forest_gate_door" type="Marker3D" parent="Doors" unique_id=1912872928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -245.296)
+script = ExtResource("4")
+
+[node name="Door_forest_gate_back" parent="Doors" unique_id=221166053 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -253.254)
+target_scene = "res://scenes/interiors/viridian_forest_interiors.tscn"
+target_spawn = "vf_gate_s_out"
+
+[node name="r2_forest_gate_back" type="Marker3D" parent="Doors" unique_id=622046791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -254.704)
+script = ExtResource("4")
+
+[node name="r2_south" type="Marker3D" parent="Doors" unique_id=1052088299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200)
+script = ExtResource("4")
+
+[node name="r2_square" type="Marker3D" parent="Doors" unique_id=19628123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -204)
+script = ExtResource("4")
+
+[node name="r2_forest" type="Marker3D" parent="Doors" unique_id=915106281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.9, -244)
+script = ExtResource("4")
+
+[node name="r2_cave" type="Marker3D" parent="Doors" unique_id=295211799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -239)
+script = ExtResource("4")
+
+[node name="TallGrass" type="Node3D" parent="." unique_id=1365306780]
+
+[node name="Grass1" type="Area3D" parent="TallGrass" unique_id=915160092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -223)
+script = ExtResource("5")
+size = Vector2(10, 9)
+encounter_table = "res://data/encounters/route_2.json"
+
+[node name="Grass2" type="Area3D" parent="TallGrass" unique_id=1032583376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -213)
+script = ExtResource("5")
+size = Vector2(9, 6)
+encounter_table = "res://data/encounters/route_2.json"
+
+[node name="Grass3" type="Area3D" parent="TallGrass" unique_id=2101540096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -225)
+script = ExtResource("5")
+size = Vector2(8, 7)
+encounter_table = "res://data/encounters/route_2.json"
+
+[node name="SpawnZones" type="Node3D" parent="." unique_id=592354373]
+
+[node name="R2SpawnWest" type="Node3D" parent="SpawnZones" unique_id=1364457846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -223)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_2.json"
+radius = 5.0
+max_alive = 2
+
+[node name="R2SpawnSquare" type="Node3D" parent="SpawnZones" unique_id=716936859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -213)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_2.json"
+radius = 4.0
+max_alive = 2
+
+[node name="R2SpawnEast" type="Node3D" parent="SpawnZones" unique_id=1315640608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -225)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_2.json"
+radius = 4.5
+max_alive = 2
+
+[node name="R2SpawnNorth" type="Node3D" parent="SpawnZones" unique_id=705700511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.9, -232)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_2.json"
+radius = 4.0
+max_alive = 2
+
+[node name="R2SpawnGroveWest" type="Node3D" parent="SpawnZones" unique_id=901335950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.9, -232)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_2_grove.json"
+radius = 2.5
+max_alive = 1
+
+[node name="R2SpawnGroveEast" type="Node3D" parent="SpawnZones" unique_id=440685952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -206)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/route_2_grove.json"
+radius = 2.0
+max_alive = 1
+
+[node name="R2SpawnPondSwim" type="Node3D" parent="SpawnZones" unique_id=1827928394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0, -217.5)
+script = ExtResource("6")
+encounter_table = "res://data/encounters/pond_swim.json"
+radius = 3.0
+max_alive = 1
+mode = "swim"
+
+[node name="NPCs" type="Node3D" parent="." unique_id=591195066]
+
+[node name="NPC_BirdWatcher" parent="NPCs" unique_id=181112653 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6, 0.9, -240)
+npc_name = "Bird Watcher"
+lines = PackedStringArray("I saw a big bird circling near the trees by the forest gate…", "It landed somewhere off the path. Quiet as you go — it spooks easy.")
+start_facing = 2
+
+[node name="NPC_Kid" parent="NPCs" unique_id=2037132782 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -221)
+npc_name = "Bug Catcher"
+sprite_sheet = ExtResource("8")
+lines = PackedStringArray("I came out here to catch bugs, but it\'s all Pidgey and Rattata today.", "The tall grass beside the road is full of them. Sneaky little things!", "That cave to the east is Diglett\'s Cave. It runs right under the whole region.")
+wander_radius = 1.5
+
+[node name="Signs" type="Node3D" parent="." unique_id=1721460846]
+
+[node name="Route2Sign" type="Node3D" parent="Signs" unique_id=394910018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -198)
+script = ExtResource("9")
+lines = PackedStringArray("ROUTE 2", "VIRIDIAN CITY - PEWTER CITY")
+model = "hgss/route_2/sign"
+model_scale = 0.8
+
+[node name="SquareSign" type="Node3D" parent="Signs" unique_id=1007110197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -207)
+script = ExtResource("9")
+lines = PackedStringArray("ROUTE 2", "WEST: VIRIDIAN FOREST  /  EAST: DIGLETT\'S CAVE", "NORTH: the two paths.  SOUTH: Viridian City.")
+model = "hgss/route_2/sign"
+model_scale = 0.8
+
+[node name="DiglettSign" type="Node3D" parent="Signs" unique_id=396093230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, -243.6)
+script = ExtResource("9")
+lines = PackedStringArray("DIGLETT\'S CAVE")
+model = "hgss/route_2/sign"
+model_scale = 0.8
+
+[node name="Items" type="Node3D" parent="." unique_id=1841024877]
+
+[node name="Item_r2_potion_west" type="Node3D" parent="Items" unique_id=1443825812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, -224.5)
+script = ExtResource("10")
+uid = "r2_potion_west"
+
+[node name="Item_r2_antidote_cave" type="Node3D" parent="Items" unique_id=1985939745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8, 0, -239.2)
+script = ExtResource("10")
+uid = "r2_antidote_cave"
+item_id = "antidote"
+
+[node name="Item_r2_ether" type="Node3D" parent="Items" unique_id=881441846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -220)
+script = ExtResource("10")
+uid = "r2_ether"
+item_id = "ether"
+
+[node name="Item_r2_paralyze_heal" type="Node3D" parent="Items" unique_id=778786649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -238)
+script = ExtResource("10")
+uid = "r2_paralyze_heal"
+item_id = "paralyze_heal"
+
+[node name="CutTrees" type="Node3D" parent="." unique_id=754645897]
+
+[node name="Cut_r2_cut_treeline" type="Node3D" parent="CutTrees" unique_id=1397594255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -220)
+script = ExtResource("11")
+uid = "r2_cut_treeline"
+
+[node name="Cut_r2_cut_grass" type="Node3D" parent="CutTrees" unique_id=969823876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -238)
+script = ExtResource("11")
+uid = "r2_cut_grass"
+
+[node name="Cut_r2_cut_east" type="Node3D" parent="CutTrees" unique_id=1204780949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -213)
+script = ExtResource("11")
+uid = "r2_cut_east"
+
+[node name="Statics" type="Node3D" parent="." unique_id=526772352]
+
+[node name="Static_r2_pidgeotto" type="Node3D" parent="Statics" unique_id=1148364184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.9, -245)
+script = ExtResource("12")
+uid = "r2_pidgeotto"
+species = "Pidgeotto"
+level = 15
+
+[node name="FlagWalls" type="Node3D" parent="." unique_id=1856962564]
+
+[node name="Triggers" type="Node3D" parent="." unique_id=101288495]

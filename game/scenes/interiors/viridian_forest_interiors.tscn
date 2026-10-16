@@ -1,0 +1,50 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cuyomuhxu6pvf" path="res://scripts/interiors/interior_rooms.gd" id="1"]
+[ext_resource type="Environment" path="res://resources/look/interior_env.tres" id="2"]
+[ext_resource type="Script" uid="uid://cfsybplrvvi84" path="res://scripts/interiors/room_env.gd" id="3"]
+[ext_resource type="Script" uid="uid://c5d5fh4poqkp6" path="res://scripts/world/sun.gd" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="5"]
+[ext_resource type="Script" uid="uid://da1ol3lcg540e" path="res://scripts/camera_rig.gd" id="6"]
+[ext_resource type="CameraAttributesPractical" path="res://resources/look/camera_attrs.tres" id="7"]
+[ext_resource type="Script" uid="uid://cjby5h0huik2e" path="res://scripts/world/post_fx.gd" id="8"]
+[ext_resource type="Script" uid="uid://bkahau4ra32t4" path="res://scripts/hud.gd" id="9"]
+
+[node name="ViridianForestInteriors" type="Node3D" unique_id=2076399006]
+script = ExtResource("1")
+manifest = "res://data/interiors/viridian_forest.json"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1436247506]
+environment = ExtResource("2")
+script = ExtResource("3")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1406998371]
+transform = Transform3D(0.79643947, 0.22412123, -0.56165284, 0, 0.92878425, 0.3706209, 0.60471827, -0.29517713, 0.73972046, 0, 10, 0)
+light_color = Color(1, 0.8648233, 0.63315433, 1)
+light_energy = 0.64
+shadow_enabled = true
+script = ExtResource("4")
+energy_scale = 0.4
+
+[node name="Player" parent="." unique_id=1822214703 instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.45)
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1003606557]
+script = ExtResource("6")
+target_path = NodePath("../Player")
+pitch_deg = 30.0
+distance = 12.0
+dof_band = 2.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1794251060]
+attributes = ExtResource("7")
+current = true
+fov = 30.0
+far = 120.0
+
+[node name="PostFX" type="CanvasLayer" parent="." unique_id=1373601638]
+layer = 0
+script = ExtResource("8")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=665508095]
+script = ExtResource("9")

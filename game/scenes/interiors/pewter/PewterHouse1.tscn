@@ -1,0 +1,216 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://m7wldfr8fec3" path="res://scripts/room.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://53aud63kbbr3" path="res://assets/textures/interior/floor_wood.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cljtape4sbnaj" path="res://assets/textures/interior/wallpaper_cream.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b67vwqwmm27as" path="res://assets/textures/window_mask.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cthkjov7j0sx8" path="res://assets/textures/interior/window_view.png" id="5"]
+[ext_resource type="Script" uid="uid://d1l5p7hown3so" path="res://scripts/interiors/prop_model.gd" id="6"]
+[ext_resource type="Script" uid="uid://bb4cnwqjekehv" path="res://scripts/prop.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://clvy4v3gk6o85" path="res://assets/textures/interior/books.png" id="8"]
+[ext_resource type="Script" uid="uid://bgexylkbqb5a4" path="res://scripts/interiors/window_light.gd" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="10"]
+[ext_resource type="Texture2D" uid="uid://8vy80ugtrobf" path="res://assets/sprites/npc_woman.png" id="11"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="13"]
+
+[node name="PewterHouse1" type="Node3D" unique_id=695176603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 0, 0)
+metadata/music = "music/indoors"
+
+[node name="Room" type="Node3D" parent="." unique_id=1484996494]
+script = ExtResource("1")
+size = Vector2(12, 7)
+floor_texture = ExtResource("2")
+wall_texture = ExtResource("3")
+exit_x = -2.5
+window_side = 1
+window_offset = 0.7
+window_size = Vector2(1.5, 1.2)
+window_y = 1.75
+window_mask = ExtResource("4")
+window_view = ExtResource("5")
+window_curtain = Color(0.95, 0.85, 0.45, 1)
+wainscot_height = 0.8
+wainscot_color = Color(0.52, 0.66, 0.48, 1)
+
+[node name="Props" type="Node3D" parent="." unique_id=1221854628]
+
+[node name="Bookcase" type="Node3D" parent="Props" unique_id=805295838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 0, -3.25)
+script = ExtResource("6")
+model = "furniture/bookcaseClosedWide"
+model_scale = 2.0
+
+[node name="BookcaseBooks0" type="Node3D" parent="Props" unique_id=1541190775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 0.145, -3.23)
+script = ExtResource("7")
+size = Vector3(1.48, 0.384, 0.44)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("8")
+collide = false
+
+[node name="BookcaseBooks1" type="Node3D" parent="Props" unique_id=2062009020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 0.625, -3.23)
+script = ExtResource("7")
+size = Vector3(1.48, 0.384, 0.44)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("8")
+collide = false
+
+[node name="BookcaseBooks2" type="Node3D" parent="Props" unique_id=527655016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 1.105, -3.23)
+script = ExtResource("7")
+size = Vector3(1.48, 0.384, 0.44)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("8")
+collide = false
+
+[node name="TVCabinet" type="Node3D" parent="Props" unique_id=1461429753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0, -3.25)
+script = ExtResource("6")
+model = "furniture/cabinetTelevision"
+model_scale = 2.0
+
+[node name="TV" type="Node3D" parent="Props" unique_id=717775769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0.62, -3.38)
+script = ExtResource("6")
+model = "furniture/televisionModern"
+model_scale = 1.8
+collide = false
+
+[node name="TVScreen" type="Node3D" parent="Props" unique_id=750366995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.05, -3.26)
+script = ExtResource("7")
+size = Vector3(0.9, 0.5, 0.02)
+color = Color(0.45, 0.62, 1, 1)
+emission = 0.9
+collide = false
+
+[node name="PictureFrame" type="Node3D" parent="Props" unique_id=493900016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.8, -3.48)
+script = ExtResource("7")
+size = Vector3(0.98, 0.78, 0.04)
+color = Color(0.45, 0.3, 0.18, 1)
+collide = false
+
+[node name="Picture" type="Node3D" parent="Props" unique_id=258921112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.8, -3.45)
+script = ExtResource("7")
+size = Vector3(0.84, 0.64, 0.03)
+color = Color(0.6, 0.75, 0.9, 1)
+collide = false
+
+[node name="Sink" type="Node3D" parent="Props" unique_id=1354052837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0, -3.53)
+script = ExtResource("6")
+model = "furniture/kitchenSink"
+model_scale = 2.2
+
+[node name="Stove" type="Node3D" parent="Props" unique_id=117583518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35, 0, -3.53)
+script = ExtResource("6")
+model = "furniture/kitchenStove"
+model_scale = 2.2
+
+[node name="Rug" type="Node3D" parent="Props" unique_id=1945658775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+script = ExtResource("6")
+model = "furniture/rugRectangle"
+model_scale = 3.8
+collide = false
+carpet_color = Color(0.36, 0.66, 0.42, 1)
+
+[node name="Table" type="Node3D" parent="Props" unique_id=825806357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, -0.3)
+script = ExtResource("6")
+model = "furniture/tableCloth"
+model_scale = 2.4
+carpet_color = Color(0.62, 0.78, 0.96, 1)
+
+[node name="ChairW" type="Node3D" parent="Props" unique_id=545574266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0, -0.3)
+script = ExtResource("6")
+model = "furniture/chairCushion"
+rot = 90.0
+model_scale = 2.2
+carpet_color = Color(0.36, 0.52, 0.84, 1)
+
+[node name="ChairE" type="Node3D" parent="Props" unique_id=823853430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.3)
+script = ExtResource("6")
+model = "furniture/chairCushion"
+rot = -90.0
+model_scale = 2.2
+carpet_color = Color(0.36, 0.52, 0.84, 1)
+
+[node name="ChairN" type="Node3D" parent="Props" unique_id=1662510420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, -1.4)
+script = ExtResource("6")
+model = "furniture/chairCushion"
+model_scale = 2.2
+carpet_color = Color(0.36, 0.52, 0.84, 1)
+
+[node name="Sofa" type="Node3D" parent="Props" unique_id=1386671901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -0.3)
+script = ExtResource("6")
+model = "furniture/loungeSofa"
+rot = 90.0
+model_scale = 2.2
+carpet_color = Color(0.55, 0.42, 0.34, 1)
+
+[node name="CoffeeTable" type="Node3D" parent="Props" unique_id=1815692643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 0, -0.3)
+script = ExtResource("6")
+model = "furniture/tableCoffee"
+model_scale = 2.2
+
+[node name="PlantL" type="Node3D" parent="Props" unique_id=2004063956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 2.6)
+script = ExtResource("6")
+model = "furniture/pottedPlant"
+model_scale = 2.4
+
+[node name="PlantR" type="Node3D" parent="Props" unique_id=2146991521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 2.6)
+script = ExtResource("6")
+model = "furniture/pottedPlant"
+model_scale = 2.4
+
+[node name="WindowLight" type="Node3D" parent="." unique_id=1447178785]
+transform = Transform3D(-0.9486833, 0.1911759, -0.25189635, 0, 0.79656625, 0.60455126, 0.31622776, 0.5735277, -0.7556891, 0.7, 1.75, -3.25)
+script = ExtResource("9")
+cookie = ExtResource("4")
+win_size = Vector2(1.5, 1.2)
+length = 12.0
+energy = 9.0
+spot_angle = 38.0
+
+[node name="Lamp0" type="OmniLight3D" parent="." unique_id=53189616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.8
+omni_range = 12.0
+
+[node name="Lamp1" type="OmniLight3D" parent="." unique_id=1893722971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 2.4, -1.2)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.5
+omni_range = 6.0
+
+[node name="NPC_Woman" parent="." unique_id=1562146402 instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.85)
+npc_name = "Woman"
+sprite_sheet = ExtResource("11")
+lines = PackedStringArray("Welcome to Pewter City!", "The Museum of Science is worth a look — fossils of ancient Pokémon!")
+start_facing = 3
+
+[node name="pw_house1_in" type="Marker3D" parent="." unique_id=901676781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.9)
+script = ExtResource("12")
+facing = 3
+
+[node name="ExitDoor" parent="." unique_id=1166492263 instance=ExtResource("13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.9)
+target_scene = "res://scenes/world/overworld.tscn"
+target_spawn = "pw_house1_door"

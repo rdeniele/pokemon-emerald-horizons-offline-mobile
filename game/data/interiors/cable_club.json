@@ -1,0 +1,21 @@
+{
+ "town": "cable_club",
+ "scene": "res://scenes/interiors/cable_club_interiors.tscn",
+ "spacing": 40.0,
+ "rooms": [
+  {
+   "node": "Colosseum",
+   "scene": "res://scenes/interiors/cable_club/Colosseum.tscn",
+   "rect": [
+    -9.0,
+    -7.0,
+    18,
+    14
+   ],
+   "spawns": [
+    "cc_colosseum_in"
+   ],
+   "next": []
+  }
+ ]
+}

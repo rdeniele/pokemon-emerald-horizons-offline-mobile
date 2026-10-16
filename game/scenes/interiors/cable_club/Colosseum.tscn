@@ -1,0 +1,148 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://m7wldfr8fec3" path="res://scripts/room.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c5hpf3prk5n1h" path="res://assets/textures/interior/floor_center.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cljtape4sbnaj" path="res://assets/textures/interior/wallpaper_cream.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b67vwqwmm27as" path="res://assets/textures/window_mask.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cthkjov7j0sx8" path="res://assets/textures/interior/window_view.png" id="5"]
+[ext_resource type="Script" uid="uid://d1l5p7hown3so" path="res://scripts/interiors/prop_model.gd" id="6"]
+[ext_resource type="Script" uid="uid://bgexylkbqb5a4" path="res://scripts/interiors/window_light.gd" id="7"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="8"]
+
+[node name="Colosseum" type="Node3D" unique_id=1753486338]
+metadata/music = "music/indoors"
+metadata/env = "res://resources/look/colosseum_env.tres"
+
+[node name="Room" type="Node3D" parent="." unique_id=1889750361]
+script = ExtResource("1")
+size = Vector2(18, 14)
+wall_height = 3.4
+floor_texture = ExtResource("2")
+wall_texture = ExtResource("3")
+wall_tint = Color(1, 0.94, 0.86, 1)
+exit_width = 0.0
+window_side = 1
+window_size = Vector2(6, 2.2)
+window_y = 2.35
+window_mask = ExtResource("4")
+window_view = ExtResource("5")
+wainscot_height = 0.95
+wainscot_color = Color(0.62, 0.42, 0.3, 1)
+
+[node name="Props" type="Node3D" parent="." unique_id=1445387225]
+
+[node name="BenchN1" type="Node3D" parent="Props" unique_id=1281306152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6.4)
+script = ExtResource("6")
+model = "furniture/bench"
+rot = 180.0
+model_scale = 2.0
+
+[node name="BenchN2" type="Node3D" parent="Props" unique_id=714141842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6.4)
+script = ExtResource("6")
+model = "furniture/bench"
+rot = 180.0
+model_scale = 2.0
+
+[node name="BenchW1" type="Node3D" parent="Props" unique_id=131623733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3, 0, -3)
+script = ExtResource("6")
+model = "furniture/bench"
+rot = 90.0
+model_scale = 2.0
+
+[node name="BenchW2" type="Node3D" parent="Props" unique_id=1481838550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3, 0, 0)
+script = ExtResource("6")
+model = "furniture/bench"
+rot = 90.0
+model_scale = 2.0
+
+[node name="BenchW3" type="Node3D" parent="Props" unique_id=1439534797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3, 0, 3)
+script = ExtResource("6")
+model = "furniture/bench"
+rot = 90.0
+model_scale = 2.0
+
+[node name="BenchE1" type="Node3D" parent="Props" unique_id=698280917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 0, -3)
+script = ExtResource("6")
+model = "furniture/bench"
+rot = -90.0
+model_scale = 2.0
+
+[node name="BenchE2" type="Node3D" parent="Props" unique_id=1659054337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 0, 0)
+script = ExtResource("6")
+model = "furniture/bench"
+rot = -90.0
+model_scale = 2.0
+
+[node name="BenchE3" type="Node3D" parent="Props" unique_id=2032750383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 0, 3)
+script = ExtResource("6")
+model = "furniture/bench"
+rot = -90.0
+model_scale = 2.0
+
+[node name="PlantNW" type="Node3D" parent="Props" unique_id=1925429553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -6.1)
+script = ExtResource("6")
+model = "furniture/pottedPlant"
+model_scale = 3.6
+
+[node name="PlantNE" type="Node3D" parent="Props" unique_id=1131891406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6.1)
+script = ExtResource("6")
+model = "furniture/pottedPlant"
+model_scale = 3.6
+
+[node name="PlantSW" type="Node3D" parent="Props" unique_id=1802895377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 6.1)
+script = ExtResource("6")
+model = "furniture/pottedPlant"
+model_scale = 3.6
+
+[node name="PlantSE" type="Node3D" parent="Props" unique_id=1607692060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6.1)
+script = ExtResource("6")
+model = "furniture/pottedPlant"
+model_scale = 3.6
+
+[node name="WindowLight" type="Node3D" parent="." unique_id=962419373]
+transform = Transform3D(-0.9486833, 0.1911759, -0.25189635, 0, 0.79656625, 0.60455126, 0.31622776, 0.5735277, -0.7556891, 0, 2.35, -6.75)
+script = ExtResource("7")
+cookie = ExtResource("4")
+win_size = Vector2(6, 2.2)
+length = 16.0
+energy = 12.0
+spot_angle = 48.0
+
+[node name="Lamp0" type="OmniLight3D" parent="." unique_id=540834833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -3)
+light_color = Color(1, 0.86, 0.68, 1)
+omni_range = 16.0
+
+[node name="Lamp1" type="OmniLight3D" parent="." unique_id=709993672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, -3)
+light_color = Color(1, 0.86, 0.68, 1)
+omni_range = 16.0
+
+[node name="Lamp2" type="OmniLight3D" parent="." unique_id=1589638073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 3)
+light_color = Color(1, 0.86, 0.68, 1)
+omni_range = 16.0
+
+[node name="Lamp3" type="OmniLight3D" parent="." unique_id=958229270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 3)
+light_color = Color(1, 0.86, 0.68, 1)
+omni_range = 16.0
+
+[node name="cc_colosseum_in" type="Marker3D" parent="." unique_id=615182307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+script = ExtResource("8")
+facing = 3
+
+[node name="BattleSpot" type="Marker3D" parent="." unique_id=24732110]

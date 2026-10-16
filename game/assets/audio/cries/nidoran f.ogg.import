@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c742on5ib6vlj"
+path="res://.godot/imported/nidoran f.ogg-591dc4676862fc2c6817d506e1ebe3fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cries/nidoran f.ogg"
+dest_files=["res://.godot/imported/nidoran f.ogg-591dc4676862fc2c6817d506e1ebe3fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

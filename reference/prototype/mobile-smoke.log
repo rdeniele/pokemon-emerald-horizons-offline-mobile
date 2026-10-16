@@ -1,0 +1,71 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3050 Laptop GPU
+
+PASS original boot scene loads
+PASS telemetry disabled
+PASS touch controls visible before first input
+[debug] checkpoint pallet -> start
+WARNING: Screen-space indirect lighting (SSIL) is only available when using the Forward+ renderer.
+   at: environment_set_ssil (servers/rendering/storage/environment_storage.cpp:775)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/front/title_screen.gd:157)
+WARNING: Volumetric fog is only available when using the Forward+ renderer.
+   at: environment_set_volumetric_fog (servers/rendering/storage/environment_storage.cpp:458)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/front/title_screen.gd:157)
+[weather] demo rain scheduled for MON 13:50
+WARNING: Godot 3.x SpatialMaterial remapped parameter not found: fog_enabled
+   at: _set (scene/resources/material.cpp:4096)
+   GDScript backtrace (most recent call first):
+       [0] _build_mesh (res://scripts/world/snowfall.gd:115)
+       [1] _ready (res://scripts/world/snowfall.gd:84)
+[zones] active: pallet_town (loaded: pallet_town)
+PASS Pallet Town loads with player
+PASS original checkpoint creates party
+PASS touch button inside landscape viewport
+PASS touch button inside landscape viewport
+PASS touch button inside landscape viewport
+PASS menu target at least 48 screen pixels
+PASS old Off value resolves to usable On setting
+PASS finger drag moves right
+PASS second finger holds run while moving
+PASS backgrounding releases both fingers
+[debug] checkpoint forest_north -> vf_north
+[zones] active: viridian_forest (loaded: pallet_town, route_1, viridian_forest)
+[zones] unload pallet_town
+PASS Viridian Forest streams
+[save] user://mobile-smoke-save.json -> ok
+PASS local save writes
+PASS local save reads with scene and party
+[battle] start vs Rattata Lv2
+[zones] unload route_1
+[battle] fight! (Charmander vs Rattata)
+PASS original real-time battle starts
+PASS Scratch label stays on one line
+PASS battle move target inside landscape viewport
+PASS battle move target inside landscape viewport
+PASS battle move target inside landscape viewport
+PASS battle move target inside landscape viewport
+PASS Items target at least 52 screen pixels
+PASS Jump target at least 52 screen pixels
+PASS finger press reaches battle move
+PASS battle move releases
+MOBILE_SMOKE: 0 failures
+ERROR: 6 RID allocations of type 'N5GLES37TextureE' were leaked at exit.
+ERROR: 1 RID allocations of type 'PN18TextServerAdvanced12FontAdvancedE' were leaked at exit.
+WARNING: 28 RIDs of type "CanvasItem" were leaked.
+   at: _free_rids (servers/rendering/renderer_canvas_cull.cpp:2735)
+ERROR: Texture with GL ID of 54: leaked 2796202 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 55: leaked 2796202 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 157: leaked 524288 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 158: leaked 524288 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 458: leaked 2796202 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 459: leaked 2796202 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+WARNING: 76 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

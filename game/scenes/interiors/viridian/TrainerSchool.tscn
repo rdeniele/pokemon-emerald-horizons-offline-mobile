@@ -1,0 +1,297 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://m7wldfr8fec3" path="res://scripts/room.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://53aud63kbbr3" path="res://assets/textures/interior/floor_wood.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cljtape4sbnaj" path="res://assets/textures/interior/wallpaper_cream.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b67vwqwmm27as" path="res://assets/textures/window_mask.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cthkjov7j0sx8" path="res://assets/textures/interior/window_view.png" id="5"]
+[ext_resource type="Script" uid="uid://bb4cnwqjekehv" path="res://scripts/prop.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://bp43e7bdkvyah" path="res://assets/textures/interior/town_map.png" id="7"]
+[ext_resource type="Script" uid="uid://d1l5p7hown3so" path="res://scripts/interiors/prop_model.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://clvy4v3gk6o85" path="res://assets/textures/interior/books.png" id="9"]
+[ext_resource type="Script" uid="uid://bgexylkbqb5a4" path="res://scripts/interiors/window_light.gd" id="10"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="11"]
+[ext_resource type="Texture2D" uid="uid://8vy80ugtrobf" path="res://assets/sprites/npc_woman.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://cnqf781ybynr0" path="res://assets/sprites/npc_kid.png" id="13"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="15"]
+
+[node name="TrainerSchool" type="Node3D" unique_id=653980648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 0)
+metadata/music = "music/indoors"
+
+[node name="Room" type="Node3D" parent="." unique_id=1649298485]
+script = ExtResource("1")
+size = Vector2(10, 6)
+floor_texture = ExtResource("2")
+wall_texture = ExtResource("3")
+exit_x = -0.5
+window_side = 1
+window_offset = -3.0
+window_size = Vector2(2.9, 1.25)
+window_y = 1.8
+window_mask = ExtResource("4")
+window_view = ExtResource("5")
+wainscot_height = 0.8
+wainscot_color = Color(0.52, 0.66, 0.48, 1)
+
+[node name="Props" type="Node3D" parent="." unique_id=1432989666]
+
+[node name="WindowSill" type="Node3D" parent="Props" unique_id=1183489561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25, 0, -2.8)
+script = ExtResource("6")
+size = Vector3(3.5, 0.4, 0.4)
+color = Color(0.612, 0.804, 0.871, 1)
+
+[node name="BoardLedge" type="Node3D" parent="Props" unique_id=956272634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.75)
+script = ExtResource("6")
+size = Vector3(3, 0.35, 0.5)
+color = Color(0.612, 0.804, 0.871, 1)
+
+[node name="MapLedge" type="Node3D" parent="Props" unique_id=80420575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, -2.8)
+script = ExtResource("6")
+size = Vector3(1.5, 0.4, 0.4)
+color = Color(0.612, 0.804, 0.871, 1)
+
+[node name="BoardFrame" type="Node3D" parent="Props" unique_id=1654587219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -2.96)
+script = ExtResource("6")
+size = Vector3(2, 1.5, 0.06)
+color = Color(0.42, 0.47, 0.6, 1)
+collide = false
+
+[node name="Board" type="Node3D" parent="Props" unique_id=1570018425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83, -2.92)
+script = ExtResource("6")
+size = Vector3(1.75, 1.25, 0.05)
+color = Color(0.385, 0.612, 0.29, 1)
+collide = false
+
+[node name="Chalk0_0" type="Node3D" parent="Props" unique_id=1914169036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.95, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk0_1" type="Node3D" parent="Props" unique_id=677931004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.95, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk0_2" type="Node3D" parent="Props" unique_id=1402436650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.95, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk0_3" type="Node3D" parent="Props" unique_id=855329646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.95, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk1_0" type="Node3D" parent="Props" unique_id=1138720737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.25, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk1_1" type="Node3D" parent="Props" unique_id=1496995451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.25, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk1_2" type="Node3D" parent="Props" unique_id=870048634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1.25, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk1_3" type="Node3D" parent="Props" unique_id=1763314595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.25, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk2_0" type="Node3D" parent="Props" unique_id=110104902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.55, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk2_1" type="Node3D" parent="Props" unique_id=1331363104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.55, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk2_2" type="Node3D" parent="Props" unique_id=866509744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1.55, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="Chalk2_3" type="Node3D" parent="Props" unique_id=1217018031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.55, -2.9)
+script = ExtResource("6")
+size = Vector3(0.28, 0.09, 0.02)
+color = Color(0.95, 0.96, 0.93, 1)
+collide = false
+
+[node name="ChalkLedge" type="Node3D" parent="Props" unique_id=793641351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, -2.84)
+script = ExtResource("6")
+size = Vector3(1.85, 0.09, 0.16)
+color = Color(0.78, 0.75, 0.68, 1)
+collide = false
+
+[node name="MapFrame" type="Node3D" parent="Props" unique_id=858899652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 1, -2.96)
+script = ExtResource("6")
+size = Vector3(1.45, 1, 0.05)
+color = Color(0.5, 0.5, 0.55, 1)
+collide = false
+
+[node name="Map" type="Node3D" parent="Props" unique_id=406070260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 1.09, -2.92)
+script = ExtResource("6")
+size = Vector3(1.25, 0.82, 0.04)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("7")
+collide = false
+
+[node name="Bookcase" type="Node3D" parent="Props" unique_id=892277908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2.725)
+script = ExtResource("8")
+model = "furniture/bookcaseClosedWide"
+model_scale = 2.2
+
+[node name="BookcaseBooks0" type="Node3D" parent="Props" unique_id=392069826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.159, -2.705)
+script = ExtResource("6")
+size = Vector3(1.628, 0.4224, 0.484)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("9")
+collide = false
+
+[node name="BookcaseBooks1" type="Node3D" parent="Props" unique_id=1370881954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.687, -2.705)
+script = ExtResource("6")
+size = Vector3(1.628, 0.4224, 0.484)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("9")
+collide = false
+
+[node name="BookcaseBooks2" type="Node3D" parent="Props" unique_id=303879130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.215, -2.705)
+script = ExtResource("6")
+size = Vector3(1.628, 0.4224, 0.484)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("9")
+collide = false
+
+[node name="TeacherDesk" type="Node3D" parent="Props" unique_id=1279331833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6)
+script = ExtResource("8")
+model = "furniture/tableCloth"
+model_scale = 2.45
+carpet_color = Color(0.92, 0.83, 0.45, 1)
+
+[node name="DeskBookOpen" type="Node3D" parent="Props" unique_id=634643562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42, 0.8, -0.62)
+script = ExtResource("6")
+size = Vector3(0.52, 0.07, 0.36)
+color = Color(0.93, 0.95, 0.97, 1)
+collide = false
+
+[node name="DeskBookRed" type="Node3D" parent="Props" unique_id=2129290148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.8, -0.6)
+script = ExtResource("6")
+size = Vector3(0.18, 0.3, 0.26)
+color = Color(0.78, 0.28, 0.24, 1)
+collide = false
+
+[node name="StoolW" type="Node3D" parent="Props" unique_id=1196223612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47, 0, 0.86)
+script = ExtResource("8")
+model = "furniture/benchCushionLow"
+model_scale = 2.2
+carpet_color = Color(0.92, 0.83, 0.45, 1)
+
+[node name="StoolE" type="Node3D" parent="Props" unique_id=247625060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0, 0.86)
+script = ExtResource("8")
+model = "furniture/benchCushionLow"
+model_scale = 2.2
+carpet_color = Color(0.92, 0.83, 0.45, 1)
+
+[node name="PlantW" type="Node3D" parent="Props" unique_id=1398695851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 2.5901058)
+script = ExtResource("8")
+model = "furniture/pottedPlant"
+model_scale = 3.0
+
+[node name="PlantE" type="Node3D" parent="Props" unique_id=2003695339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2.5901058)
+script = ExtResource("8")
+model = "furniture/pottedPlant"
+model_scale = 3.0
+
+[node name="WindowLight" type="Node3D" parent="." unique_id=1606023448]
+transform = Transform3D(-0.9486833, 0.1911759, -0.25189635, 0, 0.79656625, 0.60455126, 0.31622776, 0.5735277, -0.7556891, -3, 1.8, -2.75)
+script = ExtResource("10")
+cookie = ExtResource("4")
+win_size = Vector2(2.9, 1.25)
+length = 12.0
+energy = 9.0
+spot_angle = 38.0
+
+[node name="Lamp0" type="OmniLight3D" parent="." unique_id=492048713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2.6, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.8
+omni_range = 10.0
+
+[node name="Lamp1" type="OmniLight3D" parent="." unique_id=990921554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2.6, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.8
+omni_range = 10.0
+
+[node name="NPC_Teacher" parent="." unique_id=638527390 instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.55)
+npc_name = "Teacher"
+sprite_sheet = ExtResource("12")
+lines = PackedStringArray("Welcome to the Trainer School!", "Fire beats Grass, Grass beats Water, Water beats Fire.", "Learn the matchups and your Pokémon will thank you.")
+
+[node name="NPC_Student" parent="." unique_id=2082417490 instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.95)
+npc_name = "Student"
+sprite_sheet = ExtResource("13")
+lines = PackedStringArray("I\'m copying the notes on the blackboard...", "Status moves like Growl don\'t do damage, but they still matter!")
+start_facing = 3
+
+[node name="vc_school_in" type="Marker3D" parent="." unique_id=68617532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.7)
+script = ExtResource("14")
+facing = 3
+
+[node name="ExitDoor" parent="." unique_id=1538116429 instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.4)
+target_scene = "res://scenes/world/overworld.tscn"
+target_spawn = "vc_school_door"

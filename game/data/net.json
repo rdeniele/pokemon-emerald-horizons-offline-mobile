@@ -1,0 +1,4 @@
+{
+  "server": "https://pokemon-proto-matchmaker.vercel.app",
+  "stun": ["stun:stun.l.google.com:19302"]
+}

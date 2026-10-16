@@ -1,0 +1,479 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://m7wldfr8fec3" path="res://scripts/room.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c5hpf3prk5n1h" path="res://assets/textures/interior/floor_center.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cljtape4sbnaj" path="res://assets/textures/interior/wallpaper_cream.png" id="3"]
+[ext_resource type="Script" uid="uid://d1l5p7hown3so" path="res://scripts/interiors/prop_model.gd" id="4"]
+[ext_resource type="Script" uid="uid://bb4cnwqjekehv" path="res://scripts/prop.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://clvy4v3gk6o85" path="res://assets/textures/interior/books.png" id="6"]
+[ext_resource type="Script" uid="uid://d3p6b35spht2p" path="res://scripts/world/pc_terminal.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://bp43e7bdkvyah" path="res://assets/textures/interior/town_map.png" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://dup18i2504tp1" path="res://assets/sprites/npc_nurse.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cerermfgsa1w8" path="res://assets/sprites/npc_scientist.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://ccsf6wddmu3t3" path="res://assets/sprites/npc_oldman.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dup4crndo4a0y" path="res://assets/sprites/npc_youngster.png" id="13"]
+[ext_resource type="Script" uid="uid://cibt6yy1jdrfe" path="res://scripts/spawn_point.gd" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="15"]
+
+[node name="PokemonCenter" type="Node3D" unique_id=25914243]
+metadata/music = "music/indoors"
+
+[node name="Room" type="Node3D" parent="." unique_id=1064809535]
+script = ExtResource("1")
+size = Vector2(15, 7)
+wall_height = 3.0
+floor_texture = ExtResource("2")
+wall_texture = ExtResource("3")
+wainscot_height = 0.8
+wainscot_color = Color(0.86, 0.46, 0.44, 1)
+
+[node name="Props" type="Node3D" parent="." unique_id=1046327430]
+
+[node name="Plant" type="Node3D" parent="Props" unique_id=1137700621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3, 0, -3.1)
+script = ExtResource("4")
+model = "furniture/pottedPlant"
+model_scale = 2.8
+
+[node name="Shelf" type="Node3D" parent="Props" unique_id=842769941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -3.22)
+script = ExtResource("4")
+model = "furniture/bookcaseClosedWide"
+model_scale = 2.2
+
+[node name="ShelfBooks0" type="Node3D" parent="Props" unique_id=881666671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.159, -3.2)
+script = ExtResource("5")
+size = Vector3(1.628, 0.4224, 0.484)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("6")
+collide = false
+
+[node name="ShelfBooks1" type="Node3D" parent="Props" unique_id=1838896865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.687, -3.2)
+script = ExtResource("5")
+size = Vector3(1.628, 0.4224, 0.484)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("6")
+collide = false
+
+[node name="ShelfBooks2" type="Node3D" parent="Props" unique_id=1828371218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.215, -3.2)
+script = ExtResource("5")
+size = Vector3(1.628, 0.4224, 0.484)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("6")
+collide = false
+
+[node name="ShelfGreen" type="Node3D" parent="Props" unique_id=1426433583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.55, -3.2)
+script = ExtResource("5")
+size = Vector3(1.7, 0.2, 0.5)
+color = Color(0.52, 0.84, 0.52, 1)
+collide = false
+
+[node name="HealBody" type="Node3D" parent="Props" unique_id=584694822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3.225)
+script = ExtResource("5")
+size = Vector3(1.75, 2, 0.55)
+color = Color(0.93, 0.92, 0.87, 1)
+
+[node name="HealPanel" type="Node3D" parent="Props" unique_id=205613934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.95, -2.945)
+script = ExtResource("5")
+size = Vector3(1.2, 0.8, 0.06)
+color = Color(0.3, 0.32, 0.4, 1)
+collide = false
+
+[node name="HealScreenL" type="Node3D" parent="Props" unique_id=1581866872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72, 1.75, -2.9)
+script = ExtResource("5")
+size = Vector3(0.45, 0.16, 0.05)
+color = Color(0.35, 0.7, 0.95, 1)
+emission = 0.9
+collide = false
+
+[node name="HealScreenR" type="Node3D" parent="Props" unique_id=1474372593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28, 1.75, -2.9)
+script = ExtResource("5")
+size = Vector3(0.45, 0.16, 0.05)
+color = Color(0.35, 0.7, 0.95, 1)
+emission = 0.9
+collide = false
+
+[node name="HealBall00" type="Node3D" parent="Props" unique_id=492810283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 1.02, -2.88)
+script = ExtResource("5")
+shape = 2
+size = Vector3(0.2, 0.2, 0.2)
+color = Color(0.38, 0.82, 0.44, 1)
+emission = 0.6
+collide = false
+
+[node name="HealBall01" type="Node3D" parent="Props" unique_id=1850140482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 1.25, -2.88)
+script = ExtResource("5")
+shape = 2
+size = Vector3(0.2, 0.2, 0.2)
+color = Color(0.38, 0.82, 0.44, 1)
+emission = 0.6
+collide = false
+
+[node name="HealBall02" type="Node3D" parent="Props" unique_id=2051590912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 1.48, -2.88)
+script = ExtResource("5")
+shape = 2
+size = Vector3(0.2, 0.2, 0.2)
+color = Color(0.38, 0.82, 0.44, 1)
+emission = 0.6
+collide = false
+
+[node name="HealBall10" type="Node3D" parent="Props" unique_id=1802757216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 1.02, -2.88)
+script = ExtResource("5")
+shape = 2
+size = Vector3(0.2, 0.2, 0.2)
+color = Color(0.38, 0.82, 0.44, 1)
+emission = 0.6
+collide = false
+
+[node name="HealBall11" type="Node3D" parent="Props" unique_id=984388429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 1.25, -2.88)
+script = ExtResource("5")
+shape = 2
+size = Vector3(0.2, 0.2, 0.2)
+color = Color(0.38, 0.82, 0.44, 1)
+emission = 0.6
+collide = false
+
+[node name="HealBall12" type="Node3D" parent="Props" unique_id=421701145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 1.48, -2.88)
+script = ExtResource("5")
+shape = 2
+size = Vector3(0.2, 0.2, 0.2)
+color = Color(0.38, 0.82, 0.44, 1)
+emission = 0.6
+collide = false
+
+[node name="HealCrossH" type="Node3D" parent="Props" unique_id=1016452379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.455, -2.93)
+script = ExtResource("5")
+size = Vector3(0.26, 0.09, 0.06)
+color = Color(0.9, 0.34, 0.31, 1)
+collide = false
+
+[node name="HealCrossV" type="Node3D" parent="Props" unique_id=292837573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.37, -2.93)
+script = ExtResource("5")
+size = Vector3(0.09, 0.26, 0.06)
+color = Color(0.9, 0.34, 0.31, 1)
+collide = false
+
+[node name="TVFrame" type="Node3D" parent="Props" unique_id=479797000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 1.25, -3.45)
+script = ExtResource("5")
+size = Vector3(1.5, 0.85, 0.1)
+color = Color(0.28, 0.3, 0.38, 1)
+collide = false
+
+[node name="TVScreen" type="Node3D" parent="Props" unique_id=272846601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 1.37, -3.38)
+script = ExtResource("5")
+size = Vector3(1.25, 0.6, 0.05)
+color = Color(0.35, 0.65, 0.95, 1)
+emission = 1.0
+collide = false
+
+[node name="CounterKick" type="Node3D" parent="Props" unique_id=387704790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.125)
+script = ExtResource("5")
+size = Vector3(6.9, 0.18, 0.95)
+color = Color(0.6, 0.62, 0.65, 1)
+
+[node name="CounterBody" type="Node3D" parent="Props" unique_id=412638093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, -2.125)
+script = ExtResource("5")
+size = Vector3(6.9, 0.42, 0.95)
+color = Color(0.95, 0.45, 0.42, 1)
+
+[node name="CounterTop" type="Node3D" parent="Props" unique_id=1082009467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -2.125)
+script = ExtResource("5")
+size = Vector3(6.98, 0.06, 1.05)
+color = Color(0.99, 0.55, 0.5, 1)
+collide = false
+
+[node name="PotW" type="Node3D" parent="Props" unique_id=1384433020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.66, -2.125)
+script = ExtResource("4")
+model = "furniture/pottedPlant"
+model_scale = 1.5
+collide = false
+
+[node name="PotE" type="Node3D" parent="Props" unique_id=977470975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.66, -2.125)
+script = ExtResource("4")
+model = "furniture/pottedPlant"
+model_scale = 1.5
+collide = false
+
+[node name="Register" type="Node3D" parent="Props" unique_id=484023479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.66, -2.45)
+script = ExtResource("5")
+size = Vector3(0.7, 0.1, 0.45)
+color = Color(0.97, 0.96, 0.92, 1)
+collide = false
+
+[node name="SignPanel" type="Node3D" parent="Props" unique_id=1285298322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15, 0.66, -2.3)
+script = ExtResource("5")
+size = Vector3(0.75, 0.85, 0.1)
+color = Color(0.96, 0.96, 0.94, 1)
+collide = false
+
+[node name="SignCrossH" type="Node3D" parent="Props" unique_id=1693516677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15, 1.265, -2.24)
+script = ExtResource("5")
+size = Vector3(0.36, 0.11, 0.06)
+color = Color(0.9, 0.3, 0.28, 1)
+collide = false
+
+[node name="SignCrossV" type="Node3D" parent="Props" unique_id=1589597529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15, 1.14, -2.24)
+script = ExtResource("5")
+size = Vector3(0.11, 0.36, 0.06)
+color = Color(0.9, 0.3, 0.28, 1)
+collide = false
+
+[node name="PCBody" type="Node3D" parent="Props" unique_id=753979613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05, 0, -3.18)
+script = ExtResource("5")
+size = Vector3(1, 1.9, 0.6)
+color = Color(0.93, 0.93, 0.91, 1)
+
+[node name="PCScreen" type="Node3D" parent="Props" unique_id=1595278352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05, 1.15, -3.2)
+script = ExtResource("5")
+size = Vector3(0.8, 0.6, 0.05)
+color = Color(0.32, 0.35, 0.44, 1)
+emission = 0.5
+collide = false
+
+[node name="PCKeys" type="Node3D" parent="Props" unique_id=733560558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05, 0.85, -3.12)
+script = ExtResource("5")
+size = Vector3(0.85, 0.16, 0.08)
+color = Color(0.55, 0.57, 0.62, 1)
+collide = false
+
+[node name="PC" type="Node3D" parent="Props" unique_id=632116233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05, 0, -2.55)
+script = ExtResource("7")
+
+[node name="MapFrame" type="Node3D" parent="Props" unique_id=1570648717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, -3.44)
+script = ExtResource("5")
+size = Vector3(1.55, 1.1, 0.08)
+color = Color(0.85, 0.86, 0.88, 1)
+collide = false
+
+[node name="Map" type="Node3D" parent="Props" unique_id=1712659415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1.07, -3.38)
+script = ExtResource("5")
+size = Vector3(1.4, 0.95, 0.05)
+color = Color(1, 1, 1, 1)
+texture = ExtResource("8")
+collide = false
+
+[node name="Escalator0" type="Node3D" parent="Props" unique_id=608721459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0.12)
+script = ExtResource("4")
+model = "furniture/stairs"
+rot = 180.0
+model_scale = 1.1
+collide = false
+
+[node name="Escalator1" type="Node3D" parent="Props" unique_id=296594565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0.9)
+script = ExtResource("4")
+model = "furniture/stairs"
+rot = 180.0
+model_scale = 1.1
+collide = false
+
+[node name="Escalator2" type="Node3D" parent="Props" unique_id=530410630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 1.68)
+script = ExtResource("4")
+model = "furniture/stairs"
+rot = 180.0
+model_scale = 1.1
+collide = false
+
+[node name="EscalatorBlock" type="Node3D" parent="Props" unique_id=1223368219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0.9)
+visible = false
+script = ExtResource("5")
+size = Vector3(2, 1.3, 2.5)
+color = Color(0, 0, 0, 1)
+
+[node name="EmblemBall" type="Node3D" parent="Props" unique_id=2144742994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0.9)
+script = ExtResource("5")
+shape = 1
+size = Vector3(2.9, 0.03, 2.9)
+color = Color(0.78, 0.72, 0.55, 1)
+collide = false
+
+[node name="EmblemInner" type="Node3D" parent="Props" unique_id=836937977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0.9)
+script = ExtResource("5")
+shape = 1
+size = Vector3(2.62, 0.03, 2.62)
+color = Color(0.93, 0.9, 0.78, 1)
+collide = false
+
+[node name="EmblemBand" type="Node3D" parent="Props" unique_id=1140802833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0.9)
+script = ExtResource("5")
+size = Vector3(2.9, 0.03, 0.42)
+color = Color(0.99, 0.97, 0.88, 1)
+collide = false
+
+[node name="EmblemCentre" type="Node3D" parent="Props" unique_id=1223342177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.9)
+script = ExtResource("5")
+shape = 1
+size = Vector3(0.55, 0.03, 0.55)
+color = Color(0.99, 0.97, 0.88, 1)
+collide = false
+
+[node name="SeatY" type="Node3D" parent="Props" unique_id=1418988069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05, 0, -0.3)
+script = ExtResource("4")
+model = "furniture/loungeChair"
+model_scale = 1.7
+carpet_color = Color(0.96, 0.8, 0.24, 1)
+
+[node name="SeatB" type="Node3D" parent="Props" unique_id=868705875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05, 0, -0.3)
+script = ExtResource("4")
+model = "furniture/loungeChair"
+model_scale = 1.7
+carpet_color = Color(0.4, 0.62, 0.92, 1)
+
+[node name="TableLeg0" type="Node3D" parent="Props" unique_id=2127723523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7, 0, 0.55)
+script = ExtResource("5")
+size = Vector3(0.16, 0.34, 0.16)
+color = Color(0.95, 0.94, 0.9, 1)
+collide = false
+
+[node name="TableLeg1" type="Node3D" parent="Props" unique_id=117176603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 0, 0.55)
+script = ExtResource("5")
+size = Vector3(0.16, 0.34, 0.16)
+color = Color(0.95, 0.94, 0.9, 1)
+collide = false
+
+[node name="TableLeg2" type="Node3D" parent="Props" unique_id=1714113128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7, 0, 2.25)
+script = ExtResource("5")
+size = Vector3(0.16, 0.34, 0.16)
+color = Color(0.95, 0.94, 0.9, 1)
+collide = false
+
+[node name="TableLeg3" type="Node3D" parent="Props" unique_id=1449579098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 0, 2.25)
+script = ExtResource("5")
+size = Vector3(0.16, 0.34, 0.16)
+color = Color(0.95, 0.94, 0.9, 1)
+collide = false
+
+[node name="TableFrame" type="Node3D" parent="Props" unique_id=1674895955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55, 0.34, 1.4)
+script = ExtResource("5")
+size = Vector3(1.9, 0.1, 1.9)
+color = Color(0.95, 0.94, 0.9, 1)
+
+[node name="TableGlass" type="Node3D" parent="Props" unique_id=846938904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55, 0.44, 1.4)
+script = ExtResource("5")
+size = Vector3(1.62, 0.05, 1.62)
+color = Color(0.8, 0.88, 0.95, 1)
+emission = 0.15
+collide = false
+
+[node name="SeatYE" type="Node3D" parent="Props" unique_id=102084107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.95, 0, 0.7)
+script = ExtResource("4")
+model = "furniture/loungeChair"
+rot = -90.0
+model_scale = 1.7
+carpet_color = Color(0.96, 0.8, 0.24, 1)
+
+[node name="SeatBE" type="Node3D" parent="Props" unique_id=1925070438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.95, 0, 1.7)
+script = ExtResource("4")
+model = "furniture/loungeChair"
+rot = -90.0
+model_scale = 1.7
+carpet_color = Color(0.4, 0.62, 0.92, 1)
+
+[node name="Lamp0" type="OmniLight3D" parent="." unique_id=1590093332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.6, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.8
+omni_range = 11.0
+
+[node name="Lamp1" type="OmniLight3D" parent="." unique_id=410274267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.6, 0)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 0.8
+omni_range = 11.0
+
+[node name="NPC_Nurse" parent="." unique_id=699308001 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.1)
+npc_name = "Nurse Joy"
+sprite_sheet = ExtResource("10")
+lines = PackedStringArray("Welcome to our Pokémon Center!", "Would you like me to heal your Pokémon back to perfect health?", "Okay, I\'ll take your Pokémon for a few seconds.")
+action = 1
+after_heal_lines = PackedStringArray("Thank you for waiting. We\'ve restored your Pokémon to full health. We hope to see you again!")
+
+[node name="NPC_Attendant" parent="." unique_id=1872806402 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, 0.9)
+npc_name = "Attendant"
+sprite_sheet = ExtResource("11")
+lines = PackedStringArray("POKéMON CENTERS heal your tired,\nhurt, or fainted POKéMON.", "They make all POKéMON completely\nhealthy.")
+start_facing = 1
+
+[node name="NPC_Visitor1" parent="." unique_id=698318290 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 0, -0.2)
+npc_name = "Traveller"
+sprite_sheet = ExtResource("12")
+lines = PackedStringArray("There\'s a POKéMON CENTER in every\ntown ahead.", "They charge no money, so don\'t\nbe shy about healing POKéMON.")
+start_facing = 2
+
+[node name="NPC_Visitor2" parent="." unique_id=195266561 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.1)
+npc_name = "Youngster"
+sprite_sheet = ExtResource("13")
+lines = PackedStringArray("Please feel free to use that PC in\nthe corner.", "The receptionist told me so.\nIt\'s so kind of her!")
+start_facing = 1
+
+[node name="NPC_CableClub" parent="." unique_id=696680715 instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -2.3)
+npc_name = "Cable Club"
+sprite_sheet = ExtResource("10")
+lines = PackedStringArray("Welcome to the POKéMON CABLE CLUB.", "You can trade or battle with a\nfriend far away.")
+action = 5
+
+[node name="vc_center_in" type="Marker3D" parent="." unique_id=456500411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.7)
+script = ExtResource("14")
+facing = 3
+
+[node name="ExitDoor" parent="." unique_id=1289092457 instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.9)
+target_scene = "res://scenes/world/overworld.tscn"
+target_spawn = "vc_center_door"

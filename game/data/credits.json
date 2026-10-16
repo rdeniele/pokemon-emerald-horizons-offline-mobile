@@ -1,0 +1,134 @@
+{
+  "sections": [
+    {
+      "title": "POKÉMON SPRITES",
+      "lines": [
+        "Pokémon Mystery Dungeon sprites from PMD SpriteCollab — sprites.pmdcollab.org",
+        "Licensed under CC BY-NC 4.0"
+      ],
+      "entries": [
+        {
+          "name": "Spike Chunsoft",
+          "detail": "Beedrill, Caterpie, Diglett, Dugtrio, Fearow, Kakuna, Magikarp, Metapod, Nidoqueen, Nidoran F, Pidgeot, Pidgeotto, Pidgey, Pikachu, Poliwag, Poliwhirl, Poliwrath, Psyduck, Raichu, Sandshrew, Sandslash, Slowbro, Spearow, Squirtle, Venusaur"
+        },
+        {
+          "name": "3P1C",
+          "detail": "Sandshrew"
+        },
+        {
+          "name": "Deeshura",
+          "detail": "Nidorina"
+        },
+        {
+          "name": "Emboarger",
+          "detail": "Sandshrew"
+        },
+        {
+          "name": "Emmuffin",
+          "detail": "Blastoise, Butterfree, Charmander, Charmeleon, Geodude, Goldeen, Golem, Graveler, Gyarados, Mankey, Raticate, Sandslash, Seaking, Slowpoke, Wartortle, Weedle"
+        },
+        {
+          "name": "Grimlin",
+          "detail": "Raichu"
+        },
+        {
+          "name": "Gust",
+          "detail": "Bulbasaur, Golduck, Ivysaur"
+        },
+        {
+          "name": "G〜",
+          "detail": "Charizard, Nidoking, Onix"
+        },
+        {
+          "name": "JFain",
+          "detail": "Pidgey"
+        },
+        {
+          "name": "Morei",
+          "detail": "Golem"
+        },
+        {
+          "name": "NeonCityRain",
+          "detail": "Primeape"
+        },
+        {
+          "name": "Prismatic",
+          "detail": "Nidoran M, Nidorino"
+        },
+        {
+          "name": "ShyStarryRain",
+          "detail": "Rattata"
+        },
+        {
+          "name": "Top_Kec",
+          "detail": "Raichu"
+        }
+      ]
+    },
+    {
+      "title": "MOVE EFFECTS",
+      "lines": [
+        "Pokémon Mystery Dungeon Origins asset collection (PMDCollab)",
+        "Effects from Pokémon Mystery Dungeon, Pokémon Ruby & Sapphire & Emerald and Pokémon Ranger"
+      ],
+      "entries": []
+    },
+    {
+      "title": "MUSIC & SOUND",
+      "lines": [],
+      "entries": [
+        {
+          "name": "Kenney",
+          "detail": "Interface, UI, Impact, RPG, Digital and Sci-Fi Sounds, Music Jingles — CC0"
+        },
+        {
+          "name": "Aureolus_Omicron",
+          "detail": "15 Melodic RPG Chiptunes — CC0"
+        },
+        {
+          "name": "AkitsukiShintai",
+          "detail": "Move sound effects (Pokémon HD-2D pack)"
+        },
+        {
+          "name": "Original sounds",
+          "detail": "Synthesized cries and effects made for this game"
+        }
+      ]
+    },
+    {
+      "title": "3D MODELS",
+      "lines": [],
+      "entries": [
+        {
+          "name": "Kenney",
+          "detail": "City Kit Suburban, Nature Kit, Fantasy Town Kit — CC0"
+        },
+        {
+          "name": "Pokémon HeartGold & SoulSilver",
+          "detail": "World models © Nintendo / Creatures Inc. / GAME FREAK inc."
+        }
+      ]
+    },
+    {
+      "title": "FONTS",
+      "lines": [],
+      "entries": [
+        {
+          "name": "Nunito",
+          "detail": "The Nunito Project Authors — SIL Open Font License 1.1"
+        },
+        {
+          "name": "Pixelify Sans",
+          "detail": "The Pixelify Sans Project Authors — SIL Open Font License 1.1"
+        }
+      ]
+    },
+    {
+      "title": "POKÉMON",
+      "lines": [
+        "Pokémon © Nintendo / Creatures Inc. / GAME FREAK inc. Pokémon Mystery Dungeon © Spike Chunsoft. This is a free, non-commercial fan project and is not affiliated with or endorsed by them."
+      ],
+      "entries": []
+    }
+  ]
+}

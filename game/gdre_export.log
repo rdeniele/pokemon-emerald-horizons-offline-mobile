@@ -1,0 +1,56 @@
+GDRE Tools v2.7.4
+Windows 10.0.26300, headless
+Opening file: C:/Users/ronde/Downloads/Archive/PokemonPrototypeDemo.pck
+Loaded 2724 imported files
+Detected Engine Version: 4.7.1
+Detected Bytecode Revision: 4.5.0-stable (ebc36a7)
+Successfully loaded PCK!
+Version: 4.7.1
+Verified 5631 files, no errors detected!
+Extracted 5631 files, no errors detected!
+Recreating plugin configs...
+WARNING: Failed to recreate plugin.cfg for res://addons/beckett
+   at: ImportExporter::recreate_plugin_configs (modules\gdsdecomp\utility\import_exporter.cpp:1851)
+Saved project config.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     146
+Scripts not decompiled:                 0
+Imported resources for export session:  2724
+Successfully converted:                 2724
+Lossy:                                  59
+Rewrote metadata:                       2532
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+------
+
+The following plugins failed to have their plugin.cfg regenerated:
+beckett
+
+
+
+---------------------------------IMPORTANT NOTES----------------------------------
+
+
+Incomplete Plugin Export:
+The following addons failed to have their plugin.cfg regenerated
+You may encounter editor errors due to this.
+Tip: Try finding the plugin in the Godot Asset Library or Github.
+
+ - beckett
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.7.1 to edit the project.
+
+*******************************************************************************
+
+Recovery finished in 00m24s
