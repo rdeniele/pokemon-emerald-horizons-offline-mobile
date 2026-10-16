@@ -12,6 +12,7 @@ import {arenaMoveProfile} from '@/pokemon/moves/arenaProfile';
 import type {PokemonType} from '@/pokemon/types/typeChart';
 import type {Skill,UnitSpec} from '@/battle/types';
 import type {CampaignProgress} from './campaign';
+import type {EmeraldWorldState} from './emerald-state';
 
 // The earlier offline work is reused only for local progression, economy and saves.
 // All combat and rendering now come from the copied original game.
@@ -29,7 +30,7 @@ for(const raw of Object.values(sourceRoster) as any[]){
 }
 export type Mon={uid:string;species:number;level:number;xp:number;moves:string[];upgrades:Record<string,number>;held:string|null};
 export type Battle={id:string;kind:'wild'|'gym'|'quick';index:number;team:Mon[];active:number;paused:boolean;engineSnapshot?:string;[key:string]:any};
-export type Save={version:1;revision:number;rng:number;party:Mon[];pc:Mon[];gold:number;inventory:Record<string,number>;cleared:number[];chapter:number;seen:number[];pending:null|{id:string;mon:Mon;attempts:number};battle:Battle|null;claimed:string[];settings:{auto:boolean;sound:boolean};journal:string[];campaign?:CampaignProgress};
+export type Save={version:1;revision:number;rng:number;party:Mon[];pc:Mon[];gold:number;inventory:Record<string,number>;cleared:number[];chapter:number;seen:number[];pending:null|{id:string;mon:Mon;attempts:number};battle:Battle|null;claimed:string[];settings:{auto:boolean;sound:boolean};journal:string[];campaign?:CampaignProgress;emerald?:EmeraldWorldState};
 export const ORIGINAL_LEADERS=['Roxanne','Brawly','Wattson','Flannery','Norman','Winona','Tate & Liza','Juan','Sidney','Phoebe','Glacia','Drake','Wallace'];
 export const ORIGINAL_TYPES=['rock','fighting','electric','fire','normal','flying','psychic','water','dark','ghost','ice','dragon','water'];
 // Keep the original Hoenn journey and leaders; the new level progression is applied to it.
