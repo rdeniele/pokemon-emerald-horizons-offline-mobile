@@ -1,0 +1,362 @@
+{
+  "source": "C:/Users/ronde/Downloads/Empress-Pokemon-2D-win/resources/app.asar",
+  "sourceSha256": "5e71a4b11c35b01512772445e981ab5fe5299dc3f315cbb50530fc0a7ba97e91",
+  "baseSpecies": 1025,
+  "addedSpecies": 974,
+  "generations": {
+    "1": 151,
+    "2": 100,
+    "3": 135,
+    "4": 107,
+    "5": 156,
+    "6": 72,
+    "7": 88,
+    "8": 96,
+    "9": 120
+  },
+  "addedMoves": 113,
+  "originalMoves": 79,
+  "existingSourceSpeciesRetained": 51,
+  "encounterTables": [
+    "pallet_grove",
+    "pallet_town",
+    "pewter_city",
+    "pewter_grove",
+    "route_1",
+    "route_1_grove",
+    "route_2",
+    "route_22",
+    "route_22_grove",
+    "route_2_grove",
+    "viridian_city",
+    "viridian_forest",
+    "viridian_grove"
+  ],
+  "starterMoveAdaptations": [
+    {
+      "species": "Metapod",
+      "starterMove": "bugbite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Kakuna",
+      "starterMove": "bugbite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Ekans",
+      "starterMove": "poison_sting",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Meowth",
+      "starterMove": "scratch",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Abra",
+      "starterMove": "body_slam",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Pinsir",
+      "starterMove": "bind",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Magikarp",
+      "starterMove": "tackle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Ditto",
+      "starterMove": "struggle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Dratini",
+      "starterMove": "twister",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Wobbuffet",
+      "starterMove": "struggle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Shuckle",
+      "starterMove": "strugglebug",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Slugma",
+      "starterMove": "ember",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Delibird",
+      "starterMove": "drillpeck",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Smeargle",
+      "starterMove": "struggle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Magby",
+      "starterMove": "ember",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Silcoon",
+      "starterMove": "bugbite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Cascoon",
+      "starterMove": "bugbite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Wailmer",
+      "starterMove": "astonish",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Spoink",
+      "starterMove": "confusion",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Seviper",
+      "starterMove": "bite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Feebas",
+      "starterMove": "tackle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Banette",
+      "starterMove": "feintattack",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Wynaut",
+      "starterMove": "struggle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Spheal",
+      "starterMove": "water_gun",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Latias",
+      "starterMove": "confusion",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Latios",
+      "starterMove": "confusion",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Deoxys",
+      "starterMove": "psyshock",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Burmy",
+      "starterMove": "tackle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Glameow",
+      "starterMove": "scratch",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Chingling",
+      "starterMove": "astonish",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Bonsly",
+      "starterMove": "flail",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Heatran",
+      "starterMove": "metal_claw",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Shaymin",
+      "starterMove": "magicalleaf",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Arceus",
+      "starterMove": "earthpower",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Munna",
+      "starterMove": "psybeam",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Sawk",
+      "starterMove": "double_kick",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Dwebble",
+      "starterMove": "bugbite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Crustle",
+      "starterMove": "bugbite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Durant",
+      "starterMove": "metal_claw",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Spewpa",
+      "starterMove": "bugbite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Fomantis",
+      "starterMove": "razor_leaf",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Bounsweet",
+      "starterMove": "rapid_spin",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Comfey",
+      "starterMove": "vine_whip",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Pyukumuku",
+      "starterMove": "struggle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Komala",
+      "starterMove": "rapid_spin",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Drampa",
+      "starterMove": "twister",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Tapu Bulu",
+      "starterMove": "gigadrain",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Cosmog",
+      "starterMove": "struggle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Cosmoem",
+      "starterMove": "struggle",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Magearna",
+      "starterMove": "mirrorshot",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Gossifleur",
+      "starterMove": "rapid_spin",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Silicobra",
+      "starterMove": "bulldoze",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Sandaconda",
+      "starterMove": "bulldoze",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Clobbopus",
+      "starterMove": "bind",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Impidimp",
+      "starterMove": "bite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Indeedee",
+      "starterMove": "disarmingvoice",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Eternatus",
+      "starterMove": "crosspoison",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Kubfu",
+      "starterMove": "aerial_ace",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Urshifu",
+      "starterMove": "aerial_ace",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Capsakid",
+      "starterMove": "bite",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Iron Bundle",
+      "starterMove": "powdersnow",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Ting-Lu",
+      "starterMove": "stomp",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    },
+    {
+      "species": "Koraidon",
+      "starterMove": "ancientpower",
+      "reason": "Playable low-level encounter kit; canonical learn levels retained after starter move."
+    }
+  ],
+  "metadataSources": [
+    "https://github.com/PokeAPI/pokeapi/blob/master/data/v2/csv/pokemon_species.csv",
+    "https://github.com/PokeAPI/pokeapi/blob/master/data/v2/csv/pokemon.csv"
+  ],
+  "limitations": [
+    "Abilities remain display-only in original engine.",
+    "Special evolutions are obtainable directly; only source-supported level evolutions are automatic.",
+    "Some low-level visiting species receive an adapted supported starter attack.",
+    "Only the 1025 base National Dex species are imported, not every alternate form."
+  ]
+}

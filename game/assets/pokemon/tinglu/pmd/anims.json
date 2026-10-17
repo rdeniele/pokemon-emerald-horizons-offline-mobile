@@ -1,0 +1,514 @@
+{
+  "Idle": {
+    "file": "Idle-Anim.png",
+    "w": 104,
+    "h": 112,
+    "dirs": 8,
+    "durations": [
+      80
+    ],
+    "anchor": [
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ]
+    ],
+    "rush": -1,
+    "hit": -1,
+    "return": -1,
+    "sourceAnimation": "Idle",
+    "requestedAnimation": "Idle"
+  },
+  "Walk": {
+    "file": "Idle-Anim.png",
+    "w": 104,
+    "h": 112,
+    "dirs": 8,
+    "durations": [
+      80
+    ],
+    "anchor": [
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ]
+    ],
+    "rush": -1,
+    "hit": -1,
+    "return": -1,
+    "sourceAnimation": "Idle",
+    "requestedAnimation": "Walk"
+  },
+  "Attack": {
+    "file": "Idle-Anim.png",
+    "w": 104,
+    "h": 112,
+    "dirs": 8,
+    "durations": [
+      80
+    ],
+    "anchor": [
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ]
+    ],
+    "rush": -1,
+    "hit": -1,
+    "return": -1,
+    "sourceAnimation": "Idle",
+    "requestedAnimation": "Attack"
+  },
+  "Shoot": {
+    "file": "Idle-Anim.png",
+    "w": 104,
+    "h": 112,
+    "dirs": 8,
+    "durations": [
+      80
+    ],
+    "anchor": [
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ]
+    ],
+    "rush": -1,
+    "hit": -1,
+    "return": -1,
+    "sourceAnimation": "Idle",
+    "requestedAnimation": "Shoot"
+  },
+  "Hurt": {
+    "file": "Idle-Anim.png",
+    "w": 104,
+    "h": 112,
+    "dirs": 8,
+    "durations": [
+      80
+    ],
+    "anchor": [
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ]
+    ],
+    "rush": -1,
+    "hit": -1,
+    "return": -1,
+    "sourceAnimation": "Idle",
+    "requestedAnimation": "Hurt"
+  },
+  "Faint": {
+    "file": "Idle-Anim.png",
+    "w": 104,
+    "h": 112,
+    "dirs": 8,
+    "durations": [
+      80
+    ],
+    "anchor": [
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ]
+    ],
+    "rush": -1,
+    "hit": -1,
+    "return": -1,
+    "sourceAnimation": "Idle",
+    "requestedAnimation": "Faint"
+  },
+  "Charge": {
+    "file": "Idle-Anim.png",
+    "w": 104,
+    "h": 112,
+    "dirs": 8,
+    "durations": [
+      80
+    ],
+    "anchor": [
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ]
+    ],
+    "rush": -1,
+    "hit": -1,
+    "return": -1,
+    "sourceAnimation": "Idle",
+    "requestedAnimation": "Charge"
+  },
+  "Sleep": {
+    "file": "Idle-Anim.png",
+    "w": 104,
+    "h": 112,
+    "dirs": 8,
+    "durations": [
+      80
+    ],
+    "anchor": [
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ],
+      [
+        [
+          52,
+          60
+        ]
+      ]
+    ],
+    "rush": -1,
+    "hit": -1,
+    "return": -1,
+    "sourceAnimation": "Idle",
+    "requestedAnimation": "Sleep"
+  }
+}

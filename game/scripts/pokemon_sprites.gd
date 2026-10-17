@@ -37,16 +37,24 @@ const DEFAULT_ROWS: = {"down": 0, "left": 1, "right": 2, "up": 3}
 const PLACEHOLDER_PIXEL: = 0.05
 
 static var _cache: = {}
+const ACTOR_CACHE_LIMIT := 32
+static var _preview_cache: Dictionary = {}
 
 
 static func slug(species: String) -> String:
+	var configured := String(Dex.species(species).get("asset_slug", ""))
+	if configured != "":
+		return configured
 	return species.to_lower().replace(" ", "_").replace(".", "").replace("'", "")
 
 
 
 static func spec(species: String) -> Dictionary:
 	if _cache.has(species):
-		return _cache[species]
+		var recent: Dictionary = _cache[species]
+		_cache.erase(species)
+		_cache[species] = recent
+		return recent
 	var sp: = Dex.species(species)
 	var dir: = ROOT + slug(species) + "/"
 	var s: = {}
@@ -82,6 +90,8 @@ static func spec(species: String) -> Dictionary:
 	_pack_sprites(s, dir)
 	_pack_pmd(s, dir + "pmd/")
 	_cache[species] = s
+	while _cache.size() > ACTOR_CACHE_LIMIT:
+		_cache.erase(_cache.keys()[0])
 	return s
 
 
@@ -212,20 +222,49 @@ static func _frame0(s: Dictionary) -> Texture2D:
 
 
 static func icon(species: String) -> Texture2D:
-	return spec(species).icon
+	return _preview(species, "icon")
 
 
 
 static func front(species: String) -> Texture2D:
-	return spec(species).front
+	return _preview(species, "front")
 
 
 static func back(species: String) -> Texture2D:
-	return spec(species).back
+	return _preview(species, "back")
 
 
 static func party_icon(species: String) -> Texture2D:
-	return spec(species).party_icon
+	return _preview(species, "party_icon")
+
+
+static func _preview(species: String, kind: String) -> Texture2D:
+	var key := species + ":" + kind
+	if _preview_cache.has(key):
+		return _preview_cache[key]
+	var dir := ROOT + slug(species) + "/"
+	var image: Texture2D
+	if ResourceLoader.exists(dir + kind + ".png"):
+		if kind == "icon":
+			image = load(dir + kind + ".png")
+		else:
+			image = _strip(dir + kind + ".png").get("frame")
+	elif ResourceLoader.exists(dir + "overworld.png"):
+		var texture: Texture2D = load(dir + "overworld.png")
+		var config = JSON.parse_string(FileAccess.get_file_as_string(dir + "sprite.json"))
+		var frame := AtlasTexture.new()
+		frame.atlas = texture
+		frame.region = Rect2(0, 0, texture.get_width() / maxi(1, int(config.get("hframes", 1))), texture.get_height() / maxi(1, int(config.get("vframes", 1))))
+		image = frame
+	else:
+		image = spec(species).icon
+	# A collection thumbnail must not keep an entire directional sheet alive.
+	if image is AtlasTexture:
+		var atlas := image as AtlasTexture
+		var pixels := atlas.atlas.get_image().get_region(Rect2i(atlas.region))
+		image = ImageTexture.create_from_image(pixels)
+	_preview_cache[key] = image
+	return image
 
 
 static var _disc_cache: = {}
@@ -296,6 +335,8 @@ static func party_icon_frames(species: String) -> Dictionary:
 
 
 static func tint(species: String) -> Color:
+	if ResourceLoader.exists(ROOT + slug(species) + "/overworld.png"):
+		return Color.WHITE
 	return spec(species).tint
 
 
@@ -334,3 +375,4 @@ static func animate(sprite: Sprite3D, s: Dictionary, facing: Vector3, step: int)
 
 static func reload() -> void :
 	_cache.clear()
+	_preview_cache.clear()

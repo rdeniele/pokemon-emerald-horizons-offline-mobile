@@ -1,6 +1,6 @@
 {
   "name": "pokemon-emerald-horizons-offline-mobile",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,8 @@
     "build:game": "powershell -ExecutionPolicy Bypass -File scripts/build-game.ps1",
     "build:android": "powershell -ExecutionPolicy Bypass -File scripts/build-game.ps1 -AndroidOnly",
     "build:web": "powershell -ExecutionPolicy Bypass -File scripts/build-game.ps1 -WebOnly",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "import:national": "node scripts/import-national-data.mjs && node scripts/import-national-assets.mjs && node scripts/import-national-cries.mjs"
   },
   "dependencies": {
     "@fontsource/vt323": "5.3.0",

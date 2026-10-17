@@ -1,0 +1,40 @@
+{
+  "reason": "Explicit Gen1–9 roster extension; original recovery manifest retained unchanged.",
+  "changes": [
+    {
+      "path": "scripts/dex.gd",
+      "originalSha256": "06abd0dda2652a6b0be63be06443a59561e76edc8f4d52733a10e20f3b7aa2e1",
+      "extendedSha256": "1404224880925cd7886441936c60e54bfd9f6f4942b2fb29b013dc8b72968ca2"
+    },
+    {
+      "path": "scripts/encounters.gd",
+      "originalSha256": "41d0491be1c6f50eca2955013b806c819eda93242def4c5dad4e615e149043e2",
+      "extendedSha256": "e96e8b3f0e99d3ae016bc803d84af569b0de3ffabbed2c1baa9ea4034d28cba5"
+    },
+    {
+      "path": "scripts/state/game_state.gd",
+      "originalSha256": "8a46c32d7980d38c4f99d7910292a09dbd5398ee32b6c0c303a12ddb6d5f9a79",
+      "extendedSha256": "ba1462275d7b3beda92eec78da44bb909fd143a0f2c0406f317bb7588d46377b"
+    },
+    {
+      "path": "scripts/ui/pokedex_panel.gd",
+      "originalSha256": "20e385b44fd6ce78ee5675656dbcb864656582c71bd183b1801e5c167fa04034",
+      "extendedSha256": "c22fab8ccfb731a60501cef473f7efe922be13cbd2a1ded2d48c1228c916adae"
+    },
+    {
+      "path": "scripts/pokemon_sprites.gd",
+      "originalSha256": "5784ff900cbc0ae0de72022f51e84def71a466db8063a8e22710fd96e43136aa",
+      "extendedSha256": "983e6eb0ceebc16d4c958d96b72ba0f0ec8867b3462a1aefa8c646c7e2181e65"
+    },
+    {
+      "path": "scripts/audio.gd",
+      "originalSha256": "8d283bbebd51bbcff8e6d09fba8a52d2504ce2c0006d7ffeb58ac54dd964a24e",
+      "extendedSha256": "a2660d941fca411c9e75c565352c36085fa473b7d18630052ea2b0e77fbb87b5"
+    },
+    {
+      "path": "scripts/ui/credits_panel.gd",
+      "originalSha256": "a0f3e11afd9f17ffa67f8abc1d488dd01817e073bb67739a9e411a945c16fa12",
+      "extendedSha256": "0c226e05d01ca4b2897edc81b78bbecb97449f5c374d31681636a66d5b8e09aa"
+    }
+  ]
+}

@@ -15,3 +15,9 @@ reference/prototype/original/
 reference/prototype/*-export.log
 reference/prototype/rea-help.txt
 reference/prototype/pe-schema.json
+reference/empress/rea-evidence.json
+reference/empress/movement.json
+reference/empress/*.cjs.txt
+reference/empress/previous-species.json
+reference/empress/*.log
+public/game/*.tmp

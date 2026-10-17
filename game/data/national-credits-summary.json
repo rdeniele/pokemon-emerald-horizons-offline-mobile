@@ -1,0 +1,335 @@
+{
+  "sections": [
+    {
+      "title": "National Pokédex expansion",
+      "lines": [
+        "1,025 base Pokémon from Generations 1–9.",
+        "Additional sprites and cries: supplied Empress: Pokémon 2D package.",
+        "Pokémon Showdown data and art; SpriteCollab directional sprites.",
+        "Species metadata: PokeAPI.",
+        "Original Pokémon rights: Nintendo, Game Freak and Creatures."
+      ]
+    },
+    {
+      "title": "Additional sprite artists",
+      "entries": [
+        {
+          "name": "◥θ┴θ◤",
+          "detail": "DC:<@215638650434617345>"
+        },
+        {
+          "name": "3P1C",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "AllPatchedUp",
+          "detail": "patchedupgalaxy@gmail.com"
+        },
+        {
+          "name": "anomalocaris",
+          "detail": "https://twitter.com/radiodonta_lord"
+        },
+        {
+          "name": "Anon",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "Ariakyu",
+          "detail": "https://www.reddit.com/u/SoggyMinimum8386/s/0ULdU1GVNj"
+        },
+        {
+          "name": "Audino",
+          "detail": "https://github.com/audinowho"
+        },
+        {
+          "name": "avalancheman",
+          "detail": "milesbehemoth@gmail.com"
+        },
+        {
+          "name": "Axcel",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "baronessfaron",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "bwappi",
+          "detail": "https://bsky.app/profile/bwappi.bsky.social"
+        },
+        {
+          "name": "Caitemis",
+          "detail": "https://caitemis-art.tumblr.com/"
+        },
+        {
+          "name": "CHUNSOFT",
+          "detail": "https://www.spike-chunsoft.com/"
+        },
+        {
+          "name": "cyboy_bit",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "DavKriz",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "Deeshura",
+          "detail": "https://bsky.app/profile/deeshura.bsky.social"
+        },
+        {
+          "name": "Dejais",
+          "detail": "<@375676609283358722>"
+        },
+        {
+          "name": "Deleca7755",
+          "detail": "<https://www.deviantart.com/deleca-7755>"
+        },
+        {
+          "name": "DeltaL",
+          "detail": "averyderp.sm2@gmail.com"
+        },
+        {
+          "name": "dmDash",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "Emboarger",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "Emmuffin",
+          "detail": "https://twitter.com/Ernmuffin"
+        },
+        {
+          "name": "FerMrack",
+          "detail": "https://x.com/FerMrack_FM"
+        },
+        {
+          "name": "FlowerSnek",
+          "detail": "https://twitter.com/EthanLac13"
+        },
+        {
+          "name": "FrivolousAqua",
+          "detail": "https://twitter.com/FrivolousAqua"
+        },
+        {
+          "name": "G〜",
+          "detail": "https://bsky.app/profile/justtr4sh.pmd.social"
+        },
+        {
+          "name": "Gelius",
+          "detail": "<@276428982683959296>"
+        },
+        {
+          "name": "Ginnie",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "Grimlin",
+          "detail": "https://twitter.com/Griimlin"
+        },
+        {
+          "name": "Hanbei",
+          "detail": "https://twitter.com/Hanbei"
+        },
+        {
+          "name": "Ichor",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "Inv3rse",
+          "detail": "<@656696412087648257>"
+        },
+        {
+          "name": "JFain",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "Jhony-Rex",
+          "detail": "https://www.deviantart.com/jhony-rex"
+        },
+        {
+          "name": "Johanne2",
+          "detail": "https://github.com/Johanne2"
+        },
+        {
+          "name": "JustAGunk",
+          "detail": "<@1377429093997477928>"
+        },
+        {
+          "name": "Katach314",
+          "detail": "katamari.roller.314@gmail.com"
+        },
+        {
+          "name": "Kawaiitron",
+          "detail": "<@412938965713158144>"
+        },
+        {
+          "name": "KCN015",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "LazerBlitz",
+          "detail": "<@585276060136898591>"
+        },
+        {
+          "name": "Leif",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "LightBlueBlaze",
+          "detail": "LightBlueBlaze@gmail.com"
+        },
+        {
+          "name": "Limomon",
+          "detail": "https://twitter.com/TheLimomon"
+        },
+        {
+          "name": "Michael12",
+          "detail": "https://www.deviantart.com/michael12dz"
+        },
+        {
+          "name": "Mitsubachi",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "mixy:3",
+          "detail": "https://x.com/MixyPurple?s=20"
+        },
+        {
+          "name": "MonochromeKirby",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "mosscoated",
+          "detail": "<@713792248348672040>"
+        },
+        {
+          "name": "nataniel-sama",
+          "detail": "https://pokemon-reloaded.el-foro.net/"
+        },
+        {
+          "name": "Neat_Neato",
+          "detail": "imneatneato@gmail.com"
+        },
+        {
+          "name": "NeroIntruder",
+          "detail": "https://twitter.com/NeroIntruder"
+        },
+        {
+          "name": "NickOnimura",
+          "detail": "nickonimura.bsky.social"
+        },
+        {
+          "name": "NikolaP",
+          "detail": "nikolasnonsense@gmail.com"
+        },
+        {
+          "name": "Noivern",
+          "detail": "https://twitter.com/notarealnoivern"
+        },
+        {
+          "name": "Noo",
+          "detail": "https://artfight.net/~NooNoo_Skidoo"
+        },
+        {
+          "name": "pi3.14",
+          "detail": "https://twitter.com/Pi_y_ranitas"
+        },
+        {
+          "name": "Pink_no_tori",
+          "detail": "https://twitter.com/pink_avian_poke"
+        },
+        {
+          "name": "Pokejavi.",
+          "detail": "<@823932975916777512>"
+        },
+        {
+          "name": "powercristal",
+          "detail": "https://www.deviantart.com/powercristal"
+        },
+        {
+          "name": "programmedsleepstate",
+          "detail": "<@224476380790915072>"
+        },
+        {
+          "name": "Reimu\\_needs\\_$$$",
+          "detail": "<@!378654902181691392>"
+        },
+        {
+          "name": "RelicCipher",
+          "detail": "<@739304144552198285>"
+        },
+        {
+          "name": "Riodise",
+          "detail": "<@311963515563016193>"
+        },
+        {
+          "name": "Sceptile",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "SethY",
+          "detail": "https://linktr.ee/sethyuikora"
+        },
+        {
+          "name": "Shadowcrafts",
+          "detail": "shadowcrafts@outlook.com"
+        },
+        {
+          "name": "ShyStarryRain",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "Skycloud383",
+          "detail": "<@546904324098490368>"
+        },
+        {
+          "name": "Smalusion",
+          "detail": "https://twitter.com/Smalusion"
+        },
+        {
+          "name": "Soulja",
+          "detail": "https://twitter.com/OlSoulja"
+        },
+        {
+          "name": "Spikey-Valentine",
+          "detail": "https://twitter.com/spikeyvalentine"
+        },
+        {
+          "name": "stressparticles",
+          "detail": "<@416340821617541141>"
+        },
+        {
+          "name": "Tainted#3886",
+          "detail": "Sprite contributor"
+        },
+        {
+          "name": "TawnySoup",
+          "detail": "https://linktr.ee/tawnysoup"
+        },
+        {
+          "name": "Top_Kec",
+          "detail": "@topkec.bsky.social"
+        },
+        {
+          "name": "Uni",
+          "detail": "https://github.com/ArianaCastro01"
+        },
+        {
+          "name": "VOID",
+          "detail": "<@224988883182551040>"
+        },
+        {
+          "name": "Yari",
+          "detail": "Yari#1038"
+        },
+        {
+          "name": "ZoroarkDX",
+          "detail": "Sprite contributor"
+        }
+      ]
+    }
+  ]
+}

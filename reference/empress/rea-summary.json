@@ -1,0 +1,25 @@
+{
+  "status": "complete",
+  "evidenceId": "ev_afa960ab3fee5773be78110f05ebd5a217863b5a88a4426f58d28c6130ad3a7a",
+  "subject": {
+    "name": "app.asar",
+    "digest": {
+      "sha256": "5e71a4b11c35b01512772445e981ab5fe5299dc3f315cbb50530fc0a7ba97e91"
+    },
+    "local_path": "C:\\Users\\ronde\\Downloads\\Empress-Pokemon-2D-win\\resources\\app.asar",
+    "format": "asar",
+    "architecture": null
+  },
+  "operation": "analyze_javascript_application",
+  "provider": {
+    "id": "rea-javascript-application",
+    "name": "REA JavaScript application analyzer",
+    "version": "1"
+  },
+  "rawEvidence": "rea-evidence.json (local ignored complete record)",
+  "inventoryMembers": 12122,
+  "limitations": [
+    "Static analysis observes packaged code/data; target code was not executed.",
+    "Runtime gameplay integration is verified separately in Godot, not by REA."
+  ]
+}

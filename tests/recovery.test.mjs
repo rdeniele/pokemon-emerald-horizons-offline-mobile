@@ -6,10 +6,20 @@ import { execFileSync } from 'node:child_process';
 
 test('unmodified recovered gameplay and resources retain their source hashes', () => {
   const manifest = JSON.parse(fs.readFileSync('reference/prototype/recovery-manifest.json'));
+  const extensions = new Set(JSON.parse(fs.readFileSync('reference/empress/runtime-changes.json')).changes.map(entry => entry.path));
   assert.equal(manifest.scriptsDecompiled, 146);
-  for (const entry of manifest.entries.filter(entry => !entry.adapted)) {
+  for (const entry of manifest.entries.filter(entry => !entry.adapted && !extensions.has(entry.path))) {
     const bytes = fs.readFileSync(`game/${entry.path}`);
     assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), entry.originalSha256, entry.path);
+  }
+});
+
+test('national runtime changes are explicitly recorded against the original recovery', () => {
+  const manifest = JSON.parse(fs.readFileSync('reference/prototype/recovery-manifest.json'));
+  const extensions = JSON.parse(fs.readFileSync('reference/empress/runtime-changes.json'));
+  for (const entry of extensions.changes) {
+    assert.equal(entry.originalSha256, manifest.entries.find(original => original.path === entry.path).originalSha256);
+    assert.equal(crypto.createHash('sha256').update(fs.readFileSync(`game/${entry.path}`)).digest('hex'), entry.extendedSha256);
   }
 });
 

@@ -22,16 +22,32 @@ static func _ensure() -> void :
 	_loaded = true
 	var s = _load_json("res://data/species.json")
 	_species = s if s is Dictionary else {}
+	var national_species = _load_json("res://data/national-species.json")
+	if national_species is Dictionary:
+		_species.merge(national_species, true)
 	_species.erase("_doc")
 	var m = _load_json("res://data/moves.json")
 	if m is Dictionary:
 		for mv in m.get("moves", []):
 			_moves[mv.id] = mv
 			_move_order.append(mv.id)
+	var national_moves = _load_json("res://data/national-moves.json")
+	if national_moves is Dictionary:
+		for mv in national_moves.get("moves", []):
+			if not mv is Dictionary or not mv.has("id") or _moves.has(mv.id):
+				continue
+			_moves[mv.id] = mv
+			_move_order.append(mv.id)
 	var t = _load_json("res://data/types.json")
 	_types = t if t is Dictionary else {}
+	var national_types = _load_json("res://data/national-types.json")
+	if national_types is Dictionary:
+		_types.merge(national_types, true)
 	var a = _load_json("res://data/abilities.json")
 	_abilities = a if a is Dictionary else {}
+	var national_abilities = _load_json("res://data/national-abilities.json")
+	if national_abilities is Dictionary:
+		_abilities.merge(national_abilities, true)
 	_abilities.erase("_doc")
 
 

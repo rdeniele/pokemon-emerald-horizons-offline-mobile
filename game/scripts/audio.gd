@@ -525,6 +525,9 @@ func ui(slot: String) -> void :
 
 func cry(species: String, at = null, pitch: = 1.0) -> void :
 	var slot: = "cries/" + species.to_lower()
+	if not has_slot(slot):
+		var dex_data = preload("res://scripts/dex.gd")
+		slot = "cries/national/" + String(dex_data.species(species).get("national_id", ""))
 	if at is Vector3:
 		play_at(slot, at, 0.0, pitch)
 	else:

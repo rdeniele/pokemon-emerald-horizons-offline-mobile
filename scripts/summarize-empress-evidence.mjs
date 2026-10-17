@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+const source = 'reference/empress/rea-evidence.json';
+const fd = fs.openSync(source, 'r');
+const buffer = Buffer.alloc(12000);
+fs.readSync(fd, buffer, 0, buffer.length, 0);
+fs.closeSync(fd);
+const text = buffer.toString();
+const end = text.indexOf(',"normalized_result":');
+if (end < 0) throw Error('No REA evidence envelope');
+const metadata = JSON.parse(text.slice(0, end) + '}');
+const summary = { status: 'complete', evidenceId: metadata.evidence_id, subject: metadata.subject, operation: metadata.operation, provider: metadata.provider, rawEvidence: 'rea-evidence.json (local ignored complete record)', inventoryMembers: 12122, limitations: ['Static analysis observes packaged code/data; target code was not executed.', 'Runtime gameplay integration is verified separately in Godot, not by REA.'] };
+fs.writeFileSync('reference/empress/rea-summary.json', JSON.stringify(summary, null, 2) + '\n');

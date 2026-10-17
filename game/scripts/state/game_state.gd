@@ -303,7 +303,7 @@ func heal_all() -> void :
 
 
 
-const BOX_CAPACITY: = 30
+const BOX_CAPACITY: = 1200
 
 const PARTY_CAPACITY: = 6
 

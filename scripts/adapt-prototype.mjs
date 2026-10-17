@@ -17,6 +17,7 @@ function edit(file, from, to) {
 edit('project.godot', 'BeckettRuntime="*uid://do68dqybesb7r"\n', '');
 edit('project.godot', 'enabled=PackedStringArray("res://addons/beckett/plugin.cfg")', 'enabled=PackedStringArray()');
 edit('project.godot', 'config/name="Pokémon Prototype Demo"', 'config/name="Pokémon Prototype Mobile"');
+edit('project.godot', 'config/version="0.1.0-demo"', 'config/version="0.2.0-national"');
 edit('project.godot', 'window/stretch/aspect="expand"', 'window/stretch/aspect="expand"\nwindow/handheld/orientation=0\nwindow/size/window_width_override=1280\nwindow/size/window_height_override=720');
 edit('project.godot', 'renderer/rendering_method.mobile="forward_plus"', 'renderer/rendering_method="gl_compatibility"\nrenderer/rendering_method.mobile="gl_compatibility"');
 edit('project.godot', '[physics]', '[input_devices]\n\npointing/emulate_mouse_from_touch=false\n\n[physics]');

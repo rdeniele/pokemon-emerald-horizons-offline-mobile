@@ -57,6 +57,10 @@ func _fill(body: VBoxContainer) -> void :
 	if not data is Dictionary:
 		push_warning("[credits] %s did not parse" % CREDITS)
 		return
+	if FileAccess.file_exists("res://data/national-credits-summary.json"):
+		var national = JSON.parse_string(FileAccess.get_file_as_string("res://data/national-credits-summary.json"))
+		if national is Dictionary:
+			data["sections"].append_array(national.get("sections", []))
 	for section in data.get("sections", []):
 		var head: = Label.new()
 		head.theme_type_variation = "HeaderLabel"

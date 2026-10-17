@@ -1,0 +1,15 @@
+{
+  "landscape": true,
+  "physicalDeviceTested": false,
+  "battleResult": "NATIONAL_BATTLE_RESULT failures=0",
+  "existingSigningIdentity": true,
+  "version": "0.2.0-national",
+  "sha256": "4F5CCFE7C389964F36BA0C285AB1742BBA1E5930C7B1858CDED5544039E4A5D8",
+  "bytes": 136533394,
+  "species": 1025,
+  "entries": 24581,
+  "signatureVerified": true,
+  "internetPermission": false,
+  "storage": 1200,
+  "runtimeResult": "NATIONAL_RUNTIME_RESULT failures=0 species=1025"
+}

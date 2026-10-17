@@ -10,6 +10,20 @@ const CREATURE_SCENE: = preload("res://scenes/creature.tscn")
 var _tables: = {}
 
 var _rates: = {}
+var _national_tables: Dictionary = {}
+var _national_loaded: = false
+
+
+func national_entries(path: String) -> Array:
+	if not _national_loaded:
+		_national_loaded = true
+		var f: = FileAccess.open("res://data/national-encounters.json", FileAccess.READ)
+		if f:
+			var data = JSON.parse_string(f.get_as_text())
+			if data is Dictionary:
+				_national_tables = data
+	var entries = _national_tables.get(path.get_file().get_basename(), [])
+	return entries.duplicate(true) if entries is Array else []
 
 
 
@@ -22,8 +36,24 @@ func load_table(path: String) -> Array:
 			var data = JSON.parse_string(f.get_as_text())
 			if data is Dictionary:
 				entries = data.get("entries", [])
+		var additions: Array = national_entries(path)
+		# Keep the familiar local roster and the national visitors equally likely.
+		if not entries.is_empty() and not additions.is_empty():
+			_normalize_weights(entries)
+			_normalize_weights(additions)
+		entries.append_array(additions)
 		_tables[path] = entries
 	return _tables[path]
+
+
+func _normalize_weights(entries: Array) -> void:
+	var total: = 0.0
+	for entry in entries:
+		total += maxf(0.0, float(entry.get("weight", 1)))
+	if total <= 0.0:
+		return
+	for entry in entries:
+		entry["weight"] = maxf(0.0, float(entry.get("weight", 1))) * 100.0 / total
 
 
 

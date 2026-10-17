@@ -1,0 +1,13 @@
+{
+  "hframes": 5,
+  "vframes": 8,
+  "rows": {
+    "down": 0,
+    "right": 2,
+    "up": 4,
+    "left": 6
+  },
+  "height_m": 1.2,
+  "visible_m": 1.2,
+  "real": true
+}

@@ -247,6 +247,7 @@ func refresh_list() -> void :
 	_rebuild_entries()
 	_header.text = "SEEN %d / OWN %d" % [Game.state.dex_seen_count(), Game.state.dex_caught_count()]
 	for r in _rows:
+		_rows_box.remove_child(r.node)
 		r.node.queue_free()
 	_rows.clear()
 	for e in entries:
@@ -463,6 +464,12 @@ static func cry_slot(species: String) -> String:
 		var p: = "%s.%s" % [base, ext]
 		if ResourceLoader.exists(p) or FileAccess.file_exists(p):
 			return "cries/" + species.to_lower()
+	var national_id: = String(Dex.species(species).get("national_id", ""))
+	if national_id != "":
+		var national_slot: = "cries/national/" + national_id
+		var path: = "res://assets/audio/" + national_slot + ".mp3"
+		if ResourceLoader.exists(path) or FileAccess.file_exists(path):
+			return national_slot
 	return ""
 
 
@@ -478,6 +485,7 @@ static func _load_areas() -> void :
 	var dir: = DirAccess.open(ENCOUNTER_DIR)
 	if dir == null:
 		return
+	var national = JSON.parse_string(FileAccess.get_file_as_string("res://data/national-encounters.json")) if FileAccess.file_exists("res://data/national-encounters.json") else null
 	for f in dir.get_files():
 		if not f.ends_with(".json"):
 			continue
@@ -485,7 +493,10 @@ static func _load_areas() -> void :
 		if not (data is Dictionary):
 			continue
 		var area: = String(data.get("area", f.get_basename()))
-		for e in data.get("entries", []):
+		var encounter_entries: Array = data.get("entries", []).duplicate(true)
+		if national is Dictionary:
+			encounter_entries.append_array(national.get(f.get_basename(), []))
+		for e in encounter_entries:
 			var s: = String(e.get("species", ""))
 			if s == "":
 				continue
